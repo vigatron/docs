@@ -6,30 +6,28 @@
 | File Format    | `*.cells`                       |
 | File size      | 16384 bytes (16 KB)             |
 | Structure      | - 256 tiles <br>- Tile size: 8x8 pixels<br>- Pixel format: HRGB2222 (8-bit) |
-| Tile width     | 8 pixels = 8 bytes              |
+| Tile size      | 8x8 pixels                      |
+| Bytes/row      | 8 bytes                         |
 
 
 ## Описание
 
-Файл с расширением `.cells` представляет собой бинарный дамп участка видеопамяти,
-используемый в платформе CMBoards (STM32 + FPGA + SDRAM).
+
+Файл с расширением `.cells` представляет собой бинарное представление видеоданных,
+организованное в специализированном построчном layout,
+производном от содержимого видеопамяти и используемом в платформе CMBoards (STM32 + FPGA + SDRAM).
+ 
 
 Файл содержит фиксированный набор из 256 тайлов,
 каждый размером 8×8 пикселей с форматом 8 бит на пиксель.
 
+
 Особенностью данного формата является построчная организация данных:
-каждая строка всех тайлов занимает 256 × 8 = 1024 байта (0x400)
+каждая строка всех тайлов занимает 256 × 8 = 2048 байта (0x800)
 
-Первая строка всех 256 тайлов находится по адресу 0x0000, вторая 0x0400, третья 0x0800 ...
-Смещение (offset) вычисляется по формуле:
+## Видео - Демонстрация 
 
-    offset = row * 0x400 + tile_index * 8
-
-Где:
-
-    - row = 0..7
-    - tile_index = 0..255
-
+[![Смотреть видео](https://img.youtube.com/vi/6Itho-f9JyU/0.jpg)](https://www.youtube.com/watch?v=6Itho-f9JyU)
 
 
 ## Зачем нужен этот формат?
@@ -38,7 +36,7 @@
 - Идеально подходит для конвейеров рендеринга на базе FPGA
 
 
-## Примеры дампов
+## Примеры
 
 <table>
   <tr>
@@ -78,21 +76,33 @@ Row 1: [tile0][tile1][tile2] ... [tile255]
 
 Примеры:
 
-    Tile #0,  row 0: offset = 0 * 0x400 +  0 * 8
-    Tile #2,  row 2: offset = 2 * 0x400 +  2 * 8
-    Tile #5,  row 3: offset = 3 * 0x400 +  5 * 8
-    Tile #42, row 7: offset = 7 * 0x400 + 42 * 8
+    Tile #0,  row 0: offset = 0 * 0x800 +  0 * 8
+    Tile #2,  row 2: offset = 2 * 0x800 +  2 * 8
+    Tile #5,  row 3: offset = 3 * 0x800 +  5 * 8
+    Tile #42, row 7: offset = 7 * 0x800 + 42 * 8
     ...
+
+Первая строка всех 256 тайлов находится по адресу 0x0000, вторая 0x0800, третья 0x1000 ...
+Смещение (offset) вычисляется по формуле:
+
+    offset = row * 0x800 + tile_index * 8
+
+Где:
+
+    - row = 0..7
+    - tile_index = 0..255
 
 
 
 ## Особенности конфигурации SDRAM
 
-Команда SDRAM ACTIVATE ROW позволяет:
+Формат оптимизирован для последовательного burst-доступа SDRAM.
+После активации строки (ACTIVATE) данные могут считываться непрерывно,
+при этом количество одновременно считываемых тайлов зависит от ширины шины памяти :
 
-- 1x SDRAM x16 — считать одну строку для 64 тайлов
-- 1x SDRAM x32 — считать одну строку для 128 тайлов
-- 2x SDRAM x32 — считать одну строку для всех 256 тайлов
+- 1x SDRAM x16 — за непрерывный burst покрывается до 64 тайлов
+- 1x SDRAM x32 — до 128 тайлов
+- 2x SDRAM x32 — до 256 тайлов
 
 
 <table>
@@ -133,8 +143,37 @@ CMBoards — custom hardware platform based on STM32 MCU + Xilinx FPGA + externa
 
 [BRD32F407HDMIR3 Board Details](https://github.com/vigatron/docs/tree/main/projects/cmboards/brd32f407hdmir3)
 
+---
+
+
 ### Ограничения
 
 - Размер файла фиксирован: 16384 байта
 - Данные хранятся без сжатия
-- Выравнивание отсутствует (плотная упаковка)
+
+---
+
+
+##### Tags
+
+> Streaming-optimized tile layout for SDRAM-based rendering pipelines
+
+- FPGA
+- SDRAM
+- Tile-based rendering
+- Tile graphics format
+- 2D graphics pipeline
+- Embedded graphics
+- Memory-efficient layout
+- Cache-friendly layout
+- Burst-friendly data layout
+- Low-latency rendering
+- Scanline-oriented layout
+- Row-interleaved tiles
+- Hardware-friendly format
+- Zero-seek renderer
+- Predictable latency pipeline
+- Real-time rendering systems
+
+---
+2020-2026 Viktor Glebov (V01G04A81)
