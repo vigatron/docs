@@ -87,4 +87,11 @@
 </table>
 
 ---
+
+Related Links :
+
+[Avtonavi 2008 Board Details](https://github.com/vigatron/docs/tree/main/projects/autonavi2008)
+
+
+---
 2008 Viktor Glebov V01G04A81
