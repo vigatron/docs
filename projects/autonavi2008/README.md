@@ -11,7 +11,7 @@
 
 ### Main Device Board
 
-( Designed / Mai 2007 )
+( Designed / May 2007 )
 
 
 Dual 32-bit ARM MCU Board with CPLD
@@ -43,15 +43,12 @@ Dual 32-bit ARM MCU Board with CPLD
 - GPS + GPRS extension board
 - Embedded videocard ( Videocard-2008 )
 - Embedded MP3 Player ( based on AT91SAM7S64 )
-- Font Panel Device with B&W LCD
+- Front Panel Device with B&W LCD
 - LED Panels
-- Infrared sensor / Passanger counter
+- Infrared sensor / Passenger counter
 
 ---
 
----
-
-### PCB Layout
 
 <table>
   <tr>
@@ -110,21 +107,25 @@ Dual 32-bit ARM MCU Board with CPLD
 ### PCB Layout
 
 <a href="pics/001_NAVI_PCB.JPG"><img src="pics/001_NAVI_PCB.JPG" width="800px"/></a>
+
 <em>PCB Layout</em>
 
 ### PCB Layout 3D
 
 <a href="pics/002_NAVI_3D.jpg"><img src="pics/002_NAVI_3D.jpg" width="800px"/></a>
+
 <em>PCB Layout 3D </em>
 
 ### Main Board
 
 <a href="pics/003_NAVI_PHT.jpg"><img src="pics/003_NAVI_PHT.jpg" width="800px"/></a>
+
 <em>Main Board</em>
 
 ### Assembled Device
 
 <a href="pics/autonavi2008tbl.jpg"><img src="pics/autonavi2008tbl.jpg" width="800px"/></a>
+
 <em>Assembled Device</em>
 
 
