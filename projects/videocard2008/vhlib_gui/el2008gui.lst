@@ -1,0 +1,231 @@
+
+el2008gui.o:     file format elf32-littlearm
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         000001e4  00000000  00000000  00000034  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+  1 .data         00000000  00000000  00000000  00000218  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          00000000  00000000  00000000  00000218  2**0
+                  ALLOC
+  3 .debug_abbrev 0000010c  00000000  00000000  00000218  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_info   00000448  00000000  00000000  00000324  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+  5 .debug_line   0000009d  00000000  00000000  0000076c  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+  6 .debug_frame  0000006c  00000000  00000000  0000080c  2**2
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+  7 .debug_loc    00000163  00000000  00000000  00000878  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_pubnames 00000051  00000000  00000000  000009db  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+  9 .debug_aranges 00000020  00000000  00000000  00000a2c  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+ 10 .debug_ranges 00000040  00000000  00000000  00000a4c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_str    000004c8  00000000  00000000  00000a8c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .comment      0000001b  00000000  00000000  00000f54  2**0
+                  CONTENTS, READONLY
+Disassembly of section .text:
+
+00000000 <MoveRect>:
+extern void Debug( char *pText, int i );
+
+
+void MoveRect( VHRECT *pRECT, sint16 uiX, sint16 uiY )
+{
+   0:	e92d4010 	stmdb	sp!, {r4, lr}
+ pRECT->uiX1 += uiX;
+ pRECT->uiY1 += uiY;
+ pRECT->uiX2 += uiX;
+   4:	e1d0c0b4 	ldrh	ip, [r0, #4]
+   8:	e1d0e0b0 	ldrh	lr, [r0]
+   c:	e1d040b2 	ldrh	r4, [r0, #2]
+ pRECT->uiY2 += uiY;
+  10:	e1d030b6 	ldrh	r3, [r0, #6]
+  14:	e1a01801 	mov	r1, r1, lsl #16
+  18:	e1a02802 	mov	r2, r2, lsl #16
+  1c:	e1a01821 	mov	r1, r1, lsr #16
+  20:	e1a02822 	mov	r2, r2, lsr #16
+  24:	e081c00c 	add	ip, r1, ip
+  28:	e0823003 	add	r3, r2, r3
+  2c:	e081100e 	add	r1, r1, lr
+  30:	e0822004 	add	r2, r2, r4
+  34:	e1c030b6 	strh	r3, [r0, #6]
+  38:	e1c010b0 	strh	r1, [r0]
+  3c:	e1c020b2 	strh	r2, [r0, #2]
+  40:	e1c0c0b4 	strh	ip, [r0, #4]
+}
+  44:	e8bd4010 	ldmia	sp!, {r4, lr}
+  48:	e12fff1e 	bx	lr
+
+0000004c <EL2008GUI_DrawScene>:
+
+avoid EL2008GUI_UpdateScene( EL2008GUI_SYSTEM *pGUISystem )
+{
+ uchar8 ucObjectsCount = GET_VHDBS2_COUNT( pGUISystem->pObjectsList );
+ uchar8 i;
+ 
+ for( i=0; i<ucObjectsCount; i++ )
+ {
+  uchar8 *pObj = GET_VHDBS2_OBJECT( pGUISystem->pObjectsList,i);
+  uchar8 ucType = *pObj;
+  
+  EL2008GUI_PREFIX *pPREFIX = (EL2008GUI_PREFIX *)pObj;
+  
+  uchar8 ucFlag1 = EL2008GUI_GetFlag( pPREFIX, EL2008GUI_FLAG_VISIBLE );
+  uchar8 ucFlag2 = EL2008GUI_GetFlag( pPREFIX, EL2008GUI_FLAG_UPDATE );
+  
+  if( ( ucFlag1 != 0 ) &&  ( ucFlag2 != 0 ) )
+  {
+	   if( ucType == eEL2008GUI_TYPE_WINDOW )  EL2008GUI_DrawWindow( 	(const EL2008GUI_WINDOW *)pObj );
+       if( ucType == eEL2008GUI_TYPE_LABEL  )  EL2008GUI_DrawLabel ( 	(const EL2008GUI_LABEL *)pObj );
+       if( ucType == eEL2008GUI_TYPE_CHECKBOX) EL2008GUI_DrawCheckBox(	(const EL2008GUI_CHECKBOX *)pObj );
+       if( ucType == eEL2008GUI_TYPE_BITMAP)   EL2008GUI_DrawBitmap(	(const EL2008GUI_BITMAP *)pObj );
+       
+       if( ucType == eEL2008GUI_TYPE_BUTTON )
+       {
+           EL2008GUI_DrawButton( 	(const EL2008GUI_BUTTON *)pObj );
+       }
+
+	   EL2008GUI_ClearFlag( pPREFIX, EL2008GUI_FLAG_UPDATE );
+  }
+ }
+}
+
+// TODO: Rename
+avoid EL2008GUI_DrawScene( EL2008GUI_SYSTEM *pGUISystem )
+{
+ // Search focus
+ pGUISystem->ucFocusID = 0xFF;
+  4c:	e3e03000 	mvn	r3, #0	; 0x0
+  50:	e92d41f0 	stmdb	sp!, {r4, r5, r6, r7, r8, lr}
+  54:	e5c0300e 	strb	r3, [r0, #14]
+  58:	e1a06000 	mov	r6, r0
+ uchar8 ucObjectsCount = GET_VHDBS2_COUNT( pGUISystem->pObjectsList);
+  5c:	e5900008 	ldr	r0, [r0, #8]
+  60:	e5d03000 	ldrb	r3, [r0]
+ uchar8 i;
+ 
+ for( i=0; i<ucObjectsCount; i++ )
+  64:	e3530000 	cmp	r3, #0	; 0x0
+  68:	12438001 	subne	r8, r3, #1	; 0x1
+  6c:	13a05000 	movne	r5, #0	; 0x0
+  70:	1a000001 	bne	7c <EL2008GUI_DrawScene+0x30>
+  74:	ea000019 	b	e0 <EL2008GUI_DrawScene+0x94>
+  78:	e5960008 	ldr	r0, [r6, #8]
+  7c:	e20570ff 	and	r7, r5, #255	; 0xff
+ {
+  uchar8 *pObj = GET_VHDBS2_OBJECT(pGUISystem->pObjectsList,i);
+  uchar8 ucType = *pObj;
+  
+  EL2008GUI_PREFIX *pPREFIX = (EL2008GUI_PREFIX *)pObj;
+  80:	e0803107 	add	r3, r0, r7, lsl #2
+  84:	e1d320b2 	ldrh	r2, [r3, #2]
+  88:	e0804002 	add	r4, r0, r2
+  EL2008GUI_SetFlag( pPREFIX, EL2008GUI_FLAG_VISIBLE );
+  8c:	e3a01001 	mov	r1, #1	; 0x1
+  90:	e1a00004 	mov	r0, r4
+  94:	ebfffffe 	bl	0 <EL2008GUI_SetFlag>
+  EL2008GUI_SetFlag( pPREFIX, EL2008GUI_FLAG_UPDATE );
+  98:	e1a00004 	mov	r0, r4
+  9c:	e3a01002 	mov	r1, #2	; 0x2
+  a0:	ebfffffe 	bl	0 <EL2008GUI_SetFlag>
+  
+  // Search first focusable element in the list
+  if( EL2008GUI_GetFlag( pPREFIX, EL2008GUI_FLAG_FOCUSABLE ) != 0 )
+  a4:	e1a00004 	mov	r0, r4
+  a8:	e3a01020 	mov	r1, #32	; 0x20
+  ac:	ebfffffe 	bl	0 <EL2008GUI_GetFlag>
+  b0:	e3500000 	cmp	r0, #0	; 0x0
+  {
+   if( pGUISystem->ucFocusID == 0xFF )
+   { 
+    pGUISystem->ucFocusID = i;
+    EL2008GUI_SetFlag( pPREFIX, EL2008GUI_FLAG_FOCUS );  
+  b4:	e2855001 	add	r5, r5, #1	; 0x1
+  b8:	0a000004 	beq	d0 <EL2008GUI_DrawScene+0x84>
+  bc:	e5d6300e 	ldrb	r3, [r6, #14]
+  c0:	e35300ff 	cmp	r3, #255	; 0xff
+  c4:	e1a00004 	mov	r0, r4
+  c8:	e3a01010 	mov	r1, #16	; 0x10
+  cc:	0a000005 	beq	e8 <EL2008GUI_DrawScene+0x9c>
+  d0:	e20830ff 	and	r3, r8, #255	; 0xff
+  d4:	e2833001 	add	r3, r3, #1	; 0x1
+  d8:	e1550003 	cmp	r5, r3
+  dc:	1affffe5 	bne	78 <EL2008GUI_DrawScene+0x2c>
+   }
+  }
+  
+ }
+}
+  e0:	e8bd41f0 	ldmia	sp!, {r4, r5, r6, r7, r8, lr}
+  e4:	e12fff1e 	bx	lr
+  e8:	e5c6700e 	strb	r7, [r6, #14]
+  ec:	ebfffffe 	bl	0 <EL2008GUI_SetFlag>
+  f0:	eafffff6 	b	d0 <EL2008GUI_DrawScene+0x84>
+
+000000f4 <EL2008GUI_UpdateScene>:
+  f4:	e590c008 	ldr	ip, [r0, #8]
+  f8:	e5dc3000 	ldrb	r3, [ip]
+  fc:	e3530000 	cmp	r3, #0	; 0x0
+ 100:	e92d45f0 	stmdb	sp!, {r4, r5, r6, r7, r8, sl, lr}
+ 104:	e1a0a000 	mov	sl, r0
+ 108:	12438001 	subne	r8, r3, #1	; 0x1
+ 10c:	13a07000 	movne	r7, #0	; 0x0
+ 110:	1a00000f 	bne	154 <EL2008GUI_UpdateScene+0x60>
+ 114:	ea000024 	b	1ac <EL2008GUI_UpdateScene+0xb8>
+ 118:	e3560002 	cmp	r6, #2	; 0x2
+ 11c:	0a00002a 	beq	1cc <EL2008GUI_UpdateScene+0xd8>
+ 120:	e3560003 	cmp	r6, #3	; 0x3
+ 124:	0a000025 	beq	1c0 <EL2008GUI_UpdateScene+0xcc>
+ 128:	e3560001 	cmp	r6, #1	; 0x1
+ 12c:	0a000029 	beq	1d8 <EL2008GUI_UpdateScene+0xe4>
+ 130:	e1a00005 	mov	r0, r5
+ 134:	e3a01002 	mov	r1, #2	; 0x2
+ 138:	ebfffffe 	bl	0 <EL2008GUI_ClearFlag>
+ 13c:	e20830ff 	and	r3, r8, #255	; 0xff
+ 140:	e2877001 	add	r7, r7, #1	; 0x1
+ 144:	e2833001 	add	r3, r3, #1	; 0x1
+ 148:	e1570003 	cmp	r7, r3
+ 14c:	0a000016 	beq	1ac <EL2008GUI_UpdateScene+0xb8>
+ 150:	e59ac008 	ldr	ip, [sl, #8]
+ 154:	e20730ff 	and	r3, r7, #255	; 0xff
+ 158:	e08c3103 	add	r3, ip, r3, lsl #2
+ 15c:	e1d320b2 	ldrh	r2, [r3, #2]
+ 160:	e08c5002 	add	r5, ip, r2
+ 164:	e3a01001 	mov	r1, #1	; 0x1
+ 168:	e1a00005 	mov	r0, r5
+ 16c:	e7dc6002 	ldrb	r6, [ip, r2]
+ 170:	ebfffffe 	bl	0 <EL2008GUI_GetFlag>
+ 174:	e3a01002 	mov	r1, #2	; 0x2
+ 178:	e1a04000 	mov	r4, r0
+ 17c:	e1a00005 	mov	r0, r5
+ 180:	ebfffffe 	bl	0 <EL2008GUI_GetFlag>
+ 184:	e3540000 	cmp	r4, #0	; 0x0
+ 188:	13500000 	cmpne	r0, #0	; 0x0
+ 18c:	0affffea 	beq	13c <EL2008GUI_UpdateScene+0x48>
+ 190:	e3560004 	cmp	r6, #4	; 0x4
+ 194:	0a000006 	beq	1b4 <EL2008GUI_UpdateScene+0xc0>
+ 198:	e3560000 	cmp	r6, #0	; 0x0
+ 19c:	1affffdd 	bne	118 <EL2008GUI_UpdateScene+0x24>
+ 1a0:	e1a00005 	mov	r0, r5
+ 1a4:	ebfffffe 	bl	0 <EL2008GUI_DrawLabel>
+ 1a8:	eaffffe0 	b	130 <EL2008GUI_UpdateScene+0x3c>
+ 1ac:	e8bd45f0 	ldmia	sp!, {r4, r5, r6, r7, r8, sl, lr}
+ 1b0:	e12fff1e 	bx	lr
+ 1b4:	e1a00005 	mov	r0, r5
+ 1b8:	ebfffffe 	bl	0 <EL2008GUI_DrawWindow>
+ 1bc:	eaffffdb 	b	130 <EL2008GUI_UpdateScene+0x3c>
+ 1c0:	e1a00005 	mov	r0, r5
+ 1c4:	ebfffffe 	bl	0 <EL2008GUI_DrawBitmap>
+ 1c8:	eaffffd8 	b	130 <EL2008GUI_UpdateScene+0x3c>
+ 1cc:	e1a00005 	mov	r0, r5
+ 1d0:	ebfffffe 	bl	0 <EL2008GUI_DrawCheckBox>
+ 1d4:	eaffffd5 	b	130 <EL2008GUI_UpdateScene+0x3c>
+ 1d8:	e1a00005 	mov	r0, r5
+ 1dc:	ebfffffe 	bl	0 <EL2008GUI_DrawButton>
+ 1e0:	eaffffd2 	b	130 <EL2008GUI_DrawButton+0x130>

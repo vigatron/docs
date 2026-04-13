@@ -22,10 +22,13 @@
 
 
 
-## Video-Mode
+## Video-Modes
 
 * (A) Resolution: 640 x 480, 8-bit color
 * (B) Resolution: 320 x 240, 8-bit color
+* (C) Resolution: 400 x 240, 8-bit color
+* (D) Resolution: custom nnon-standard etc ...
+
 
 
 ### PCB Layout
@@ -95,6 +98,8 @@
 ##### VHDL Source XC95144XL CPLD #1 : [DEMO7MODE VHDL CPLD1](https://github.com/vigatron/docs/tree/main/projects/videocard2008/demo7vhdl/videox1)
 
 ##### VHDL Source XC95144XL CPLD #2 : [DEMO7MODE VHDL CPLD2](https://github.com/vigatron/docs/tree/main/projects/videocard2008/demo7vhdl/videox2)
+
+##### GUI 2008 / Embedded C / AT91SAM7X256 : [Embedded GUI 2008](https://github.com/vigatron/docs/tree/main/projects/videocard2008/vhlib_gui)
 
 
 ---

@@ -1,0 +1,64 @@
+# Project: vhlib_gui
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe -D__DEBUG__
+CC   = gcc.exe -D__DEBUG__
+WINDRES = windres.exe
+RES  = 
+OBJ  = el2008gui.o el2008gui_dbs2.o el2008gui_dynamic.o el2008gui_flags.o el2008gui_fonts.o el2008gui_io.o el2008gui_text.o el2008gui_vizual.o font0.o font1.o font2.o font3.o $(RES)
+LINKOBJ  = el2008gui.o el2008gui_dbs2.o el2008gui_dynamic.o el2008gui_flags.o el2008gui_fonts.o el2008gui_io.o el2008gui_text.o el2008gui_vizual.o font0.o font1.o font2.o font3.o $(RES)
+LIBS =  -L"C:/Dev-Cpp/lib"  -g3 
+INCS =  -I"C:/Dev-Cpp/include"  -I"E:/VHSource" 
+CXXINCS =  -I"C:/Dev-Cpp/lib/gcc/mingw32/3.4.2/include"  -I"C:/Dev-Cpp/include/c++/3.4.2/backward"  -I"C:/Dev-Cpp/include/c++/3.4.2/mingw32"  -I"C:/Dev-Cpp/include/c++/3.4.2"  -I"C:/Dev-Cpp/include"  -I"E:/VHSource" 
+BIN  = vhlib_gui.a
+CXXFLAGS = $(CXXINCS) -D__VHPLATFORM_MINGW32__   -g3
+CFLAGS = $(INCS)   -g3
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before vhlib_gui.a all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(LINKOBJ)
+	ar r $(BIN) $(LINKOBJ)
+	ranlib $(BIN)
+
+el2008gui.o: el2008gui.c
+	$(CPP) -c el2008gui.c -o el2008gui.o $(CXXFLAGS)
+
+el2008gui_dbs2.o: el2008gui_dbs2.c
+	$(CPP) -c el2008gui_dbs2.c -o el2008gui_dbs2.o $(CXXFLAGS)
+
+el2008gui_dynamic.o: el2008gui_dynamic.c
+	$(CPP) -c el2008gui_dynamic.c -o el2008gui_dynamic.o $(CXXFLAGS)
+
+el2008gui_flags.o: el2008gui_flags.c
+	$(CPP) -c el2008gui_flags.c -o el2008gui_flags.o $(CXXFLAGS)
+
+el2008gui_fonts.o: el2008gui_fonts.c
+	$(CPP) -c el2008gui_fonts.c -o el2008gui_fonts.o $(CXXFLAGS)
+
+el2008gui_io.o: el2008gui_io.c
+	$(CPP) -c el2008gui_io.c -o el2008gui_io.o $(CXXFLAGS)
+
+el2008gui_text.o: el2008gui_text.c
+	$(CPP) -c el2008gui_text.c -o el2008gui_text.o $(CXXFLAGS)
+
+el2008gui_vizual.o: el2008gui_vizual.c
+	$(CPP) -c el2008gui_vizual.c -o el2008gui_vizual.o $(CXXFLAGS)
+
+font0.o: font0.c
+	$(CPP) -c font0.c -o font0.o $(CXXFLAGS)
+
+font1.o: font1.c
+	$(CPP) -c font1.c -o font1.o $(CXXFLAGS)
+
+font2.o: font2.c
+	$(CPP) -c font2.c -o font2.o $(CXXFLAGS)
+
+font3.o: font3.c
+	$(CPP) -c font3.c -o font3.o $(CXXFLAGS)

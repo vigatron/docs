@@ -1,0 +1,304 @@
+
+el2008gui_text.o:     file format elf32-littlearm
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000350  00000000  00000000  00000034  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+  1 .data         00000000  00000000  00000000  00000384  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          00000000  00000000  00000000  00000384  2**0
+                  ALLOC
+  3 .debug_abbrev 00000141  00000000  00000000  00000384  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_info   000005ec  00000000  00000000  000004c5  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+  5 .debug_line   000000be  00000000  00000000  00000ab1  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+  6 .debug_frame  000000ac  00000000  00000000  00000b70  2**2
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+  7 .debug_loc    000002ec  00000000  00000000  00000c1c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_pubnames 0000007c  00000000  00000000  00000f08  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+  9 .debug_aranges 00000020  00000000  00000000  00000f84  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+ 10 .debug_ranges 00000058  00000000  00000000  00000fa4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_str    00000592  00000000  00000000  00000ffc  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .comment      0000001b  00000000  00000000  0000158e  2**0
+                  CONTENTS, READONLY
+Disassembly of section .text:
+
+00000000 <CharMap>:
+	return (ucSYM == ' ') ? SYMMINWIDTH : ucSYMWIDTH;
+}
+
+uchar8 CharMap( uchar8 ucSym )
+{
+   0:	e20000ff 	and	r0, r0, #255	; 0xff
+ if( ( ucSym >= (12*16) ) && ( ucSym < (14*16) ) ) return (ucSym - (12*16)) + (8*16);
+   4:	e2803040 	add	r3, r0, #64	; 0x40
+   8:	e20330ff 	and	r3, r3, #255	; 0xff
+ if( ( ucSym >= (14*16) ) && ( ucSym < (15*16) ) ) return (ucSym - (14*16)) + (10*16);
+   c:	e2802020 	add	r2, r0, #32	; 0x20
+  10:	e2401040 	sub	r1, r0, #64	; 0x40
+  14:	e353001f 	cmp	r3, #31	; 0x1f
+  18:	e20220ff 	and	r2, r2, #255	; 0xff
+  1c:	e20110ff 	and	r1, r1, #255	; 0xff
+  20:	9a00000a 	bls	50 <CharMap+0x50>
+  24:	e2403040 	sub	r3, r0, #64	; 0x40
+  28:	e352000f 	cmp	r2, #15	; 0xf
+  2c:	e20310ff 	and	r1, r3, #255	; 0xff
+  30:	9a000006 	bls	50 <CharMap+0x50>
+ if( ucSym >= (15*16) )  return (ucSym - (15*16)) + (14*16);
+  34:	e2403010 	sub	r3, r0, #16	; 0x10
+  38:	e35000ef 	cmp	r0, #239	; 0xef
+  3c:	e20310ff 	and	r1, r3, #255	; 0xff
+  40:	8a000002 	bhi	50 <CharMap+0x50>
+ if( ucSym == '³' ) return 'i';
+  44:	e35000b3 	cmp	r0, #179	; 0xb3
+  48:	11a01000 	movne	r1, r0
+  4c:	03a01069 	moveq	r1, #105	; 0x69
+ return ucSym;
+}
+  50:	e1a00001 	mov	r0, r1
+  54:	e12fff1e 	bx	lr
+
+00000058 <ELGUI2008_DRAW_CHAR>:
+  58:	e92d4ff0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, lr}
+  5c:	e1a02802 	mov	r2, r2, lsl #16
+  60:	e24dd01c 	sub	sp, sp, #28	; 0x1c
+  64:	e1a02822 	mov	r2, r2, lsr #16
+  68:	e203a0ff 	and	sl, r3, #255	; 0xff
+  6c:	e58d2004 	str	r2, [sp, #4]
+  70:	e1a03801 	mov	r3, r1, lsl #16
+  74:	e5dd2040 	ldrb	r2, [sp, #64]
+  78:	e1a03823 	mov	r3, r3, lsr #16
+  7c:	e20000ff 	and	r0, r0, #255	; 0xff
+  80:	e1a0100a 	mov	r1, sl
+  84:	e58d3008 	str	r3, [sp, #8]
+  88:	e58d2000 	str	r2, [sp]
+  8c:	e58d000c 	str	r0, [sp, #12]
+  90:	ebfffffe 	bl	0 <FONT_GET_SYM_W>
+  94:	e1a0100a 	mov	r1, sl
+  98:	e1a07000 	mov	r7, r0
+  9c:	e59d000c 	ldr	r0, [sp, #12]
+  a0:	ebfffffe 	bl	0 <FONT_GET_SYM_H>
+  a4:	e1a0100a 	mov	r1, sl
+  a8:	e58d0014 	str	r0, [sp, #20]
+  ac:	e59d000c 	ldr	r0, [sp, #12]
+  b0:	e58d7010 	str	r7, [sp, #16]
+  b4:	ebfffffe 	bl	0 <FONT_GET_SYM_O>
+  b8:	e59d7010 	ldr	r7, [sp, #16]
+  bc:	e1a031a7 	mov	r3, r7, lsr #3
+  c0:	e20330ff 	and	r3, r3, #255	; 0xff
+  c4:	e3170007 	tst	r7, #7	; 0x7
+  c8:	e58d3018 	str	r3, [sp, #24]
+  cc:	12833001 	addne	r3, r3, #1	; 0x1
+  d0:	120330ff 	andne	r3, r3, #255	; 0xff
+  d4:	158d3018 	strne	r3, [sp, #24]
+  d8:	e59d3014 	ldr	r3, [sp, #20]
+  dc:	e3530000 	cmp	r3, #0	; 0x0
+  e0:	13a09000 	movne	r9, #0	; 0x0
+  e4:	e1a0b000 	mov	fp, r0
+  e8:	11a08009 	movne	r8, r9
+  ec:	0a00002b 	beq	1a0 <ELGUI2008_DRAW_CHAR+0x148>
+  f0:	e3570000 	cmp	r7, #0	; 0x0
+  f4:	13a05000 	movne	r5, #0	; 0x0
+  f8:	13a04080 	movne	r4, #128	; 0x80
+  fc:	11a06005 	movne	r6, r5
+ 100:	1a000009 	bne	12c <ELGUI2008_DRAW_CHAR+0xd4>
+ 104:	ea00001d 	b	180 <ELGUI2008_DRAW_CHAR+0x128>
+ 108:	e3540001 	cmp	r4, #1	; 0x1
+ 10c:	e2863001 	add	r3, r6, #1	; 0x1
+ 110:	020360ff 	andeq	r6, r3, #255	; 0xff
+ 114:	e2853001 	add	r3, r5, #1	; 0x1
+ 118:	e20350ff 	and	r5, r3, #255	; 0xff
+ 11c:	e1a040a4 	mov	r4, r4, lsr #1
+ 120:	03a04080 	moveq	r4, #128	; 0x80
+ 124:	e1570005 	cmp	r7, r5
+ 128:	0a000014 	beq	180 <ELGUI2008_DRAW_CHAR+0x128>
+ 12c:	e08b0006 	add	r0, fp, r6
+ 130:	e0890000 	add	r0, r9, r0
+ 134:	e1a00800 	mov	r0, r0, lsl #16
+ 138:	e1a0100a 	mov	r1, sl
+ 13c:	e1a00820 	mov	r0, r0, lsr #16
+ 140:	ebfffffe 	bl	0 <FONT_GET_SYM_B>
+ 144:	e59d2008 	ldr	r2, [sp, #8]
+ 148:	e0823005 	add	r3, r2, r5
+ 14c:	e59d2004 	ldr	r2, [sp, #4]
+ 150:	e0821008 	add	r1, r2, r8
+ 154:	e0042000 	and	r2, r4, r0
+ 158:	e1a03803 	mov	r3, r3, lsl #16
+ 15c:	e1a01801 	mov	r1, r1, lsl #16
+ 160:	e1540002 	cmp	r4, r2
+ 164:	e1a01821 	mov	r1, r1, lsr #16
+ 168:	e1a00823 	mov	r0, r3, lsr #16
+ 16c:	1affffe5 	bne	108 <ELGUI2008_DRAW_CHAR+0xb0>
+ 170:	ebfffffe 	bl	0 <EL2008GUI_SetPointer>
+ 174:	e59d0000 	ldr	r0, [sp]
+ 178:	ebfffffe 	bl	0 <EL2008GUI_DrawPixelAndRight>
+ 17c:	eaffffe1 	b	108 <ELGUI2008_DRAW_CHAR+0xb0>
+ 180:	e2883001 	add	r3, r8, #1	; 0x1
+ 184:	e20380ff 	and	r8, r3, #255	; 0xff
+ 188:	e59d3014 	ldr	r3, [sp, #20]
+ 18c:	e1530008 	cmp	r3, r8
+ 190:	159d2018 	ldrne	r2, [sp, #24]
+ 194:	10823009 	addne	r3, r2, r9
+ 198:	120390ff 	andne	r9, r3, #255	; 0xff
+ 19c:	1affffd3 	bne	f0 <ELGUI2008_DRAW_CHAR+0x98>
+ 1a0:	e59d300c 	ldr	r3, [sp, #12]
+ 1a4:	e59d0010 	ldr	r0, [sp, #16]
+ 1a8:	e3530020 	cmp	r3, #32	; 0x20
+ 1ac:	03a0000a 	moveq	r0, #10	; 0xa
+ 1b0:	e28dd01c 	add	sp, sp, #28	; 0x1c
+ 1b4:	e8bd4ff0 	ldmia	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, lr}
+ 1b8:	e12fff1e 	bx	lr
+
+000001bc <ELGUI2008_TEXT_OUT>:
+
+avoid ELGUI2008_TEXT_OUT( const char *pText, uint16 x, uint16 y, uchar8 ucFont, uchar8 ucCOL )
+{
+ 1bc:	e92d4ff0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, lr}
+ 1c0:	e1a01801 	mov	r1, r1, lsl #16
+ 1c4:	e24dd004 	sub	sp, sp, #4	; 0x4
+ 1c8:	e1a02802 	mov	r2, r2, lsl #16
+ 1cc:	e1a04821 	mov	r4, r1, lsr #16
+ 1d0:	e1a0b822 	mov	fp, r2, lsr #16
+ 1d4:	e20360ff 	and	r6, r3, #255	; 0xff
+ 1d8:	e1a09000 	mov	r9, r0
+	uint16 uiCurrentX = x;
+	uchar8 ucTEXTLEN = strlen( pText );
+ 1dc:	ebfffffe 	bl	0 <strlen>
+	uchar8 i;
+	for( i=0;i<ucTEXTLEN;i++ )
+ 1e0:	e21000ff 	ands	r0, r0, #255	; 0xff
+ 1e4:	e5dda028 	ldrb	sl, [sp, #40]
+ 1e8:	0a00001f 	beq	26c <ELGUI2008_TEXT_OUT+0xb0>
+ 1ec:	e2403001 	sub	r3, r0, #1	; 0x1
+ 1f0:	e20330ff 	and	r3, r3, #255	; 0xff
+ 1f4:	e1a05004 	mov	r5, r4
+ 1f8:	e2838001 	add	r8, r3, #1	; 0x1
+ 1fc:	e3a07000 	mov	r7, #0	; 0x0
+ 200:	ea000010 	b	248 <ELGUI2008_TEXT_OUT+0x8c>
+	{
+	 uchar8 ucSYM = pText[i];
+	 
+	 if( ucFont == 4 ) ucSYM = CharMap( ucSYM );
+	 
+ 	 char ucTOP = FONT_GET_SYM_T( ucSYM, ucFont );
+ 204:	e1a01006 	mov	r1, r6
+ 208:	e1a00004 	mov	r0, r4
+ 20c:	ebfffffe 	bl	0 <FONT_GET_SYM_T>
+
+	 uchar8 ucW = ELGUI2008_DRAW_CHAR( ucSYM, uiCurrentX, y + ucTOP, ucFont, ucCOL );
+ 210:	e08b2000 	add	r2, fp, r0
+ 214:	e1a02802 	mov	r2, r2, lsl #16
+ 218:	e1a01005 	mov	r1, r5
+ 21c:	e1a00004 	mov	r0, r4
+ 220:	e1a02822 	mov	r2, r2, lsr #16
+ 224:	e1a03006 	mov	r3, r6
+ 228:	e58da000 	str	sl, [sp]
+ 22c:	ebfffffe 	bl	58 <ELGUI2008_DRAW_CHAR>
+	 uiCurrentX += ucW + 1;
+ 230:	e2800001 	add	r0, r0, #1	; 0x1
+ 234:	e0850000 	add	r0, r5, r0
+ 238:	e1a00800 	mov	r0, r0, lsl #16
+ 23c:	e1570008 	cmp	r7, r8
+ 240:	e1a05820 	mov	r5, r0, lsr #16
+ 244:	0a000008 	beq	26c <ELGUI2008_TEXT_OUT+0xb0>
+ 248:	e20730ff 	and	r3, r7, #255	; 0xff
+ 24c:	e7d94003 	ldrb	r4, [r9, r3]
+ 250:	e3560004 	cmp	r6, #4	; 0x4
+ 254:	e2877001 	add	r7, r7, #1	; 0x1
+ 258:	e1a00004 	mov	r0, r4
+ 25c:	1affffe8 	bne	204 <ELGUI2008_TEXT_OUT+0x48>
+ 260:	ebfffffe 	bl	0 <CharMap>
+ 264:	e1a04000 	mov	r4, r0
+ 268:	eaffffe5 	b	204 <ELGUI2008_TEXT_OUT+0x48>
+	}
+}
+ 26c:	e28dd004 	add	sp, sp, #4	; 0x4
+ 270:	e8bd4ff0 	ldmia	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, lr}
+ 274:	e12fff1e 	bx	lr
+
+00000278 <EL2008GUI_DrawTextA>:
+
+avoid EL2008GUI_DrawTextA( const char *pText, const VHRECT *pRect, uchar8 ucAlign, uchar8 ucFont, uchar8 ucCOL  )
+{
+ 278:	e92d41f0 	stmdb	sp!, {r4, r5, r6, r7, r8, lr}
+ 27c:	e20360ff 	and	r6, r3, #255	; 0xff
+ 280:	e1a04001 	mov	r4, r1
+     uint16 uiWidth  = EL2008GUI_GetTextWidth( pText, ucFont );
+ 284:	e1a01006 	mov	r1, r6
+ 288:	e1a07000 	mov	r7, r0
+ 28c:	e5dd8018 	ldrb	r8, [sp, #24]
+ 290:	ebfffffe 	bl	0 <EL2008GUI_GetTextWidth>
+ 294:	e1a05000 	mov	r5, r0
+     uint16 uiHeight = EL2008GUI_GetTextHeight( ucFont );
+ 298:	e1a00006 	mov	r0, r6
+ 29c:	ebfffffe 	bl	0 <EL2008GUI_GetTextHeight>
+     
+     uint16 uiRectW = pRect->uiX2 - pRect->uiX1 + 1;
+ 2a0:	e1d410b0 	ldrh	r1, [r4]
+     uint16 uiRectH = pRect->uiY2 - pRect->uiY1 + 1;
+ 2a4:	e1d420b2 	ldrh	r2, [r4, #2]
+     
+     uint16 uiX = pRect->uiX1 + (( uiRectW - uiWidth ) / 2);
+     uint16 uiY = pRect->uiY1 + (( uiRectH - uiHeight ) / 2);
+     
+     ELGUI2008_TEXT_OUT( pText, uiX, uiY, ucFont, ucCOL );
+ 2a8:	e1d4c0b6 	ldrh	ip, [r4, #6]
+ 2ac:	e1d430b4 	ldrh	r3, [r4, #4]
+ 2b0:	e062c00c 	rsb	ip, r2, ip
+ 2b4:	e0613003 	rsb	r3, r1, r3
+ 2b8:	e2833001 	add	r3, r3, #1	; 0x1
+ 2bc:	e28cc001 	add	ip, ip, #1	; 0x1
+ 2c0:	e1a03803 	mov	r3, r3, lsl #16
+ 2c4:	e1a0c80c 	mov	ip, ip, lsl #16
+ 2c8:	e060082c 	rsb	r0, r0, ip, lsr #16
+ 2cc:	e0655823 	rsb	r5, r5, r3, lsr #16
+ 2d0:	e0855fa5 	add	r5, r5, r5, lsr #31
+ 2d4:	e0800fa0 	add	r0, r0, r0, lsr #31
+ 2d8:	e08110c5 	add	r1, r1, r5, asr #1
+ 2dc:	e08220c0 	add	r2, r2, r0, asr #1
+ 2e0:	e1a01801 	mov	r1, r1, lsl #16
+ 2e4:	e1a02802 	mov	r2, r2, lsl #16
+ 2e8:	e1a00007 	mov	r0, r7
+ 2ec:	e1a01821 	mov	r1, r1, lsr #16
+ 2f0:	e1a02822 	mov	r2, r2, lsr #16
+ 2f4:	e1a03006 	mov	r3, r6
+ 2f8:	e58d8018 	str	r8, [sp, #24]
+}
+ 2fc:	e8bd41f0 	ldmia	sp!, {r4, r5, r6, r7, r8, lr}
+ 300:	eafffffe 	b	1bc <ELGUI2008_TEXT_OUT>
+
+00000304 <EL2008GUI_DrawText>:
+
+avoid EL2008GUI_DrawText( const VHRECT *pRect, const EL2008GUI_TEXT *pTEXT )
+{
+ 304:	e92d4030 	stmdb	sp!, {r4, r5, lr}
+  if( pTEXT->ucTEXTID == -1 ) return;
+  const char *pText = (const char *)GET_VHDBS2_OBJECT( sGUISYSTEM.pStringsList, pTEXT->ucTEXTID );
+ 308:	e59f203c 	ldr	r2, [pc, #60]	; 34c <.text+0x34c>
+  EL2008GUI_DrawTextA( pText, pRect, pTEXT->ucTEXTAlign, pTEXT->ucTEXTFontID, pTEXT->ucTEXTColor );
+ 30c:	e5d13000 	ldrb	r3, [r1]
+ 310:	e5925000 	ldr	r5, [r2]
+ 314:	e0853103 	add	r3, r5, r3, lsl #2
+ 318:	e1d3e0b2 	ldrh	lr, [r3, #2]
+ 31c:	e1a0c000 	mov	ip, r0
+ 320:	e5d14004 	ldrb	r4, [r1, #4]
+ 324:	e5d12001 	ldrb	r2, [r1, #1]
+ 328:	e5d13002 	ldrb	r3, [r1, #2]
+ 32c:	e24dd004 	sub	sp, sp, #4	; 0x4
+ 330:	e085000e 	add	r0, r5, lr
+ 334:	e1a0100c 	mov	r1, ip
+ 338:	e58d4000 	str	r4, [sp]
+ 33c:	ebfffffe 	bl	278 <EL2008GUI_DrawTextA>
+}
+ 340:	e28dd004 	add	sp, sp, #4	; 0x4
+ 344:	e8bd4030 	ldmia	sp!, {r4, r5, lr}
+ 348:	e12fff1e 	bx	lr
+ 34c:	00000000 	andeq	r0, r0, r0

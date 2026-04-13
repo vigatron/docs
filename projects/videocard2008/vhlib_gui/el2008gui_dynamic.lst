@@ -1,0 +1,453 @@
+
+el2008gui_dynamic.o:     file format elf32-littlearm
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000400  00000000  00000000  00000034  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+  1 .data         00000000  00000000  00000000  00000434  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          00000000  00000000  00000000  00000434  2**0
+                  ALLOC
+  3 .debug_abbrev 000000f6  00000000  00000000  00000434  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_info   000008f8  00000000  00000000  0000052a  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+  5 .debug_line   00000169  00000000  00000000  00000e22  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+  6 .debug_frame  0000011c  00000000  00000000  00000f8c  2**2
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+  7 .debug_loc    000003ec  00000000  00000000  000010a8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_pubnames 00000158  00000000  00000000  00001494  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+  9 .debug_aranges 00000020  00000000  00000000  000015ec  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+ 10 .debug_str    000007a3  00000000  00000000  0000160c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .comment      0000001b  00000000  00000000  00001daf  2**0
+                  CONTENTS, READONLY
+Disassembly of section .text:
+
+00000000 <EL2008GUI_DBS2RESET>:
+  return VHDBS2_Insert( &sDBS2FILES, (uchar8 *)pFile, ucLEN );
+}
+
+void EL2008GUI_DBS2RESET( const EL2008GUI_SYSTEM *pGUISystem )
+{
+   0:	e92d4010 	stmdb	sp!, {r4, lr}
+ VHDBS2_Reset( &sDBS2TEXT,  	pGUISystem->pStringsList, 	30 );
+   4:	e5901000 	ldr	r1, [r0]
+   8:	e1a04000 	mov	r4, r0
+   c:	e3a0201e 	mov	r2, #30	; 0x1e
+  10:	e59f0028 	ldr	r0, [pc, #40]	; 40 <.text+0x40>
+  14:	ebfffffe 	bl	0 <VHDBS2_Reset>
+ VHDBS2_Reset( &sDBS2FILES, 	pGUISystem->pFilesList, 	30 );
+  18:	e5941004 	ldr	r1, [r4, #4]
+  1c:	e59f0020 	ldr	r0, [pc, #32]	; 44 <.text+0x44>
+  20:	e3a0201e 	mov	r2, #30	; 0x1e
+  24:	ebfffffe 	bl	0 <VHDBS2_Reset>
+ //VHDBS2_Reset( &sDBS2FILESMP3,	pGUISystem->pFilesListMP3, 	30 );
+ VHDBS2_Reset( &sDBS2OBJ,   	pGUISystem->pObjectsList, 	30 );
+  28:	e5941008 	ldr	r1, [r4, #8]
+  2c:	e59f0014 	ldr	r0, [pc, #20]	; 48 <.text+0x48>
+  30:	e3a0201e 	mov	r2, #30	; 0x1e
+  34:	ebfffffe 	bl	0 <VHDBS2_Reset>
+}
+  38:	e8bd4010 	ldmia	sp!, {r4, lr}
+  3c:	e12fff1e 	bx	lr
+	...
+
+0000004c <InsertFile>:
+  4c:	e92d4010 	stmdb	sp!, {r4, lr}
+  50:	e1a04000 	mov	r4, r0
+  54:	ebfffffe 	bl	0 <strlen>
+  58:	e2802001 	add	r2, r0, #1	; 0x1
+  5c:	e20220ff 	and	r2, r2, #255	; 0xff
+  60:	e1a01004 	mov	r1, r4
+  64:	e59f0008 	ldr	r0, [pc, #8]	; 74 <.text+0x74>
+  68:	ebfffffe 	bl	0 <VHDBS2_Insert>
+  6c:	e8bd4010 	ldmia	sp!, {r4, lr}
+  70:	e12fff1e 	bx	lr
+  74:	00000000 	andeq	r0, r0, r0
+
+00000078 <VHNAVI2008_SCRMAN_InsertBitmap>:
+
+void VHNAVI2008_SCRMAN_InsertLabel( const EL2008GUI_SYSTEM *pGUISYSTEM, const char *pText, const VHRECT *pRECT )
+{
+ EL2008GUI_LABEL sLABEL;
+ 
+ sLABEL.sPREFIX.ucTYPE = eEL2008GUI_TYPE_LABEL;
+ sLABEL.sPREFIX.ucVER  = 0;
+ sLABEL.sPREFIX.ucFLAGS = 0;
+ sLABEL.sPREFIX.ucRES = 0;
+ memcpy( &sLABEL.sPREFIX.sRECT, pRECT, sizeof(VHRECT));
+ 
+ sLABEL.sTEXT.ucTEXTID     = InsertText( pText ); // GET_VHDBS2_COUNT(sDBS2TEXT.pBASE);
+ 
+ sLABEL.sTEXT.ucTEXTFontID = pGUISYSTEM->ucDEFAULT_LABEL_FONT_ID;
+ sLABEL.sTEXT.ucTEXTAlign  = pGUISYSTEM->ucDEFAULT_LABEL_ALIGN;
+ sLABEL.sTEXT.ucTEXTColor  = pGUISYSTEM->ucDEFAULT_LABEL_FONT_COLOR;
+ sLABEL.ucBACKColor        = pGUISYSTEM->ucDEFAULT_LABEL_BACK_COLOR;
+ sLABEL.sTEXT.ucTEXTAttr   = 0; // pGUISYSTEM->ucDEFAULT_TEXTATTR;
+ 
+ VHDBS2_Insert( &sDBS2OBJ, &sLABEL, sizeof(EL2008GUI_LABEL) );
+}
+
+void VHNAVI2008_SCRMAN_InsertCheckBox( const EL2008GUI_SYSTEM *pGUISYSTEM, 
+                                       const char *pText,
+                                       const VHRECT *pRECT,
+                                       uchar8 ucState )
+{
+ EL2008GUI_CHECKBOX sCHECKBOX;
+ 
+ sCHECKBOX.sPREFIX.ucTYPE = eEL2008GUI_TYPE_CHECKBOX;
+ sCHECKBOX.sPREFIX.ucVER  = 0;
+ sCHECKBOX.sPREFIX.ucFLAGS = EL2008GUI_FLAG_FOCUSABLE;
+ sCHECKBOX.sPREFIX.ucRES = 0;
+ memcpy( &sCHECKBOX.sPREFIX.sRECT, pRECT, sizeof(VHRECT));
+ 
+ sCHECKBOX.sTEXT.ucTEXTID     = InsertText( pText ); // GET_VHDBS2_COUNT(sDBS2TEXT.pBASE);
+ sCHECKBOX.sTEXT.ucTEXTFontID = pGUISYSTEM->ucDEFAULT_CHECKBOX_FONT_ID;
+ sCHECKBOX.sTEXT.ucTEXTAlign  = pGUISYSTEM->ucDEFAULT_CHECKBOX_ALIGN;
+ sCHECKBOX.sTEXT.ucTEXTColor  = pGUISYSTEM->ucDEFAULT_CHECKBOX_FONT_COLOR;
+ sCHECKBOX.sTEXT.ucTEXTAttr   = 0; // pGUISYSTEM->ucDEFAULT_TEXTATTR;
+ 
+ sCHECKBOX.ucBACKColor        = pGUISYSTEM->ucDEFAULT_CHECKBOX_BACK_COLOR;
+ sCHECKBOX.ucSTATE = ucState;
+  
+ // InsertText( pText );
+ VHDBS2_Insert( &sDBS2OBJ, &sCHECKBOX, sizeof(EL2008GUI_CHECKBOX) );
+}
+
+// VHRGB(2,0,0,3);
+// VHRGB(3,3,3,3);
+// pGUISYSTEM->ucDEFAULT_TEXTATTR;
+
+void VHNAVI2008_SCRMAN_InsertButton( const EL2008GUI_SYSTEM *pGUISYSTEM,
+                                     const char *pText,
+                                     const VHRECT *pRECT,
+                                     uint16 uiCMD,
+                                     uint16 uiPARAM )
+{
+ EL2008GUI_BUTTON sBUTTON;
+ 
+ sBUTTON.sPREFIX.ucTYPE = eEL2008GUI_TYPE_BUTTON;
+ sBUTTON.sPREFIX.ucVER  = 0;
+ sBUTTON.sPREFIX.ucFLAGS = EL2008GUI_FLAG_FOCUSABLE;
+ sBUTTON.sPREFIX.ucRES = 0;
+
+ memcpy( &sBUTTON.sPREFIX.sRECT, pRECT, sizeof(VHRECT));
+
+ int iTextID = InsertText( pText ); // GET_VHDBS2_COUNT(sDBS2TEXT.pBASE);
+
+ sBUTTON.sTEXT.ucTEXTID     = iTextID;
+ sBUTTON.sTEXT.ucTEXTFontID = pGUISYSTEM->ucDEFAULT_BUTTON_FONT_ID;
+ sBUTTON.sTEXT.ucTEXTAlign  = pGUISYSTEM->ucDEFAULT_BUTTON_TEXT_ALIGN;
+ sBUTTON.sTEXT.ucTEXTAttr   = 0; 
+ sBUTTON.sTEXT.ucTEXTColor  = pGUISYSTEM->ucDEFAULT_BUTTON_FONT_COLOR;
+ sBUTTON.ucBUTTONColor 		= pGUISYSTEM->ucDEFAULT_BUTTON_BACK_COLOR;
+ sBUTTON.ucBUTTONFrameColor = pGUISYSTEM->ucDEFAULT_BUTTON_FRAME_COLOR; 
+
+ sBUTTON.sTEXTSEL.ucTEXTID      = iTextID; 
+ sBUTTON.sTEXTSEL.ucTEXTFontID  = pGUISYSTEM->ucDEFAULT_BUTTON_SELECTED_FONT_ID;
+ sBUTTON.sTEXTSEL.ucTEXTAlign   = pGUISYSTEM->ucDEFAULT_BUTTON_SELECTED_TEXT_ALIGN;
+ sBUTTON.sTEXTSEL.ucTEXTAttr    = 0; 
+ sBUTTON.sTEXTSEL.ucTEXTColor   = pGUISYSTEM->ucDEFAULT_BUTTON_SELECTED_FONT_COLOR;
+ sBUTTON.ucBUTTONSELColor 		= pGUISYSTEM->ucDEFAULT_BUTTON_SELECTED_BACK_COLOR;
+ sBUTTON.ucBUTTONSELFrameColor  = pGUISYSTEM->ucDEFAULT_BUTTON_SELECTED_FRAME_COLOR; 
+ 
+ sBUTTON.ucEVENT            = uiCMD;
+ sBUTTON.ucEVENTARG         = uiPARAM;
+
+ // InsertText( pText );
+ VHDBS2_Insert( &sDBS2OBJ, &sBUTTON, sizeof(EL2008GUI_BUTTON) );
+}
+
+void VHNAVI2008_SCRMAN_InsertButtonM( 	const EL2008GUI_SYSTEM *pGUISYSTEM,
+        								const char *pText,
+        								VHRECT *pRECT,
+        								uint16 uiCMD,
+        								uint16 uiPARAM,
+        								uint16 uiXDelta,
+        								uint16 uiYDelta )
+{
+	VHNAVI2008_SCRMAN_InsertButton( pGUISYSTEM, pText, pRECT, uiCMD, uiPARAM );
+	MoveRect( pRECT, uiXDelta, uiYDelta );
+}
+ 
+void VHNAVI2008_SCRMAN_InsertBitmap( const EL2008GUI_SYSTEM *pGUISYSTEM, const char *pFileName, const VHRECT *pRECT )
+{
+  78:	e52de004 	str	lr, [sp, #-4]!
+  EL2008GUI_BITMAP sBITMAP;
+  sBITMAP.sPREFIX.ucTYPE = eEL2008GUI_TYPE_BITMAP;
+  sBITMAP.sPREFIX.ucVER = 0;
+  7c:	e3a00000 	mov	r0, #0	; 0x0
+  80:	e24dd010 	sub	sp, sp, #16	; 0x10
+  84:	e3a03003 	mov	r3, #3	; 0x3
+  88:	e5cd3000 	strb	r3, [sp]
+  sBITMAP.sPREFIX.ucFLAGS = 0;
+  sBITMAP.sPREFIX.ucRES = 0;
+  8c:	e5cd0003 	strb	r0, [sp, #3]
+  90:	e5cd0001 	strb	r0, [sp, #1]
+  94:	e5cd0002 	strb	r0, [sp, #2]
+  98:	e1a0c001 	mov	ip, r1
+  memcpy( &sBITMAP.sPREFIX.sRECT, pRECT, sizeof(VHRECT));
+  9c:	e8920003 	ldmia	r2, {r0, r1}
+  a0:	e28d3004 	add	r3, sp, #4	; 0x4
+  a4:	e8830003 	stmia	r3, {r0, r1}
+  sBITMAP.ucBMPID = InsertFile( pFileName ); // GET_VHDBS2_COUNT(sDBS2FILES.pBASE);
+  a8:	e1a0000c 	mov	r0, ip
+  ac:	ebfffffe 	bl	4c <InsertFile>
+    
+  VHDBS2_Insert( &sDBS2OBJ, &sBITMAP, sizeof(EL2008GUI_BITMAP) );
+  b0:	e1a0100d 	mov	r1, sp
+  b4:	e5cd000c 	strb	r0, [sp, #12]
+  b8:	e3a02010 	mov	r2, #16	; 0x10
+  bc:	e59f000c 	ldr	r0, [pc, #12]	; d0 <.text+0xd0>
+  c0:	ebfffffe 	bl	0 <VHDBS2_Insert>
+}
+  c4:	e28dd010 	add	sp, sp, #16	; 0x10
+  c8:	e49de004 	ldr	lr, [sp], #4
+  cc:	e12fff1e 	bx	lr
+  d0:	00000000 	andeq	r0, r0, r0
+
+000000d4 <InsertText>:
+  d4:	e92d4010 	stmdb	sp!, {r4, lr}
+  d8:	e1a04000 	mov	r4, r0
+  dc:	ebfffffe 	bl	0 <strlen>
+  e0:	e2802001 	add	r2, r0, #1	; 0x1
+  e4:	e20220ff 	and	r2, r2, #255	; 0xff
+  e8:	e1a01004 	mov	r1, r4
+  ec:	e59f0008 	ldr	r0, [pc, #8]	; fc <.text+0xfc>
+  f0:	ebfffffe 	bl	0 <VHDBS2_Insert>
+  f4:	e8bd4010 	ldmia	sp!, {r4, lr}
+  f8:	e12fff1e 	bx	lr
+  fc:	00000000 	andeq	r0, r0, r0
+
+00000100 <VHNAVI2008_SCRMAN_InsertWindow>:
+
+void VHNAVI2008_SCRMAN_InsertWindow( const EL2008GUI_SYSTEM *pGUISYSTEM,
+                                     const char *pCaptionName,
+                                     const VHRECT *pRECT )
+{
+ 100:	e92d41f0 	stmdb	sp!, {r4, r5, r6, r7, r8, lr}
+ EL2008GUI_WINDOW sWINDOW;
+
+ sWINDOW.sPREFIX.ucTYPE  = eEL2008GUI_TYPE_WINDOW;
+ 104:	e3a03004 	mov	r3, #4	; 0x4
+ 108:	e24dd018 	sub	sp, sp, #24	; 0x18
+ sWINDOW.sPREFIX.ucVER   = 0;
+ 10c:	e3a05000 	mov	r5, #0	; 0x0
+ 110:	e5cd3000 	strb	r3, [sp]
+ 114:	e5cd5001 	strb	r5, [sp, #1]
+ sWINDOW.sPREFIX.ucFLAGS = 0;
+ 118:	e5cd5002 	strb	r5, [sp, #2]
+ sWINDOW.sPREFIX.ucRES   = 0;
+ 11c:	e5cd5003 	strb	r5, [sp, #3]
+ 120:	e1a04000 	mov	r4, r0
+ 124:	e1a0c001 	mov	ip, r1
+ memcpy( &sWINDOW.sPREFIX.sRECT, pRECT, sizeof(VHRECT));
+ 128:	e8920003 	ldmia	r2, {r0, r1}
+ 12c:	e08d3003 	add	r3, sp, r3
+ 130:	e8830003 	stmia	r3, {r0, r1}
+
+ sWINDOW.sTEXT.ucTEXTID     = InsertText( pCaptionName ); // GET_VHDBS2_COUNT(sDBS2TEXT.pBASE);
+ 134:	e1a0000c 	mov	r0, ip
+ 138:	ebfffffe 	bl	d4 <InsertText>
+ sWINDOW.sTEXT.ucTEXTAlign  = pGUISYSTEM->ucDEFAULT_WINDOW_ALIGN;
+ sWINDOW.sTEXT.ucTEXTFontID = pGUISYSTEM->ucDEFAULT_WINDOW_FONT_ID;
+ sWINDOW.sTEXT.ucTEXTAttr   = 0;
+ sWINDOW.sTEXT.ucTEXTColor  = pGUISYSTEM->ucDEFAULT_WINDOW_FONT_COLOR;
+ sWINDOW.ucCaptionColor     = pGUISYSTEM->ucDEFAULT_WINDOW_BACK_COLOR;
+ sWINDOW.ucBodyColor        = pGUISYSTEM->ucDEFAULT_WINDOW_BODY_COLOR;
+ sWINDOW.ucCaptionWidth     = pGUISYSTEM->ucDEFAULT_WINDOW_CAPTION_WIDTH;
+ 13c:	e5d48026 	ldrb	r8, [r4, #38]
+ 140:	e5d43027 	ldrb	r3, [r4, #39]
+ 144:	e5d4c022 	ldrb	ip, [r4, #34]
+ 148:	e5d4e023 	ldrb	lr, [r4, #35]
+ 14c:	e5d46024 	ldrb	r6, [r4, #36]
+ 150:	e5d47025 	ldrb	r7, [r4, #37]
+ 
+ // InsertText( pCaptionName );
+ VHDBS2_Insert( &sDBS2OBJ, &sWINDOW, sizeof(EL2008GUI_WINDOW) );
+ 154:	e1a0100d 	mov	r1, sp
+ 158:	e5cd000c 	strb	r0, [sp, #12]
+ 15c:	e3a02018 	mov	r2, #24	; 0x18
+ 160:	e59f0028 	ldr	r0, [pc, #40]	; 190 <.text+0x190>
+ 164:	e5cd300d 	strb	r3, [sp, #13]
+ 168:	e5cdc00e 	strb	ip, [sp, #14]
+ 16c:	e5cd500f 	strb	r5, [sp, #15]
+ 170:	e5cde010 	strb	lr, [sp, #16]
+ 174:	e5cd6014 	strb	r6, [sp, #20]
+ 178:	e5cd7015 	strb	r7, [sp, #21]
+ 17c:	e5cd8016 	strb	r8, [sp, #22]
+ 180:	ebfffffe 	bl	0 <VHDBS2_Insert>
+}
+ 184:	e28dd018 	add	sp, sp, #24	; 0x18
+ 188:	e8bd41f0 	ldmia	sp!, {r4, r5, r6, r7, r8, lr}
+ 18c:	e12fff1e 	bx	lr
+ 190:	00000000 	andeq	r0, r0, r0
+
+00000194 <VHNAVI2008_SCRMAN_InsertButton>:
+ 194:	e92d4ff0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, lr}
+ 198:	e3a0c001 	mov	ip, #1	; 0x1
+ 19c:	e24dd030 	sub	sp, sp, #48	; 0x30
+ 1a0:	e5cdc00c 	strb	ip, [sp, #12]
+ 1a4:	e3a0e020 	mov	lr, #32	; 0x20
+ 1a8:	e3a0c000 	mov	ip, #0	; 0x0
+ 1ac:	e5cde00e 	strb	lr, [sp, #14]
+ 1b0:	e5cdc00d 	strb	ip, [sp, #13]
+ 1b4:	e5cdc00f 	strb	ip, [sp, #15]
+ 1b8:	e1a04000 	mov	r4, r0
+ 1bc:	e1a0c001 	mov	ip, r1
+ 1c0:	e8920003 	ldmia	r2, {r0, r1}
+ 1c4:	e1a03803 	mov	r3, r3, lsl #16
+ 1c8:	e28d2010 	add	r2, sp, #16	; 0x10
+ 1cc:	e8820003 	stmia	r2, {r0, r1}
+ 1d0:	e1a02823 	mov	r2, r3, lsr #16
+ 1d4:	e1a0000c 	mov	r0, ip
+ 1d8:	e59d5054 	ldr	r5, [sp, #84]
+ 1dc:	e58d2008 	str	r2, [sp, #8]
+ 1e0:	ebfffffe 	bl	d4 <InsertText>
+ 1e4:	e5d4c012 	ldrb	ip, [r4, #18]
+ 1e8:	e58dc000 	str	ip, [sp]
+ 1ec:	e5d4c014 	ldrb	ip, [r4, #20]
+ 1f0:	e5d4e018 	ldrb	lr, [r4, #24]
+ 1f4:	e5d48015 	ldrb	r8, [r4, #21]
+ 1f8:	e5d4a016 	ldrb	sl, [r4, #22]
+ 1fc:	e5d49017 	ldrb	r9, [r4, #23]
+ 200:	e5d4b00f 	ldrb	fp, [r4, #15]
+ 204:	e5d47013 	ldrb	r7, [r4, #19]
+ 208:	e5d46010 	ldrb	r6, [r4, #16]
+ 20c:	e5d44011 	ldrb	r4, [r4, #17]
+ 210:	e5cdc01a 	strb	ip, [sp, #26]
+ 214:	e3a0c000 	mov	ip, #0	; 0x0
+ 218:	e5cdc023 	strb	ip, [sp, #35]
+ 21c:	e59dc000 	ldr	ip, [sp]
+ 220:	e20030ff 	and	r3, r0, #255	; 0xff
+ 224:	e5cdc02b 	strb	ip, [sp, #43]
+ 228:	e1a05805 	mov	r5, r5, lsl #16
+ 22c:	e59dc008 	ldr	ip, [sp, #8]
+ 230:	e1a05825 	mov	r5, r5, lsr #16
+ 234:	e5cd3020 	strb	r3, [sp, #32]
+ 238:	e5cd3018 	strb	r3, [sp, #24]
+ 23c:	e28d100c 	add	r1, sp, #12	; 0xc
+ 240:	e3a03000 	mov	r3, #0	; 0x0
+ 244:	e3a02024 	mov	r2, #36	; 0x24
+ 248:	e59f0038 	ldr	r0, [pc, #56]	; 288 <.text+0x288>
+ 24c:	e5cde019 	strb	lr, [sp, #25]
+ 250:	e5cd801c 	strb	r8, [sp, #28]
+ 254:	e5cda028 	strb	sl, [sp, #40]
+ 258:	e5cd9029 	strb	r9, [sp, #41]
+ 25c:	e5cdb022 	strb	fp, [sp, #34]
+ 260:	e5cd7021 	strb	r7, [sp, #33]
+ 264:	e5cd6024 	strb	r6, [sp, #36]
+ 268:	e5cd402a 	strb	r4, [sp, #42]
+ 26c:	e5cdc02c 	strb	ip, [sp, #44]
+ 270:	e5cd502d 	strb	r5, [sp, #45]
+ 274:	e5cd301b 	strb	r3, [sp, #27]
+ 278:	ebfffffe 	bl	0 <VHDBS2_Insert>
+ 27c:	e28dd030 	add	sp, sp, #48	; 0x30
+ 280:	e8bd4ff0 	ldmia	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, lr}
+ 284:	e12fff1e 	bx	lr
+ 288:	00000000 	andeq	r0, r0, r0
+
+0000028c <VHNAVI2008_SCRMAN_InsertButtonM>:
+ 28c:	e92d4070 	stmdb	sp!, {r4, r5, r6, lr}
+ 290:	e24dd004 	sub	sp, sp, #4	; 0x4
+ 294:	e59d5018 	ldr	r5, [sp, #24]
+ 298:	e59d401c 	ldr	r4, [sp, #28]
+ 29c:	e59dc014 	ldr	ip, [sp, #20]
+ 2a0:	e1a05805 	mov	r5, r5, lsl #16
+ 2a4:	e1a04804 	mov	r4, r4, lsl #16
+ 2a8:	e1a0c80c 	mov	ip, ip, lsl #16
+ 2ac:	e1a03803 	mov	r3, r3, lsl #16
+ 2b0:	e1a05825 	mov	r5, r5, lsr #16
+ 2b4:	e1a04824 	mov	r4, r4, lsr #16
+ 2b8:	e1a06002 	mov	r6, r2
+ 2bc:	e1a0c82c 	mov	ip, ip, lsr #16
+ 2c0:	e1a03823 	mov	r3, r3, lsr #16
+ 2c4:	e1a05805 	mov	r5, r5, lsl #16
+ 2c8:	e1a04804 	mov	r4, r4, lsl #16
+ 2cc:	e58dc000 	str	ip, [sp]
+ 2d0:	ebfffffe 	bl	194 <VHNAVI2008_SCRMAN_InsertButton>
+ 2d4:	e1a00006 	mov	r0, r6
+ 2d8:	e1a01845 	mov	r1, r5, asr #16
+ 2dc:	e1a02844 	mov	r2, r4, asr #16
+ 2e0:	ebfffffe 	bl	0 <MoveRect>
+ 2e4:	e28dd004 	add	sp, sp, #4	; 0x4
+ 2e8:	e8bd4070 	ldmia	sp!, {r4, r5, r6, lr}
+ 2ec:	e12fff1e 	bx	lr
+
+000002f0 <VHNAVI2008_SCRMAN_InsertCheckBox>:
+ 2f0:	e92d40f0 	stmdb	sp!, {r4, r5, r6, r7, lr}
+ 2f4:	e3a0c002 	mov	ip, #2	; 0x2
+ 2f8:	e24dd018 	sub	sp, sp, #24	; 0x18
+ 2fc:	e3a06000 	mov	r6, #0	; 0x0
+ 300:	e3a0e020 	mov	lr, #32	; 0x20
+ 304:	e5cdc000 	strb	ip, [sp]
+ 308:	e5cde002 	strb	lr, [sp, #2]
+ 30c:	e5cd6001 	strb	r6, [sp, #1]
+ 310:	e5cd6003 	strb	r6, [sp, #3]
+ 314:	e1a04000 	mov	r4, r0
+ 318:	e1a0c001 	mov	ip, r1
+ 31c:	e8920003 	ldmia	r2, {r0, r1}
+ 320:	e28d2004 	add	r2, sp, #4	; 0x4
+ 324:	e8820003 	stmia	r2, {r0, r1}
+ 328:	e1a0000c 	mov	r0, ip
+ 32c:	e20350ff 	and	r5, r3, #255	; 0xff
+ 330:	ebfffffe 	bl	d4 <InsertText>
+ 334:	e5d4701b 	ldrb	r7, [r4, #27]
+ 338:	e5d43019 	ldrb	r3, [r4, #25]
+ 33c:	e5d4c01d 	ldrb	ip, [r4, #29]
+ 340:	e5d4e01a 	ldrb	lr, [r4, #26]
+ 344:	e1a0100d 	mov	r1, sp
+ 348:	e5cd000c 	strb	r0, [sp, #12]
+ 34c:	e3a02018 	mov	r2, #24	; 0x18
+ 350:	e59f0024 	ldr	r0, [pc, #36]	; 37c <.text+0x37c>
+ 354:	e5cd300e 	strb	r3, [sp, #14]
+ 358:	e5cdc00d 	strb	ip, [sp, #13]
+ 35c:	e5cde010 	strb	lr, [sp, #16]
+ 360:	e5cd600f 	strb	r6, [sp, #15]
+ 364:	e5cd7014 	strb	r7, [sp, #20]
+ 368:	e5cd5015 	strb	r5, [sp, #21]
+ 36c:	ebfffffe 	bl	0 <VHDBS2_Insert>
+ 370:	e28dd018 	add	sp, sp, #24	; 0x18
+ 374:	e8bd40f0 	ldmia	sp!, {r4, r5, r6, r7, lr}
+ 378:	e12fff1e 	bx	lr
+ 37c:	00000000 	andeq	r0, r0, r0
+
+00000380 <VHNAVI2008_SCRMAN_InsertLabel>:
+ 380:	e92d4070 	stmdb	sp!, {r4, r5, r6, lr}
+ 384:	e3a05000 	mov	r5, #0	; 0x0
+ 388:	e24dd018 	sub	sp, sp, #24	; 0x18
+ 38c:	e5cd5000 	strb	r5, [sp]
+ 390:	e5cd5001 	strb	r5, [sp, #1]
+ 394:	e5cd5002 	strb	r5, [sp, #2]
+ 398:	e5cd5003 	strb	r5, [sp, #3]
+ 39c:	e1a04000 	mov	r4, r0
+ 3a0:	e1a0c001 	mov	ip, r1
+ 3a4:	e8920003 	ldmia	r2, {r0, r1}
+ 3a8:	e28d3004 	add	r3, sp, #4	; 0x4
+ 3ac:	e8830003 	stmia	r3, {r0, r1}
+ 3b0:	e1a0000c 	mov	r0, ip
+ 3b4:	ebfffffe 	bl	d4 <InsertText>
+ 3b8:	e5d46020 	ldrb	r6, [r4, #32]
+ 3bc:	e5d4301e 	ldrb	r3, [r4, #30]
+ 3c0:	e5d4c021 	ldrb	ip, [r4, #33]
+ 3c4:	e5d4e01f 	ldrb	lr, [r4, #31]
+ 3c8:	e1a0100d 	mov	r1, sp
+ 3cc:	e5cd000c 	strb	r0, [sp, #12]
+ 3d0:	e3a02018 	mov	r2, #24	; 0x18
+ 3d4:	e59f0020 	ldr	r0, [pc, #32]	; 3fc <.text+0x3fc>
+ 3d8:	e5cd300e 	strb	r3, [sp, #14]
+ 3dc:	e5cdc00d 	strb	ip, [sp, #13]
+ 3e0:	e5cde010 	strb	lr, [sp, #16]
+ 3e4:	e5cd6014 	strb	r6, [sp, #20]
+ 3e8:	e5cd500f 	strb	r5, [sp, #15]
+ 3ec:	ebfffffe 	bl	0 <VHDBS2_Insert>
+ 3f0:	e28dd018 	add	sp, sp, #24	; 0x18
+ 3f4:	e8bd4070 	ldmia	sp!, {r4, r5, r6, lr}
+ 3f8:	e12fff1e 	bx	lr
+ 3fc:	00000000 	andeq	r0, r0, r0

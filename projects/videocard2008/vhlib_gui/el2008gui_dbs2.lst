@@ -1,0 +1,120 @@
+
+el2008gui_dbs2.o:     file format elf32-littlearm
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         000000b0  00000000  00000000  00000034  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+  1 .data         00000000  00000000  00000000  000000e4  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          00000000  00000000  00000000  000000e4  2**0
+                  ALLOC
+  3 .debug_abbrev 000000cd  00000000  00000000  000000e4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_info   000001d9  00000000  00000000  000001b1  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+  5 .debug_line   0000006f  00000000  00000000  0000038a  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+  6 .debug_frame  0000004c  00000000  00000000  000003fc  2**2
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+  7 .debug_loc    0000008c  00000000  00000000  00000448  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_pubnames 00000045  00000000  00000000  000004d4  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+  9 .debug_aranges 00000020  00000000  00000000  00000519  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+ 10 .debug_str    0000016b  00000000  00000000  00000539  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .comment      0000001b  00000000  00000000  000006a4  2**0
+                  CONTENTS, READONLY
+Disassembly of section .text:
+
+00000000 <VHDBS2_Reset>:
+
+void VHDBS2_Reset( VHDBS2 *pDBS2, void *pBASE, uchar8 ucItemsCount )
+{
+  pDBS2->pBASE = (uchar8 *)pBASE;
+  pDBS2->ucItemsCount = ucItemsCount;
+   0:	e5c02010 	strb	r2, [r0, #16]
+  pDBS2->pDATA = (uchar8 *)pBASE;
+  pDBS2->pPTRINT  = (uint16 *)pBASE;
+  pDBS2->pPTRCOUNT  = (uint16 *)pBASE;
+ 
+  uint16 *pCOUNT = pDBS2->pPTRCOUNT;
+  *pCOUNT = 0;
+   4:	e3a03000 	mov	r3, #0	; 0x0
+   8:	e1a02001 	mov	r2, r1
+   c:	e0c230b2 	strh	r3, [r2], #2
+  pDBS2->pPTRINT++;
+  pDBS2->pDATA += (pDBS2->ucItemsCount * 4) + 2;
+  10:	e5d03010 	ldrb	r3, [r0, #16]
+  14:	e0813103 	add	r3, r1, r3, lsl #2
+  18:	e2833002 	add	r3, r3, #2	; 0x2
+  1c:	e5803004 	str	r3, [r0, #4]
+  20:	e580200c 	str	r2, [r0, #12]
+  24:	e5801000 	str	r1, [r0]
+  28:	e5801008 	str	r1, [r0, #8]
+}
+  2c:	e12fff1e 	bx	lr
+
+00000030 <VHDBS2_Save>:
+
+int VHDBS2_Insert( VHDBS2 *pDBS2, void *pOBJ, uchar8 ucSize )
+{
+   int iResult = *pDBS2->pPTRCOUNT; // GET_VHDBS2_COUNT( pDBS2 );
+   if( *(pDBS2->pPTRCOUNT) >= pDBS2->ucItemsCount ) return -1; // Overflow
+   
+   memcpy( pDBS2->pDATA, pOBJ, ucSize );
+   (*pDBS2->pPTRCOUNT)++;
+   *pDBS2->pPTRINT = (uchar8 *)pDBS2->pDATA - (uchar8 *)pDBS2->pBASE;
+   pDBS2->pPTRINT++;
+   *pDBS2->pPTRINT = ucSize;
+   pDBS2->pPTRINT++;
+   pDBS2->pDATA += ucSize;
+   
+   return iResult;
+}
+
+void VHDBS2_Save( VHDBS2 *pDBS2, char *pFileName )
+{
+ /*
+ VFile mFile;
+ mFile.Open( pFileName, VFile::WRITE );
+ mFile.Write( pDBS2->pBASE, pDBS2->pDATA - pDBS2->pBASE );
+ mFile.Close();
+ */
+}
+  30:	e12fff1e 	bx	lr
+
+00000034 <VHDBS2_Insert>:
+  34:	e92d4070 	stmdb	sp!, {r4, r5, r6, lr}
+  38:	e5903008 	ldr	r3, [r0, #8]
+  3c:	e1a04000 	mov	r4, r0
+  40:	e1d300b0 	ldrh	r0, [r3]
+  44:	e5d43010 	ldrb	r3, [r4, #16]
+  48:	e20250ff 	and	r5, r2, #255	; 0xff
+  4c:	e1530000 	cmp	r3, r0
+  50:	e1a06000 	mov	r6, r0
+  54:	e1a02005 	mov	r2, r5
+  58:	93e06000 	mvnls	r6, #0	; 0x0
+  5c:	9a000010 	bls	a4 <VHDBS2_Insert+0x70>
+  60:	e5940004 	ldr	r0, [r4, #4]
+  64:	ebfffffe 	bl	0 <memcpy>
+  68:	e2841008 	add	r1, r4, #8	; 0x8
+  6c:	e8911002 	ldmia	r1, {r1, ip}
+  70:	e1d130b0 	ldrh	r3, [r1]
+  74:	e8940005 	ldmia	r4, {r0, r2}
+  78:	e0420000 	sub	r0, r2, r0
+  7c:	e2833001 	add	r3, r3, #1	; 0x1
+  80:	e1a0200c 	mov	r2, ip
+  84:	e1c130b0 	strh	r3, [r1]
+  88:	e0c200b2 	strh	r0, [r2], #2
+  8c:	e5943004 	ldr	r3, [r4, #4]
+  90:	e2822002 	add	r2, r2, #2	; 0x2
+  94:	e0833005 	add	r3, r3, r5
+  98:	e5843004 	str	r3, [r4, #4]
+  9c:	e1cc50b2 	strh	r5, [ip, #2]
+  a0:	e584200c 	str	r2, [r4, #12]
+  a4:	e1a00006 	mov	r0, r6
+  a8:	e8bd4070 	ldmia	sp!, {r4, r5, r6, lr}
+  ac:	e12fff1e 	bx	lr

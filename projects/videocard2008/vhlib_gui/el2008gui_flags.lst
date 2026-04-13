@@ -1,0 +1,68 @@
+
+el2008gui_flags.o:     file format elf32-littlearm
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000040  00000000  00000000  00000034  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000000  00000000  00000000  00000074  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          00000000  00000000  00000000  00000074  2**0
+                  ALLOC
+  3 .debug_abbrev 000000aa  00000000  00000000  00000074  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_info   000001df  00000000  00000000  0000011e  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+  5 .debug_line   00000058  00000000  00000000  000002fd  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+  6 .debug_frame  00000040  00000000  00000000  00000358  2**2
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+  7 .debug_loc    00000039  00000000  00000000  00000398  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_pubnames 00000056  00000000  00000000  000003d1  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+  9 .debug_aranges 00000020  00000000  00000000  00000427  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+ 10 .debug_str    0000017c  00000000  00000000  00000447  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .comment      0000001b  00000000  00000000  000005c3  2**0
+                  CONTENTS, READONLY
+Disassembly of section .text:
+
+00000000 <EL2008GUI_SetFlag>:
+#include "el2008gui.h"
+
+avoid EL2008GUI_SetFlag( EL2008GUI_PREFIX *pPREFIX, uchar8 ucFLAG )
+{
+      pPREFIX->ucFLAGS |= ucFLAG;
+   0:	e5d03002 	ldrb	r3, [r0, #2]
+   4:	e1811003 	orr	r1, r1, r3
+   8:	e5c01002 	strb	r1, [r0, #2]
+}
+   c:	e12fff1e 	bx	lr
+
+00000010 <EL2008GUI_ClearFlag>:
+
+avoid EL2008GUI_ClearFlag( EL2008GUI_PREFIX *pPREFIX, uchar8 ucFLAG )
+{
+      pPREFIX->ucFLAGS &= ~ucFLAG;
+  10:	e5d03002 	ldrb	r3, [r0, #2]
+  14:	e1e01001 	mvn	r1, r1
+  18:	e0011003 	and	r1, r1, r3
+  1c:	e5c01002 	strb	r1, [r0, #2]
+}
+  20:	e12fff1e 	bx	lr
+
+00000024 <EL2008GUI_GetFlag>:
+
+auchar8 EL2008GUI_GetFlag( EL2008GUI_PREFIX *pPREFIX, uchar8 ucFLAG )
+{
+  24:	e5d00002 	ldrb	r0, [r0, #2]
+  28:	e20110ff 	and	r1, r1, #255	; 0xff
+  2c:	e0010000 	and	r0, r1, r0
+  return (pPREFIX->ucFLAGS & ucFLAG) == ucFLAG;
+}
+  30:	e1510000 	cmp	r1, r0
+  34:	13a00000 	movne	r0, #0	; 0x0
+  38:	03a00001 	moveq	r0, #1	; 0x1
+  3c:	e12fff1e 	bx	lr

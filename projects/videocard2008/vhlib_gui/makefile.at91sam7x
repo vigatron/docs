@@ -1,0 +1,28 @@
+include $(VHBASE)/makefile_at91sam7x256
+libname = vhlib_gui
+libfull = $(PATH_LIBS)/$(libname)_at91sam7x256.a
+incs	= $(VHBASE)
+
+opts1	= -g -O2
+
+options = $(OPTBASE) $(opts1) -I$(incs) -mcpu=arm7tdmi -mthumb-interwork -DSAM7_GCC -DTHUMB_INTERWORK 
+
+SOURCES	= $(wildcard *.c)
+OBJECTS	= $(patsubst %.c,%.o,$(SOURCES))
+LISTS 	= $(patsubst %.c,%.lst,$(SOURCES))
+
+all: $(libfull) $(LISTS)
+
+$(libfull): $(OBJECTS)
+	$(AR) cru $(libfull) $(OBJECTS)
+
+.c.o: $(SOURCES)
+	arm-elf-gcc -c $(options) $< -o $@
+
+%.lst: %.o
+	$(OBJDUMP) -h -S $< > $@
+
+clean:
+	$(REMOVE) $(libfull)
+	$(REMOVE) $(OBJECTS)
+	$(REMOVE) $(LISTS)

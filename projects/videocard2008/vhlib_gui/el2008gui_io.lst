@@ -1,0 +1,124 @@
+
+el2008gui_io.o:     file format elf32-littlearm
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000164  00000000  00000000  00000034  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+  1 .data         00000000  00000000  00000000  00000198  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          00000000  00000000  00000000  00000198  2**0
+                  ALLOC
+  3 .debug_abbrev 0000010e  00000000  00000000  00000198  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_info   00000373  00000000  00000000  000002a6  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+  5 .debug_line   0000007f  00000000  00000000  00000619  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+  6 .debug_frame  00000058  00000000  00000000  00000698  2**2
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+  7 .debug_loc    000000ab  00000000  00000000  000006f0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_pubnames 000000a8  00000000  00000000  0000079b  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+  9 .debug_aranges 00000020  00000000  00000000  00000843  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+ 10 .debug_str    000004b9  00000000  00000000  00000863  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .comment      0000001b  00000000  00000000  00000d1c  2**0
+                  CONTENTS, READONLY
+Disassembly of section .text:
+
+00000000 <EL2008GUI_BMP_DATA>:
+
+uchar8 * EL2008GUI_BMP_DATA()
+{
+ return &szBMPSPACE[0];
+}
+   0:	e59f0000 	ldr	r0, [pc, #0]	; 8 <.text+0x8>
+   4:	e12fff1e 	bx	lr
+   8:	00000000 	andeq	r0, r0, r0
+
+0000000c <EL2008GUI_BMP_ReadLine>:
+   c:	e59f304c 	ldr	r3, [pc, #76]	; 60 <.text+0x60>
+  10:	e52de004 	str	lr, [sp, #-4]!
+  14:	e1d310b0 	ldrh	r1, [r3]
+  18:	e59f0044 	ldr	r0, [pc, #68]	; 64 <.text+0x64>
+  1c:	ebfffffe 	bl	0 <VHLIB_EL2008GUI_READFILE>
+  20:	e3500000 	cmp	r0, #0	; 0x0
+  24:	e59f203c 	ldr	r2, [pc, #60]	; 68 <.text+0x68>
+  28:	0a000007 	beq	4c <EL2008GUI_BMP_ReadLine+0x40>
+  2c:	e1d230b0 	ldrh	r3, [r2]
+  30:	e2433001 	sub	r3, r3, #1	; 0x1
+  34:	e1a03803 	mov	r3, r3, lsl #16
+  38:	e1a03823 	mov	r3, r3, lsr #16
+  3c:	e3530000 	cmp	r3, #0	; 0x0
+  40:	e3a00001 	mov	r0, #1	; 0x1
+  44:	e1c230b0 	strh	r3, [r2]
+  48:	0a000001 	beq	54 <EL2008GUI_BMP_ReadLine+0x48>
+  4c:	e49de004 	ldr	lr, [sp], #4
+  50:	e12fff1e 	bx	lr
+  54:	ebfffffe 	bl	0 <VHLIB_EL2008GUI_CLOSEFILE>
+  58:	e3a00001 	mov	r0, #1	; 0x1
+  5c:	eafffffa 	b	4c <EL2008GUI_BMP_ReadLine+0x40>
+	...
+
+0000006c <EL2008GUI_BMP_Init>:
+  6c:	e92d40f0 	stmdb	sp!, {r4, r5, r6, r7, lr}
+  70:	e59f40d8 	ldr	r4, [pc, #216]	; 150 <.text+0x150>
+  74:	e59f70d8 	ldr	r7, [pc, #216]	; 154 <.text+0x154>
+  78:	e3a0c064 	mov	ip, #100	; 0x64
+  7c:	e5943004 	ldr	r3, [r4, #4]
+  80:	e1c7c0b0 	strh	ip, [r7]
+  84:	e1d3c0b0 	ldrh	ip, [r3]
+  88:	e200e0ff 	and	lr, r0, #255	; 0xff
+  8c:	e15e000c 	cmp	lr, ip
+  90:	e1a05001 	mov	r5, r1
+  94:	e1a06002 	mov	r6, r2
+  98:	3a000002 	bcc	a8 <EL2008GUI_BMP_Init+0x3c>
+  9c:	e3a00000 	mov	r0, #0	; 0x0
+  a0:	e8bd40f0 	ldmia	sp!, {r4, r5, r6, r7, lr}
+  a4:	e12fff1e 	bx	lr
+  a8:	e5940004 	ldr	r0, [r4, #4]
+  ac:	e5943004 	ldr	r3, [r4, #4]
+  b0:	e083310e 	add	r3, r3, lr, lsl #2
+  b4:	e1d320b2 	ldrh	r2, [r3, #2]
+  b8:	e0800002 	add	r0, r0, r2
+  bc:	ebfffffe 	bl	0 <VHLIB_EL2008GUI_OPENFILE>
+  c0:	e3500000 	cmp	r0, #0	; 0x0
+  c4:	0afffff4 	beq	9c <EL2008GUI_BMP_Init+0x30>
+  c8:	e59f4088 	ldr	r4, [pc, #136]	; 158 <.text+0x158>
+  cc:	e3a01076 	mov	r1, #118	; 0x76
+  d0:	e1a00004 	mov	r0, r4
+  d4:	ebfffffe 	bl	0 <VHLIB_EL2008GUI_READFILE>
+  d8:	e3500000 	cmp	r0, #0	; 0x0
+  dc:	0affffee 	beq	9c <EL2008GUI_BMP_Init+0x30>
+  e0:	e5d43000 	ldrb	r3, [r4]
+  e4:	e3530042 	cmp	r3, #66	; 0x42
+  e8:	1affffeb 	bne	9c <EL2008GUI_BMP_Init+0x30>
+  ec:	e5d43001 	ldrb	r3, [r4, #1]
+  f0:	e353004d 	cmp	r3, #77	; 0x4d
+  f4:	1affffe8 	bne	9c <EL2008GUI_BMP_Init+0x30>
+  f8:	e5d4300a 	ldrb	r3, [r4, #10]
+  fc:	e3530076 	cmp	r3, #118	; 0x76
+ 100:	1affffe5 	bne	9c <EL2008GUI_BMP_Init+0x30>
+ 104:	e1d431b2 	ldrh	r3, [r4, #18]
+ 108:	e1c530b0 	strh	r3, [r5]
+ 10c:	e1d4c1b6 	ldrh	ip, [r4, #22]
+ 110:	e1c6c0b0 	strh	ip, [r6]
+ 114:	e1d421b2 	ldrh	r2, [r4, #18]
+ 118:	e59f303c 	ldr	r3, [pc, #60]	; 15c <.text+0x15c>
+ 11c:	e1a010a2 	mov	r1, r2, lsr #1
+ 120:	e2110003 	ands	r0, r1, #3	; 0x3
+ 124:	e1d441b6 	ldrh	r4, [r4, #22]
+ 128:	e59fc030 	ldr	ip, [pc, #48]	; 160 <.text+0x160>
+ 12c:	e1c320b0 	strh	r2, [r3]
+ 130:	10603001 	rsbne	r3, r0, r1
+ 134:	12833004 	addne	r3, r3, #4	; 0x4
+ 138:	03a00001 	moveq	r0, #1	; 0x1
+ 13c:	13a00001 	movne	r0, #1	; 0x1
+ 140:	e1cc10b0 	strh	r1, [ip]
+ 144:	e1c740b0 	strh	r4, [r7]
+ 148:	11cc30b0 	strneh	r3, [ip]
+ 14c:	eaffffd3 	b	a0 <EL2008GUI_BMP_Init+0x34>
+	...

@@ -1,0 +1,416 @@
+
+el2008gui_vizual.o:     file format elf32-littlearm
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         0000051c  00000000  00000000  00000034  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+  1 .data         00000000  00000000  00000000  00000550  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          00000000  00000000  00000000  00000550  2**0
+                  ALLOC
+  3 .debug_abbrev 00000118  00000000  00000000  00000550  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_info   000006b1  00000000  00000000  00000668  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+  5 .debug_line   00000140  00000000  00000000  00000d19  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+  6 .rodata       00000010  00000000  00000000  00000e59  2**0
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  7 .debug_frame  000000f0  00000000  00000000  00000e6c  2**2
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+  8 .debug_loc    0000037f  00000000  00000000  00000f5c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_pubnames 000000d0  00000000  00000000  000012db  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+ 10 .debug_aranges 00000020  00000000  00000000  000013ab  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+ 11 .debug_str    000003c0  00000000  00000000  000013cb  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .comment      0000001b  00000000  00000000  0000178b  2**0
+                  CONTENTS, READONLY
+Disassembly of section .text:
+
+00000000 <EL2008GUI_DrawBitmap>:
+  EL2008GUI_DrawText( &sCaption, &pWindow->sTEXT );
+}
+
+avoid EL2008GUI_DrawBitmap( const EL2008GUI_BITMAP * pBITMAP )
+{
+   0:	e92d45f0 	stmdb	sp!, {r4, r5, r6, r7, r8, sl, lr}
+   4:	e24dd004 	sub	sp, sp, #4	; 0x4
+ uint16 uiW=0,uiH=0;
+   8:	e3a03000 	mov	r3, #0	; 0x0
+   c:	e1a0a000 	mov	sl, r0
+ if( !EL2008GUI_BMP_Init( pBITMAP->ucBMPID, &uiW, &uiH ) ) return;
+  10:	e1a0100d 	mov	r1, sp
+  14:	e5d0000c 	ldrb	r0, [r0, #12]
+  18:	e28d2002 	add	r2, sp, #2	; 0x2
+  1c:	e1cd30b0 	strh	r3, [sp]
+  20:	e1cd30b2 	strh	r3, [sp, #2]
+  24:	ebfffffe 	bl	0 <EL2008GUI_BMP_Init>
+  28:	e3500000 	cmp	r0, #0	; 0x0
+  2c:	0a00003a 	beq	11c <EL2008GUI_DrawBitmap+0x11c>
+ uint16 y;
+ for( y=0; y<uiH; y++ )
+  30:	e1dd30b2 	ldrh	r3, [sp, #2]
+  34:	e3530000 	cmp	r3, #0	; 0x0
+  38:	0a000037 	beq	11c <EL2008GUI_DrawBitmap+0x11c>
+  3c:	e3a08000 	mov	r8, #0	; 0x0
+  40:	ea000006 	b	60 <EL2008GUI_DrawBitmap+0x60>
+ {
+  if( EL2008GUI_BMP_ReadLine() != 0 )
+  {
+      uchar8 *pPtr = EL2008GUI_BMP_DATA();
+      uint16 x = uiW;
+      
+      EL2008GUI_SetPointer( pBITMAP->sPREFIX.sRECT.uiX1, pBITMAP->sPREFIX.sRECT.uiY1+ uiH - y );
+      
+      while(x>0)
+      {
+       if( x>1 )
+       {
+        uchar8 ucCOL1 = ((*pPtr) >> 4) & 0x0F;
+        uchar8 ucCOL2 = ((*pPtr) & 0x0F);
+        ucCOL1 = arrayPALETTE[ucCOL1];
+        EL2008GUI_DrawPixelAndRight( ucCOL1 );
+        ucCOL2 = arrayPALETTE[ucCOL2];
+        EL2008GUI_DrawPixelAndRight( ucCOL2 );
+        x-=2;
+       }
+       else
+       {
+        uchar8 ucCOL1 = ((*pPtr) >> 4) & 0x0F;
+        ucCOL1 = arrayPALETTE[ucCOL1];
+        EL2008GUI_DrawPixelAndRight( ucCOL1 );
+         x--;
+       }
+       pPtr++;
+      }
+  }
+  else y = uiH;
+  44:	e1dd20b2 	ldrh	r2, [sp, #2]
+  48:	e1a08002 	mov	r8, r2
+  4c:	e2883001 	add	r3, r8, #1	; 0x1
+  50:	e1a03803 	mov	r3, r3, lsl #16
+  54:	e1a08823 	mov	r8, r3, lsr #16
+  58:	e1520008 	cmp	r2, r8
+  5c:	9a00002e 	bls	11c <EL2008GUI_DrawBitmap+0x11c>
+  60:	ebfffffe 	bl	0 <EL2008GUI_BMP_ReadLine>
+  64:	e3500000 	cmp	r0, #0	; 0x0
+  68:	0afffff5 	beq	44 <EL2008GUI_DrawBitmap+0x44>
+  6c:	ebfffffe 	bl	0 <EL2008GUI_BMP_DATA>
+  70:	e1da10b6 	ldrh	r1, [sl, #6]
+  74:	e1dd30b2 	ldrh	r3, [sp, #2]
+  78:	e0811003 	add	r1, r1, r3
+  7c:	e0681001 	rsb	r1, r8, r1
+  80:	e1dd50b0 	ldrh	r5, [sp]
+  84:	e1a01801 	mov	r1, r1, lsl #16
+  88:	e1a06000 	mov	r6, r0
+  8c:	e1a01821 	mov	r1, r1, lsr #16
+  90:	e1da00b4 	ldrh	r0, [sl, #4]
+  94:	ebfffffe 	bl	0 <EL2008GUI_SetPointer>
+  98:	e3550000 	cmp	r5, #0	; 0x0
+  9c:	0a000018 	beq	104 <EL2008GUI_DrawBitmap+0x104>
+  a0:	e59f7080 	ldr	r7, [pc, #128]	; 128 <.text+0x128>
+  a4:	ea00000b 	b	d8 <EL2008GUI_DrawBitmap+0xd8>
+  a8:	e5d64000 	ldrb	r4, [r6]
+  ac:	e7d70224 	ldrb	r0, [r7, r4, lsr #4]
+  b0:	e204400f 	and	r4, r4, #15	; 0xf
+  b4:	ebfffffe 	bl	0 <EL2008GUI_DrawPixelAndRight>
+  b8:	e7d70004 	ldrb	r0, [r7, r4]
+  bc:	ebfffffe 	bl	0 <EL2008GUI_DrawPixelAndRight>
+  c0:	e2453002 	sub	r3, r5, #2	; 0x2
+  c4:	e1a03803 	mov	r3, r3, lsl #16
+  c8:	e1a05823 	mov	r5, r3, lsr #16
+  cc:	e3550000 	cmp	r5, #0	; 0x0
+  d0:	e2866001 	add	r6, r6, #1	; 0x1
+  d4:	0a00000a 	beq	104 <EL2008GUI_DrawBitmap+0x104>
+  d8:	e3550001 	cmp	r5, #1	; 0x1
+  dc:	8afffff1 	bhi	a8 <EL2008GUI_DrawBitmap+0xa8>
+  e0:	e5d63000 	ldrb	r3, [r6]
+  e4:	e7d70223 	ldrb	r0, [r7, r3, lsr #4]
+  e8:	ebfffffe 	bl	0 <EL2008GUI_DrawPixelAndRight>
+  ec:	e2453001 	sub	r3, r5, #1	; 0x1
+  f0:	e1a03803 	mov	r3, r3, lsl #16
+  f4:	e1a05823 	mov	r5, r3, lsr #16
+  f8:	e3550000 	cmp	r5, #0	; 0x0
+  fc:	e2866001 	add	r6, r6, #1	; 0x1
+ 100:	1afffff4 	bne	d8 <EL2008GUI_DrawBitmap+0xd8>
+ 104:	e2883001 	add	r3, r8, #1	; 0x1
+ 108:	e1dd20b2 	ldrh	r2, [sp, #2]
+ 10c:	e1a03803 	mov	r3, r3, lsl #16
+ 110:	e1a08823 	mov	r8, r3, lsr #16
+ 114:	e1520008 	cmp	r2, r8
+ 118:	8affffd0 	bhi	60 <EL2008GUI_DrawBitmap+0x60>
+ }
+    
+}
+ 11c:	e28dd004 	add	sp, sp, #4	; 0x4
+ 120:	e8bd45f0 	ldmia	sp!, {r4, r5, r6, r7, r8, sl, lr}
+ 124:	e12fff1e 	bx	lr
+ 128:	00000000 	andeq	r0, r0, r0
+
+0000012c <EL2008GUI_DrawFrame>:
+ 12c:	e92d45f0 	stmdb	sp!, {r4, r5, r6, r7, r8, sl, lr}
+ 130:	e1a0a000 	mov	sl, r0
+ 134:	e1da30b4 	ldrh	r3, [sl, #4]
+ 138:	e1d000b0 	ldrh	r0, [r0]
+ 13c:	e0603003 	rsb	r3, r0, r3
+ 140:	e2833001 	add	r3, r3, #1	; 0x1
+ 144:	e1a03803 	mov	r3, r3, lsl #16
+ 148:	e2800001 	add	r0, r0, #1	; 0x1
+ 14c:	e1a03823 	mov	r3, r3, lsr #16
+ 150:	e1a00800 	mov	r0, r0, lsl #16
+ 154:	e1a0c001 	mov	ip, r1
+ 158:	e2435002 	sub	r5, r3, #2	; 0x2
+ 15c:	e1a00820 	mov	r0, r0, lsr #16
+ 160:	e1da10b2 	ldrh	r1, [sl, #2]
+ 164:	e20c80ff 	and	r8, ip, #255	; 0xff
+ 168:	e20270ff 	and	r7, r2, #255	; 0xff
+ 16c:	ebfffffe 	bl	0 <EL2008GUI_SetPointer>
+ 170:	e3550000 	cmp	r5, #0	; 0x0
+ 174:	da000037 	ble	258 <EL2008GUI_DrawFrame+0x12c>
+ 178:	e3a04000 	mov	r4, #0	; 0x0
+ 17c:	e1a00008 	mov	r0, r8
+ 180:	ebfffffe 	bl	0 <EL2008GUI_DrawPixelAndRight>
+ 184:	e2843001 	add	r3, r4, #1	; 0x1
+ 188:	e1a03803 	mov	r3, r3, lsl #16
+ 18c:	e1a04823 	mov	r4, r3, lsr #16
+ 190:	e1550004 	cmp	r5, r4
+ 194:	cafffff8 	bgt	17c <EL2008GUI_DrawFrame+0x50>
+ 198:	e1da00b0 	ldrh	r0, [sl]
+ 19c:	e2800001 	add	r0, r0, #1	; 0x1
+ 1a0:	e1a00800 	mov	r0, r0, lsl #16
+ 1a4:	e1a00820 	mov	r0, r0, lsr #16
+ 1a8:	e1da10b6 	ldrh	r1, [sl, #6]
+ 1ac:	ebfffffe 	bl	0 <EL2008GUI_SetPointer>
+ 1b0:	e3a04000 	mov	r4, #0	; 0x0
+ 1b4:	e1a00008 	mov	r0, r8
+ 1b8:	ebfffffe 	bl	0 <EL2008GUI_DrawPixelAndRight>
+ 1bc:	e2843001 	add	r3, r4, #1	; 0x1
+ 1c0:	e1a03803 	mov	r3, r3, lsl #16
+ 1c4:	e1a04823 	mov	r4, r3, lsr #16
+ 1c8:	e1550004 	cmp	r5, r4
+ 1cc:	cafffff8 	bgt	1b4 <EL2008GUI_DrawFrame+0x88>
+ 1d0:	e1da30b2 	ldrh	r3, [sl, #2]
+ 1d4:	e1da20f6 	ldrsh	r2, [sl, #6]
+ 1d8:	e2833001 	add	r3, r3, #1	; 0x1
+ 1dc:	e1a03803 	mov	r3, r3, lsl #16
+ 1e0:	e1a06823 	mov	r6, r3, lsr #16
+ 1e4:	e2422001 	sub	r2, r2, #1	; 0x1
+ 1e8:	e1560002 	cmp	r6, r2
+ 1ec:	ca000017 	bgt	250 <EL2008GUI_DrawFrame+0x124>
+ 1f0:	e1a01006 	mov	r1, r6
+ 1f4:	e1da00b0 	ldrh	r0, [sl]
+ 1f8:	ebfffffe 	bl	0 <EL2008GUI_SetPointer>
+ 1fc:	e1a00008 	mov	r0, r8
+ 200:	ebfffffe 	bl	0 <EL2008GUI_DrawPixelAndRight>
+ 204:	e3550000 	cmp	r5, #0	; 0x0
+ 208:	da000007 	ble	22c <EL2008GUI_DrawFrame+0x100>
+ 20c:	e3a04000 	mov	r4, #0	; 0x0
+ 210:	e1a00007 	mov	r0, r7
+ 214:	ebfffffe 	bl	0 <EL2008GUI_DrawPixelAndRight>
+ 218:	e2843001 	add	r3, r4, #1	; 0x1
+ 21c:	e1a03803 	mov	r3, r3, lsl #16
+ 220:	e1a04823 	mov	r4, r3, lsr #16
+ 224:	e1550004 	cmp	r5, r4
+ 228:	cafffff8 	bgt	210 <EL2008GUI_DrawFrame+0xe4>
+ 22c:	e1a00008 	mov	r0, r8
+ 230:	ebfffffe 	bl	0 <EL2008GUI_DrawPixelAndRight>
+ 234:	e2863001 	add	r3, r6, #1	; 0x1
+ 238:	e1da20f6 	ldrsh	r2, [sl, #6]
+ 23c:	e1a03803 	mov	r3, r3, lsl #16
+ 240:	e1a06823 	mov	r6, r3, lsr #16
+ 244:	e2422001 	sub	r2, r2, #1	; 0x1
+ 248:	e1560002 	cmp	r6, r2
+ 24c:	daffffe7 	ble	1f0 <EL2008GUI_DrawFrame+0xc4>
+ 250:	e8bd45f0 	ldmia	sp!, {r4, r5, r6, r7, r8, sl, lr}
+ 254:	e12fff1e 	bx	lr
+ 258:	e1da00b0 	ldrh	r0, [sl]
+ 25c:	e2800001 	add	r0, r0, #1	; 0x1
+ 260:	e1a00800 	mov	r0, r0, lsl #16
+ 264:	e1a00820 	mov	r0, r0, lsr #16
+ 268:	e1da10b6 	ldrh	r1, [sl, #6]
+ 26c:	ebfffffe 	bl	0 <EL2008GUI_SetPointer>
+ 270:	eaffffd6 	b	1d0 <EL2008GUI_DrawFrame+0xa4>
+
+00000274 <EL2008GUI_DrawRect>:
+ 274:	e92d41f0 	stmdb	sp!, {r4, r5, r6, r7, r8, lr}
+ 278:	e1d030b4 	ldrh	r3, [r0, #4]
+ 27c:	e1a08000 	mov	r8, r0
+ 280:	e1d000b0 	ldrh	r0, [r0]
+ 284:	e1d870b2 	ldrh	r7, [r8, #2]
+ 288:	e0603003 	rsb	r3, r0, r3
+ 28c:	e1d820f6 	ldrsh	r2, [r8, #6]
+ 290:	e2833001 	add	r3, r3, #1	; 0x1
+ 294:	e1a03803 	mov	r3, r3, lsl #16
+ 298:	e1520007 	cmp	r2, r7
+ 29c:	e20160ff 	and	r6, r1, #255	; 0xff
+ 2a0:	e1a05823 	mov	r5, r3, lsr #16
+ 2a4:	ba000012 	blt	2f4 <EL2008GUI_DrawRect+0x80>
+ 2a8:	e1a01007 	mov	r1, r7
+ 2ac:	ebfffffe 	bl	0 <EL2008GUI_SetPointer>
+ 2b0:	e3550000 	cmp	r5, #0	; 0x0
+ 2b4:	0a000007 	beq	2d8 <EL2008GUI_DrawRect+0x64>
+ 2b8:	e3a04000 	mov	r4, #0	; 0x0
+ 2bc:	e1a00006 	mov	r0, r6
+ 2c0:	ebfffffe 	bl	0 <EL2008GUI_DrawPixelAndRight>
+ 2c4:	e2843001 	add	r3, r4, #1	; 0x1
+ 2c8:	e1a03803 	mov	r3, r3, lsl #16
+ 2cc:	e1a04823 	mov	r4, r3, lsr #16
+ 2d0:	e1550004 	cmp	r5, r4
+ 2d4:	1afffff8 	bne	2bc <EL2008GUI_DrawRect+0x48>
+ 2d8:	e2873001 	add	r3, r7, #1	; 0x1
+ 2dc:	e1a03803 	mov	r3, r3, lsl #16
+ 2e0:	e1d820f6 	ldrsh	r2, [r8, #6]
+ 2e4:	e1a07823 	mov	r7, r3, lsr #16
+ 2e8:	e1570002 	cmp	r7, r2
+ 2ec:	d1d800b0 	ldrleh	r0, [r8]
+ 2f0:	daffffec 	ble	2a8 <EL2008GUI_DrawRect+0x34>
+ 2f4:	e8bd41f0 	ldmia	sp!, {r4, r5, r6, r7, r8, lr}
+ 2f8:	e12fff1e 	bx	lr
+
+000002fc <EL2008GUI_DrawWindow>:
+ 2fc:	e92d40f0 	stmdb	sp!, {r4, r5, r6, r7, lr}
+ 300:	e2803004 	add	r3, r0, #4	; 0x4
+ 304:	e1d350b2 	ldrh	r5, [r3, #2]
+ 308:	e24dd010 	sub	sp, sp, #16	; 0x10
+ 30c:	e1d3e0b4 	ldrh	lr, [r3, #4]
+ 310:	e1d0c0b4 	ldrh	ip, [r0, #4]
+ 314:	e1a04000 	mov	r4, r0
+ 318:	e1d360b6 	ldrh	r6, [r3, #6]
+ 31c:	e5d42014 	ldrb	r2, [r4, #20]
+ 320:	e285301e 	add	r3, r5, #30	; 0x1e
+ 324:	e1a0000d 	mov	r0, sp
+ 328:	e3a01000 	mov	r1, #0	; 0x0
+ 32c:	e1cdc0b8 	strh	ip, [sp, #8]
+ 330:	e1cde0bc 	strh	lr, [sp, #12]
+ 334:	e1cd30ba 	strh	r3, [sp, #10]
+ 338:	e1cdc0b0 	strh	ip, [sp]
+ 33c:	e1cde0b4 	strh	lr, [sp, #4]
+ 340:	e1cd30b6 	strh	r3, [sp, #6]
+ 344:	e1cd60be 	strh	r6, [sp, #14]
+ 348:	e1cd50b2 	strh	r5, [sp, #2]
+ 34c:	ebfffffe 	bl	12c <EL2008GUI_DrawFrame>
+ 350:	e28d0008 	add	r0, sp, #8	; 0x8
+ 354:	e3a01000 	mov	r1, #0	; 0x0
+ 358:	e5d42015 	ldrb	r2, [r4, #21]
+ 35c:	ebfffffe 	bl	12c <EL2008GUI_DrawFrame>
+ 360:	e1a0000d 	mov	r0, sp
+ 364:	e284100c 	add	r1, r4, #12	; 0xc
+ 368:	e1a0700d 	mov	r7, sp
+ 36c:	ebfffffe 	bl	0 <EL2008GUI_DrawText>
+ 370:	e28dd010 	add	sp, sp, #16	; 0x10
+ 374:	e8bd40f0 	ldmia	sp!, {r4, r5, r6, r7, lr}
+ 378:	e12fff1e 	bx	lr
+
+0000037c <EL2008GUI_DrawLabel>:
+ 37c:	e92d4030 	stmdb	sp!, {r4, r5, lr}
+ 380:	e2805004 	add	r5, r0, #4	; 0x4
+ 384:	e1a04000 	mov	r4, r0
+ 388:	e5d01014 	ldrb	r1, [r0, #20]
+ 38c:	e1a00005 	mov	r0, r5
+ 390:	ebfffffe 	bl	274 <EL2008GUI_DrawRect>
+ 394:	e1a00005 	mov	r0, r5
+ 398:	e284100c 	add	r1, r4, #12	; 0xc
+ 39c:	ebfffffe 	bl	0 <EL2008GUI_DrawText>
+ 3a0:	e8bd4030 	ldmia	sp!, {r4, r5, lr}
+ 3a4:	e12fff1e 	bx	lr
+
+000003a8 <EL2008GUI_DrawButton>:
+ 3a8:	e92d4030 	stmdb	sp!, {r4, r5, lr}
+ 3ac:	e3a01010 	mov	r1, #16	; 0x10
+ 3b0:	e1a04000 	mov	r4, r0
+ 3b4:	ebfffffe 	bl	0 <EL2008GUI_GetFlag>
+ 3b8:	e2845004 	add	r5, r4, #4	; 0x4
+ 3bc:	e3500000 	cmp	r0, #0	; 0x0
+ 3c0:	e1a00005 	mov	r0, r5
+ 3c4:	1a000007 	bne	3e8 <EL2008GUI_DrawButton+0x40>
+ 3c8:	e5d4101d 	ldrb	r1, [r4, #29]
+ 3cc:	e5d4201c 	ldrb	r2, [r4, #28]
+ 3d0:	ebfffffe 	bl	12c <EL2008GUI_DrawFrame>
+ 3d4:	e1a00005 	mov	r0, r5
+ 3d8:	e284100c 	add	r1, r4, #12	; 0xc
+ 3dc:	ebfffffe 	bl	0 <EL2008GUI_DrawText>
+ 3e0:	e8bd4030 	ldmia	sp!, {r4, r5, lr}
+ 3e4:	e12fff1e 	bx	lr
+ 3e8:	e5d4101f 	ldrb	r1, [r4, #31]
+ 3ec:	e1a00005 	mov	r0, r5
+ 3f0:	e5d4201e 	ldrb	r2, [r4, #30]
+ 3f4:	ebfffffe 	bl	12c <EL2008GUI_DrawFrame>
+ 3f8:	e1a00005 	mov	r0, r5
+ 3fc:	e2841014 	add	r1, r4, #20	; 0x14
+ 400:	ebfffffe 	bl	0 <EL2008GUI_DrawText>
+ 404:	eafffff5 	b	3e0 <EL2008GUI_DrawButton+0x38>
+
+00000408 <EL2008GUI_DrawCheckBox>:
+ 408:	e92d4070 	stmdb	sp!, {r4, r5, r6, lr}
+ 40c:	e3a01010 	mov	r1, #16	; 0x10
+ 410:	e24dd010 	sub	sp, sp, #16	; 0x10
+ 414:	e1a06000 	mov	r6, r0
+ 418:	ebfffffe 	bl	0 <EL2008GUI_GetFlag>
+ 41c:	e2865004 	add	r5, r6, #4	; 0x4
+ 420:	e3500000 	cmp	r0, #0	; 0x0
+ 424:	e3a010f0 	mov	r1, #240	; 0xf0
+ 428:	e1a00005 	mov	r0, r5
+ 42c:	1a000033 	bne	500 <EL2008GUI_DrawCheckBox+0xf8>
+ 430:	e5d61014 	ldrb	r1, [r6, #20]
+ 434:	ebfffffe 	bl	274 <EL2008GUI_DrawRect>
+ 438:	e8950003 	ldmia	r5, {r0, r1}
+ 43c:	e5d52002 	ldrb	r2, [r5, #2]
+ 440:	e5d53006 	ldrb	r3, [r5, #6]
+ 444:	e88d0003 	stmia	sp, {r0, r1}
+ 448:	e8950003 	ldmia	r5, {r0, r1}
+ 44c:	e28dc008 	add	ip, sp, #8	; 0x8
+ 450:	e88c0003 	stmia	ip, {r0, r1}
+ 454:	e0623003 	rsb	r3, r2, r3
+ 458:	e1dd10b0 	ldrh	r1, [sp]
+ 45c:	e1dd20b8 	ldrh	r2, [sp, #8]
+ 460:	e20330ff 	and	r3, r3, #255	; 0xff
+ 464:	e0832002 	add	r2, r3, r2
+ 468:	e1a00006 	mov	r0, r6
+ 46c:	e0833001 	add	r3, r3, r1
+ 470:	e3a01010 	mov	r1, #16	; 0x10
+ 474:	e1cd20b8 	strh	r2, [sp, #8]
+ 478:	e1cd30b4 	strh	r3, [sp, #4]
+ 47c:	ebfffffe 	bl	0 <EL2008GUI_GetFlag>
+ 480:	e2501000 	subs	r1, r0, #0	; 0x0
+ 484:	e1a0400d 	mov	r4, sp
+ 488:	e1a0000d 	mov	r0, sp
+ 48c:	e3a020f0 	mov	r2, #240	; 0xf0
+ 490:	1a00001d 	bne	50c <EL2008GUI_DrawCheckBox+0x104>
+ 494:	e5d62014 	ldrb	r2, [r6, #20]
+ 498:	ebfffffe 	bl	12c <EL2008GUI_DrawFrame>
+ 49c:	e5d63015 	ldrb	r3, [r6, #21]
+ 4a0:	e3a01000 	mov	r1, #0	; 0x0
+ 4a4:	e1530001 	cmp	r3, r1
+ 4a8:	e1a0000d 	mov	r0, sp
+ 4ac:	e3a020b0 	mov	r2, #176	; 0xb0
+ 4b0:	0a00000c 	beq	4e8 <EL2008GUI_DrawCheckBox+0xe0>
+ 4b4:	e1dd30b0 	ldrh	r3, [sp]
+ 4b8:	e1ddc0b4 	ldrh	ip, [sp, #4]
+ 4bc:	e1dde0b2 	ldrh	lr, [sp, #2]
+ 4c0:	e1dd40b6 	ldrh	r4, [sp, #6]
+ 4c4:	e2833002 	add	r3, r3, #2	; 0x2
+ 4c8:	e24cc002 	sub	ip, ip, #2	; 0x2
+ 4cc:	e28ee002 	add	lr, lr, #2	; 0x2
+ 4d0:	e2444002 	sub	r4, r4, #2	; 0x2
+ 4d4:	e1cd30b0 	strh	r3, [sp]
+ 4d8:	e1cdc0b4 	strh	ip, [sp, #4]
+ 4dc:	e1cde0b2 	strh	lr, [sp, #2]
+ 4e0:	e1cd40b6 	strh	r4, [sp, #6]
+ 4e4:	ebfffffe 	bl	12c <EL2008GUI_DrawFrame>
+ 4e8:	e1a00005 	mov	r0, r5
+ 4ec:	e286100c 	add	r1, r6, #12	; 0xc
+ 4f0:	ebfffffe 	bl	0 <EL2008GUI_DrawText>
+ 4f4:	e28dd010 	add	sp, sp, #16	; 0x10
+ 4f8:	e8bd4070 	ldmia	sp!, {r4, r5, r6, lr}
+ 4fc:	e12fff1e 	bx	lr
+ 500:	e1a00005 	mov	r0, r5
+ 504:	ebfffffe 	bl	274 <EL2008GUI_DrawRect>
+ 508:	eaffffca 	b	438 <EL2008GUI_DrawCheckBox+0x30>
+ 50c:	e1a0000d 	mov	r0, sp
+ 510:	e3a01000 	mov	r1, #0	; 0x0
+ 514:	ebfffffe 	bl	12c <EL2008GUI_DrawFrame>
+ 518:	eaffffdf 	b	5c8 <EL2008GUI_DrawCheckBox+0x1c0>
