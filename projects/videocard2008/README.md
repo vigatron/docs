@@ -90,7 +90,7 @@
 
 Related Links :
 
-[Avtonavi 2008 Board Details](https://github.com/vigatron/docs/tree/main/projects/autonavi2008)
+[Autonavi 2008 Board Details](https://github.com/vigatron/docs/tree/main/projects/autonavi2008)
 
 
 ---

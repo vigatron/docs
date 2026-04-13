@@ -1,4 +1,4 @@
-# Project Avtonavi 2008
+# Project Autonavi 2008
 
 | Property          | Value                         |
 |-------------------|-------------------------------|
@@ -133,10 +133,10 @@ Dual 32-bit ARM MCU Board with CPLD
 
 Related Links : 
 
-[VideoCARD 2008 Board Details](https://github.com/vigatron/docs/tree/main/projects/videocard2008)
-Embedded MP3 Player ( --- )
-LED Panels ( --- )
-Passanger Counter ( --- )
+- [VideoCARD 2008 Board Details](https://github.com/vigatron/docs/tree/main/projects/videocard2008)
+- [LED Panels 2008](https://github.com/vigatron/docs/tree/main/projects/led2008)
+- Embedded MP3 Player ( --- )
+- Passanger Counter ( --- )
 
 ---
 
