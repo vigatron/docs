@@ -14,11 +14,11 @@
   <tr>
     <td align="center">
       <a href="DSC03997.JPG"><img src="DSC03997.JPG" width="600px"/>
-      </a><br><em>Пример #1<br>256 cells 8x8</em>
+      </a><br><em>Пример #1<br>Маршрут #3 Львов</em>
     </td>
     <td align="center">
       <a href="DSC03998a.JPG"><img src="DSC03998a.JPG" width="600px"/>
-      </a><br><em>Пример #2<br>256 cells 8x8</em>
+      </a><br><em>Пример #2<br>В процессе монтажа</em>
     </td>
   </tr>
 </table>
@@ -66,6 +66,13 @@
 > Это делалось путем создания файлов в специальной программе, после чего файлы отправлялись по e-mail,
 > пользователь переносил их на SD-Card и блок управления считывал файлы - обновлял маршрут и отображение
 > всех 3-х табло ( переднее, боковое, заднее )
+
+
+---
+
+Links:
+
+[Autonavi 2008 Project](https://github.com/vigatron/docs/tree/main/projects/autonavi2008)
 
 
 ---
