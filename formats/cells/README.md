@@ -185,8 +185,6 @@ CMBoards — custom hardware platform based on STM32 MCU + Xilinx FPGA + externa
 * CMBoards HDM32F746TFT7 : STM32F746 + XC6SLX16 + 2x SDRAM x32 + TFT7_800_480
 * CMBoards HDM32H750TFT7 : STM32H750 + XC6SLX16 + 1x DDR   x32 + TFT7_800_480
 
-[BRD32F407HDMIR3 Board Details](https://github.com/vigatron/docs/tree/main/projects/cmboards/brd32f407hdmir3)
-
 ---
 
 
@@ -194,6 +192,14 @@ CMBoards — custom hardware platform based on STM32 MCU + Xilinx FPGA + externa
 
 - Размер файла фиксирован: 16384 байта
 - Данные хранятся без сжатия
+
+---
+Links : 
+
+[BRD32F407HDMIR3 Board Details](https://github.com/vigatron/docs/tree/main/projects/cmboards/brd32f407hdmir3)
+[DEMO7MODE VHDL CPLD1](https://github.com/vigatron/docs/projects/videocard2008/demo7vhdl/videox1)
+[DEMO7MODE VHDL CPLD2](https://github.com/vigatron/docs/projects/videocard2008/demo7vhdl/videox2)
+
 
 ---
 

@@ -1,0 +1,1555 @@
+ 
+cpldfit:  version J.36                              Xilinx Inc.
+                                  Fitter Report
+Design Name: x2dac                               Date: 12-28-2007,  6:22AM
+Device Used: XC95144XL-10-TQ100
+Fitting Status: Successful
+
+*************************  Mapped Resource Summary  **************************
+
+Macrocells     Product Terms    Function Block   Registers      Pins           
+Used/Tot       Used/Tot         Inps Used/Tot    Used/Tot       Used/Tot       
+105/144 ( 73%) 342 /720  ( 47%) 238/432 ( 55%)   105/144 ( 73%) 52 /81  ( 64%)
+
+** Function Block Resources **
+
+Function    Mcells      FB Inps     Pterms      IO          
+Block       Used/Tot    Used/Tot    Used/Tot    Used/Tot    
+FB1           0/18        0/54        0/90       0/11
+FB2          16/18       36/54       43/90       2/10
+FB3          13/18       26/54       30/90       5/10
+FB4           6/18       33/54       24/90       1/10
+FB5          18/18*      35/54       45/90       6/10
+FB6          18/18*      36/54       72/90       9/10
+FB7          17/18       36/54       58/90      10/10*
+FB8          17/18       36/54       70/90       9/10
+             -----       -----       -----      -----    
+            105/144     238/432     342/720     42/81 
+
+* - Resource is exhausted
+
+** Global Control Resources **
+
+Signal 'GCLK2' mapped onto global clock net GCK2.
+Global output enable net(s) unused.
+Global set/reset net(s) unused.
+
+** Pin Resources **
+
+Signal Type    Required     Mapped  |  Pin Type            Used    Total 
+------------------------------------|------------------------------------
+Input         :    9           9    |  I/O              :    50      73
+Output        :   34          34    |  GCK/IO           :     1       3
+Bidirectional :    8           8    |  GTS/IO           :     1       4
+GCK           :    1           1    |  GSR/IO           :     0       1
+GTS           :    0           0    |
+GSR           :    0           0    |
+                 ----        ----
+        Total     52          52
+
+** Power Data **
+
+There are 105 macrocells in high performance mode (MCHP).
+There are 0 macrocells in low power mode (MCLP).
+End of Mapped Resource Summary
+**************************  Errors and Warnings  ***************************
+
+WARNING:Cpld:936 - The output buffer 'XRES_OBUF' is missing an input and will be
+   deleted.
+WARNING:Cpld:1007 - Removing unused input(s) 'GCLK1'.  The input(s) are unused
+   after optimization. Please verify functionality via simulation.
+WARNING:Cpld:1007 - Removing unused input(s) 'X2B'.  The input(s) are unused
+   after optimization. Please verify functionality via simulation.
+WARNING:Cpld:1007 - Removing unused input(s) 'X2C'.  The input(s) are unused
+   after optimization. Please verify functionality via simulation.
+*************************  Summary of Mapped Logic  ************************
+
+** 42 Outputs **
+
+Signal              Total Total Loc     Pin  Pin     Pin     Pwr  Slew Reg Init
+Name                Pts   Inps          No.  Type    Use     Mode Rate State
+XM1                 3     14    FB2_5   1    GTS/I/O O       STD  FAST RESET
+XM2                 3     14    FB2_11  6    I/O     O       STD  FAST RESET
+DAC<0>              2     4     FB3_9   28   I/O     O       STD  FAST RESET
+DAC<1>              2     4     FB3_11  29   I/O     O       STD  FAST RESET
+DAC<2>              2     4     FB3_12  30   I/O     O       STD  FAST RESET
+DAC<3>              2     4     FB3_14  32   I/O     O       STD  FAST RESET
+DAC<4>              2     4     FB3_15  33   I/O     O       STD  FAST RESET
+SRAM_ADDR<12>       4     5     FB4_2   87   I/O     O       STD  FAST RESET
+DAC<5>              2     4     FB5_2   35   I/O     O       STD  FAST RESET
+DAC<7>              2     4     FB5_5   36   I/O     O       STD  FAST RESET
+DAC<6>              2     4     FB5_6   37   I/O     O       STD  FAST RESET
+HSYNC               2     11    FB5_8   39   I/O     O       STD  FAST RESET
+VSYNC               3     22    FB5_9   40   I/O     O       STD  FAST RESET
+RAM_CE              5     14    FB5_17  49   I/O     O       STD  FAST RESET
+SRAM_ADDR<6>        4     5     FB6_2   74   I/O     O       STD  FAST RESET
+SRAM_ADDR<5>        4     5     FB6_5   76   I/O     O       STD  FAST RESET
+SRAM_ADDR<4>        4     5     FB6_6   77   I/O     O       STD  FAST RESET
+SRAM_ADDR<3>        4     5     FB6_8   78   I/O     O       STD  FAST RESET
+SRAM_ADDR<2>        4     5     FB6_9   79   I/O     O       STD  FAST RESET
+SRAM_ADDR<1>        4     5     FB6_12  81   I/O     O       STD  FAST RESET
+SRAM_ADDR<0>        4     5     FB6_14  82   I/O     O       STD  FAST RESET
+SRAM_ADDR<10>       4     5     FB6_15  85   I/O     O       STD  FAST RESET
+SRAM_ADDR<11>       4     5     FB6_17  86   I/O     O       STD  FAST RESET
+SRAM_ADDR<18>       4     5     FB7_2   50   I/O     O       STD  FAST RESET
+SRAM_ADDR<17>       4     5     FB7_5   52   I/O     O       STD  FAST RESET
+SRAM_ADDR<16>       4     5     FB7_6   53   I/O     O       STD  FAST RESET
+SRAM_ADDR<15>       4     5     FB7_8   54   I/O     O       STD  FAST RESET
+SRAM_ADDR<14>       4     5     FB7_9   55   I/O     O       STD  FAST RESET
+SRAM_ADDR<13>       4     5     FB7_11  56   I/O     O       STD  FAST RESET
+RAM_RD              3     13    FB7_12  58   I/O     O       STD  FAST RESET
+RAM_WR              3     13    FB7_14  59   I/O     O       STD  FAST RESET
+SRAM_DATA<4>        5     6     FB7_15  60   I/O     I/O     STD  FAST RESET
+SRAM_DATA<5>        5     6     FB7_17  61   I/O     I/O     STD  FAST RESET
+SRAM_DATA<6>        5     6     FB8_2   63   I/O     I/O     STD  FAST RESET
+SRAM_DATA<7>        5     6     FB8_5   64   I/O     I/O     STD  FAST RESET
+SRAM_DATA<0>        5     6     FB8_6   65   I/O     I/O     STD  FAST RESET
+SRAM_DATA<1>        5     6     FB8_8   66   I/O     I/O     STD  FAST RESET
+SRAM_DATA<2>        5     6     FB8_9   67   I/O     I/O     STD  FAST RESET
+SRAM_DATA<3>        5     6     FB8_11  68   I/O     I/O     STD  FAST RESET
+SRAM_ADDR<9>        4     5     FB8_12  70   I/O     O       STD  FAST RESET
+
+Signal              Total Total Loc     Pin  Pin     Pin     Pwr  Slew Reg Init
+Name                Pts   Inps          No.  Type    Use     Mode Rate State
+SRAM_ADDR<8>        4     5     FB8_14  71   I/O     O       STD  FAST RESET
+SRAM_ADDR<7>        4     5     FB8_15  72   I/O     O       STD  FAST RESET
+
+** 63 Buried Nodes **
+
+Signal              Total Total Loc     Pwr  Reg Init
+Name                Pts   Inps          Mode State
+rcol<1>             2     3     FB2_3   STD  RESET
+rcol<0>             2     3     FB2_4   STD  RESET
+pxlcnt<8>           2     9     FB2_6   STD  RESET
+pxlcnt<6>           2     7     FB2_7   STD  RESET
+pxlcnt<5>           2     6     FB2_8   STD  RESET
+pxlcnt<4>           2     5     FB2_9   STD  RESET
+pxlcnt<3>           2     4     FB2_10  STD  RESET
+lincnt<1>           2     12    FB2_12  STD  RESET
+pxlcnt<9>           3     11    FB2_13  STD  RESET
+flag_wd             3     14    FB2_14  STD  RESET
+flag_w              3     14    FB2_15  STD  RESET
+flag_dac            3     13    FB2_16  STD  RESET
+ramptr<4>           4     18    FB2_17  STD  RESET
+pxlcnt<7>           5     11    FB2_18  STD  RESET
+rcol<7>             2     3     FB3_6   STD  RESET
+rcol<6>             2     3     FB3_7   STD  RESET
+rcol<5>             2     3     FB3_8   STD  RESET
+rcol<4>             2     3     FB3_10  STD  RESET
+rcol<3>             2     3     FB3_13  STD  RESET
+rcol<2>             2     3     FB3_16  STD  RESET
+ramdat<5>           4     6     FB3_17  STD  RESET
+ramdat<4>           4     6     FB3_18  STD  RESET
+ramptr<18>          4     32    FB4_14  STD  RESET
+ramptr<17>          4     31    FB4_15  STD  RESET
+ramptr<16>          4     30    FB4_16  STD  RESET
+ramptr<15>          4     29    FB4_17  STD  RESET
+ramptr<14>          4     28    FB4_18  STD  RESET
+lincnt<8>           2     19    FB5_1   STD  RESET
+lincnt<7>           2     18    FB5_3   STD  RESET
+lincnt<6>           2     17    FB5_4   STD  RESET
+lincnt<5>           2     16    FB5_7   STD  RESET
+lincnt<4>           2     15    FB5_10  STD  RESET
+lincnt<0>           2     21    FB5_11  STD  RESET
+flag_up             2     22    FB5_12  STD  RESET
+lincnt<9>           3     21    FB5_13  STD  RESET
+lincnt<3>           3     21    FB5_14  STD  RESET
+lincnt<2>           3     21    FB5_15  STD  RESET
+flag_vis            3     22    FB5_16  STD  RESET
+flag_r              3     14    FB5_18  STD  RESET
+ramptr<9>           4     23    FB6_1   STD  RESET
+
+Signal              Total Total Loc     Pwr  Reg Init
+Name                Pts   Inps          Mode State
+ramptr<8>           4     22    FB6_3   STD  RESET
+ramptr<7>           4     21    FB6_4   STD  RESET
+ramptr<6>           4     20    FB6_7   STD  RESET
+ramptr<5>           4     19    FB6_10  STD  RESET
+ramptr<13>          4     27    FB6_11  STD  RESET
+ramptr<12>          4     26    FB6_13  STD  RESET
+ramptr<11>          4     25    FB6_16  STD  RESET
+ramptr<10>          4     24    FB6_18  STD  RESET
+pxlcnt<0>           1     1     FB7_3   STD  RESET
+clk2                0     0     FB7_4   STD  RESET
+Mtrien_SRAM_DATA    2     4     FB7_7   STD  RESET
+ramptr<0>           3     14    FB7_10  STD  RESET
+ramptr<3>           4     17    FB7_13  STD  RESET
+ramptr<2>           4     16    FB7_16  STD  RESET
+ramptr<1>           4     15    FB7_18  STD  RESET
+pxlcnt<2>           2     3     FB8_3   STD  RESET
+pxlcnt<1>           2     2     FB8_4   STD  RESET
+ramdat<7>           4     6     FB8_7   STD  RESET
+ramdat<6>           4     6     FB8_10  STD  RESET
+ramdat<3>           4     6     FB8_13  STD  RESET
+ramdat<2>           4     6     FB8_16  STD  RESET
+ramdat<1>           4     6     FB8_17  STD  RESET
+ramdat<0>           4     6     FB8_18  STD  RESET
+
+** 10 Inputs **
+
+Signal              Loc     Pin  Pin     Pin     
+Name                        No.  Type    Use     
+X2A                 FB2_14  8    I/O     I
+GCLK2               FB3_2   23   GCK/I/O GCK
+COL<0>              FB4_6   90   I/O     I
+COL<1>              FB4_8   91   I/O     I
+COL<2>              FB4_9   92   I/O     I
+COL<3>              FB4_11  93   I/O     I
+COL<4>              FB4_12  94   I/O     I
+COL<5>              FB4_14  95   I/O     I
+COL<6>              FB4_15  96   I/O     I
+COL<7>              FB4_17  97   I/O     I
+
+Legend:
+Pin No. - ~ - User Assigned
+**************************  Function Block Details  ************************
+Legend:
+Total Pt     - Total product terms used by the macrocell signal
+Imp Pt       - Product terms imported from other macrocells
+Exp Pt       - Product terms exported to other macrocells
+               in direction shown
+Unused Pt    - Unused local product terms remaining in macrocell
+Loc          - Location where logic was mapped in device
+Pin Type/Use - I  - Input             GCK - Global Clock
+               O  - Output            GTS - Global Output Enable
+              (b) - Buried macrocell  GSR - Global Set/Reset
+X            - Signal used as input to the macrocell logic.
+Pin No.      - ~  - User Assigned
+*********************************** FB1  ***********************************
+Number of function block inputs used/remaining:               0/54
+Number of signals used by logic mapping into function block:  0
+Signal              Total   Imp   Exp Unused  Loc     Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt               #    Type    Use
+(unused)              0       0     0   5     FB1_1         (b)     
+(unused)              0       0     0   5     FB1_2   11    I/O     
+(unused)              0       0     0   5     FB1_3   12    I/O     
+(unused)              0       0     0   5     FB1_4         (b)     
+(unused)              0       0     0   5     FB1_5   13    I/O     
+(unused)              0       0     0   5     FB1_6   14    I/O     
+(unused)              0       0     0   5     FB1_7         (b)     
+(unused)              0       0     0   5     FB1_8   15    I/O     
+(unused)              0       0     0   5     FB1_9   16    I/O     
+(unused)              0       0     0   5     FB1_10        (b)     
+(unused)              0       0     0   5     FB1_11  17    I/O     
+(unused)              0       0     0   5     FB1_12  18    I/O     
+(unused)              0       0     0   5     FB1_13        (b)     
+(unused)              0       0     0   5     FB1_14  19    I/O     
+(unused)              0       0     0   5     FB1_15  20    I/O     
+(unused)              0       0     0   5     FB1_16        (b)     
+(unused)              0       0     0   5     FB1_17  22    GCK/I/O 
+(unused)              0       0     0   5     FB1_18        (b)     
+*********************************** FB2  ***********************************
+Number of function block inputs used/remaining:               36/18
+Number of signals used by logic mapping into function block:  36
+Signal              Total   Imp   Exp Unused  Loc     Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt               #    Type    Use
+(unused)              0       0     0   5     FB2_1         (b)     
+(unused)              0       0     0   5     FB2_2   99    GSR/I/O 
+rcol<1>               2       0     0   3     FB2_3         (b)     (b)
+rcol<0>               2       0     0   3     FB2_4         (b)     (b)
+XM1                   3       0     0   2     FB2_5   1     GTS/I/O O
+pxlcnt<8>             2       0     0   3     FB2_6   2     GTS/I/O (b)
+pxlcnt<6>             2       0     0   3     FB2_7         (b)     (b)
+pxlcnt<5>             2       0     0   3     FB2_8   3     GTS/I/O (b)
+pxlcnt<4>             2       0     0   3     FB2_9   4     GTS/I/O (b)
+pxlcnt<3>             2       0     0   3     FB2_10        (b)     (b)
+XM2                   3       0     0   2     FB2_11  6     I/O     O
+lincnt<1>             2       0     0   3     FB2_12  7     I/O     (b)
+pxlcnt<9>             3       0     0   2     FB2_13        (b)     (b)
+flag_wd               3       0     0   2     FB2_14  8     I/O     I
+flag_w                3       0     0   2     FB2_15  9     I/O     (b)
+flag_dac              3       0     0   2     FB2_16        (b)     (b)
+ramptr<4>             4       0     0   1     FB2_17  10    I/O     (b)
+pxlcnt<7>             5       0     0   0     FB2_18        (b)     (b)
+
+Signals Used by Logic in Function Block
+  1: COL<0>            13: lincnt<1>         25: pxlcnt<3> 
+  2: COL<1>            14: lincnt<2>         26: pxlcnt<4> 
+  3: XM1               15: lincnt<3>         27: pxlcnt<5> 
+  4: XM2               16: lincnt<4>         28: pxlcnt<6> 
+  5: clk2              17: lincnt<5>         29: pxlcnt<7> 
+  6: flag_dac          18: lincnt<6>         30: pxlcnt<8> 
+  7: flag_r            19: lincnt<7>         31: pxlcnt<9> 
+  8: flag_up           20: lincnt<8>         32: ramptr<0> 
+  9: flag_vis          21: lincnt<9>         33: ramptr<1> 
+ 10: flag_w            22: pxlcnt<0>         34: ramptr<2> 
+ 11: flag_wd           23: pxlcnt<1>         35: ramptr<3> 
+ 12: lincnt<0>         24: pxlcnt<2>         36: ramptr<4> 
+
+Signal                        1         2         3         4 FB
+Name                0----+----0----+----0----+----0----+----0 Inputs
+rcol<1>              .X..X.....X............................. 3
+rcol<0>              X...X.....X............................. 3
+XM1                  ..X.X..XX............XXXXXXXXXX......... 14
+pxlcnt<8>            ....X................XXXXXXXX........... 9
+pxlcnt<6>            ....X................XXXXXX............. 7
+pxlcnt<5>            ....X................XXXXX.............. 6
+pxlcnt<4>            ....X................XXXX............... 5
+pxlcnt<3>            ....X................XXX................ 4
+XM2                  ...XX..XX............XXXXXXXXXX......... 14
+lincnt<1>            ....X......X.........XXXXXXXXXX......... 12
+pxlcnt<9>            ....X................XXXXXXXXXX......... 11
+flag_wd              ....X..XX.X..........XXXXXXXXXX......... 14
+flag_w               ....X..XXX...........XXXXXXXXXX......... 14
+flag_dac             ....XX..X............XXXXXXXXXX......... 13
+ramptr<4>            ....X.X..X.XXXXXXXXXX..........XXXXX.... 18
+pxlcnt<7>            ....X................XXXXXXXXXX......... 11
+                    0----+----1----+----2----+----3----+----4
+                              0         0         0         0
+*********************************** FB3  ***********************************
+Number of function block inputs used/remaining:               26/28
+Number of signals used by logic mapping into function block:  26
+Signal              Total   Imp   Exp Unused  Loc     Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt               #    Type    Use
+(unused)              0       0     0   5     FB3_1         (b)     
+(unused)              0       0     0   5     FB3_2   23    GCK/I/O GCK
+(unused)              0       0     0   5     FB3_3         (b)     
+(unused)              0       0     0   5     FB3_4         (b)     
+(unused)              0       0     0   5     FB3_5   24    I/O     
+rcol<7>               2       0     0   3     FB3_6   25    I/O     (b)
+rcol<6>               2       0     0   3     FB3_7         (b)     (b)
+rcol<5>               2       0     0   3     FB3_8   27    GCK/I/O (b)
+DAC<0>                2       0     0   3     FB3_9   28    I/O     O
+rcol<4>               2       0     0   3     FB3_10        (b)     (b)
+DAC<1>                2       0     0   3     FB3_11  29    I/O     O
+DAC<2>                2       0     0   3     FB3_12  30    I/O     O
+rcol<3>               2       0     0   3     FB3_13        (b)     (b)
+DAC<3>                2       0     0   3     FB3_14  32    I/O     O
+DAC<4>                2       0     0   3     FB3_15  33    I/O     O
+rcol<2>               2       0     0   3     FB3_16        (b)     (b)
+ramdat<5>             4       0     0   1     FB3_17  34    I/O     (b)
+ramdat<4>             4       0     0   1     FB3_18        (b)     (b)
+
+Signals Used by Logic in Function Block
+  1: COL<2>            10: DAC<3>            19: ramdat<0> 
+  2: COL<3>            11: DAC<4>            20: ramdat<1> 
+  3: COL<4>            12: SRAM_DATA<5>.PIN  21: ramdat<2> 
+  4: COL<5>            13: SRAM_DATA<4>.PIN  22: ramdat<3> 
+  5: COL<6>            14: clk2              23: ramdat<4> 
+  6: COL<7>            15: flag_dac          24: ramdat<5> 
+  7: DAC<0>            16: flag_r            25: rcol<4> 
+  8: DAC<1>            17: flag_w            26: rcol<5> 
+  9: DAC<2>            18: flag_wd          
+
+Signal                        1         2         3         4 FB
+Name                0----+----0----+----0----+----0----+----0 Inputs
+rcol<7>              .....X.......X...X...................... 3
+rcol<6>              ....X........X...X...................... 3
+rcol<5>              ...X.........X...X...................... 3
+DAC<0>               ......X......XX...X..................... 4
+rcol<4>              ..X..........X...X...................... 3
+DAC<1>               .......X.....XX....X.................... 4
+DAC<2>               ........X....XX.....X................... 4
+rcol<3>              .X...........X...X...................... 3
+DAC<3>               .........X...XX......X.................. 4
+DAC<4>               ..........X..XX.......X................. 4
+rcol<2>              X............X...X...................... 3
+ramdat<5>            ...........X.X.XX......X.X.............. 6
+ramdat<4>            ............XX.XX.....X.X............... 6
+                    0----+----1----+----2----+----3----+----4
+                              0         0         0         0
+*********************************** FB4  ***********************************
+Number of function block inputs used/remaining:               33/21
+Number of signals used by logic mapping into function block:  33
+Signal              Total   Imp   Exp Unused  Loc     Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt               #    Type    Use
+(unused)              0       0     0   5     FB4_1         (b)     
+SRAM_ADDR<12>         4       0     0   1     FB4_2   87    I/O     O
+(unused)              0       0     0   5     FB4_3         (b)     
+(unused)              0       0     0   5     FB4_4         (b)     
+(unused)              0       0     0   5     FB4_5   89    I/O     
+(unused)              0       0     0   5     FB4_6   90    I/O     I
+(unused)              0       0     0   5     FB4_7         (b)     
+(unused)              0       0     0   5     FB4_8   91    I/O     I
+(unused)              0       0     0   5     FB4_9   92    I/O     I
+(unused)              0       0     0   5     FB4_10        (b)     
+(unused)              0       0     0   5     FB4_11  93    I/O     I
+(unused)              0       0     0   5     FB4_12  94    I/O     I
+(unused)              0       0     0   5     FB4_13        (b)     
+ramptr<18>            4       0     0   1     FB4_14  95    I/O     I
+ramptr<17>            4       0     0   1     FB4_15  96    I/O     I
+ramptr<16>            4       0     0   1     FB4_16        (b)     (b)
+ramptr<15>            4       0     0   1     FB4_17  97    I/O     I
+ramptr<14>            4       0     0   1     FB4_18        (b)     (b)
+
+Signals Used by Logic in Function Block
+  1: SRAM_ADDR<12>     12: lincnt<7>         23: ramptr<17> 
+  2: clk2              13: lincnt<8>         24: ramptr<18> 
+  3: flag_r            14: lincnt<9>         25: ramptr<1> 
+  4: flag_w            15: ramptr<0>         26: ramptr<2> 
+  5: lincnt<0>         16: ramptr<10>        27: ramptr<3> 
+  6: lincnt<1>         17: ramptr<11>        28: ramptr<4> 
+  7: lincnt<2>         18: ramptr<12>        29: ramptr<5> 
+  8: lincnt<3>         19: ramptr<13>        30: ramptr<6> 
+  9: lincnt<4>         20: ramptr<14>        31: ramptr<7> 
+ 10: lincnt<5>         21: ramptr<15>        32: ramptr<8> 
+ 11: lincnt<6>         22: ramptr<16>        33: ramptr<9> 
+
+Signal                        1         2         3         4 FB
+Name                0----+----0----+----0----+----0----+----0 Inputs
+SRAM_ADDR<12>        XXXX.............X...................... 5
+ramptr<18>           .XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX....... 32
+ramptr<17>           .XXXXXXXXXXXXXXXXXXXXXX.XXXXXXXXX....... 31
+ramptr<16>           .XXXXXXXXXXXXXXXXXXXXX..XXXXXXXXX....... 30
+ramptr<15>           .XXXXXXXXXXXXXXXXXXXX...XXXXXXXXX....... 29
+ramptr<14>           .XXXXXXXXXXXXXXXXXXX....XXXXXXXXX....... 28
+                    0----+----1----+----2----+----3----+----4
+                              0         0         0         0
+*********************************** FB5  ***********************************
+Number of function block inputs used/remaining:               35/19
+Number of signals used by logic mapping into function block:  35
+Signal              Total   Imp   Exp Unused  Loc     Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt               #    Type    Use
+lincnt<8>             2       0     0   3     FB5_1         (b)     (b)
+DAC<5>                2       0     0   3     FB5_2   35    I/O     O
+lincnt<7>             2       0     0   3     FB5_3         (b)     (b)
+lincnt<6>             2       0     0   3     FB5_4         (b)     (b)
+DAC<7>                2       0     0   3     FB5_5   36    I/O     O
+DAC<6>                2       0     0   3     FB5_6   37    I/O     O
+lincnt<5>             2       0     0   3     FB5_7         (b)     (b)
+HSYNC                 2       0     0   3     FB5_8   39    I/O     O
+VSYNC                 3       0     0   2     FB5_9   40    I/O     O
+lincnt<4>             2       0     0   3     FB5_10        (b)     (b)
+lincnt<0>             2       0     0   3     FB5_11  41    I/O     (b)
+flag_up               2       0     0   3     FB5_12  42    I/O     (b)
+lincnt<9>             3       0     0   2     FB5_13        (b)     (b)
+lincnt<3>             3       0     0   2     FB5_14  43    I/O     (b)
+lincnt<2>             3       0     0   2     FB5_15  46    I/O     (b)
+flag_vis              3       0     0   2     FB5_16        (b)     (b)
+RAM_CE                5       0     0   0     FB5_17  49    I/O     O
+flag_r                3       0     0   2     FB5_18        (b)     (b)
+
+Signals Used by Logic in Function Block
+  1: DAC<5>            13: lincnt<0>         25: pxlcnt<2> 
+  2: DAC<6>            14: lincnt<1>         26: pxlcnt<3> 
+  3: DAC<7>            15: lincnt<2>         27: pxlcnt<4> 
+  4: HSYNC             16: lincnt<3>         28: pxlcnt<5> 
+  5: RAM_CE            17: lincnt<4>         29: pxlcnt<6> 
+  6: VSYNC             18: lincnt<5>         30: pxlcnt<7> 
+  7: X2A               19: lincnt<6>         31: pxlcnt<8> 
+  8: clk2              20: lincnt<7>         32: pxlcnt<9> 
+  9: flag_dac          21: lincnt<8>         33: ramdat<5> 
+ 10: flag_r            22: lincnt<9>         34: ramdat<6> 
+ 11: flag_up           23: pxlcnt<0>         35: ramdat<7> 
+ 12: flag_vis          24: pxlcnt<1>        
+
+Signal                        1         2         3         4 FB
+Name                0----+----0----+----0----+----0----+----0 Inputs
+lincnt<8>            .......X....XXXXXXXX..XXXXXXXXXX........ 19
+DAC<5>               X......XX.......................X....... 4
+lincnt<7>            .......X....XXXXXXX...XXXXXXXXXX........ 18
+lincnt<6>            .......X....XXXXXX....XXXXXXXXXX........ 17
+DAC<7>               ..X....XX.........................X..... 4
+DAC<6>               .X.....XX........................X...... 4
+lincnt<5>            .......X....XXXXX.....XXXXXXXXXX........ 16
+HSYNC                ...X..................XXXXXXXXXX........ 11
+VSYNC                .....X.X....XXXXXXXXXXXXXXXXXXXX........ 22
+lincnt<4>            .......X....XXXX......XXXXXXXXXX........ 15
+lincnt<0>            .......X....XXXXXXXXXXXXXXXXXXXX........ 21
+flag_up              ......XX....XXXXXXXXXXXXXXXXXXXX........ 22
+lincnt<9>            .......X....XXXXXXXXXXXXXXXXXXXX........ 21
+lincnt<3>            .......X....XXXXXXXXXXXXXXXXXXXX........ 21
+lincnt<2>            .......X....XXXXXXXXXXXXXXXXXXXX........ 21
+flag_vis             .......X...XXXXXXXXXXXXXXXXXXXXX........ 22
+RAM_CE               ....X..X..XX..........XXXXXXXXXX........ 14
+flag_r               .......X.XXX..........XXXXXXXXXX........ 14
+                    0----+----1----+----2----+----3----+----4
+                              0         0         0         0
+*********************************** FB6  ***********************************
+Number of function block inputs used/remaining:               36/18
+Number of signals used by logic mapping into function block:  36
+Signal              Total   Imp   Exp Unused  Loc     Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt               #    Type    Use
+ramptr<9>             4       0     0   1     FB6_1         (b)     (b)
+SRAM_ADDR<6>          4       0     0   1     FB6_2   74    I/O     O
+ramptr<8>             4       0     0   1     FB6_3         (b)     (b)
+ramptr<7>             4       0     0   1     FB6_4         (b)     (b)
+SRAM_ADDR<5>          4       0     0   1     FB6_5   76    I/O     O
+SRAM_ADDR<4>          4       0     0   1     FB6_6   77    I/O     O
+ramptr<6>             4       0     0   1     FB6_7         (b)     (b)
+SRAM_ADDR<3>          4       0     0   1     FB6_8   78    I/O     O
+SRAM_ADDR<2>          4       0     0   1     FB6_9   79    I/O     O
+ramptr<5>             4       0     0   1     FB6_10        (b)     (b)
+ramptr<13>            4       0     0   1     FB6_11  80    I/O     (b)
+SRAM_ADDR<1>          4       0     0   1     FB6_12  81    I/O     O
+ramptr<12>            4       0     0   1     FB6_13        (b)     (b)
+SRAM_ADDR<0>          4       0     0   1     FB6_14  82    I/O     O
+SRAM_ADDR<10>         4       0     0   1     FB6_15  85    I/O     O
+ramptr<11>            4       0     0   1     FB6_16        (b)     (b)
+SRAM_ADDR<11>         4       0     0   1     FB6_17  86    I/O     O
+ramptr<10>            4       0     0   1     FB6_18        (b)     (b)
+
+Signals Used by Logic in Function Block
+  1: SRAM_ADDR<0>      13: lincnt<0>         25: ramptr<11> 
+  2: SRAM_ADDR<10>     14: lincnt<1>         26: ramptr<12> 
+  3: SRAM_ADDR<11>     15: lincnt<2>         27: ramptr<13> 
+  4: SRAM_ADDR<1>      16: lincnt<3>         28: ramptr<1> 
+  5: SRAM_ADDR<2>      17: lincnt<4>         29: ramptr<2> 
+  6: SRAM_ADDR<3>      18: lincnt<5>         30: ramptr<3> 
+  7: SRAM_ADDR<4>      19: lincnt<6>         31: ramptr<4> 
+  8: SRAM_ADDR<5>      20: lincnt<7>         32: ramptr<5> 
+  9: SRAM_ADDR<6>      21: lincnt<8>         33: ramptr<6> 
+ 10: clk2              22: lincnt<9>         34: ramptr<7> 
+ 11: flag_r            23: ramptr<0>         35: ramptr<8> 
+ 12: flag_w            24: ramptr<10>        36: ramptr<9> 
+
+Signal                        1         2         3         4 FB
+Name                0----+----0----+----0----+----0----+----0 Inputs
+ramptr<9>            .........XXXXXXXXXXXXXX....XXXXXXXXX.... 23
+SRAM_ADDR<6>         ........XXXX....................X....... 5
+ramptr<8>            .........XXXXXXXXXXXXXX....XXXXXXXX..... 22
+ramptr<7>            .........XXXXXXXXXXXXXX....XXXXXXX...... 21
+SRAM_ADDR<5>         .......X.XXX...................X........ 5
+SRAM_ADDR<4>         ......X..XXX..................X......... 5
+ramptr<6>            .........XXXXXXXXXXXXXX....XXXXXX....... 20
+SRAM_ADDR<3>         .....X...XXX.................X.......... 5
+SRAM_ADDR<2>         ....X....XXX................X........... 5
+ramptr<5>            .........XXXXXXXXXXXXXX....XXXXX........ 19
+ramptr<13>           .........XXXXXXXXXXXXXXXXXXXXXXXXXXX.... 27
+SRAM_ADDR<1>         ...X.....XXX...............X............ 5
+ramptr<12>           .........XXXXXXXXXXXXXXXXX.XXXXXXXXX.... 26
+SRAM_ADDR<0>         X........XXX..........X................. 5
+SRAM_ADDR<10>        .X.......XXX...........X................ 5
+ramptr<11>           .........XXXXXXXXXXXXXXXX..XXXXXXXXX.... 25
+SRAM_ADDR<11>        ..X......XXX............X............... 5
+ramptr<10>           .........XXXXXXXXXXXXXXX...XXXXXXXXX.... 24
+                    0----+----1----+----2----+----3----+----4
+                              0         0         0         0
+*********************************** FB7  ***********************************
+Number of function block inputs used/remaining:               36/18
+Number of signals used by logic mapping into function block:  36
+Signal              Total   Imp   Exp Unused  Loc     Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt               #    Type    Use
+(unused)              0       0     0   5     FB7_1         (b)     
+SRAM_ADDR<18>         4       0     0   1     FB7_2   50    I/O     O
+pxlcnt<0>             1       0     0   4     FB7_3         (b)     (b)
+clk2                  0       0     0   5     FB7_4         (b)     (b)
+SRAM_ADDR<17>         4       0     0   1     FB7_5   52    I/O     O
+SRAM_ADDR<16>         4       0     0   1     FB7_6   53    I/O     O
+Mtrien_SRAM_DATA      2       0     0   3     FB7_7         (b)     (b)
+SRAM_ADDR<15>         4       0     0   1     FB7_8   54    I/O     O
+SRAM_ADDR<14>         4       0     0   1     FB7_9   55    I/O     O
+ramptr<0>             3       0     0   2     FB7_10        (b)     (b)
+SRAM_ADDR<13>         4       0     0   1     FB7_11  56    I/O     O
+RAM_RD                3       0     0   2     FB7_12  58    I/O     O
+ramptr<3>             4       0     0   1     FB7_13        (b)     (b)
+RAM_WR                3       0     0   2     FB7_14  59    I/O     O
+SRAM_DATA<4>          5       0     0   0     FB7_15  60    I/O     I/O
+ramptr<2>             4       0     0   1     FB7_16        (b)     (b)
+SRAM_DATA<5>          5       0     0   0     FB7_17  61    I/O     I/O
+ramptr<1>             4       0     0   1     FB7_18        (b)     (b)
+
+Signals Used by Logic in Function Block
+  1: Mtrien_SRAM_DATA  13: flag_r            25: ramptr<0> 
+  2: RAM_RD            14: flag_w            26: ramptr<13> 
+  3: RAM_WR            15: lincnt<0>         27: ramptr<14> 
+  4: SRAM_ADDR<13>     16: lincnt<1>         28: ramptr<15> 
+  5: SRAM_ADDR<14>     17: lincnt<2>         29: ramptr<16> 
+  6: SRAM_ADDR<15>     18: lincnt<3>         30: ramptr<17> 
+  7: SRAM_ADDR<16>     19: lincnt<4>         31: ramptr<18> 
+  8: SRAM_ADDR<17>     20: lincnt<5>         32: ramptr<1> 
+  9: SRAM_ADDR<18>     21: lincnt<6>         33: ramptr<2> 
+ 10: SRAM_DATA<4>      22: lincnt<7>         34: ramptr<3> 
+ 11: SRAM_DATA<5>      23: lincnt<8>         35: rcol<4> 
+ 12: clk2              24: lincnt<9>         36: rcol<5> 
+
+Signal                        1         2         3         4 FB
+Name                0----+----0----+----0----+----0----+----0 Inputs
+SRAM_ADDR<18>        ........X..XXX................X......... 5
+pxlcnt<0>            ...........X............................ 1
+clk2                 ........................................ 0
+SRAM_ADDR<17>        .......X...XXX...............X.......... 5
+SRAM_ADDR<16>        ......X....XXX..............X........... 5
+Mtrien_SRAM_DATA     X..........XXX.......................... 4
+SRAM_ADDR<15>        .....X.....XXX.............X............ 5
+SRAM_ADDR<14>        ....X......XXX............X............. 5
+ramptr<0>            ...........XXXXXXXXXXXXXX............... 14
+SRAM_ADDR<13>        ...X.......XXX...........X.............. 5
+RAM_RD               .X.........XX.XXXXXXXXXX................ 13
+ramptr<3>            ...........XXXXXXXXXXXXXX......XXX...... 17
+RAM_WR               ..X........X.XXXXXXXXXXX................ 13
+SRAM_DATA<4>         X........X.XXX....................X..... 6
+ramptr<2>            ...........XXXXXXXXXXXXXX......XX....... 16
+SRAM_DATA<5>         X.........XXXX.....................X.... 6
+ramptr<1>            ...........XXXXXXXXXXXXXX......X........ 15
+                    0----+----1----+----2----+----3----+----4
+                              0         0         0         0
+*********************************** FB8  ***********************************
+Number of function block inputs used/remaining:               36/18
+Number of signals used by logic mapping into function block:  36
+Signal              Total   Imp   Exp Unused  Loc     Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt               #    Type    Use
+(unused)              0       0     0   5     FB8_1         (b)     
+SRAM_DATA<6>          5       0     0   0     FB8_2   63    I/O     I/O
+pxlcnt<2>             2       0     0   3     FB8_3         (b)     (b)
+pxlcnt<1>             2       0     0   3     FB8_4         (b)     (b)
+SRAM_DATA<7>          5       0     0   0     FB8_5   64    I/O     I/O
+SRAM_DATA<0>          5       0     0   0     FB8_6   65    I/O     I/O
+ramdat<7>             4       0     0   1     FB8_7         (b)     (b)
+SRAM_DATA<1>          5       0     0   0     FB8_8   66    I/O     I/O
+SRAM_DATA<2>          5       0     0   0     FB8_9   67    I/O     I/O
+ramdat<6>             4       0     0   1     FB8_10        (b)     (b)
+SRAM_DATA<3>          5       0     0   0     FB8_11  68    I/O     I/O
+SRAM_ADDR<9>          4       0     0   1     FB8_12  70    I/O     O
+ramdat<3>             4       0     0   1     FB8_13        (b)     (b)
+SRAM_ADDR<8>          4       0     0   1     FB8_14  71    I/O     O
+SRAM_ADDR<7>          4       0     0   1     FB8_15  72    I/O     O
+ramdat<2>             4       0     0   1     FB8_16        (b)     (b)
+ramdat<1>             4       0     0   1     FB8_17  73    I/O     (b)
+ramdat<0>             4       0     0   1     FB8_18        (b)     (b)
+
+Signals Used by Logic in Function Block
+  1: Mtrien_SRAM_DATA  13: SRAM_DATA<2>      25: ramdat<3> 
+  2: SRAM_DATA<7>.PIN  14: SRAM_DATA<3>      26: ramdat<6> 
+  3: SRAM_DATA<6>.PIN  15: SRAM_DATA<6>      27: ramdat<7> 
+  4: SRAM_DATA<3>.PIN  16: SRAM_DATA<7>      28: ramptr<7> 
+  5: SRAM_DATA<2>.PIN  17: clk2              29: ramptr<8> 
+  6: SRAM_DATA<1>.PIN  18: flag_r            30: ramptr<9> 
+  7: SRAM_DATA<0>.PIN  19: flag_w            31: rcol<0> 
+  8: SRAM_ADDR<7>      20: pxlcnt<0>         32: rcol<1> 
+  9: SRAM_ADDR<8>      21: pxlcnt<1>         33: rcol<2> 
+ 10: SRAM_ADDR<9>      22: ramdat<0>         34: rcol<3> 
+ 11: SRAM_DATA<0>      23: ramdat<1>         35: rcol<6> 
+ 12: SRAM_DATA<1>      24: ramdat<2>         36: rcol<7> 
+
+Signal                        1         2         3         4 FB
+Name                0----+----0----+----0----+----0----+----0 Inputs
+SRAM_DATA<6>         X.............X.XXX...............X..... 6
+pxlcnt<2>            ................X..XX................... 3
+pxlcnt<1>            ................X..X.................... 2
+SRAM_DATA<7>         X..............XXXX................X.... 6
+SRAM_DATA<0>         X.........X.....XXX...........X......... 6
+ramdat<7>            .X..............XXX.......X........X.... 6
+SRAM_DATA<1>         X..........X....XXX............X........ 6
+SRAM_DATA<2>         X...........X...XXX.............X....... 6
+ramdat<6>            ..X.............XXX......X........X..... 6
+SRAM_DATA<3>         X............X..XXX..............X...... 6
+SRAM_ADDR<9>         .........X......XXX..........X.......... 5
+ramdat<3>            ...X............XXX.....X........X...... 6
+SRAM_ADDR<8>         ........X.......XXX.........X........... 5
+SRAM_ADDR<7>         .......X........XXX........X............ 5
+ramdat<2>            ....X...........XXX....X........X....... 6
+ramdat<1>            .....X..........XXX...X........X........ 6
+ramdat<0>            ......X.........XXX..X........X......... 6
+                    0----+----1----+----2----+----3----+----4
+                              0         0         0         0
+*******************************  Equations  ********************************
+
+********** Mapped Logic **********
+
+FDCPE_DAC0: FDCPE port map (DAC(0),DAC_D(0),GCLK2,'0','0');
+DAC_D(0) <= ((ramdat(0) AND clk2 AND flag_dac)
+	OR (DAC(0) AND NOT clk2 AND flag_dac));
+
+FDCPE_DAC1: FDCPE port map (DAC(1),DAC_D(1),GCLK2,'0','0');
+DAC_D(1) <= ((ramdat(1) AND clk2 AND flag_dac)
+	OR (DAC(1) AND NOT clk2 AND flag_dac));
+
+FDCPE_DAC2: FDCPE port map (DAC(2),DAC_D(2),GCLK2,'0','0');
+DAC_D(2) <= ((ramdat(2) AND clk2 AND flag_dac)
+	OR (DAC(2) AND NOT clk2 AND flag_dac));
+
+FDCPE_DAC3: FDCPE port map (DAC(3),DAC_D(3),GCLK2,'0','0');
+DAC_D(3) <= ((ramdat(3) AND clk2 AND flag_dac)
+	OR (DAC(3) AND NOT clk2 AND flag_dac));
+
+FDCPE_DAC4: FDCPE port map (DAC(4),DAC_D(4),GCLK2,'0','0');
+DAC_D(4) <= ((ramdat(4) AND clk2 AND flag_dac)
+	OR (DAC(4) AND NOT clk2 AND flag_dac));
+
+FDCPE_DAC5: FDCPE port map (DAC(5),DAC_D(5),GCLK2,'0','0');
+DAC_D(5) <= ((ramdat(5) AND clk2 AND flag_dac)
+	OR (DAC(5) AND NOT clk2 AND flag_dac));
+
+FDCPE_DAC6: FDCPE port map (DAC(6),DAC_D(6),GCLK2,'0','0');
+DAC_D(6) <= ((ramdat(6) AND clk2 AND flag_dac)
+	OR (DAC(6) AND NOT clk2 AND flag_dac));
+
+FDCPE_DAC7: FDCPE port map (DAC(7),DAC_D(7),GCLK2,'0','0');
+DAC_D(7) <= ((ramdat(7) AND clk2 AND flag_dac)
+	OR (DAC(7) AND NOT clk2 AND flag_dac));
+
+FTCPE_HSYNC: FTCPE port map (HSYNC,HSYNC_T,GCLK2,'0','0');
+HSYNC_T <= ((pxlcnt(3) AND pxlcnt(6) AND NOT pxlcnt(7) AND NOT pxlcnt(9) AND 
+	NOT pxlcnt(0) AND pxlcnt(2) AND NOT pxlcnt(1) AND NOT pxlcnt(4) AND NOT pxlcnt(5) AND 
+	NOT pxlcnt(8) AND NOT HSYNC)
+	OR (NOT pxlcnt(3) AND NOT pxlcnt(6) AND NOT pxlcnt(7) AND NOT pxlcnt(9) AND 
+	NOT pxlcnt(0) AND NOT pxlcnt(2) AND NOT pxlcnt(1) AND NOT pxlcnt(4) AND NOT pxlcnt(5) AND 
+	NOT pxlcnt(8) AND HSYNC));
+
+FTCPE_Mtrien_SRAM_DATA: FTCPE port map (Mtrien_SRAM_DATA,Mtrien_SRAM_DATA_T,GCLK2,'0','0');
+Mtrien_SRAM_DATA_T <= ((flag_w AND Mtrien_SRAM_DATA AND NOT clk2)
+	OR (NOT Mtrien_SRAM_DATA AND clk2 AND flag_r));
+
+FTCPE_RAM_CE: FTCPE port map (RAM_CE,RAM_CE_T,GCLK2,'0','0',flag_vis);
+RAM_CE_T <= ((RAM_CE AND pxlcnt(3) AND NOT pxlcnt(6) AND pxlcnt(7) AND 
+	NOT pxlcnt(9) AND NOT pxlcnt(0) AND NOT pxlcnt(2) AND pxlcnt(1) AND NOT pxlcnt(4) AND 
+	NOT pxlcnt(5) AND NOT pxlcnt(8) AND flag_up AND clk2)
+	OR (RAM_CE AND pxlcnt(3) AND NOT pxlcnt(6) AND pxlcnt(7) AND 
+	NOT pxlcnt(9) AND NOT pxlcnt(0) AND NOT pxlcnt(2) AND pxlcnt(1) AND NOT pxlcnt(4) AND 
+	NOT pxlcnt(5) AND NOT pxlcnt(8) AND NOT flag_up AND NOT clk2)
+	OR (NOT RAM_CE AND NOT pxlcnt(3) AND pxlcnt(6) AND NOT pxlcnt(7) AND 
+	pxlcnt(9) AND NOT pxlcnt(0) AND NOT pxlcnt(2) AND pxlcnt(1) AND NOT pxlcnt(4) AND 
+	NOT pxlcnt(5) AND NOT pxlcnt(8) AND flag_up AND clk2)
+	OR (NOT RAM_CE AND NOT pxlcnt(3) AND pxlcnt(6) AND NOT pxlcnt(7) AND 
+	pxlcnt(9) AND NOT pxlcnt(0) AND NOT pxlcnt(2) AND pxlcnt(1) AND NOT pxlcnt(4) AND 
+	NOT pxlcnt(5) AND NOT pxlcnt(8) AND NOT flag_up AND NOT clk2));
+
+FDCPE_RAM_RD: FDCPE port map (RAM_RD,RAM_RD_D,GCLK2,'0','0');
+RAM_RD_D <= ((RAM_RD AND NOT flag_r)
+	OR (NOT clk2 AND flag_r)
+	OR (NOT lincnt(0) AND NOT lincnt(2) AND NOT lincnt(5) AND NOT lincnt(1) AND 
+	NOT lincnt(3) AND NOT lincnt(4) AND NOT lincnt(6) AND NOT lincnt(7) AND NOT lincnt(8) AND 
+	NOT lincnt(9) AND NOT flag_r));
+
+FDCPE_RAM_WR: FDCPE port map (RAM_WR,RAM_WR_D,GCLK2,'0','0');
+RAM_WR_D <= ((flag_w AND clk2)
+	OR (NOT flag_w AND RAM_WR)
+	OR (NOT flag_w AND NOT lincnt(0) AND NOT lincnt(2) AND NOT lincnt(5) AND 
+	NOT lincnt(1) AND NOT lincnt(3) AND NOT lincnt(4) AND NOT lincnt(6) AND NOT lincnt(7) AND 
+	NOT lincnt(8) AND NOT lincnt(9)));
+
+FDCPE_SRAM_ADDR0: FDCPE port map (SRAM_ADDR(0),SRAM_ADDR_D(0),GCLK2,'0','0');
+SRAM_ADDR_D(0) <= ((flag_w AND ramptr(0) AND NOT clk2)
+	OR (NOT flag_w AND SRAM_ADDR(0) AND NOT clk2)
+	OR (ramptr(0) AND clk2 AND flag_r)
+	OR (SRAM_ADDR(0) AND clk2 AND NOT flag_r));
+
+FDCPE_SRAM_ADDR1: FDCPE port map (SRAM_ADDR(1),SRAM_ADDR_D(1),GCLK2,'0','0');
+SRAM_ADDR_D(1) <= ((flag_w AND ramptr(1) AND NOT clk2)
+	OR (NOT flag_w AND SRAM_ADDR(1) AND NOT clk2)
+	OR (ramptr(1) AND clk2 AND flag_r)
+	OR (SRAM_ADDR(1) AND clk2 AND NOT flag_r));
+
+FDCPE_SRAM_ADDR2: FDCPE port map (SRAM_ADDR(2),SRAM_ADDR_D(2),GCLK2,'0','0');
+SRAM_ADDR_D(2) <= ((flag_w AND ramptr(2) AND NOT clk2)
+	OR (NOT flag_w AND SRAM_ADDR(2) AND NOT clk2)
+	OR (ramptr(2) AND clk2 AND flag_r)
+	OR (SRAM_ADDR(2) AND clk2 AND NOT flag_r));
+
+FDCPE_SRAM_ADDR3: FDCPE port map (SRAM_ADDR(3),SRAM_ADDR_D(3),GCLK2,'0','0');
+SRAM_ADDR_D(3) <= ((flag_w AND ramptr(3) AND NOT clk2)
+	OR (NOT flag_w AND SRAM_ADDR(3) AND NOT clk2)
+	OR (ramptr(3) AND clk2 AND flag_r)
+	OR (SRAM_ADDR(3) AND clk2 AND NOT flag_r));
+
+FDCPE_SRAM_ADDR4: FDCPE port map (SRAM_ADDR(4),SRAM_ADDR_D(4),GCLK2,'0','0');
+SRAM_ADDR_D(4) <= ((flag_w AND ramptr(4) AND NOT clk2)
+	OR (NOT flag_w AND SRAM_ADDR(4) AND NOT clk2)
+	OR (ramptr(4) AND clk2 AND flag_r)
+	OR (SRAM_ADDR(4) AND clk2 AND NOT flag_r));
+
+FDCPE_SRAM_ADDR5: FDCPE port map (SRAM_ADDR(5),SRAM_ADDR_D(5),GCLK2,'0','0');
+SRAM_ADDR_D(5) <= ((flag_w AND ramptr(5) AND NOT clk2)
+	OR (NOT flag_w AND SRAM_ADDR(5) AND NOT clk2)
+	OR (ramptr(5) AND clk2 AND flag_r)
+	OR (SRAM_ADDR(5) AND clk2 AND NOT flag_r));
+
+FDCPE_SRAM_ADDR6: FDCPE port map (SRAM_ADDR(6),SRAM_ADDR_D(6),GCLK2,'0','0');
+SRAM_ADDR_D(6) <= ((flag_w AND ramptr(6) AND NOT clk2)
+	OR (NOT flag_w AND SRAM_ADDR(6) AND NOT clk2)
+	OR (ramptr(6) AND clk2 AND flag_r)
+	OR (SRAM_ADDR(6) AND clk2 AND NOT flag_r));
+
+FDCPE_SRAM_ADDR7: FDCPE port map (SRAM_ADDR(7),SRAM_ADDR_D(7),GCLK2,'0','0');
+SRAM_ADDR_D(7) <= ((flag_w AND ramptr(7) AND NOT clk2)
+	OR (NOT flag_w AND SRAM_ADDR(7) AND NOT clk2)
+	OR (ramptr(7) AND clk2 AND flag_r)
+	OR (SRAM_ADDR(7) AND clk2 AND NOT flag_r));
+
+FDCPE_SRAM_ADDR8: FDCPE port map (SRAM_ADDR(8),SRAM_ADDR_D(8),GCLK2,'0','0');
+SRAM_ADDR_D(8) <= ((flag_w AND ramptr(8) AND NOT clk2)
+	OR (NOT flag_w AND SRAM_ADDR(8) AND NOT clk2)
+	OR (ramptr(8) AND clk2 AND flag_r)
+	OR (SRAM_ADDR(8) AND clk2 AND NOT flag_r));
+
+FDCPE_SRAM_ADDR9: FDCPE port map (SRAM_ADDR(9),SRAM_ADDR_D(9),GCLK2,'0','0');
+SRAM_ADDR_D(9) <= ((flag_w AND ramptr(9) AND NOT clk2)
+	OR (NOT flag_w AND SRAM_ADDR(9) AND NOT clk2)
+	OR (ramptr(9) AND clk2 AND flag_r)
+	OR (SRAM_ADDR(9) AND clk2 AND NOT flag_r));
+
+FDCPE_SRAM_ADDR10: FDCPE port map (SRAM_ADDR(10),SRAM_ADDR_D(10),GCLK2,'0','0');
+SRAM_ADDR_D(10) <= ((flag_w AND ramptr(10) AND NOT clk2)
+	OR (NOT flag_w AND SRAM_ADDR(10) AND NOT clk2)
+	OR (ramptr(10) AND clk2 AND flag_r)
+	OR (SRAM_ADDR(10) AND clk2 AND NOT flag_r));
+
+FDCPE_SRAM_ADDR11: FDCPE port map (SRAM_ADDR(11),SRAM_ADDR_D(11),GCLK2,'0','0');
+SRAM_ADDR_D(11) <= ((flag_w AND ramptr(11) AND NOT clk2)
+	OR (NOT flag_w AND SRAM_ADDR(11) AND NOT clk2)
+	OR (ramptr(11) AND clk2 AND flag_r)
+	OR (SRAM_ADDR(11) AND clk2 AND NOT flag_r));
+
+FDCPE_SRAM_ADDR12: FDCPE port map (SRAM_ADDR(12),SRAM_ADDR_D(12),GCLK2,'0','0');
+SRAM_ADDR_D(12) <= ((flag_w AND ramptr(12) AND NOT clk2)
+	OR (NOT flag_w AND SRAM_ADDR(12) AND NOT clk2)
+	OR (ramptr(12) AND clk2 AND flag_r)
+	OR (SRAM_ADDR(12) AND clk2 AND NOT flag_r));
+
+FDCPE_SRAM_ADDR13: FDCPE port map (SRAM_ADDR(13),SRAM_ADDR_D(13),GCLK2,'0','0');
+SRAM_ADDR_D(13) <= ((flag_w AND ramptr(13) AND NOT clk2)
+	OR (NOT flag_w AND SRAM_ADDR(13) AND NOT clk2)
+	OR (ramptr(13) AND clk2 AND flag_r)
+	OR (SRAM_ADDR(13) AND clk2 AND NOT flag_r));
+
+FDCPE_SRAM_ADDR14: FDCPE port map (SRAM_ADDR(14),SRAM_ADDR_D(14),GCLK2,'0','0');
+SRAM_ADDR_D(14) <= ((flag_w AND ramptr(14) AND NOT clk2)
+	OR (NOT flag_w AND SRAM_ADDR(14) AND NOT clk2)
+	OR (ramptr(14) AND clk2 AND flag_r)
+	OR (SRAM_ADDR(14) AND clk2 AND NOT flag_r));
+
+FDCPE_SRAM_ADDR15: FDCPE port map (SRAM_ADDR(15),SRAM_ADDR_D(15),GCLK2,'0','0');
+SRAM_ADDR_D(15) <= ((flag_w AND ramptr(15) AND NOT clk2)
+	OR (NOT flag_w AND SRAM_ADDR(15) AND NOT clk2)
+	OR (ramptr(15) AND clk2 AND flag_r)
+	OR (SRAM_ADDR(15) AND clk2 AND NOT flag_r));
+
+FDCPE_SRAM_ADDR16: FDCPE port map (SRAM_ADDR(16),SRAM_ADDR_D(16),GCLK2,'0','0');
+SRAM_ADDR_D(16) <= ((flag_w AND ramptr(16) AND NOT clk2)
+	OR (NOT flag_w AND SRAM_ADDR(16) AND NOT clk2)
+	OR (ramptr(16) AND clk2 AND flag_r)
+	OR (SRAM_ADDR(16) AND clk2 AND NOT flag_r));
+
+FDCPE_SRAM_ADDR17: FDCPE port map (SRAM_ADDR(17),SRAM_ADDR_D(17),GCLK2,'0','0');
+SRAM_ADDR_D(17) <= ((flag_w AND ramptr(17) AND NOT clk2)
+	OR (NOT flag_w AND SRAM_ADDR(17) AND NOT clk2)
+	OR (ramptr(17) AND clk2 AND flag_r)
+	OR (SRAM_ADDR(17) AND clk2 AND NOT flag_r));
+
+FDCPE_SRAM_ADDR18: FDCPE port map (SRAM_ADDR(18),SRAM_ADDR_D(18),GCLK2,'0','0');
+SRAM_ADDR_D(18) <= ((flag_w AND ramptr(18) AND NOT clk2)
+	OR (NOT flag_w AND SRAM_ADDR(18) AND NOT clk2)
+	OR (ramptr(18) AND clk2 AND flag_r)
+	OR (SRAM_ADDR(18) AND clk2 AND NOT flag_r));
+
+FDCPE_SRAM_DATA0: FDCPE port map (SRAM_DATA_I(0),SRAM_DATA(0),GCLK2,'0','0');
+SRAM_DATA(0) <= ((SRAM_DATA(0) AND NOT flag_w AND NOT clk2)
+	OR (SRAM_DATA(0) AND clk2 AND NOT flag_r)
+	OR (flag_w AND rcol(0) AND NOT clk2)
+	OR (rcol(0) AND clk2 AND flag_r));
+SRAM_DATA(0) <= SRAM_DATA_I(0) when SRAM_DATA_OE(0) = '1' else 'Z';
+SRAM_DATA_OE(0) <= NOT Mtrien_SRAM_DATA;
+
+FDCPE_SRAM_DATA1: FDCPE port map (SRAM_DATA_I(1),SRAM_DATA(1),GCLK2,'0','0');
+SRAM_DATA(1) <= ((SRAM_DATA(1) AND NOT flag_w AND NOT clk2)
+	OR (SRAM_DATA(1) AND clk2 AND NOT flag_r)
+	OR (flag_w AND rcol(1) AND NOT clk2)
+	OR (rcol(1) AND clk2 AND flag_r));
+SRAM_DATA(1) <= SRAM_DATA_I(1) when SRAM_DATA_OE(1) = '1' else 'Z';
+SRAM_DATA_OE(1) <= NOT Mtrien_SRAM_DATA;
+
+FDCPE_SRAM_DATA2: FDCPE port map (SRAM_DATA_I(2),SRAM_DATA(2),GCLK2,'0','0');
+SRAM_DATA(2) <= ((SRAM_DATA(2) AND NOT flag_w AND NOT clk2)
+	OR (SRAM_DATA(2) AND clk2 AND NOT flag_r)
+	OR (flag_w AND rcol(2) AND NOT clk2)
+	OR (rcol(2) AND clk2 AND flag_r));
+SRAM_DATA(2) <= SRAM_DATA_I(2) when SRAM_DATA_OE(2) = '1' else 'Z';
+SRAM_DATA_OE(2) <= NOT Mtrien_SRAM_DATA;
+
+FDCPE_SRAM_DATA3: FDCPE port map (SRAM_DATA_I(3),SRAM_DATA(3),GCLK2,'0','0');
+SRAM_DATA(3) <= ((SRAM_DATA(3) AND NOT flag_w AND NOT clk2)
+	OR (SRAM_DATA(3) AND clk2 AND NOT flag_r)
+	OR (flag_w AND rcol(3) AND NOT clk2)
+	OR (rcol(3) AND clk2 AND flag_r));
+SRAM_DATA(3) <= SRAM_DATA_I(3) when SRAM_DATA_OE(3) = '1' else 'Z';
+SRAM_DATA_OE(3) <= NOT Mtrien_SRAM_DATA;
+
+FDCPE_SRAM_DATA4: FDCPE port map (SRAM_DATA_I(4),SRAM_DATA(4),GCLK2,'0','0');
+SRAM_DATA(4) <= ((SRAM_DATA(4) AND NOT flag_w AND NOT clk2)
+	OR (SRAM_DATA(4) AND clk2 AND NOT flag_r)
+	OR (flag_w AND rcol(4) AND NOT clk2)
+	OR (rcol(4) AND clk2 AND flag_r));
+SRAM_DATA(4) <= SRAM_DATA_I(4) when SRAM_DATA_OE(4) = '1' else 'Z';
+SRAM_DATA_OE(4) <= NOT Mtrien_SRAM_DATA;
+
+FDCPE_SRAM_DATA5: FDCPE port map (SRAM_DATA_I(5),SRAM_DATA(5),GCLK2,'0','0');
+SRAM_DATA(5) <= ((SRAM_DATA(5) AND NOT flag_w AND NOT clk2)
+	OR (SRAM_DATA(5) AND clk2 AND NOT flag_r)
+	OR (flag_w AND rcol(5) AND NOT clk2)
+	OR (rcol(5) AND clk2 AND flag_r));
+SRAM_DATA(5) <= SRAM_DATA_I(5) when SRAM_DATA_OE(5) = '1' else 'Z';
+SRAM_DATA_OE(5) <= NOT Mtrien_SRAM_DATA;
+
+FDCPE_SRAM_DATA6: FDCPE port map (SRAM_DATA_I(6),SRAM_DATA(6),GCLK2,'0','0');
+SRAM_DATA(6) <= ((SRAM_DATA(6) AND NOT flag_w AND NOT clk2)
+	OR (SRAM_DATA(6) AND clk2 AND NOT flag_r)
+	OR (flag_w AND rcol(6) AND NOT clk2)
+	OR (rcol(6) AND clk2 AND flag_r));
+SRAM_DATA(6) <= SRAM_DATA_I(6) when SRAM_DATA_OE(6) = '1' else 'Z';
+SRAM_DATA_OE(6) <= NOT Mtrien_SRAM_DATA;
+
+FDCPE_SRAM_DATA7: FDCPE port map (SRAM_DATA_I(7),SRAM_DATA(7),GCLK2,'0','0');
+SRAM_DATA(7) <= ((SRAM_DATA(7) AND NOT flag_w AND NOT clk2)
+	OR (SRAM_DATA(7) AND clk2 AND NOT flag_r)
+	OR (flag_w AND rcol(7) AND NOT clk2)
+	OR (rcol(7) AND clk2 AND flag_r));
+SRAM_DATA(7) <= SRAM_DATA_I(7) when SRAM_DATA_OE(7) = '1' else 'Z';
+SRAM_DATA_OE(7) <= NOT Mtrien_SRAM_DATA;
+
+FTCPE_VSYNC: FTCPE port map (VSYNC,VSYNC_T,GCLK2,'0','0',VSYNC_CE);
+VSYNC_T <= ((VSYNC AND NOT lincnt(0) AND NOT lincnt(2) AND NOT lincnt(5) AND 
+	NOT lincnt(1) AND NOT lincnt(3) AND NOT lincnt(4) AND NOT lincnt(6) AND NOT lincnt(7) AND 
+	NOT lincnt(8) AND NOT lincnt(9))
+	OR (NOT VSYNC AND NOT lincnt(0) AND NOT lincnt(2) AND NOT lincnt(5) AND 
+	lincnt(1) AND NOT lincnt(3) AND NOT lincnt(4) AND NOT lincnt(6) AND NOT lincnt(7) AND 
+	NOT lincnt(8) AND NOT lincnt(9)));
+VSYNC_CE <= (pxlcnt(3) AND pxlcnt(6) AND NOT pxlcnt(7) AND pxlcnt(9) AND 
+	pxlcnt(0) AND pxlcnt(2) AND pxlcnt(1) AND pxlcnt(4) AND pxlcnt(5) AND 
+	NOT pxlcnt(8) AND clk2);
+
+FTCPE_XM1: FTCPE port map (XM1,XM1_T,GCLK2,'0','0',flag_vis);
+XM1_T <= ((XM1 AND NOT pxlcnt(3) AND pxlcnt(6) AND NOT pxlcnt(7) AND 
+	pxlcnt(9) AND NOT pxlcnt(0) AND NOT pxlcnt(2) AND NOT pxlcnt(1) AND NOT pxlcnt(4) AND 
+	NOT pxlcnt(5) AND NOT pxlcnt(8) AND flag_up AND clk2)
+	OR (NOT XM1 AND pxlcnt(3) AND NOT pxlcnt(6) AND pxlcnt(7) AND 
+	NOT pxlcnt(9) AND NOT pxlcnt(0) AND NOT pxlcnt(2) AND NOT pxlcnt(1) AND NOT pxlcnt(4) AND 
+	NOT pxlcnt(5) AND NOT pxlcnt(8) AND flag_up AND clk2));
+
+FTCPE_XM2: FTCPE port map (XM2,XM2_T,GCLK2,'0','0',flag_vis);
+XM2_T <= ((XM2 AND NOT pxlcnt(3) AND pxlcnt(6) AND NOT pxlcnt(7) AND 
+	pxlcnt(9) AND pxlcnt(0) AND NOT pxlcnt(2) AND NOT pxlcnt(1) AND NOT pxlcnt(4) AND 
+	NOT pxlcnt(5) AND NOT pxlcnt(8) AND flag_up AND clk2)
+	OR (NOT XM2 AND pxlcnt(3) AND NOT pxlcnt(6) AND pxlcnt(7) AND 
+	NOT pxlcnt(9) AND pxlcnt(0) AND NOT pxlcnt(2) AND NOT pxlcnt(1) AND NOT pxlcnt(4) AND 
+	NOT pxlcnt(5) AND NOT pxlcnt(8) AND flag_up AND clk2));
+
+FTCPE_clk2: FTCPE port map (clk2,'1',GCLK2,'0','0');
+
+FTCPE_flag_dac: FTCPE port map (flag_dac,flag_dac_T,GCLK2,'0','0');
+flag_dac_T <= ((NOT flag_vis AND flag_dac)
+	OR (NOT pxlcnt(3) AND pxlcnt(6) AND NOT pxlcnt(7) AND pxlcnt(9) AND 
+	pxlcnt(0) AND NOT pxlcnt(2) AND pxlcnt(1) AND NOT pxlcnt(4) AND NOT pxlcnt(5) AND 
+	NOT pxlcnt(8) AND NOT clk2 AND flag_dac)
+	OR (pxlcnt(3) AND NOT pxlcnt(6) AND pxlcnt(7) AND NOT pxlcnt(9) AND 
+	pxlcnt(0) AND NOT pxlcnt(2) AND pxlcnt(1) AND NOT pxlcnt(4) AND NOT pxlcnt(5) AND 
+	NOT pxlcnt(8) AND flag_vis AND NOT clk2 AND NOT flag_dac));
+
+FTCPE_flag_r: FTCPE port map (flag_r,flag_r_T,GCLK2,'0','0');
+flag_r_T <= ((NOT flag_vis AND flag_r)
+	OR (NOT pxlcnt(3) AND pxlcnt(6) AND NOT pxlcnt(7) AND pxlcnt(9) AND 
+	NOT pxlcnt(0) AND NOT pxlcnt(2) AND pxlcnt(1) AND NOT pxlcnt(4) AND NOT pxlcnt(5) AND 
+	NOT pxlcnt(8) AND NOT flag_up AND NOT clk2 AND flag_r)
+	OR (pxlcnt(3) AND NOT pxlcnt(6) AND pxlcnt(7) AND NOT pxlcnt(9) AND 
+	NOT pxlcnt(0) AND NOT pxlcnt(2) AND pxlcnt(1) AND NOT pxlcnt(4) AND NOT pxlcnt(5) AND 
+	NOT pxlcnt(8) AND NOT flag_up AND flag_vis AND NOT clk2 AND NOT flag_r));
+
+FDCPE_flag_up: FDCPE port map (flag_up,X2A,GCLK2,'0','0',flag_up_CE);
+flag_up_CE <= (pxlcnt(3) AND pxlcnt(6) AND NOT pxlcnt(7) AND pxlcnt(9) AND 
+	pxlcnt(0) AND pxlcnt(2) AND pxlcnt(1) AND pxlcnt(4) AND pxlcnt(5) AND 
+	NOT pxlcnt(8) AND NOT lincnt(0) AND NOT lincnt(2) AND NOT lincnt(5) AND lincnt(1) AND 
+	NOT lincnt(3) AND NOT lincnt(4) AND NOT lincnt(6) AND NOT lincnt(7) AND NOT lincnt(8) AND 
+	NOT lincnt(9) AND clk2);
+
+FTCPE_flag_vis: FTCPE port map (flag_vis,flag_vis_T,GCLK2,'0','0',flag_vis_CE);
+flag_vis_T <= ((NOT lincnt(0) AND lincnt(2) AND lincnt(5) AND NOT lincnt(1) AND 
+	NOT lincnt(3) AND NOT lincnt(4) AND NOT lincnt(6) AND NOT lincnt(7) AND NOT lincnt(8) AND 
+	NOT lincnt(9) AND NOT flag_vis)
+	OR (NOT lincnt(0) AND NOT lincnt(2) AND NOT lincnt(5) AND NOT lincnt(1) AND 
+	NOT lincnt(3) AND NOT lincnt(4) AND NOT lincnt(6) AND NOT lincnt(7) AND NOT lincnt(8) AND 
+	lincnt(9) AND flag_vis));
+flag_vis_CE <= (pxlcnt(3) AND pxlcnt(6) AND NOT pxlcnt(7) AND pxlcnt(9) AND 
+	pxlcnt(0) AND pxlcnt(2) AND pxlcnt(1) AND pxlcnt(4) AND pxlcnt(5) AND 
+	NOT pxlcnt(8) AND clk2);
+
+FTCPE_flag_w: FTCPE port map (flag_w,flag_w_T,GCLK2,'0','0',flag_vis);
+flag_w_T <= ((flag_w AND NOT pxlcnt(3) AND pxlcnt(6) AND NOT pxlcnt(7) AND 
+	pxlcnt(9) AND NOT pxlcnt(0) AND NOT pxlcnt(2) AND pxlcnt(1) AND NOT pxlcnt(4) AND 
+	NOT pxlcnt(5) AND NOT pxlcnt(8) AND flag_up AND clk2)
+	OR (NOT flag_w AND pxlcnt(3) AND NOT pxlcnt(6) AND pxlcnt(7) AND 
+	NOT pxlcnt(9) AND NOT pxlcnt(0) AND NOT pxlcnt(2) AND pxlcnt(1) AND NOT pxlcnt(4) AND 
+	NOT pxlcnt(5) AND NOT pxlcnt(8) AND flag_up AND clk2));
+
+FTCPE_flag_wd: FTCPE port map (flag_wd,flag_wd_T,GCLK2,'0','0',flag_vis);
+flag_wd_T <= ((pxlcnt(3) AND NOT pxlcnt(6) AND pxlcnt(7) AND NOT pxlcnt(9) AND 
+	NOT pxlcnt(0) AND NOT pxlcnt(2) AND pxlcnt(1) AND NOT pxlcnt(4) AND NOT pxlcnt(5) AND 
+	NOT pxlcnt(8) AND flag_up AND NOT flag_wd AND NOT clk2)
+	OR (NOT pxlcnt(3) AND pxlcnt(6) AND NOT pxlcnt(7) AND pxlcnt(9) AND 
+	NOT pxlcnt(0) AND NOT pxlcnt(2) AND pxlcnt(1) AND NOT pxlcnt(4) AND NOT pxlcnt(5) AND 
+	NOT pxlcnt(8) AND flag_up AND flag_wd AND NOT clk2));
+
+FTCPE_lincnt0: FTCPE port map (lincnt(0),lincnt_T(0),GCLK2,'0','0',lincnt_CE(0));
+lincnt_T(0) <= (pxlcnt(3) AND pxlcnt(6) AND NOT pxlcnt(7) AND pxlcnt(9) AND 
+	pxlcnt(0) AND pxlcnt(2) AND pxlcnt(1) AND pxlcnt(4) AND pxlcnt(5) AND 
+	NOT pxlcnt(8) AND NOT lincnt(0) AND lincnt(2) AND NOT lincnt(5) AND NOT lincnt(1) AND 
+	lincnt(3) AND NOT lincnt(4) AND NOT lincnt(6) AND NOT lincnt(7) AND NOT lincnt(8) AND 
+	lincnt(9) AND clk2);
+lincnt_CE(0) <= (pxlcnt(3) AND pxlcnt(6) AND NOT pxlcnt(7) AND pxlcnt(9) AND 
+	pxlcnt(0) AND pxlcnt(2) AND pxlcnt(1) AND pxlcnt(4) AND pxlcnt(5) AND 
+	NOT pxlcnt(8) AND clk2);
+
+FTCPE_lincnt1: FTCPE port map (lincnt(1),lincnt(0),GCLK2,'0','0',lincnt_CE(1));
+lincnt_CE(1) <= (pxlcnt(3) AND pxlcnt(6) AND NOT pxlcnt(7) AND pxlcnt(9) AND 
+	pxlcnt(0) AND pxlcnt(2) AND pxlcnt(1) AND pxlcnt(4) AND pxlcnt(5) AND 
+	NOT pxlcnt(8) AND clk2);
+
+FTCPE_lincnt2: FTCPE port map (lincnt(2),lincnt_T(2),GCLK2,'0','0',lincnt_CE(2));
+lincnt_T(2) <= ((lincnt(0) AND lincnt(1))
+	OR (pxlcnt(3) AND pxlcnt(6) AND NOT pxlcnt(7) AND pxlcnt(9) AND 
+	pxlcnt(0) AND pxlcnt(2) AND pxlcnt(1) AND pxlcnt(4) AND pxlcnt(5) AND 
+	NOT pxlcnt(8) AND NOT lincnt(0) AND lincnt(2) AND NOT lincnt(5) AND NOT lincnt(1) AND 
+	lincnt(3) AND NOT lincnt(4) AND NOT lincnt(6) AND NOT lincnt(7) AND NOT lincnt(8) AND 
+	lincnt(9) AND clk2));
+lincnt_CE(2) <= (pxlcnt(3) AND pxlcnt(6) AND NOT pxlcnt(7) AND pxlcnt(9) AND 
+	pxlcnt(0) AND pxlcnt(2) AND pxlcnt(1) AND pxlcnt(4) AND pxlcnt(5) AND 
+	NOT pxlcnt(8) AND clk2);
+
+FTCPE_lincnt3: FTCPE port map (lincnt(3),lincnt_T(3),GCLK2,'0','0',lincnt_CE(3));
+lincnt_T(3) <= ((lincnt(0) AND lincnt(2) AND lincnt(1))
+	OR (pxlcnt(3) AND pxlcnt(6) AND NOT pxlcnt(7) AND pxlcnt(9) AND 
+	pxlcnt(0) AND pxlcnt(2) AND pxlcnt(1) AND pxlcnt(4) AND pxlcnt(5) AND 
+	NOT pxlcnt(8) AND NOT lincnt(0) AND lincnt(2) AND NOT lincnt(5) AND NOT lincnt(1) AND 
+	lincnt(3) AND NOT lincnt(4) AND NOT lincnt(6) AND NOT lincnt(7) AND NOT lincnt(8) AND 
+	lincnt(9) AND clk2));
+lincnt_CE(3) <= (pxlcnt(3) AND pxlcnt(6) AND NOT pxlcnt(7) AND pxlcnt(9) AND 
+	pxlcnt(0) AND pxlcnt(2) AND pxlcnt(1) AND pxlcnt(4) AND pxlcnt(5) AND 
+	NOT pxlcnt(8) AND clk2);
+
+FTCPE_lincnt4: FTCPE port map (lincnt(4),lincnt_T(4),GCLK2,'0','0',lincnt_CE(4));
+lincnt_T(4) <= (lincnt(0) AND lincnt(2) AND lincnt(1) AND lincnt(3));
+lincnt_CE(4) <= (pxlcnt(3) AND pxlcnt(6) AND NOT pxlcnt(7) AND pxlcnt(9) AND 
+	pxlcnt(0) AND pxlcnt(2) AND pxlcnt(1) AND pxlcnt(4) AND pxlcnt(5) AND 
+	NOT pxlcnt(8) AND clk2);
+
+FTCPE_lincnt5: FTCPE port map (lincnt(5),lincnt_T(5),GCLK2,'0','0',lincnt_CE(5));
+lincnt_T(5) <= (lincnt(0) AND lincnt(2) AND lincnt(1) AND lincnt(3) AND 
+	lincnt(4));
+lincnt_CE(5) <= (pxlcnt(3) AND pxlcnt(6) AND NOT pxlcnt(7) AND pxlcnt(9) AND 
+	pxlcnt(0) AND pxlcnt(2) AND pxlcnt(1) AND pxlcnt(4) AND pxlcnt(5) AND 
+	NOT pxlcnt(8) AND clk2);
+
+FTCPE_lincnt6: FTCPE port map (lincnt(6),lincnt_T(6),GCLK2,'0','0',lincnt_CE(6));
+lincnt_T(6) <= (lincnt(0) AND lincnt(2) AND lincnt(5) AND lincnt(1) AND 
+	lincnt(3) AND lincnt(4));
+lincnt_CE(6) <= (pxlcnt(3) AND pxlcnt(6) AND NOT pxlcnt(7) AND pxlcnt(9) AND 
+	pxlcnt(0) AND pxlcnt(2) AND pxlcnt(1) AND pxlcnt(4) AND pxlcnt(5) AND 
+	NOT pxlcnt(8) AND clk2);
+
+FTCPE_lincnt7: FTCPE port map (lincnt(7),lincnt_T(7),GCLK2,'0','0',lincnt_CE(7));
+lincnt_T(7) <= (lincnt(0) AND lincnt(2) AND lincnt(5) AND lincnt(1) AND 
+	lincnt(3) AND lincnt(4) AND lincnt(6));
+lincnt_CE(7) <= (pxlcnt(3) AND pxlcnt(6) AND NOT pxlcnt(7) AND pxlcnt(9) AND 
+	pxlcnt(0) AND pxlcnt(2) AND pxlcnt(1) AND pxlcnt(4) AND pxlcnt(5) AND 
+	NOT pxlcnt(8) AND clk2);
+
+FTCPE_lincnt8: FTCPE port map (lincnt(8),lincnt_T(8),GCLK2,'0','0',lincnt_CE(8));
+lincnt_T(8) <= (lincnt(0) AND lincnt(2) AND lincnt(5) AND lincnt(1) AND 
+	lincnt(3) AND lincnt(4) AND lincnt(6) AND lincnt(7));
+lincnt_CE(8) <= (pxlcnt(3) AND pxlcnt(6) AND NOT pxlcnt(7) AND pxlcnt(9) AND 
+	pxlcnt(0) AND pxlcnt(2) AND pxlcnt(1) AND pxlcnt(4) AND pxlcnt(5) AND 
+	NOT pxlcnt(8) AND clk2);
+
+FTCPE_lincnt9: FTCPE port map (lincnt(9),lincnt_T(9),GCLK2,'0','0',lincnt_CE(9));
+lincnt_T(9) <= ((lincnt(0) AND lincnt(2) AND lincnt(5) AND lincnt(1) AND 
+	lincnt(3) AND lincnt(4) AND lincnt(6) AND lincnt(7) AND lincnt(8))
+	OR (pxlcnt(3) AND pxlcnt(6) AND NOT pxlcnt(7) AND pxlcnt(9) AND 
+	pxlcnt(0) AND pxlcnt(2) AND pxlcnt(1) AND pxlcnt(4) AND pxlcnt(5) AND 
+	NOT pxlcnt(8) AND NOT lincnt(0) AND lincnt(2) AND NOT lincnt(5) AND NOT lincnt(1) AND 
+	lincnt(3) AND NOT lincnt(4) AND NOT lincnt(6) AND NOT lincnt(7) AND NOT lincnt(8) AND 
+	lincnt(9) AND clk2));
+lincnt_CE(9) <= (pxlcnt(3) AND pxlcnt(6) AND NOT pxlcnt(7) AND pxlcnt(9) AND 
+	pxlcnt(0) AND pxlcnt(2) AND pxlcnt(1) AND pxlcnt(4) AND pxlcnt(5) AND 
+	NOT pxlcnt(8) AND clk2);
+
+FTCPE_pxlcnt0: FTCPE port map (pxlcnt(0),'1',GCLK2,'0','0',clk2);
+
+FTCPE_pxlcnt1: FTCPE port map (pxlcnt(1),pxlcnt(0),GCLK2,'0','0',clk2);
+
+FTCPE_pxlcnt2: FTCPE port map (pxlcnt(2),pxlcnt_T(2),GCLK2,'0','0',clk2);
+pxlcnt_T(2) <= (pxlcnt(0) AND pxlcnt(1));
+
+FTCPE_pxlcnt3: FTCPE port map (pxlcnt(3),pxlcnt_T(3),GCLK2,'0','0',clk2);
+pxlcnt_T(3) <= (pxlcnt(0) AND pxlcnt(2) AND pxlcnt(1));
+
+FTCPE_pxlcnt4: FTCPE port map (pxlcnt(4),pxlcnt_T(4),GCLK2,'0','0',clk2);
+pxlcnt_T(4) <= (pxlcnt(3) AND pxlcnt(0) AND pxlcnt(2) AND pxlcnt(1));
+
+FTCPE_pxlcnt5: FTCPE port map (pxlcnt(5),pxlcnt_T(5),GCLK2,'0','0',clk2);
+pxlcnt_T(5) <= (pxlcnt(3) AND pxlcnt(0) AND pxlcnt(2) AND pxlcnt(1) AND 
+	pxlcnt(4));
+
+FTCPE_pxlcnt6: FTCPE port map (pxlcnt(6),pxlcnt_T(6),GCLK2,'0','0',clk2);
+pxlcnt_T(6) <= (pxlcnt(3) AND pxlcnt(0) AND pxlcnt(2) AND pxlcnt(1) AND 
+	pxlcnt(4) AND pxlcnt(5));
+
+FTCPE_pxlcnt7: FTCPE port map (pxlcnt(7),pxlcnt_T(7),GCLK2,'0','0',clk2);
+pxlcnt_T(7) <= ((pxlcnt(3) AND pxlcnt(6) AND pxlcnt(7) AND pxlcnt(0) AND 
+	pxlcnt(2) AND pxlcnt(1) AND pxlcnt(4) AND pxlcnt(5))
+	OR (pxlcnt(3) AND pxlcnt(6) AND NOT pxlcnt(9) AND pxlcnt(0) AND 
+	pxlcnt(2) AND pxlcnt(1) AND pxlcnt(4) AND pxlcnt(5))
+	OR (pxlcnt(3) AND pxlcnt(6) AND pxlcnt(0) AND pxlcnt(2) AND 
+	pxlcnt(1) AND pxlcnt(4) AND pxlcnt(5) AND pxlcnt(8))
+	OR (pxlcnt(3) AND pxlcnt(6) AND pxlcnt(0) AND pxlcnt(2) AND 
+	pxlcnt(1) AND pxlcnt(4) AND pxlcnt(5) AND NOT clk2));
+
+FTCPE_pxlcnt8: FTCPE port map (pxlcnt(8),pxlcnt_T(8),GCLK2,'0','0',clk2);
+pxlcnt_T(8) <= (pxlcnt(3) AND pxlcnt(6) AND pxlcnt(7) AND pxlcnt(0) AND 
+	pxlcnt(2) AND pxlcnt(1) AND pxlcnt(4) AND pxlcnt(5));
+
+FTCPE_pxlcnt9: FTCPE port map (pxlcnt(9),pxlcnt_T(9),GCLK2,'0','0',clk2);
+pxlcnt_T(9) <= ((pxlcnt(3) AND pxlcnt(6) AND pxlcnt(7) AND pxlcnt(0) AND 
+	pxlcnt(2) AND pxlcnt(1) AND pxlcnt(4) AND pxlcnt(5) AND pxlcnt(8))
+	OR (pxlcnt(3) AND pxlcnt(6) AND NOT pxlcnt(7) AND pxlcnt(9) AND 
+	pxlcnt(0) AND pxlcnt(2) AND pxlcnt(1) AND pxlcnt(4) AND pxlcnt(5) AND 
+	NOT pxlcnt(8) AND clk2));
+
+FDCPE_ramdat0: FDCPE port map (ramdat(0),ramdat_D(0),GCLK2,'0','0');
+ramdat_D(0) <= ((ramdat(0) AND clk2)
+	OR (flag_w AND rcol(0) AND NOT clk2)
+	OR (NOT flag_w AND ramdat(0) AND NOT flag_r)
+	OR (NOT flag_w AND NOT clk2 AND flag_r AND SRAM_DATA(0).PIN));
+
+FDCPE_ramdat1: FDCPE port map (ramdat(1),ramdat_D(1),GCLK2,'0','0');
+ramdat_D(1) <= ((ramdat(1) AND clk2)
+	OR (flag_w AND rcol(1) AND NOT clk2)
+	OR (NOT flag_w AND ramdat(1) AND NOT flag_r)
+	OR (NOT flag_w AND NOT clk2 AND flag_r AND SRAM_DATA(1).PIN));
+
+FDCPE_ramdat2: FDCPE port map (ramdat(2),ramdat_D(2),GCLK2,'0','0');
+ramdat_D(2) <= ((ramdat(2) AND clk2)
+	OR (flag_w AND rcol(2) AND NOT clk2)
+	OR (NOT flag_w AND ramdat(2) AND NOT flag_r)
+	OR (NOT flag_w AND NOT clk2 AND flag_r AND SRAM_DATA(2).PIN));
+
+FDCPE_ramdat3: FDCPE port map (ramdat(3),ramdat_D(3),GCLK2,'0','0');
+ramdat_D(3) <= ((ramdat(3) AND clk2)
+	OR (flag_w AND rcol(3) AND NOT clk2)
+	OR (NOT flag_w AND ramdat(3) AND NOT flag_r)
+	OR (NOT flag_w AND NOT clk2 AND flag_r AND SRAM_DATA(3).PIN));
+
+FDCPE_ramdat4: FDCPE port map (ramdat(4),ramdat_D(4),GCLK2,'0','0');
+ramdat_D(4) <= ((ramdat(4) AND clk2)
+	OR (flag_w AND rcol(4) AND NOT clk2)
+	OR (NOT flag_w AND ramdat(4) AND NOT flag_r)
+	OR (NOT flag_w AND NOT clk2 AND flag_r AND SRAM_DATA(4).PIN));
+
+FDCPE_ramdat5: FDCPE port map (ramdat(5),ramdat_D(5),GCLK2,'0','0');
+ramdat_D(5) <= ((ramdat(5) AND clk2)
+	OR (flag_w AND rcol(5) AND NOT clk2)
+	OR (NOT flag_w AND ramdat(5) AND NOT flag_r)
+	OR (NOT flag_w AND NOT clk2 AND flag_r AND SRAM_DATA(5).PIN));
+
+FDCPE_ramdat6: FDCPE port map (ramdat(6),ramdat_D(6),GCLK2,'0','0');
+ramdat_D(6) <= ((ramdat(6) AND clk2)
+	OR (flag_w AND rcol(6) AND NOT clk2)
+	OR (NOT flag_w AND ramdat(6) AND NOT flag_r)
+	OR (NOT flag_w AND NOT clk2 AND flag_r AND SRAM_DATA(6).PIN));
+
+FDCPE_ramdat7: FDCPE port map (ramdat(7),ramdat_D(7),GCLK2,'0','0');
+ramdat_D(7) <= ((ramdat(7) AND clk2)
+	OR (flag_w AND rcol(7) AND NOT clk2)
+	OR (NOT flag_w AND ramdat(7) AND NOT flag_r)
+	OR (NOT flag_w AND NOT clk2 AND flag_r AND SRAM_DATA(7).PIN));
+
+FTCPE_ramptr0: FTCPE port map (ramptr(0),ramptr_T(0),GCLK2,'0','0');
+ramptr_T(0) <= ((flag_w AND clk2)
+	OR (NOT clk2 AND flag_r)
+	OR (NOT lincnt(0) AND NOT lincnt(2) AND NOT lincnt(5) AND NOT lincnt(1) AND 
+	NOT lincnt(3) AND NOT lincnt(4) AND NOT lincnt(6) AND NOT lincnt(7) AND NOT lincnt(8) AND 
+	NOT lincnt(9) AND ramptr(0)));
+
+FTCPE_ramptr1: FTCPE port map (ramptr(1),ramptr_T(1),GCLK2,'0','0');
+ramptr_T(1) <= ((flag_w AND ramptr(0) AND clk2)
+	OR (ramptr(0) AND NOT clk2 AND flag_r)
+	OR (NOT flag_w AND NOT lincnt(0) AND NOT lincnt(2) AND NOT lincnt(5) AND 
+	NOT lincnt(1) AND NOT lincnt(3) AND NOT lincnt(4) AND NOT lincnt(6) AND NOT lincnt(7) AND 
+	NOT lincnt(8) AND NOT lincnt(9) AND ramptr(1) AND clk2)
+	OR (NOT lincnt(0) AND NOT lincnt(2) AND NOT lincnt(5) AND NOT lincnt(1) AND 
+	NOT lincnt(3) AND NOT lincnt(4) AND NOT lincnt(6) AND NOT lincnt(7) AND NOT lincnt(8) AND 
+	NOT lincnt(9) AND ramptr(1) AND NOT clk2 AND NOT flag_r));
+
+FTCPE_ramptr2: FTCPE port map (ramptr(2),ramptr_T(2),GCLK2,'0','0');
+ramptr_T(2) <= ((flag_w AND ramptr(0) AND ramptr(1) AND clk2)
+	OR (ramptr(0) AND ramptr(1) AND NOT clk2 AND flag_r)
+	OR (NOT flag_w AND NOT lincnt(0) AND NOT lincnt(2) AND NOT lincnt(5) AND 
+	NOT lincnt(1) AND NOT lincnt(3) AND NOT lincnt(4) AND NOT lincnt(6) AND NOT lincnt(7) AND 
+	NOT lincnt(8) AND NOT lincnt(9) AND ramptr(2) AND clk2)
+	OR (NOT lincnt(0) AND NOT lincnt(2) AND NOT lincnt(5) AND NOT lincnt(1) AND 
+	NOT lincnt(3) AND NOT lincnt(4) AND NOT lincnt(6) AND NOT lincnt(7) AND NOT lincnt(8) AND 
+	NOT lincnt(9) AND ramptr(2) AND NOT clk2 AND NOT flag_r));
+
+FTCPE_ramptr3: FTCPE port map (ramptr(3),ramptr_T(3),GCLK2,'0','0');
+ramptr_T(3) <= ((flag_w AND ramptr(0) AND ramptr(1) AND ramptr(2) AND 
+	clk2)
+	OR (ramptr(0) AND ramptr(1) AND ramptr(2) AND NOT clk2 AND 
+	flag_r)
+	OR (NOT flag_w AND NOT lincnt(0) AND NOT lincnt(2) AND NOT lincnt(5) AND 
+	NOT lincnt(1) AND NOT lincnt(3) AND NOT lincnt(4) AND NOT lincnt(6) AND NOT lincnt(7) AND 
+	NOT lincnt(8) AND NOT lincnt(9) AND ramptr(3) AND clk2)
+	OR (NOT lincnt(0) AND NOT lincnt(2) AND NOT lincnt(5) AND NOT lincnt(1) AND 
+	NOT lincnt(3) AND NOT lincnt(4) AND NOT lincnt(6) AND NOT lincnt(7) AND NOT lincnt(8) AND 
+	NOT lincnt(9) AND ramptr(3) AND NOT clk2 AND NOT flag_r));
+
+FTCPE_ramptr4: FTCPE port map (ramptr(4),ramptr_T(4),GCLK2,'0','0');
+ramptr_T(4) <= ((flag_w AND ramptr(0) AND ramptr(1) AND ramptr(2) AND 
+	ramptr(3) AND clk2)
+	OR (ramptr(0) AND ramptr(1) AND ramptr(2) AND ramptr(3) AND 
+	NOT clk2 AND flag_r)
+	OR (NOT flag_w AND NOT lincnt(0) AND NOT lincnt(2) AND NOT lincnt(5) AND 
+	NOT lincnt(1) AND NOT lincnt(3) AND NOT lincnt(4) AND NOT lincnt(6) AND NOT lincnt(7) AND 
+	NOT lincnt(8) AND NOT lincnt(9) AND ramptr(4) AND clk2)
+	OR (NOT lincnt(0) AND NOT lincnt(2) AND NOT lincnt(5) AND NOT lincnt(1) AND 
+	NOT lincnt(3) AND NOT lincnt(4) AND NOT lincnt(6) AND NOT lincnt(7) AND NOT lincnt(8) AND 
+	NOT lincnt(9) AND ramptr(4) AND NOT clk2 AND NOT flag_r));
+
+FTCPE_ramptr5: FTCPE port map (ramptr(5),ramptr_T(5),GCLK2,'0','0');
+ramptr_T(5) <= ((flag_w AND ramptr(0) AND ramptr(1) AND ramptr(2) AND 
+	ramptr(3) AND ramptr(4) AND clk2)
+	OR (ramptr(0) AND ramptr(1) AND ramptr(2) AND ramptr(3) AND 
+	ramptr(4) AND NOT clk2 AND flag_r)
+	OR (NOT flag_w AND NOT lincnt(0) AND NOT lincnt(2) AND NOT lincnt(5) AND 
+	NOT lincnt(1) AND NOT lincnt(3) AND NOT lincnt(4) AND NOT lincnt(6) AND NOT lincnt(7) AND 
+	NOT lincnt(8) AND NOT lincnt(9) AND ramptr(5) AND clk2)
+	OR (NOT lincnt(0) AND NOT lincnt(2) AND NOT lincnt(5) AND NOT lincnt(1) AND 
+	NOT lincnt(3) AND NOT lincnt(4) AND NOT lincnt(6) AND NOT lincnt(7) AND NOT lincnt(8) AND 
+	NOT lincnt(9) AND ramptr(5) AND NOT clk2 AND NOT flag_r));
+
+FTCPE_ramptr6: FTCPE port map (ramptr(6),ramptr_T(6),GCLK2,'0','0');
+ramptr_T(6) <= ((flag_w AND ramptr(0) AND ramptr(1) AND ramptr(2) AND 
+	ramptr(3) AND ramptr(4) AND ramptr(5) AND clk2)
+	OR (ramptr(0) AND ramptr(1) AND ramptr(2) AND ramptr(3) AND 
+	ramptr(4) AND ramptr(5) AND NOT clk2 AND flag_r)
+	OR (NOT flag_w AND NOT lincnt(0) AND NOT lincnt(2) AND NOT lincnt(5) AND 
+	NOT lincnt(1) AND NOT lincnt(3) AND NOT lincnt(4) AND NOT lincnt(6) AND NOT lincnt(7) AND 
+	NOT lincnt(8) AND NOT lincnt(9) AND ramptr(6) AND clk2)
+	OR (NOT lincnt(0) AND NOT lincnt(2) AND NOT lincnt(5) AND NOT lincnt(1) AND 
+	NOT lincnt(3) AND NOT lincnt(4) AND NOT lincnt(6) AND NOT lincnt(7) AND NOT lincnt(8) AND 
+	NOT lincnt(9) AND ramptr(6) AND NOT clk2 AND NOT flag_r));
+
+FTCPE_ramptr7: FTCPE port map (ramptr(7),ramptr_T(7),GCLK2,'0','0');
+ramptr_T(7) <= ((flag_w AND ramptr(0) AND ramptr(1) AND ramptr(2) AND 
+	ramptr(3) AND ramptr(4) AND ramptr(5) AND ramptr(6) AND clk2)
+	OR (ramptr(0) AND ramptr(1) AND ramptr(2) AND ramptr(3) AND 
+	ramptr(4) AND ramptr(5) AND ramptr(6) AND NOT clk2 AND flag_r)
+	OR (NOT flag_w AND NOT lincnt(0) AND NOT lincnt(2) AND NOT lincnt(5) AND 
+	NOT lincnt(1) AND NOT lincnt(3) AND NOT lincnt(4) AND NOT lincnt(6) AND NOT lincnt(7) AND 
+	NOT lincnt(8) AND NOT lincnt(9) AND ramptr(7) AND clk2)
+	OR (NOT lincnt(0) AND NOT lincnt(2) AND NOT lincnt(5) AND NOT lincnt(1) AND 
+	NOT lincnt(3) AND NOT lincnt(4) AND NOT lincnt(6) AND NOT lincnt(7) AND NOT lincnt(8) AND 
+	NOT lincnt(9) AND ramptr(7) AND NOT clk2 AND NOT flag_r));
+
+FTCPE_ramptr8: FTCPE port map (ramptr(8),ramptr_T(8),GCLK2,'0','0');
+ramptr_T(8) <= ((flag_w AND ramptr(0) AND ramptr(1) AND ramptr(2) AND 
+	ramptr(3) AND ramptr(4) AND ramptr(5) AND ramptr(6) AND ramptr(7) AND 
+	clk2)
+	OR (ramptr(0) AND ramptr(1) AND ramptr(2) AND ramptr(3) AND 
+	ramptr(4) AND ramptr(5) AND ramptr(6) AND ramptr(7) AND NOT clk2 AND 
+	flag_r)
+	OR (NOT flag_w AND NOT lincnt(0) AND NOT lincnt(2) AND NOT lincnt(5) AND 
+	NOT lincnt(1) AND NOT lincnt(3) AND NOT lincnt(4) AND NOT lincnt(6) AND NOT lincnt(7) AND 
+	NOT lincnt(8) AND NOT lincnt(9) AND ramptr(8) AND clk2)
+	OR (NOT lincnt(0) AND NOT lincnt(2) AND NOT lincnt(5) AND NOT lincnt(1) AND 
+	NOT lincnt(3) AND NOT lincnt(4) AND NOT lincnt(6) AND NOT lincnt(7) AND NOT lincnt(8) AND 
+	NOT lincnt(9) AND ramptr(8) AND NOT clk2 AND NOT flag_r));
+
+FTCPE_ramptr9: FTCPE port map (ramptr(9),ramptr_T(9),GCLK2,'0','0');
+ramptr_T(9) <= ((flag_w AND ramptr(0) AND ramptr(1) AND ramptr(2) AND 
+	ramptr(3) AND ramptr(4) AND ramptr(5) AND ramptr(6) AND ramptr(7) AND 
+	ramptr(8) AND clk2)
+	OR (ramptr(0) AND ramptr(1) AND ramptr(2) AND ramptr(3) AND 
+	ramptr(4) AND ramptr(5) AND ramptr(6) AND ramptr(7) AND ramptr(8) AND 
+	NOT clk2 AND flag_r)
+	OR (NOT flag_w AND NOT lincnt(0) AND NOT lincnt(2) AND NOT lincnt(5) AND 
+	NOT lincnt(1) AND NOT lincnt(3) AND NOT lincnt(4) AND NOT lincnt(6) AND NOT lincnt(7) AND 
+	NOT lincnt(8) AND NOT lincnt(9) AND ramptr(9) AND clk2)
+	OR (NOT lincnt(0) AND NOT lincnt(2) AND NOT lincnt(5) AND NOT lincnt(1) AND 
+	NOT lincnt(3) AND NOT lincnt(4) AND NOT lincnt(6) AND NOT lincnt(7) AND NOT lincnt(8) AND 
+	NOT lincnt(9) AND ramptr(9) AND NOT clk2 AND NOT flag_r));
+
+FTCPE_ramptr10: FTCPE port map (ramptr(10),ramptr_T(10),GCLK2,'0','0');
+ramptr_T(10) <= ((flag_w AND ramptr(0) AND ramptr(1) AND ramptr(2) AND 
+	ramptr(3) AND ramptr(4) AND ramptr(5) AND ramptr(6) AND ramptr(7) AND 
+	ramptr(8) AND ramptr(9) AND clk2)
+	OR (ramptr(0) AND ramptr(1) AND ramptr(2) AND ramptr(3) AND 
+	ramptr(4) AND ramptr(5) AND ramptr(6) AND ramptr(7) AND ramptr(8) AND 
+	ramptr(9) AND NOT clk2 AND flag_r)
+	OR (NOT flag_w AND NOT lincnt(0) AND NOT lincnt(2) AND NOT lincnt(5) AND 
+	NOT lincnt(1) AND NOT lincnt(3) AND NOT lincnt(4) AND NOT lincnt(6) AND NOT lincnt(7) AND 
+	NOT lincnt(8) AND NOT lincnt(9) AND ramptr(10) AND clk2)
+	OR (NOT lincnt(0) AND NOT lincnt(2) AND NOT lincnt(5) AND NOT lincnt(1) AND 
+	NOT lincnt(3) AND NOT lincnt(4) AND NOT lincnt(6) AND NOT lincnt(7) AND NOT lincnt(8) AND 
+	NOT lincnt(9) AND ramptr(10) AND NOT clk2 AND NOT flag_r));
+
+FTCPE_ramptr11: FTCPE port map (ramptr(11),ramptr_T(11),GCLK2,'0','0');
+ramptr_T(11) <= ((flag_w AND ramptr(0) AND ramptr(10) AND ramptr(1) AND 
+	ramptr(2) AND ramptr(3) AND ramptr(4) AND ramptr(5) AND ramptr(6) AND 
+	ramptr(7) AND ramptr(8) AND ramptr(9) AND clk2)
+	OR (NOT flag_w AND NOT lincnt(0) AND NOT lincnt(2) AND NOT lincnt(5) AND 
+	NOT lincnt(1) AND NOT lincnt(3) AND NOT lincnt(4) AND NOT lincnt(6) AND NOT lincnt(7) AND 
+	NOT lincnt(8) AND NOT lincnt(9) AND ramptr(11) AND clk2)
+	OR (NOT lincnt(0) AND NOT lincnt(2) AND NOT lincnt(5) AND NOT lincnt(1) AND 
+	NOT lincnt(3) AND NOT lincnt(4) AND NOT lincnt(6) AND NOT lincnt(7) AND NOT lincnt(8) AND 
+	NOT lincnt(9) AND ramptr(11) AND NOT clk2 AND NOT flag_r)
+	OR (ramptr(0) AND ramptr(10) AND ramptr(1) AND ramptr(2) AND 
+	ramptr(3) AND ramptr(4) AND ramptr(5) AND ramptr(6) AND ramptr(7) AND 
+	ramptr(8) AND ramptr(9) AND NOT clk2 AND flag_r));
+
+FTCPE_ramptr12: FTCPE port map (ramptr(12),ramptr_T(12),GCLK2,'0','0');
+ramptr_T(12) <= ((NOT flag_w AND NOT lincnt(0) AND NOT lincnt(2) AND NOT lincnt(5) AND 
+	NOT lincnt(1) AND NOT lincnt(3) AND NOT lincnt(4) AND NOT lincnt(6) AND NOT lincnt(7) AND 
+	NOT lincnt(8) AND NOT lincnt(9) AND ramptr(12) AND clk2)
+	OR (NOT lincnt(0) AND NOT lincnt(2) AND NOT lincnt(5) AND NOT lincnt(1) AND 
+	NOT lincnt(3) AND NOT lincnt(4) AND NOT lincnt(6) AND NOT lincnt(7) AND NOT lincnt(8) AND 
+	NOT lincnt(9) AND ramptr(12) AND NOT clk2 AND NOT flag_r)
+	OR (flag_w AND ramptr(0) AND ramptr(10) AND ramptr(11) AND 
+	ramptr(1) AND ramptr(2) AND ramptr(3) AND ramptr(4) AND ramptr(5) AND 
+	ramptr(6) AND ramptr(7) AND ramptr(8) AND ramptr(9) AND clk2)
+	OR (ramptr(0) AND ramptr(10) AND ramptr(11) AND ramptr(1) AND 
+	ramptr(2) AND ramptr(3) AND ramptr(4) AND ramptr(5) AND ramptr(6) AND 
+	ramptr(7) AND ramptr(8) AND ramptr(9) AND NOT clk2 AND flag_r));
+
+FTCPE_ramptr13: FTCPE port map (ramptr(13),ramptr_T(13),GCLK2,'0','0');
+ramptr_T(13) <= ((NOT flag_w AND NOT lincnt(0) AND NOT lincnt(2) AND NOT lincnt(5) AND 
+	NOT lincnt(1) AND NOT lincnt(3) AND NOT lincnt(4) AND NOT lincnt(6) AND NOT lincnt(7) AND 
+	NOT lincnt(8) AND NOT lincnt(9) AND ramptr(13) AND clk2)
+	OR (NOT lincnt(0) AND NOT lincnt(2) AND NOT lincnt(5) AND NOT lincnt(1) AND 
+	NOT lincnt(3) AND NOT lincnt(4) AND NOT lincnt(6) AND NOT lincnt(7) AND NOT lincnt(8) AND 
+	NOT lincnt(9) AND ramptr(13) AND NOT clk2 AND NOT flag_r)
+	OR (flag_w AND ramptr(0) AND ramptr(10) AND ramptr(11) AND 
+	ramptr(12) AND ramptr(1) AND ramptr(2) AND ramptr(3) AND ramptr(4) AND 
+	ramptr(5) AND ramptr(6) AND ramptr(7) AND ramptr(8) AND ramptr(9) AND 
+	clk2)
+	OR (ramptr(0) AND ramptr(10) AND ramptr(11) AND 
+	ramptr(12) AND ramptr(1) AND ramptr(2) AND ramptr(3) AND ramptr(4) AND 
+	ramptr(5) AND ramptr(6) AND ramptr(7) AND ramptr(8) AND ramptr(9) AND 
+	NOT clk2 AND flag_r));
+
+FTCPE_ramptr14: FTCPE port map (ramptr(14),ramptr_T(14),GCLK2,'0','0');
+ramptr_T(14) <= ((NOT flag_w AND NOT lincnt(0) AND NOT lincnt(2) AND NOT lincnt(5) AND 
+	NOT lincnt(1) AND NOT lincnt(3) AND NOT lincnt(4) AND NOT lincnt(6) AND NOT lincnt(7) AND 
+	NOT lincnt(8) AND NOT lincnt(9) AND ramptr(14) AND clk2)
+	OR (NOT lincnt(0) AND NOT lincnt(2) AND NOT lincnt(5) AND NOT lincnt(1) AND 
+	NOT lincnt(3) AND NOT lincnt(4) AND NOT lincnt(6) AND NOT lincnt(7) AND NOT lincnt(8) AND 
+	NOT lincnt(9) AND ramptr(14) AND NOT clk2 AND NOT flag_r)
+	OR (flag_w AND ramptr(0) AND ramptr(10) AND ramptr(11) AND 
+	ramptr(12) AND ramptr(13) AND ramptr(1) AND ramptr(2) AND ramptr(3) AND 
+	ramptr(4) AND ramptr(5) AND ramptr(6) AND ramptr(7) AND ramptr(8) AND 
+	ramptr(9) AND clk2)
+	OR (ramptr(0) AND ramptr(10) AND ramptr(11) AND 
+	ramptr(12) AND ramptr(13) AND ramptr(1) AND ramptr(2) AND ramptr(3) AND 
+	ramptr(4) AND ramptr(5) AND ramptr(6) AND ramptr(7) AND ramptr(8) AND 
+	ramptr(9) AND NOT clk2 AND flag_r));
+
+FTCPE_ramptr15: FTCPE port map (ramptr(15),ramptr_T(15),GCLK2,'0','0');
+ramptr_T(15) <= ((NOT flag_w AND NOT lincnt(0) AND NOT lincnt(2) AND NOT lincnt(5) AND 
+	NOT lincnt(1) AND NOT lincnt(3) AND NOT lincnt(4) AND NOT lincnt(6) AND NOT lincnt(7) AND 
+	NOT lincnt(8) AND NOT lincnt(9) AND ramptr(15) AND clk2)
+	OR (NOT lincnt(0) AND NOT lincnt(2) AND NOT lincnt(5) AND NOT lincnt(1) AND 
+	NOT lincnt(3) AND NOT lincnt(4) AND NOT lincnt(6) AND NOT lincnt(7) AND NOT lincnt(8) AND 
+	NOT lincnt(9) AND ramptr(15) AND NOT clk2 AND NOT flag_r)
+	OR (flag_w AND ramptr(0) AND ramptr(10) AND ramptr(11) AND 
+	ramptr(12) AND ramptr(13) AND ramptr(14) AND ramptr(1) AND ramptr(2) AND 
+	ramptr(3) AND ramptr(4) AND ramptr(5) AND ramptr(6) AND ramptr(7) AND 
+	ramptr(8) AND ramptr(9) AND clk2)
+	OR (ramptr(0) AND ramptr(10) AND ramptr(11) AND 
+	ramptr(12) AND ramptr(13) AND ramptr(14) AND ramptr(1) AND ramptr(2) AND 
+	ramptr(3) AND ramptr(4) AND ramptr(5) AND ramptr(6) AND ramptr(7) AND 
+	ramptr(8) AND ramptr(9) AND NOT clk2 AND flag_r));
+
+FTCPE_ramptr16: FTCPE port map (ramptr(16),ramptr_T(16),GCLK2,'0','0');
+ramptr_T(16) <= ((NOT flag_w AND NOT lincnt(0) AND NOT lincnt(2) AND NOT lincnt(5) AND 
+	NOT lincnt(1) AND NOT lincnt(3) AND NOT lincnt(4) AND NOT lincnt(6) AND NOT lincnt(7) AND 
+	NOT lincnt(8) AND NOT lincnt(9) AND ramptr(16) AND clk2)
+	OR (NOT lincnt(0) AND NOT lincnt(2) AND NOT lincnt(5) AND NOT lincnt(1) AND 
+	NOT lincnt(3) AND NOT lincnt(4) AND NOT lincnt(6) AND NOT lincnt(7) AND NOT lincnt(8) AND 
+	NOT lincnt(9) AND ramptr(16) AND NOT clk2 AND NOT flag_r)
+	OR (flag_w AND ramptr(0) AND ramptr(10) AND ramptr(11) AND 
+	ramptr(12) AND ramptr(13) AND ramptr(14) AND ramptr(15) AND 
+	ramptr(1) AND ramptr(2) AND ramptr(3) AND ramptr(4) AND ramptr(5) AND 
+	ramptr(6) AND ramptr(7) AND ramptr(8) AND ramptr(9) AND clk2)
+	OR (ramptr(0) AND ramptr(10) AND ramptr(11) AND 
+	ramptr(12) AND ramptr(13) AND ramptr(14) AND ramptr(15) AND 
+	ramptr(1) AND ramptr(2) AND ramptr(3) AND ramptr(4) AND ramptr(5) AND 
+	ramptr(6) AND ramptr(7) AND ramptr(8) AND ramptr(9) AND NOT clk2 AND 
+	flag_r));
+
+FTCPE_ramptr17: FTCPE port map (ramptr(17),ramptr_T(17),GCLK2,'0','0');
+ramptr_T(17) <= ((NOT flag_w AND NOT lincnt(0) AND NOT lincnt(2) AND NOT lincnt(5) AND 
+	NOT lincnt(1) AND NOT lincnt(3) AND NOT lincnt(4) AND NOT lincnt(6) AND NOT lincnt(7) AND 
+	NOT lincnt(8) AND NOT lincnt(9) AND ramptr(17) AND clk2)
+	OR (NOT lincnt(0) AND NOT lincnt(2) AND NOT lincnt(5) AND NOT lincnt(1) AND 
+	NOT lincnt(3) AND NOT lincnt(4) AND NOT lincnt(6) AND NOT lincnt(7) AND NOT lincnt(8) AND 
+	NOT lincnt(9) AND ramptr(17) AND NOT clk2 AND NOT flag_r)
+	OR (flag_w AND ramptr(0) AND ramptr(10) AND ramptr(11) AND 
+	ramptr(12) AND ramptr(13) AND ramptr(14) AND ramptr(15) AND 
+	ramptr(16) AND ramptr(1) AND ramptr(2) AND ramptr(3) AND ramptr(4) AND 
+	ramptr(5) AND ramptr(6) AND ramptr(7) AND ramptr(8) AND ramptr(9) AND 
+	clk2)
+	OR (ramptr(0) AND ramptr(10) AND ramptr(11) AND 
+	ramptr(12) AND ramptr(13) AND ramptr(14) AND ramptr(15) AND 
+	ramptr(16) AND ramptr(1) AND ramptr(2) AND ramptr(3) AND ramptr(4) AND 
+	ramptr(5) AND ramptr(6) AND ramptr(7) AND ramptr(8) AND ramptr(9) AND 
+	NOT clk2 AND flag_r));
+
+FTCPE_ramptr18: FTCPE port map (ramptr(18),ramptr_T(18),GCLK2,'0','0');
+ramptr_T(18) <= ((NOT flag_w AND NOT lincnt(0) AND NOT lincnt(2) AND NOT lincnt(5) AND 
+	NOT lincnt(1) AND NOT lincnt(3) AND NOT lincnt(4) AND NOT lincnt(6) AND NOT lincnt(7) AND 
+	NOT lincnt(8) AND NOT lincnt(9) AND ramptr(18) AND clk2)
+	OR (NOT lincnt(0) AND NOT lincnt(2) AND NOT lincnt(5) AND NOT lincnt(1) AND 
+	NOT lincnt(3) AND NOT lincnt(4) AND NOT lincnt(6) AND NOT lincnt(7) AND NOT lincnt(8) AND 
+	NOT lincnt(9) AND ramptr(18) AND NOT clk2 AND NOT flag_r)
+	OR (flag_w AND ramptr(0) AND ramptr(10) AND ramptr(11) AND 
+	ramptr(12) AND ramptr(13) AND ramptr(14) AND ramptr(15) AND 
+	ramptr(16) AND ramptr(17) AND ramptr(1) AND ramptr(2) AND ramptr(3) AND 
+	ramptr(4) AND ramptr(5) AND ramptr(6) AND ramptr(7) AND ramptr(8) AND 
+	ramptr(9) AND clk2)
+	OR (ramptr(0) AND ramptr(10) AND ramptr(11) AND 
+	ramptr(12) AND ramptr(13) AND ramptr(14) AND ramptr(15) AND 
+	ramptr(16) AND ramptr(17) AND ramptr(1) AND ramptr(2) AND ramptr(3) AND 
+	ramptr(4) AND ramptr(5) AND ramptr(6) AND ramptr(7) AND ramptr(8) AND 
+	ramptr(9) AND NOT clk2 AND flag_r));
+
+FDCPE_rcol0: FDCPE port map (rcol(0),COL(0),GCLK2,'0','0',rcol_CE(0));
+rcol_CE(0) <= (flag_wd AND clk2);
+
+FDCPE_rcol1: FDCPE port map (rcol(1),COL(1),GCLK2,'0','0',rcol_CE(1));
+rcol_CE(1) <= (flag_wd AND clk2);
+
+FDCPE_rcol2: FDCPE port map (rcol(2),COL(2),GCLK2,'0','0',rcol_CE(2));
+rcol_CE(2) <= (flag_wd AND clk2);
+
+FDCPE_rcol3: FDCPE port map (rcol(3),COL(3),GCLK2,'0','0',rcol_CE(3));
+rcol_CE(3) <= (flag_wd AND clk2);
+
+FDCPE_rcol4: FDCPE port map (rcol(4),COL(4),GCLK2,'0','0',rcol_CE(4));
+rcol_CE(4) <= (flag_wd AND clk2);
+
+FDCPE_rcol5: FDCPE port map (rcol(5),COL(5),GCLK2,'0','0',rcol_CE(5));
+rcol_CE(5) <= (flag_wd AND clk2);
+
+FDCPE_rcol6: FDCPE port map (rcol(6),COL(6),GCLK2,'0','0',rcol_CE(6));
+rcol_CE(6) <= (flag_wd AND clk2);
+
+FDCPE_rcol7: FDCPE port map (rcol(7),COL(7),GCLK2,'0','0',rcol_CE(7));
+rcol_CE(7) <= (flag_wd AND clk2);
+
+Register Legend:
+ FDCPE (Q,D,C,CLR,PRE,CE); 
+ FTCPE (Q,D,C,CLR,PRE,CE); 
+ LDCP  (Q,D,G,CLR,PRE); 
+
+******************************  Device Pin Out *****************************
+
+Device : XC95144XL-10-TQ100
+
+
+   --------------------------------------------------  
+  /100 98  96  94  92  90  88  86  84  82  80  78  76  \
+ |   99  97  95  93  91  89  87  85  83  81  79  77    |
+ | 1                                               75  | 
+ | 2                                               74  | 
+ | 3                                               73  | 
+ | 4                                               72  | 
+ | 5                                               71  | 
+ | 6                                               70  | 
+ | 7                                               69  | 
+ | 8                                               68  | 
+ | 9                                               67  | 
+ | 10                                              66  | 
+ | 11                                              65  | 
+ | 12                                              64  | 
+ | 13              XC95144XL-10-TQ100              63  | 
+ | 14                                              62  | 
+ | 15                                              61  | 
+ | 16                                              60  | 
+ | 17                                              59  | 
+ | 18                                              58  | 
+ | 19                                              57  | 
+ | 20                                              56  | 
+ | 21                                              55  | 
+ | 22                                              54  | 
+ | 23                                              53  | 
+ | 24                                              52  | 
+ | 25                                              51  | 
+ |   27  29  31  33  35  37  39  41  43  45  47  49    |
+  \26  28  30  32  34  36  38  40  42  44  46  48  50  /
+   --------------------------------------------------  
+
+
+Pin Signal                         Pin Signal                        
+No. Name                           No. Name                          
+  1 XM1                              51 VCC                           
+  2 KPR                              52 SRAM_ADDR<17>                 
+  3 KPR                              53 SRAM_ADDR<16>                 
+  4 KPR                              54 SRAM_ADDR<15>                 
+  5 VCC                              55 SRAM_ADDR<14>                 
+  6 XM2                              56 SRAM_ADDR<13>                 
+  7 KPR                              57 VCC                           
+  8 X2A                              58 RAM_RD                        
+  9 KPR                              59 RAM_WR                        
+ 10 KPR                              60 SRAM_DATA<4>                  
+ 11 KPR                              61 SRAM_DATA<5>                  
+ 12 KPR                              62 GND                           
+ 13 KPR                              63 SRAM_DATA<6>                  
+ 14 KPR                              64 SRAM_DATA<7>                  
+ 15 KPR                              65 SRAM_DATA<0>                  
+ 16 KPR                              66 SRAM_DATA<1>                  
+ 17 KPR                              67 SRAM_DATA<2>                  
+ 18 KPR                              68 SRAM_DATA<3>                  
+ 19 KPR                              69 GND                           
+ 20 KPR                              70 SRAM_ADDR<9>                  
+ 21 GND                              71 SRAM_ADDR<8>                  
+ 22 KPR                              72 SRAM_ADDR<7>                  
+ 23 GCLK2                            73 KPR                           
+ 24 KPR                              74 SRAM_ADDR<6>                  
+ 25 KPR                              75 GND                           
+ 26 VCC                              76 SRAM_ADDR<5>                  
+ 27 KPR                              77 SRAM_ADDR<4>                  
+ 28 DAC<0>                           78 SRAM_ADDR<3>                  
+ 29 DAC<1>                           79 SRAM_ADDR<2>                  
+ 30 DAC<2>                           80 KPR                           
+ 31 GND                              81 SRAM_ADDR<1>                  
+ 32 DAC<3>                           82 SRAM_ADDR<0>                  
+ 33 DAC<4>                           83 TDO                           
+ 34 KPR                              84 GND                           
+ 35 DAC<5>                           85 SRAM_ADDR<10>                 
+ 36 DAC<7>                           86 SRAM_ADDR<11>                 
+ 37 DAC<6>                           87 SRAM_ADDR<12>                 
+ 38 VCC                              88 VCC                           
+ 39 HSYNC                            89 KPR                           
+ 40 VSYNC                            90 COL<0>                        
+ 41 KPR                              91 COL<1>                        
+ 42 KPR                              92 COL<2>                        
+ 43 KPR                              93 COL<3>                        
+ 44 GND                              94 COL<4>                        
+ 45 TDI                              95 COL<5>                        
+ 46 KPR                              96 COL<6>                        
+ 47 TMS                              97 COL<7>                        
+ 48 TCK                              98 VCC                           
+ 49 RAM_CE                           99 KPR                           
+ 50 SRAM_ADDR<18>                   100 GND                           
+
+
+Legend :  NC  = Not Connected, unbonded pin
+         PGND = Unused I/O configured as additional Ground pin
+         TIE  = Unused I/O floating -- must tie to VCC, GND or other signal
+         KPR  = Unused I/O with weak keeper (leave unconnected)
+         VCC  = Dedicated Power Pin
+         GND  = Dedicated Ground Pin
+         TDI  = Test Data In, JTAG pin
+         TDO  = Test Data Out, JTAG pin
+         TCK  = Test Clock, JTAG pin
+         TMS  = Test Mode Select, JTAG pin
+  PROHIBITED  = User reserved pin
+****************************  Compiler Options  ****************************
+
+Following is a list of all global compiler options used by the fitter run.
+
+Device(s) Specified                         : xc95144xl-10-TQ100
+Optimization Method                         : SPEED
+Multi-Level Logic Optimization              : ON
+Ignore Timing Specifications                : OFF
+Default Register Power Up Value             : LOW
+Keep User Location Constraints              : ON
+What-You-See-Is-What-You-Get                : OFF
+Exhaustive Fitting                          : OFF
+Keep Unused Inputs                          : OFF
+Slew Rate                                   : FAST
+Power Mode                                  : STD
+Ground on Unused IOs                        : OFF
+Set I/O Pin Termination                     : KEEPER
+Global Clock Optimization                   : ON
+Global Set/Reset Optimization               : ON
+Global Ouput Enable Optimization            : ON
+Input Limit                                 : 54
+Pterm Limit                                 : 25

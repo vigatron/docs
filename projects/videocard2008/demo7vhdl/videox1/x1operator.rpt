@@ -1,0 +1,1429 @@
+ 
+cpldfit:  version J.36                              Xilinx Inc.
+                                  Fitter Report
+Design Name: x1operator                          Date: 12-28-2007,  1:51PM
+Device Used: XC95144XL-10-TQ100
+Fitting Status: Successful
+
+*************************  Mapped Resource Summary  **************************
+
+Macrocells     Product Terms    Function Block   Registers      Pins           
+Used/Tot       Used/Tot         Inps Used/Tot    Used/Tot       Used/Tot       
+74 /144 ( 51%) 340 /720  ( 47%) 209/432 ( 48%)   74 /144 ( 51%) 56 /81  ( 69%)
+
+** Function Block Resources **
+
+Function    Mcells      FB Inps     Pterms      IO          
+Block       Used/Tot    Used/Tot    Used/Tot    Used/Tot    
+FB1           0/18        0/54        0/90       0/11
+FB2           0/18        0/54        0/90       0/10
+FB3           7/18       14/54       18/90       5/10
+FB4          11/18       39/54       60/90       1/10
+FB5          11/18       39/54       54/90       4/10
+FB6          11/18       39/54       48/90       9/10
+FB7          18/18*      39/54       76/90      10/10*
+FB8          16/18       39/54       84/90       9/10
+             -----       -----       -----      -----    
+             74/144     209/432     340/720     38/81 
+
+* - Resource is exhausted
+
+** Global Control Resources **
+
+Signal 'GCLK2' mapped onto global clock net GCK2.
+Global output enable net(s) unused.
+Global set/reset net(s) unused.
+
+** Pin Resources **
+
+Signal Type    Required     Mapped  |  Pin Type            Used    Total 
+------------------------------------|------------------------------------
+Input         :   17          17    |  I/O              :    55      73
+Output        :   30          30    |  GCK/IO           :     1       3
+Bidirectional :    8           8    |  GTS/IO           :     0       4
+GCK           :    1           1    |  GSR/IO           :     0       1
+GTS           :    0           0    |
+GSR           :    0           0    |
+                 ----        ----
+        Total     56          56
+
+** Power Data **
+
+There are 74 macrocells in high performance mode (MCHP).
+There are 0 macrocells in low power mode (MCLP).
+End of Mapped Resource Summary
+**************************  Errors and Warnings  ***************************
+
+WARNING:Cpld:1007 - Removing unused input(s) 'FIQ'.  The input(s) are unused
+   after optimization. Please verify functionality via simulation.
+WARNING:Cpld:1007 - Removing unused input(s) 'GCLK1'.  The input(s) are unused
+   after optimization. Please verify functionality via simulation.
+WARNING:Cpld:1007 - Removing unused input(s) 'HSYNC'.  The input(s) are unused
+   after optimization. Please verify functionality via simulation.
+WARNING:Cpld:1007 - Removing unused input(s) 'IRQ0'.  The input(s) are unused
+   after optimization. Please verify functionality via simulation.
+WARNING:Cpld:1007 - Removing unused input(s) 'IRQ1'.  The input(s) are unused
+   after optimization. Please verify functionality via simulation.
+WARNING:Cpld:1007 - Removing unused input(s) 'MCU_CMD<4>'.  The input(s) are
+   unused after optimization. Please verify functionality via simulation.
+WARNING:Cpld:1007 - Removing unused input(s) 'MCU_CMD<5>'.  The input(s) are
+   unused after optimization. Please verify functionality via simulation.
+WARNING:Cpld:1007 - Removing unused input(s) 'MCU_CMD<6>'.  The input(s) are
+   unused after optimization. Please verify functionality via simulation.
+WARNING:Cpld:1007 - Removing unused input(s) 'MCU_CMD<7>'.  The input(s) are
+   unused after optimization. Please verify functionality via simulation.
+WARNING:Cpld:1007 - Removing unused input(s) 'X1B'.  The input(s) are unused
+   after optimization. Please verify functionality via simulation.
+WARNING:Cpld:1007 - Removing unused input(s) 'X1C'.  The input(s) are unused
+   after optimization. Please verify functionality via simulation.
+*************************  Summary of Mapped Logic  ************************
+
+** 38 Outputs **
+
+Signal              Total Total Loc     Pin  Pin     Pin     Pwr  Slew Reg Init
+Name                Pts   Inps          No.  Type    Use     Mode Rate State
+COL<7>              2     3     FB3_9   28   I/O     O       STD  FAST RESET
+COL<6>              2     3     FB3_11  29   I/O     O       STD  FAST RESET
+COL<5>              2     3     FB3_12  30   I/O     O       STD  FAST RESET
+COL<4>              2     3     FB3_14  32   I/O     O       STD  FAST RESET
+COL<3>              2     3     FB3_15  33   I/O     O       STD  FAST RESET
+RAM_ADR<12>         4     13    FB4_2   87   I/O     O       STD  FAST RESET
+COL<2>              2     3     FB5_2   35   I/O     O       STD  FAST RESET
+COL<1>              2     3     FB5_5   36   I/O     O       STD  FAST RESET
+COL<0>              2     3     FB5_6   37   I/O     O       STD  FAST RESET
+RAM_CE              6     12    FB5_17  49   I/O     O       STD  FAST RESET
+RAM_ADR<6>          4     13    FB6_2   74   I/O     O       STD  FAST RESET
+RAM_ADR<5>          4     13    FB6_5   76   I/O     O       STD  FAST RESET
+RAM_ADR<4>          4     13    FB6_6   77   I/O     O       STD  FAST RESET
+RAM_ADR<3>          4     13    FB6_8   78   I/O     O       STD  FAST RESET
+RAM_ADR<2>          4     13    FB6_9   79   I/O     O       STD  FAST RESET
+RAM_ADR<1>          4     13    FB6_12  81   I/O     O       STD  FAST RESET
+RAM_ADR<0>          4     13    FB6_14  82   I/O     O       STD  FAST RESET
+RAM_ADR<10>         4     13    FB6_15  85   I/O     O       STD  FAST RESET
+RAM_ADR<11>         4     13    FB6_17  86   I/O     O       STD  FAST RESET
+RAM_ADR<18>         4     13    FB7_2   50   I/O     O       STD  FAST RESET
+RAM_ADR<17>         4     13    FB7_5   52   I/O     O       STD  FAST RESET
+RAM_ADR<16>         4     13    FB7_6   53   I/O     O       STD  FAST RESET
+RAM_ADR<15>         4     13    FB7_8   54   I/O     O       STD  FAST RESET
+RAM_ADR<14>         4     13    FB7_9   55   I/O     O       STD  FAST RESET
+RAM_ADR<13>         4     13    FB7_11  56   I/O     O       STD  FAST RESET
+RAM_RD              3     6     FB7_12  58   I/O     O       STD  FAST RESET
+RAM_WR              4     10    FB7_14  59   I/O     O       STD  FAST RESET
+RAM_DAT<4>          5     14    FB7_15  60   I/O     I/O     STD  FAST RESET
+RAM_DAT<5>          5     14    FB7_17  61   I/O     I/O     STD  FAST RESET
+RAM_DAT<6>          5     14    FB8_2   63   I/O     I/O     STD  FAST RESET
+RAM_DAT<7>          5     14    FB8_5   64   I/O     I/O     STD  FAST RESET
+RAM_DAT<0>          5     14    FB8_6   65   I/O     I/O     STD  FAST RESET
+RAM_DAT<1>          5     14    FB8_8   66   I/O     I/O     STD  FAST RESET
+RAM_DAT<2>          5     14    FB8_9   67   I/O     I/O     STD  FAST RESET
+RAM_DAT<3>          5     14    FB8_11  68   I/O     I/O     STD  FAST RESET
+RAM_ADR<9>          4     13    FB8_12  70   I/O     O       STD  FAST RESET
+RAM_ADR<8>          4     13    FB8_14  71   I/O     O       STD  FAST RESET
+RAM_ADR<7>          4     13    FB8_15  72   I/O     O       STD  FAST RESET
+
+** 36 Buried Nodes **
+
+Signal              Total Total Loc     Pwr  Reg Init
+Name                Pts   Inps          Mode State
+cmdid<3>            4     5     FB3_17  STD  RESET
+cmdid<2>            4     5     FB3_18  STD  RESET
+ramdat<0>           6     8     FB4_1   STD  RESET
+cmdid<1>            4     5     FB4_9   STD  RESET
+cmdid<0>            4     5     FB4_10  STD  RESET
+ramdat<7>           6     8     FB4_11  STD  RESET
+ramdat<6>           6     8     FB4_12  STD  RESET
+ramdat<5>           6     8     FB4_14  STD  RESET
+ramdat<4>           6     8     FB4_15  STD  RESET
+ramdat<3>           6     8     FB4_16  STD  RESET
+ramdat<2>           6     8     FB4_17  STD  RESET
+ramdat<1>           6     8     FB4_18  STD  RESET
+ramptr<0>           6     14    FB5_1   STD  RESET
+ramptr<18>          6     32    FB5_11  STD  RESET
+ramptr<17>          6     31    FB5_12  STD  RESET
+ramptr<16>          6     30    FB5_13  STD  RESET
+ramptr<13>          6     27    FB5_14  STD  RESET
+ramptr<12>          6     26    FB5_15  STD  RESET
+ramptr<11>          6     25    FB5_16  STD  RESET
+ramptr<15>          6     29    FB6_16  STD  RESET
+ramptr<14>          6     28    FB6_18  STD  RESET
+clk2                2     3     FB7_1   STD  RESET
+Mtrien_RAM_DAT      2     12    FB7_3   STD  RESET
+autostep<0>         3     4     FB7_4   STD  RESET
+cmddone             5     9     FB7_7   STD  RESET
+autostep<1>         5     5     FB7_10  STD  RESET
+ramptr<6>           6     20    FB7_13  STD  RESET
+ramptr<5>           6     19    FB7_16  STD  RESET
+ramptr<4>           6     18    FB7_18  STD  RESET
+ramptr<10>          6     24    FB8_1   STD  RESET
+ramptr<9>           6     23    FB8_4   STD  RESET
+ramptr<8>           6     22    FB8_7   STD  RESET
+ramptr<7>           6     21    FB8_10  STD  RESET
+ramptr<3>           6     17    FB8_13  STD  RESET
+ramptr<2>           6     16    FB8_17  STD  RESET
+ramptr<1>           6     15    FB8_18  STD  RESET
+
+** 18 Inputs **
+
+Signal              Loc     Pin  Pin     Pin     
+Name                        No.  Type    Use     
+MCU_DAT<1>          FB1_2   11   I/O     I
+MCU_DAT<0>          FB1_3   12   I/O     I
+MCU_DAT<7>          FB1_5   13   I/O     I
+MCU_DAT<5>          FB1_6   14   I/O     I
+MCU_DAT<6>          FB1_8   15   I/O     I
+MCU_SWR             FB1_15  20   I/O     I
+MCU_DAT<4>          FB2_14  8    I/O     I
+MCU_DAT<3>          FB2_15  9    I/O     I
+MCU_DAT<2>          FB2_17  10   I/O     I
+GCLK2               FB3_2   23   GCK/I/O GCK
+MCU_CMD<1>          FB4_5   89   I/O     I
+MCU_CMD<0>          FB4_6   90   I/O     I
+MCU_CMD<2>          FB4_8   91   I/O     I
+MCU_CMD<3>          FB4_9   92   I/O     I
+X1A                 FB4_17  97   I/O     I
+VSYNC               FB5_9   40   I/O     I
+XM1                 FB5_11  41   I/O     I
+XM2                 FB5_12  42   I/O     I
+
+Legend:
+Pin No. - ~ - User Assigned
+**************************  Function Block Details  ************************
+Legend:
+Total Pt     - Total product terms used by the macrocell signal
+Imp Pt       - Product terms imported from other macrocells
+Exp Pt       - Product terms exported to other macrocells
+               in direction shown
+Unused Pt    - Unused local product terms remaining in macrocell
+Loc          - Location where logic was mapped in device
+Pin Type/Use - I  - Input             GCK - Global Clock
+               O  - Output            GTS - Global Output Enable
+              (b) - Buried macrocell  GSR - Global Set/Reset
+X            - Signal used as input to the macrocell logic.
+Pin No.      - ~  - User Assigned
+*********************************** FB1  ***********************************
+Number of function block inputs used/remaining:               0/54
+Number of signals used by logic mapping into function block:  0
+Signal              Total   Imp   Exp Unused  Loc     Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt               #    Type    Use
+(unused)              0       0     0   5     FB1_1         (b)     
+(unused)              0       0     0   5     FB1_2   11    I/O     I
+(unused)              0       0     0   5     FB1_3   12    I/O     I
+(unused)              0       0     0   5     FB1_4         (b)     
+(unused)              0       0     0   5     FB1_5   13    I/O     I
+(unused)              0       0     0   5     FB1_6   14    I/O     I
+(unused)              0       0     0   5     FB1_7         (b)     
+(unused)              0       0     0   5     FB1_8   15    I/O     I
+(unused)              0       0     0   5     FB1_9   16    I/O     
+(unused)              0       0     0   5     FB1_10        (b)     
+(unused)              0       0     0   5     FB1_11  17    I/O     
+(unused)              0       0     0   5     FB1_12  18    I/O     
+(unused)              0       0     0   5     FB1_13        (b)     
+(unused)              0       0     0   5     FB1_14  19    I/O     
+(unused)              0       0     0   5     FB1_15  20    I/O     I
+(unused)              0       0     0   5     FB1_16        (b)     
+(unused)              0       0     0   5     FB1_17  22    GCK/I/O 
+(unused)              0       0     0   5     FB1_18        (b)     
+*********************************** FB2  ***********************************
+Number of function block inputs used/remaining:               0/54
+Number of signals used by logic mapping into function block:  0
+Signal              Total   Imp   Exp Unused  Loc     Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt               #    Type    Use
+(unused)              0       0     0   5     FB2_1         (b)     
+(unused)              0       0     0   5     FB2_2   99    GSR/I/O 
+(unused)              0       0     0   5     FB2_3         (b)     
+(unused)              0       0     0   5     FB2_4         (b)     
+(unused)              0       0     0   5     FB2_5   1     GTS/I/O 
+(unused)              0       0     0   5     FB2_6   2     GTS/I/O 
+(unused)              0       0     0   5     FB2_7         (b)     
+(unused)              0       0     0   5     FB2_8   3     GTS/I/O 
+(unused)              0       0     0   5     FB2_9   4     GTS/I/O 
+(unused)              0       0     0   5     FB2_10        (b)     
+(unused)              0       0     0   5     FB2_11  6     I/O     
+(unused)              0       0     0   5     FB2_12  7     I/O     
+(unused)              0       0     0   5     FB2_13        (b)     
+(unused)              0       0     0   5     FB2_14  8     I/O     I
+(unused)              0       0     0   5     FB2_15  9     I/O     I
+(unused)              0       0     0   5     FB2_16        (b)     
+(unused)              0       0     0   5     FB2_17  10    I/O     I
+(unused)              0       0     0   5     FB2_18        (b)     
+*********************************** FB3  ***********************************
+Number of function block inputs used/remaining:               14/40
+Number of signals used by logic mapping into function block:  14
+Signal              Total   Imp   Exp Unused  Loc     Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt               #    Type    Use
+(unused)              0       0     0   5     FB3_1         (b)     
+(unused)              0       0     0   5     FB3_2   23    GCK/I/O GCK
+(unused)              0       0     0   5     FB3_3         (b)     
+(unused)              0       0     0   5     FB3_4         (b)     
+(unused)              0       0     0   5     FB3_5   24    I/O     
+(unused)              0       0     0   5     FB3_6   25    I/O     
+(unused)              0       0     0   5     FB3_7         (b)     
+(unused)              0       0     0   5     FB3_8   27    GCK/I/O 
+COL<7>                2       0     0   3     FB3_9   28    I/O     O
+(unused)              0       0     0   5     FB3_10        (b)     
+COL<6>                2       0     0   3     FB3_11  29    I/O     O
+COL<5>                2       0     0   3     FB3_12  30    I/O     O
+(unused)              0       0     0   5     FB3_13        (b)     
+COL<4>                2       0     0   3     FB3_14  32    I/O     O
+COL<3>                2       0     0   3     FB3_15  33    I/O     O
+(unused)              0       0     0   5     FB3_16        (b)     
+cmdid<3>              4       0     0   1     FB3_17  34    I/O     (b)
+cmdid<2>              4       0     0   1     FB3_18        (b)     (b)
+
+Signals Used by Logic in Function Block
+  1: MCU_CMD<2>         6: clk2              11: ramdat<4> 
+  2: MCU_CMD<3>         7: cmddone           12: ramdat<5> 
+  3: MCU_SWR            8: cmdid<2>          13: ramdat<6> 
+  4: X1A                9: cmdid<3>          14: ramdat<7> 
+  5: XM2               10: ramdat<3>        
+
+Signal                        1         2         3         4 FB
+Name                0----+----0----+----0----+----0----+----0 Inputs
+COL<7>               ....XX.......X.......................... 3
+COL<6>               ....XX......X........................... 3
+COL<5>               ....XX.....X............................ 3
+COL<4>               ....XX....X............................. 3
+COL<3>               ....XX...X.............................. 3
+cmdid<3>             .XXX..X.X............................... 5
+cmdid<2>             X.XX..XX................................ 5
+                    0----+----1----+----2----+----3----+----4
+                              0         0         0         0
+*********************************** FB4  ***********************************
+Number of function block inputs used/remaining:               39/15
+Number of signals used by logic mapping into function block:  39
+Signal              Total   Imp   Exp Unused  Loc     Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt               #    Type    Use
+ramdat<0>             6       3<- /\2   0     FB4_1         (b)     (b)
+RAM_ADR<12>           4       2<- /\3   0     FB4_2   87    I/O     O
+(unused)              0       0   /\2   3     FB4_3         (b)     (b)
+(unused)              0       0     0   5     FB4_4         (b)     
+(unused)              0       0     0   5     FB4_5   89    I/O     I
+(unused)              0       0     0   5     FB4_6   90    I/O     I
+(unused)              0       0     0   5     FB4_7         (b)     
+(unused)              0       0     0   5     FB4_8   91    I/O     I
+cmdid<1>              4       0   \/1   0     FB4_9   92    I/O     I
+cmdid<0>              4       1<- \/2   0     FB4_10        (b)     (b)
+ramdat<7>             6       2<- \/1   0     FB4_11  93    I/O     (b)
+ramdat<6>             6       1<-   0   0     FB4_12  94    I/O     (b)
+(unused)              0       0   \/3   2     FB4_13        (b)     (b)
+ramdat<5>             6       3<- \/2   0     FB4_14  95    I/O     (b)
+ramdat<4>             6       2<- \/1   0     FB4_15  96    I/O     (b)
+ramdat<3>             6       1<-   0   0     FB4_16        (b)     (b)
+ramdat<2>             6       1<-   0   0     FB4_17  97    I/O     I
+ramdat<1>             6       2<- /\1   0     FB4_18        (b)     (b)
+
+Signals Used by Logic in Function Block
+  1: MCU_CMD<0>        14: RAM_DAT<5>.PIN    27: cmdid<0> 
+  2: MCU_CMD<1>        15: RAM_DAT<4>.PIN    28: cmdid<1> 
+  3: MCU_DAT<0>        16: RAM_DAT<3>.PIN    29: cmdid<2> 
+  4: MCU_DAT<1>        17: RAM_DAT<2>.PIN    30: cmdid<3> 
+  5: MCU_DAT<2>        18: RAM_DAT<1>.PIN    31: ramdat<0> 
+  6: MCU_DAT<3>        19: RAM_DAT<0>.PIN    32: ramdat<1> 
+  7: MCU_DAT<4>        20: RAM_ADR<12>       33: ramdat<2> 
+  8: MCU_DAT<5>        21: X1A               34: ramdat<3> 
+  9: MCU_DAT<6>        22: XM1               35: ramdat<4> 
+ 10: MCU_DAT<7>        23: autostep<0>       36: ramdat<5> 
+ 11: MCU_SWR           24: autostep<1>       37: ramdat<6> 
+ 12: RAM_DAT<7>.PIN    25: clk2              38: ramdat<7> 
+ 13: RAM_DAT<6>.PIN    26: cmddone           39: ramptr<12> 
+
+Signal                        1         2         3         4 FB
+Name                0----+----0----+----0----+----0----+----0 Inputs
+ramdat<0>            ..X.......X.......X.XX..XX....X......... 8
+RAM_ADR<12>          ..........X........XXXXXXXXXXX........X. 13
+cmdid<1>             .X........X.........X....X.X............ 5
+cmdid<0>             X.........X.........X....XX............. 5
+ramdat<7>            .........XXX........XX..XX...........X.. 8
+ramdat<6>            ........X.X.X.......XX..XX..........X... 8
+ramdat<5>            .......X..X..X......XX..XX.........X.... 8
+ramdat<4>            ......X...X...X.....XX..XX........X..... 8
+ramdat<3>            .....X....X....X....XX..XX.......X...... 8
+ramdat<2>            ....X.....X.....X...XX..XX......X....... 8
+ramdat<1>            ...X......X......X..XX..XX.....X........ 8
+                    0----+----1----+----2----+----3----+----4
+                              0         0         0         0
+*********************************** FB5  ***********************************
+Number of function block inputs used/remaining:               39/15
+Number of signals used by logic mapping into function block:  39
+Signal              Total   Imp   Exp Unused  Loc     Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt               #    Type    Use
+ramptr<0>             6       1<-   0   0     FB5_1         (b)     (b)
+COL<2>                2       0   /\1   2     FB5_2   35    I/O     O
+(unused)              0       0     0   5     FB5_3         (b)     
+(unused)              0       0     0   5     FB5_4         (b)     
+COL<1>                2       0     0   3     FB5_5   36    I/O     O
+COL<0>                2       0     0   3     FB5_6   37    I/O     O
+(unused)              0       0     0   5     FB5_7         (b)     
+(unused)              0       0     0   5     FB5_8   39    I/O     
+(unused)              0       0     0   5     FB5_9   40    I/O     I
+(unused)              0       0   \/4   1     FB5_10        (b)     (b)
+ramptr<18>            6       4<- \/3   0     FB5_11  41    I/O     I
+ramptr<17>            6       3<- \/2   0     FB5_12  42    I/O     I
+ramptr<16>            6       2<- \/1   0     FB5_13        (b)     (b)
+ramptr<13>            6       1<-   0   0     FB5_14  43    I/O     (b)
+ramptr<12>            6       1<-   0   0     FB5_15  46    I/O     (b)
+ramptr<11>            6       2<- /\1   0     FB5_16        (b)     (b)
+RAM_CE                6       3<- /\2   0     FB5_17  49    I/O     O
+(unused)              0       0   /\3   2     FB5_18        (b)     (b)
+
+Signals Used by Logic in Function Block
+  1: MCU_SWR           14: cmdid<3>          27: ramptr<15> 
+  2: RAM_CE            15: ramdat<0>         28: ramptr<16> 
+  3: VSYNC             16: ramdat<1>         29: ramptr<17> 
+  4: X1A               17: ramdat<2>         30: ramptr<18> 
+  5: XM1               18: ramdat<3>         31: ramptr<1> 
+  6: XM2               19: ramdat<4>         32: ramptr<2> 
+  7: autostep<0>       20: ramdat<5>         33: ramptr<3> 
+  8: autostep<1>       21: ramptr<0>         34: ramptr<4> 
+  9: clk2              22: ramptr<10>        35: ramptr<5> 
+ 10: cmddone           23: ramptr<11>        36: ramptr<6> 
+ 11: cmdid<0>          24: ramptr<12>        37: ramptr<7> 
+ 12: cmdid<1>          25: ramptr<13>        38: ramptr<8> 
+ 13: cmdid<2>          26: ramptr<14>        39: ramptr<9> 
+
+Signal                        1         2         3         4 FB
+Name                0----+----0----+----0----+----0----+----0 Inputs
+ramptr<0>            X.XXX.XXXXXXXXX.....X................... 14
+COL<2>               .....X..X.......X....................... 3
+COL<1>               .....X..X......X........................ 3
+COL<0>               .....X..X.....X......................... 3
+ramptr<18>           X.XXX.XXXXXXXX..X...XXXXXXXXXXXXXXXXXXX. 32
+ramptr<17>           X.XXX.XXXXXXXX.X....XXXXXXXXX.XXXXXXXXX. 31
+ramptr<16>           X.XXX.XXXXXXXXX.....XXXXXXXX..XXXXXXXXX. 30
+ramptr<13>           X.XXX.XXXXXXXX.....XXXXXX.....XXXXXXXXX. 27
+ramptr<12>           X.XXX.XXXXXXXX....X.XXXX......XXXXXXXXX. 26
+ramptr<11>           X.XXX.XXXXXXXX...X..XXX.......XXXXXXXXX. 25
+RAM_CE               XX.XX.XXXXXXXX.......................... 12
+                    0----+----1----+----2----+----3----+----4
+                              0         0         0         0
+*********************************** FB6  ***********************************
+Number of function block inputs used/remaining:               39/15
+Number of signals used by logic mapping into function block:  39
+Signal              Total   Imp   Exp Unused  Loc     Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt               #    Type    Use
+(unused)              0       0     0   5     FB6_1         (b)     
+RAM_ADR<6>            4       0     0   1     FB6_2   74    I/O     O
+(unused)              0       0     0   5     FB6_3         (b)     
+(unused)              0       0     0   5     FB6_4         (b)     
+RAM_ADR<5>            4       0     0   1     FB6_5   76    I/O     O
+RAM_ADR<4>            4       0     0   1     FB6_6   77    I/O     O
+(unused)              0       0     0   5     FB6_7         (b)     
+RAM_ADR<3>            4       0     0   1     FB6_8   78    I/O     O
+RAM_ADR<2>            4       0     0   1     FB6_9   79    I/O     O
+(unused)              0       0     0   5     FB6_10        (b)     
+(unused)              0       0     0   5     FB6_11  80    I/O     
+RAM_ADR<1>            4       0     0   1     FB6_12  81    I/O     O
+(unused)              0       0     0   5     FB6_13        (b)     
+RAM_ADR<0>            4       0     0   1     FB6_14  82    I/O     O
+RAM_ADR<10>           4       0   \/1   0     FB6_15  85    I/O     O
+ramptr<15>            6       1<-   0   0     FB6_16        (b)     (b)
+RAM_ADR<11>           4       0   \/1   0     FB6_17  86    I/O     O
+ramptr<14>            6       1<-   0   0     FB6_18        (b)     (b)
+
+Signals Used by Logic in Function Block
+  1: MCU_SWR           14: autostep<0>       27: ramptr<12> 
+  2: RAM_ADR<0>        15: autostep<1>       28: ramptr<13> 
+  3: RAM_ADR<10>       16: clk2              29: ramptr<14> 
+  4: RAM_ADR<11>       17: cmddone           30: ramptr<15> 
+  5: RAM_ADR<1>        18: cmdid<0>          31: ramptr<1> 
+  6: RAM_ADR<2>        19: cmdid<1>          32: ramptr<2> 
+  7: RAM_ADR<3>        20: cmdid<2>          33: ramptr<3> 
+  8: RAM_ADR<4>        21: cmdid<3>          34: ramptr<4> 
+  9: RAM_ADR<5>        22: ramdat<6>         35: ramptr<5> 
+ 10: RAM_ADR<6>        23: ramdat<7>         36: ramptr<6> 
+ 11: VSYNC             24: ramptr<0>         37: ramptr<7> 
+ 12: X1A               25: ramptr<10>        38: ramptr<8> 
+ 13: XM1               26: ramptr<11>        39: ramptr<9> 
+
+Signal                        1         2         3         4 FB
+Name                0----+----0----+----0----+----0----+----0 Inputs
+RAM_ADR<6>           X........X.XXXXXXXXXX..............X.... 13
+RAM_ADR<5>           X.......X..XXXXXXXXXX.............X..... 13
+RAM_ADR<4>           X......X...XXXXXXXXXX............X...... 13
+RAM_ADR<3>           X.....X....XXXXXXXXXX...........X....... 13
+RAM_ADR<2>           X....X.....XXXXXXXXXX..........X........ 13
+RAM_ADR<1>           X...X......XXXXXXXXXX.........X......... 13
+RAM_ADR<0>           XX.........XXXXXXXXXX..X................ 13
+RAM_ADR<10>          X.X........XXXXXXXXXX...X............... 13
+ramptr<15>           X.........XXXXXXXXXXX.XXXXXXXXXXXXXXXXX. 29
+RAM_ADR<11>          X..X.......XXXXXXXXXX....X.............. 13
+ramptr<14>           X.........XXXXXXXXXXXX.XXXXXX.XXXXXXXXX. 28
+                    0----+----1----+----2----+----3----+----4
+                              0         0         0         0
+*********************************** FB7  ***********************************
+Number of function block inputs used/remaining:               39/15
+Number of signals used by logic mapping into function block:  39
+Signal              Total   Imp   Exp Unused  Loc     Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt               #    Type    Use
+clk2                  2       0   /\1   2     FB7_1         (b)     (b)
+RAM_ADR<18>           4       0     0   1     FB7_2   50    I/O     O
+Mtrien_RAM_DAT        2       0     0   3     FB7_3         (b)     (b)
+autostep<0>           3       0     0   2     FB7_4         (b)     (b)
+RAM_ADR<17>           4       0     0   1     FB7_5   52    I/O     O
+RAM_ADR<16>           4       0     0   1     FB7_6   53    I/O     O
+cmddone               5       0     0   0     FB7_7         (b)     (b)
+RAM_ADR<15>           4       0     0   1     FB7_8   54    I/O     O
+RAM_ADR<14>           4       0     0   1     FB7_9   55    I/O     O
+autostep<1>           5       0     0   0     FB7_10        (b)     (b)
+RAM_ADR<13>           4       0     0   1     FB7_11  56    I/O     O
+RAM_RD                3       0   \/1   1     FB7_12  58    I/O     O
+ramptr<6>             6       1<-   0   0     FB7_13        (b)     (b)
+RAM_WR                4       0   \/1   0     FB7_14  59    I/O     O
+RAM_DAT<4>            5       1<- \/1   0     FB7_15  60    I/O     I/O
+ramptr<5>             6       1<-   0   0     FB7_16        (b)     (b)
+RAM_DAT<5>            5       0     0   0     FB7_17  61    I/O     I/O
+ramptr<4>             6       1<-   0   0     FB7_18        (b)     (b)
+
+Signals Used by Logic in Function Block
+  1: MCU_SWR           14: X1A               27: ramptr<0> 
+  2: Mtrien_RAM_DAT    15: XM1               28: ramptr<13> 
+  3: RAM_ADR<13>       16: autostep<0>       29: ramptr<14> 
+  4: RAM_ADR<14>       17: autostep<1>       30: ramptr<15> 
+  5: RAM_ADR<15>       18: clk2              31: ramptr<16> 
+  6: RAM_ADR<16>       19: cmddone           32: ramptr<17> 
+  7: RAM_ADR<17>       20: cmdid<0>          33: ramptr<18> 
+  8: RAM_ADR<18>       21: cmdid<1>          34: ramptr<1> 
+  9: RAM_DAT<4>        22: cmdid<2>          35: ramptr<2> 
+ 10: RAM_DAT<5>        23: cmdid<3>          36: ramptr<3> 
+ 11: RAM_RD            24: ramdat<4>         37: ramptr<4> 
+ 12: RAM_WR            25: ramdat<5>         38: ramptr<5> 
+ 13: VSYNC             26: ramdat<6>         39: ramptr<6> 
+
+Signal                        1         2         3         4 FB
+Name                0----+----0----+----0----+----0----+----0 Inputs
+clk2                 ............XX...X...................... 3
+RAM_ADR<18>          X......X.....XXXXXXXXXX.........X....... 13
+Mtrien_RAM_DAT       XX...........XXXXXXXXXX................. 12
+autostep<0>          X............X.X..X..................... 4
+RAM_ADR<17>          X.....X......XXXXXXXXXX........X........ 13
+RAM_ADR<16>          X....X.......XXXXXXXXXX.......X......... 13
+cmddone              X............X.XX.XXXXX................. 9
+RAM_ADR<15>          X...X........XXXXXXXXXX......X.......... 13
+RAM_ADR<14>          X..X.........XXXXXXXXXX.....X........... 13
+autostep<1>          X............X.XX.X..................... 5
+RAM_ADR<13>          X.X..........XXXXXXXXXX....X............ 13
+RAM_RD               X.........X..XX..XX..................... 6
+ramptr<6>            X...........XXXXXXXXXXX..XX......XXXXXX. 20
+RAM_WR               X..........X.X.XX.XXXXX................. 10
+RAM_DAT<4>           XX......X....XXXXXXXXXXX................ 14
+ramptr<5>            X...........XXXXXXXXXXX.X.X......XXXXX.. 19
+RAM_DAT<5>           XX.......X...XXXXXXXXXX.X............... 14
+ramptr<4>            X...........XXXXXXXXXXXX..X......XXXX... 18
+                    0----+----1----+----2----+----3----+----4
+                              0         0         0         0
+*********************************** FB8  ***********************************
+Number of function block inputs used/remaining:               39/15
+Number of signals used by logic mapping into function block:  39
+Signal              Total   Imp   Exp Unused  Loc     Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt               #    Type    Use
+ramptr<10>            6       1<-   0   0     FB8_1         (b)     (b)
+RAM_DAT<6>            5       0     0   0     FB8_2   63    I/O     I/O
+(unused)              0       0   \/2   3     FB8_3         (b)     (b)
+ramptr<9>             6       2<- \/1   0     FB8_4         (b)     (b)
+RAM_DAT<7>            5       1<- \/1   0     FB8_5   64    I/O     I/O
+RAM_DAT<0>            5       1<- \/1   0     FB8_6   65    I/O     I/O
+ramptr<8>             6       1<-   0   0     FB8_7         (b)     (b)
+RAM_DAT<1>            5       0     0   0     FB8_8   66    I/O     I/O
+RAM_DAT<2>            5       0     0   0     FB8_9   67    I/O     I/O
+ramptr<7>             6       1<-   0   0     FB8_10        (b)     (b)
+RAM_DAT<3>            5       1<- /\1   0     FB8_11  68    I/O     I/O
+RAM_ADR<9>            4       0   /\1   0     FB8_12  70    I/O     O
+ramptr<3>             6       1<-   0   0     FB8_13        (b)     (b)
+RAM_ADR<8>            4       0   /\1   0     FB8_14  71    I/O     O
+RAM_ADR<7>            4       0     0   1     FB8_15  72    I/O     O
+(unused)              0       0   \/3   2     FB8_16        (b)     (b)
+ramptr<2>             6       3<- \/2   0     FB8_17  73    I/O     (b)
+ramptr<1>             6       2<- \/1   0     FB8_18        (b)     (b)
+
+Signals Used by Logic in Function Block
+  1: MCU_SWR           14: XM1               27: ramdat<6> 
+  2: Mtrien_RAM_DAT    15: autostep<0>       28: ramdat<7> 
+  3: RAM_ADR<7>        16: autostep<1>       29: ramptr<0> 
+  4: RAM_ADR<8>        17: clk2              30: ramptr<10> 
+  5: RAM_ADR<9>        18: cmddone           31: ramptr<1> 
+  6: RAM_DAT<0>        19: cmdid<0>          32: ramptr<2> 
+  7: RAM_DAT<1>        20: cmdid<1>          33: ramptr<3> 
+  8: RAM_DAT<2>        21: cmdid<2>          34: ramptr<4> 
+  9: RAM_DAT<3>        22: cmdid<3>          35: ramptr<5> 
+ 10: RAM_DAT<6>        23: ramdat<0>         36: ramptr<6> 
+ 11: RAM_DAT<7>        24: ramdat<1>         37: ramptr<7> 
+ 12: VSYNC             25: ramdat<2>         38: ramptr<8> 
+ 13: X1A               26: ramdat<3>         39: ramptr<9> 
+
+Signal                        1         2         3         4 FB
+Name                0----+----0----+----0----+----0----+----0 Inputs
+ramptr<10>           X..........XXXXXXXXXXX..X...XXXXXXXXXXX. 24
+RAM_DAT<6>           XX.......X..XXXXXXXXXX....X............. 14
+ramptr<9>            X..........XXXXXXXXXXX.X....X.XXXXXXXXX. 23
+RAM_DAT<7>           XX........X.XXXXXXXXXX.....X............ 14
+RAM_DAT<0>           XX...X......XXXXXXXXXXX................. 14
+ramptr<8>            X..........XXXXXXXXXXXX.....X.XXXXXXXX.. 22
+RAM_DAT<1>           XX....X.....XXXXXXXXXX.X................ 14
+RAM_DAT<2>           XX.....X....XXXXXXXXXX..X............... 14
+ramptr<7>            X..........XXXXXXXXXXX.....XX.XXXXXXX... 21
+RAM_DAT<3>           XX......X...XXXXXXXXXX...X.............. 14
+RAM_ADR<9>           X...X.......XXXXXXXXXX................X. 13
+ramptr<3>            X..........XXXXXXXXXXX...X..X.XXX....... 17
+RAM_ADR<8>           X..X........XXXXXXXXXX...............X.. 13
+RAM_ADR<7>           X.X.........XXXXXXXXXX..............X... 13
+ramptr<2>            X..........XXXXXXXXXXX..X...X.XX........ 16
+ramptr<1>            X..........XXXXXXXXXXX.X....X.X......... 15
+                    0----+----1----+----2----+----3----+----4
+                              0         0         0         0
+*******************************  Equations  ********************************
+
+********** Mapped Logic **********
+
+FDCPE_COL0: FDCPE port map (COL(0),ramdat(0),GCLK2,'0','0',COL_CE(0));
+COL_CE(0) <= (NOT clk2 AND XM2);
+
+FDCPE_COL1: FDCPE port map (COL(1),ramdat(1),GCLK2,'0','0',COL_CE(1));
+COL_CE(1) <= (NOT clk2 AND XM2);
+
+FDCPE_COL2: FDCPE port map (COL(2),ramdat(2),GCLK2,'0','0',COL_CE(2));
+COL_CE(2) <= (NOT clk2 AND XM2);
+
+FDCPE_COL3: FDCPE port map (COL(3),ramdat(3),GCLK2,'0','0',COL_CE(3));
+COL_CE(3) <= (NOT clk2 AND XM2);
+
+FDCPE_COL4: FDCPE port map (COL(4),ramdat(4),GCLK2,'0','0',COL_CE(4));
+COL_CE(4) <= (NOT clk2 AND XM2);
+
+FDCPE_COL5: FDCPE port map (COL(5),ramdat(5),GCLK2,'0','0',COL_CE(5));
+COL_CE(5) <= (NOT clk2 AND XM2);
+
+FDCPE_COL6: FDCPE port map (COL(6),ramdat(6),GCLK2,'0','0',COL_CE(6));
+COL_CE(6) <= (NOT clk2 AND XM2);
+
+FDCPE_COL7: FDCPE port map (COL(7),ramdat(7),GCLK2,'0','0',COL_CE(7));
+COL_CE(7) <= (NOT clk2 AND XM2);
+
+
+
+
+
+
+
+
+
+
+
+
+
+FTCPE_Mtrien_RAM_DAT: FTCPE port map (Mtrien_RAM_DAT,Mtrien_RAM_DAT_T,GCLK2,'0','0');
+Mtrien_RAM_DAT_T <= ((X1A AND NOT Mtrien_RAM_DAT AND NOT clk2 AND XM1)
+	OR (MCU_SWR AND NOT X1A AND cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND Mtrien_RAM_DAT AND NOT autostep(0) AND 
+	NOT autostep(1)));
+
+FTCPE_RAM_ADR0: FTCPE port map (RAM_ADR(0),RAM_ADR_T(0),GCLK2,'0','0');
+RAM_ADR_T(0) <= ((X1A AND ramptr(0) AND NOT clk2 AND NOT RAM_ADR(0) AND XM1)
+	OR (X1A AND NOT ramptr(0) AND NOT clk2 AND RAM_ADR(0) AND XM1)
+	OR (MCU_SWR AND NOT X1A AND cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND NOT autostep(0) AND NOT autostep(1) AND ramptr(0) AND 
+	NOT RAM_ADR(0))
+	OR (MCU_SWR AND NOT X1A AND cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND NOT autostep(0) AND NOT autostep(1) AND NOT ramptr(0) AND 
+	RAM_ADR(0)));
+
+FTCPE_RAM_ADR1: FTCPE port map (RAM_ADR(1),RAM_ADR_T(1),GCLK2,'0','0');
+RAM_ADR_T(1) <= ((X1A AND NOT clk2 AND ramptr(1) AND NOT RAM_ADR(1) AND XM1)
+	OR (X1A AND NOT clk2 AND NOT ramptr(1) AND RAM_ADR(1) AND XM1)
+	OR (MCU_SWR AND NOT X1A AND cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND NOT autostep(0) AND NOT autostep(1) AND ramptr(1) AND 
+	NOT RAM_ADR(1))
+	OR (MCU_SWR AND NOT X1A AND cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND NOT autostep(0) AND NOT autostep(1) AND NOT ramptr(1) AND 
+	RAM_ADR(1)));
+
+FTCPE_RAM_ADR2: FTCPE port map (RAM_ADR(2),RAM_ADR_T(2),GCLK2,'0','0');
+RAM_ADR_T(2) <= ((X1A AND NOT clk2 AND ramptr(2) AND NOT RAM_ADR(2) AND XM1)
+	OR (X1A AND NOT clk2 AND NOT ramptr(2) AND RAM_ADR(2) AND XM1)
+	OR (MCU_SWR AND NOT X1A AND cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND NOT autostep(0) AND NOT autostep(1) AND ramptr(2) AND 
+	NOT RAM_ADR(2))
+	OR (MCU_SWR AND NOT X1A AND cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND NOT autostep(0) AND NOT autostep(1) AND NOT ramptr(2) AND 
+	RAM_ADR(2)));
+
+FTCPE_RAM_ADR3: FTCPE port map (RAM_ADR(3),RAM_ADR_T(3),GCLK2,'0','0');
+RAM_ADR_T(3) <= ((X1A AND NOT clk2 AND ramptr(3) AND NOT RAM_ADR(3) AND XM1)
+	OR (X1A AND NOT clk2 AND NOT ramptr(3) AND RAM_ADR(3) AND XM1)
+	OR (MCU_SWR AND NOT X1A AND cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND NOT autostep(0) AND NOT autostep(1) AND ramptr(3) AND 
+	NOT RAM_ADR(3))
+	OR (MCU_SWR AND NOT X1A AND cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND NOT autostep(0) AND NOT autostep(1) AND NOT ramptr(3) AND 
+	RAM_ADR(3)));
+
+FTCPE_RAM_ADR4: FTCPE port map (RAM_ADR(4),RAM_ADR_T(4),GCLK2,'0','0');
+RAM_ADR_T(4) <= ((X1A AND NOT clk2 AND ramptr(4) AND NOT RAM_ADR(4) AND XM1)
+	OR (X1A AND NOT clk2 AND NOT ramptr(4) AND RAM_ADR(4) AND XM1)
+	OR (MCU_SWR AND NOT X1A AND cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND NOT autostep(0) AND NOT autostep(1) AND ramptr(4) AND 
+	NOT RAM_ADR(4))
+	OR (MCU_SWR AND NOT X1A AND cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND NOT autostep(0) AND NOT autostep(1) AND NOT ramptr(4) AND 
+	RAM_ADR(4)));
+
+FTCPE_RAM_ADR5: FTCPE port map (RAM_ADR(5),RAM_ADR_T(5),GCLK2,'0','0');
+RAM_ADR_T(5) <= ((X1A AND NOT clk2 AND ramptr(5) AND NOT RAM_ADR(5) AND XM1)
+	OR (X1A AND NOT clk2 AND NOT ramptr(5) AND RAM_ADR(5) AND XM1)
+	OR (MCU_SWR AND NOT X1A AND cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND NOT autostep(0) AND NOT autostep(1) AND ramptr(5) AND 
+	NOT RAM_ADR(5))
+	OR (MCU_SWR AND NOT X1A AND cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND NOT autostep(0) AND NOT autostep(1) AND NOT ramptr(5) AND 
+	RAM_ADR(5)));
+
+FTCPE_RAM_ADR6: FTCPE port map (RAM_ADR(6),RAM_ADR_T(6),GCLK2,'0','0');
+RAM_ADR_T(6) <= ((X1A AND NOT clk2 AND ramptr(6) AND NOT RAM_ADR(6) AND XM1)
+	OR (X1A AND NOT clk2 AND NOT ramptr(6) AND RAM_ADR(6) AND XM1)
+	OR (MCU_SWR AND NOT X1A AND cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND NOT autostep(0) AND NOT autostep(1) AND ramptr(6) AND 
+	NOT RAM_ADR(6))
+	OR (MCU_SWR AND NOT X1A AND cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND NOT autostep(0) AND NOT autostep(1) AND NOT ramptr(6) AND 
+	RAM_ADR(6)));
+
+FTCPE_RAM_ADR7: FTCPE port map (RAM_ADR(7),RAM_ADR_T(7),GCLK2,'0','0');
+RAM_ADR_T(7) <= ((X1A AND NOT clk2 AND ramptr(7) AND NOT RAM_ADR(7) AND XM1)
+	OR (X1A AND NOT clk2 AND NOT ramptr(7) AND RAM_ADR(7) AND XM1)
+	OR (MCU_SWR AND NOT X1A AND cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND NOT autostep(0) AND NOT autostep(1) AND ramptr(7) AND 
+	NOT RAM_ADR(7))
+	OR (MCU_SWR AND NOT X1A AND cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND NOT autostep(0) AND NOT autostep(1) AND NOT ramptr(7) AND 
+	RAM_ADR(7)));
+
+FTCPE_RAM_ADR8: FTCPE port map (RAM_ADR(8),RAM_ADR_T(8),GCLK2,'0','0');
+RAM_ADR_T(8) <= ((X1A AND NOT clk2 AND ramptr(8) AND NOT RAM_ADR(8) AND XM1)
+	OR (X1A AND NOT clk2 AND NOT ramptr(8) AND RAM_ADR(8) AND XM1)
+	OR (MCU_SWR AND NOT X1A AND cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND NOT autostep(0) AND NOT autostep(1) AND ramptr(8) AND 
+	NOT RAM_ADR(8))
+	OR (MCU_SWR AND NOT X1A AND cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND NOT autostep(0) AND NOT autostep(1) AND NOT ramptr(8) AND 
+	RAM_ADR(8)));
+
+FTCPE_RAM_ADR9: FTCPE port map (RAM_ADR(9),RAM_ADR_T(9),GCLK2,'0','0');
+RAM_ADR_T(9) <= ((X1A AND NOT clk2 AND ramptr(9) AND NOT RAM_ADR(9) AND XM1)
+	OR (X1A AND NOT clk2 AND NOT ramptr(9) AND RAM_ADR(9) AND XM1)
+	OR (MCU_SWR AND NOT X1A AND cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND NOT autostep(0) AND NOT autostep(1) AND ramptr(9) AND 
+	NOT RAM_ADR(9))
+	OR (MCU_SWR AND NOT X1A AND cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND NOT autostep(0) AND NOT autostep(1) AND NOT ramptr(9) AND 
+	RAM_ADR(9)));
+
+FTCPE_RAM_ADR10: FTCPE port map (RAM_ADR(10),RAM_ADR_T(10),GCLK2,'0','0');
+RAM_ADR_T(10) <= ((X1A AND NOT clk2 AND ramptr(10) AND NOT RAM_ADR(10) AND XM1)
+	OR (X1A AND NOT clk2 AND NOT ramptr(10) AND RAM_ADR(10) AND XM1)
+	OR (MCU_SWR AND NOT X1A AND cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND NOT autostep(0) AND NOT autostep(1) AND 
+	ramptr(10) AND NOT RAM_ADR(10))
+	OR (MCU_SWR AND NOT X1A AND cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND NOT autostep(0) AND NOT autostep(1) AND 
+	NOT ramptr(10) AND RAM_ADR(10)));
+
+FTCPE_RAM_ADR11: FTCPE port map (RAM_ADR(11),RAM_ADR_T(11),GCLK2,'0','0');
+RAM_ADR_T(11) <= ((X1A AND NOT clk2 AND ramptr(11) AND NOT RAM_ADR(11) AND XM1)
+	OR (X1A AND NOT clk2 AND NOT ramptr(11) AND RAM_ADR(11) AND XM1)
+	OR (MCU_SWR AND NOT X1A AND cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND NOT autostep(0) AND NOT autostep(1) AND 
+	ramptr(11) AND NOT RAM_ADR(11))
+	OR (MCU_SWR AND NOT X1A AND cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND NOT autostep(0) AND NOT autostep(1) AND 
+	NOT ramptr(11) AND RAM_ADR(11)));
+
+FTCPE_RAM_ADR12: FTCPE port map (RAM_ADR(12),RAM_ADR_T(12),GCLK2,'0','0');
+RAM_ADR_T(12) <= ((EXP10_.EXP)
+	OR (X1A AND NOT clk2 AND ramptr(12) AND NOT RAM_ADR(12) AND XM1)
+	OR (X1A AND NOT clk2 AND NOT ramptr(12) AND RAM_ADR(12) AND XM1));
+
+FTCPE_RAM_ADR13: FTCPE port map (RAM_ADR(13),RAM_ADR_T(13),GCLK2,'0','0');
+RAM_ADR_T(13) <= ((X1A AND NOT clk2 AND ramptr(13) AND NOT RAM_ADR(13) AND XM1)
+	OR (X1A AND NOT clk2 AND NOT ramptr(13) AND RAM_ADR(13) AND XM1)
+	OR (MCU_SWR AND NOT X1A AND cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND NOT autostep(0) AND NOT autostep(1) AND 
+	ramptr(13) AND NOT RAM_ADR(13))
+	OR (MCU_SWR AND NOT X1A AND cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND NOT autostep(0) AND NOT autostep(1) AND 
+	NOT ramptr(13) AND RAM_ADR(13)));
+
+FTCPE_RAM_ADR14: FTCPE port map (RAM_ADR(14),RAM_ADR_T(14),GCLK2,'0','0');
+RAM_ADR_T(14) <= ((X1A AND NOT clk2 AND ramptr(14) AND NOT RAM_ADR(14) AND XM1)
+	OR (X1A AND NOT clk2 AND NOT ramptr(14) AND RAM_ADR(14) AND XM1)
+	OR (MCU_SWR AND NOT X1A AND cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND NOT autostep(0) AND NOT autostep(1) AND 
+	ramptr(14) AND NOT RAM_ADR(14))
+	OR (MCU_SWR AND NOT X1A AND cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND NOT autostep(0) AND NOT autostep(1) AND 
+	NOT ramptr(14) AND RAM_ADR(14)));
+
+FTCPE_RAM_ADR15: FTCPE port map (RAM_ADR(15),RAM_ADR_T(15),GCLK2,'0','0');
+RAM_ADR_T(15) <= ((X1A AND NOT clk2 AND ramptr(15) AND NOT RAM_ADR(15) AND XM1)
+	OR (X1A AND NOT clk2 AND NOT ramptr(15) AND RAM_ADR(15) AND XM1)
+	OR (MCU_SWR AND NOT X1A AND cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND NOT autostep(0) AND NOT autostep(1) AND 
+	ramptr(15) AND NOT RAM_ADR(15))
+	OR (MCU_SWR AND NOT X1A AND cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND NOT autostep(0) AND NOT autostep(1) AND 
+	NOT ramptr(15) AND RAM_ADR(15)));
+
+FTCPE_RAM_ADR16: FTCPE port map (RAM_ADR(16),RAM_ADR_T(16),GCLK2,'0','0');
+RAM_ADR_T(16) <= ((X1A AND NOT clk2 AND ramptr(16) AND NOT RAM_ADR(16) AND XM1)
+	OR (X1A AND NOT clk2 AND NOT ramptr(16) AND RAM_ADR(16) AND XM1)
+	OR (MCU_SWR AND NOT X1A AND cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND NOT autostep(0) AND NOT autostep(1) AND 
+	ramptr(16) AND NOT RAM_ADR(16))
+	OR (MCU_SWR AND NOT X1A AND cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND NOT autostep(0) AND NOT autostep(1) AND 
+	NOT ramptr(16) AND RAM_ADR(16)));
+
+FTCPE_RAM_ADR17: FTCPE port map (RAM_ADR(17),RAM_ADR_T(17),GCLK2,'0','0');
+RAM_ADR_T(17) <= ((X1A AND NOT clk2 AND ramptr(17) AND NOT RAM_ADR(17) AND XM1)
+	OR (X1A AND NOT clk2 AND NOT ramptr(17) AND RAM_ADR(17) AND XM1)
+	OR (MCU_SWR AND NOT X1A AND cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND NOT autostep(0) AND NOT autostep(1) AND 
+	ramptr(17) AND NOT RAM_ADR(17))
+	OR (MCU_SWR AND NOT X1A AND cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND NOT autostep(0) AND NOT autostep(1) AND 
+	NOT ramptr(17) AND RAM_ADR(17)));
+
+FTCPE_RAM_ADR18: FTCPE port map (RAM_ADR(18),RAM_ADR_T(18),GCLK2,'0','0');
+RAM_ADR_T(18) <= ((X1A AND NOT clk2 AND ramptr(18) AND NOT RAM_ADR(18) AND XM1)
+	OR (X1A AND NOT clk2 AND NOT ramptr(18) AND RAM_ADR(18) AND XM1)
+	OR (MCU_SWR AND NOT X1A AND cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND NOT autostep(0) AND NOT autostep(1) AND 
+	ramptr(18) AND NOT RAM_ADR(18))
+	OR (MCU_SWR AND NOT X1A AND cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND NOT autostep(0) AND NOT autostep(1) AND 
+	NOT ramptr(18) AND RAM_ADR(18)));
+
+FTCPE_RAM_CE: FTCPE port map (RAM_CE,RAM_CE_T,GCLK2,'0','0');
+RAM_CE_T <= ((EXP13_.EXP)
+	OR (NOT MCU_SWR AND NOT X1A AND NOT RAM_CE)
+	OR (NOT X1A AND NOT RAM_CE AND cmddone)
+	OR (X1A AND NOT RAM_CE AND clk2 AND XM1));
+
+FTCPE_RAM_DAT0: FTCPE port map (RAM_DAT_I(0),RAM_DAT_T(0),GCLK2,'0','0');
+RAM_DAT_T(0) <= ((Mtridata_RAM_DAT(7).EXP)
+	OR (RAM_DAT(0) AND X1A AND NOT clk2 AND NOT ramdat(0) AND XM1)
+	OR (NOT RAM_DAT(0) AND X1A AND NOT clk2 AND ramdat(0) AND XM1)
+	OR (RAM_DAT(0) AND MCU_SWR AND NOT X1A AND cmdid(2) AND 
+	NOT cmdid(3) AND cmdid(1) AND NOT cmdid(0) AND NOT cmddone AND NOT autostep(0) AND 
+	NOT autostep(1) AND NOT ramdat(0)));
+RAM_DAT(0) <= RAM_DAT_I(0) when RAM_DAT_OE(0) = '1' else 'Z';
+RAM_DAT_OE(0) <= NOT Mtrien_RAM_DAT;
+
+FTCPE_RAM_DAT1: FTCPE port map (RAM_DAT_I(1),RAM_DAT_T(1),GCLK2,'0','0');
+RAM_DAT_T(1) <= ((RAM_DAT(1) AND X1A AND NOT clk2 AND NOT ramdat(1) AND XM1)
+	OR (NOT RAM_DAT(1) AND X1A AND NOT clk2 AND ramdat(1) AND XM1)
+	OR (RAM_DAT(1) AND MCU_SWR AND NOT X1A AND cmdid(2) AND 
+	NOT cmdid(3) AND cmdid(1) AND NOT cmdid(0) AND NOT cmddone AND NOT autostep(0) AND 
+	NOT autostep(1) AND NOT ramdat(1))
+	OR (NOT RAM_DAT(1) AND MCU_SWR AND NOT X1A AND cmdid(2) AND 
+	NOT cmdid(3) AND cmdid(1) AND NOT cmdid(0) AND NOT cmddone AND NOT autostep(0) AND 
+	NOT autostep(1) AND ramdat(1)));
+RAM_DAT(1) <= RAM_DAT_I(1) when RAM_DAT_OE(1) = '1' else 'Z';
+RAM_DAT_OE(1) <= NOT Mtrien_RAM_DAT;
+
+FTCPE_RAM_DAT2: FTCPE port map (RAM_DAT_I(2),RAM_DAT_T(2),GCLK2,'0','0');
+RAM_DAT_T(2) <= ((RAM_DAT(2) AND X1A AND NOT clk2 AND NOT ramdat(2) AND XM1)
+	OR (NOT RAM_DAT(2) AND X1A AND NOT clk2 AND ramdat(2) AND XM1)
+	OR (RAM_DAT(2) AND MCU_SWR AND NOT X1A AND cmdid(2) AND 
+	NOT cmdid(3) AND cmdid(1) AND NOT cmdid(0) AND NOT cmddone AND NOT autostep(0) AND 
+	NOT autostep(1) AND NOT ramdat(2))
+	OR (NOT RAM_DAT(2) AND MCU_SWR AND NOT X1A AND cmdid(2) AND 
+	NOT cmdid(3) AND cmdid(1) AND NOT cmdid(0) AND NOT cmddone AND NOT autostep(0) AND 
+	NOT autostep(1) AND ramdat(2)));
+RAM_DAT(2) <= RAM_DAT_I(2) when RAM_DAT_OE(2) = '1' else 'Z';
+RAM_DAT_OE(2) <= NOT Mtrien_RAM_DAT;
+
+FTCPE_RAM_DAT3: FTCPE port map (RAM_DAT_I(3),RAM_DAT_T(3),GCLK2,'0','0');
+RAM_DAT_T(3) <= ((RAM_ADR_9.EXP)
+	OR (RAM_DAT(3) AND X1A AND NOT clk2 AND NOT ramdat(3) AND XM1)
+	OR (NOT RAM_DAT(3) AND X1A AND NOT clk2 AND ramdat(3) AND XM1)
+	OR (RAM_DAT(3) AND MCU_SWR AND NOT X1A AND cmdid(2) AND 
+	NOT cmdid(3) AND cmdid(1) AND NOT cmdid(0) AND NOT cmddone AND NOT autostep(0) AND 
+	NOT autostep(1) AND NOT ramdat(3)));
+RAM_DAT(3) <= RAM_DAT_I(3) when RAM_DAT_OE(3) = '1' else 'Z';
+RAM_DAT_OE(3) <= NOT Mtrien_RAM_DAT;
+
+FTCPE_RAM_DAT4: FTCPE port map (RAM_DAT_I(4),RAM_DAT_T(4),GCLK2,'0','0');
+RAM_DAT_T(4) <= ((RAM_WR_OBUF.EXP)
+	OR (RAM_DAT(4) AND X1A AND NOT clk2 AND NOT ramdat(4) AND XM1)
+	OR (NOT RAM_DAT(4) AND X1A AND NOT clk2 AND ramdat(4) AND XM1)
+	OR (RAM_DAT(4) AND MCU_SWR AND NOT X1A AND cmdid(2) AND 
+	NOT cmdid(3) AND cmdid(1) AND NOT cmdid(0) AND NOT cmddone AND NOT autostep(0) AND 
+	NOT autostep(1) AND NOT ramdat(4)));
+RAM_DAT(4) <= RAM_DAT_I(4) when RAM_DAT_OE(4) = '1' else 'Z';
+RAM_DAT_OE(4) <= NOT Mtrien_RAM_DAT;
+
+FTCPE_RAM_DAT5: FTCPE port map (RAM_DAT_I(5),RAM_DAT_T(5),GCLK2,'0','0');
+RAM_DAT_T(5) <= ((RAM_DAT(5) AND X1A AND NOT clk2 AND NOT ramdat(5) AND XM1)
+	OR (NOT RAM_DAT(5) AND X1A AND NOT clk2 AND ramdat(5) AND XM1)
+	OR (RAM_DAT(5) AND MCU_SWR AND NOT X1A AND cmdid(2) AND 
+	NOT cmdid(3) AND cmdid(1) AND NOT cmdid(0) AND NOT cmddone AND NOT autostep(0) AND 
+	NOT autostep(1) AND NOT ramdat(5))
+	OR (NOT RAM_DAT(5) AND MCU_SWR AND NOT X1A AND cmdid(2) AND 
+	NOT cmdid(3) AND cmdid(1) AND NOT cmdid(0) AND NOT cmddone AND NOT autostep(0) AND 
+	NOT autostep(1) AND ramdat(5)));
+RAM_DAT(5) <= RAM_DAT_I(5) when RAM_DAT_OE(5) = '1' else 'Z';
+RAM_DAT_OE(5) <= NOT Mtrien_RAM_DAT;
+
+FTCPE_RAM_DAT6: FTCPE port map (RAM_DAT_I(6),RAM_DAT_T(6),GCLK2,'0','0');
+RAM_DAT_T(6) <= ((RAM_DAT(6) AND X1A AND NOT clk2 AND NOT ramdat(6) AND XM1)
+	OR (NOT RAM_DAT(6) AND X1A AND NOT clk2 AND ramdat(6) AND XM1)
+	OR (RAM_DAT(6) AND MCU_SWR AND NOT X1A AND cmdid(2) AND 
+	NOT cmdid(3) AND cmdid(1) AND NOT cmdid(0) AND NOT cmddone AND NOT autostep(0) AND 
+	NOT autostep(1) AND NOT ramdat(6))
+	OR (NOT RAM_DAT(6) AND MCU_SWR AND NOT X1A AND cmdid(2) AND 
+	NOT cmdid(3) AND cmdid(1) AND NOT cmdid(0) AND NOT cmddone AND NOT autostep(0) AND 
+	NOT autostep(1) AND ramdat(6)));
+RAM_DAT(6) <= RAM_DAT_I(6) when RAM_DAT_OE(6) = '1' else 'Z';
+RAM_DAT_OE(6) <= NOT Mtrien_RAM_DAT;
+
+FTCPE_RAM_DAT7: FTCPE port map (RAM_DAT_I(7),RAM_DAT_T(7),GCLK2,'0','0');
+RAM_DAT_T(7) <= ((ramptr(9).EXP)
+	OR (RAM_DAT(7) AND X1A AND NOT clk2 AND NOT ramdat(7) AND XM1)
+	OR (NOT RAM_DAT(7) AND X1A AND NOT clk2 AND ramdat(7) AND XM1)
+	OR (RAM_DAT(7) AND MCU_SWR AND NOT X1A AND cmdid(2) AND 
+	NOT cmdid(3) AND cmdid(1) AND NOT cmdid(0) AND NOT cmddone AND NOT autostep(0) AND 
+	NOT autostep(1) AND NOT ramdat(7)));
+RAM_DAT(7) <= RAM_DAT_I(7) when RAM_DAT_OE(7) = '1' else 'Z';
+RAM_DAT_OE(7) <= NOT Mtrien_RAM_DAT;
+
+FDCPE_RAM_RD: FDCPE port map (RAM_RD,RAM_RD_D,GCLK2,'0','0');
+RAM_RD_D <= ((X1A AND NOT clk2 AND XM1)
+	OR (X1A AND NOT RAM_RD AND NOT XM1)
+	OR (MCU_SWR AND NOT X1A AND NOT cmddone AND NOT RAM_RD));
+
+FTCPE_RAM_WR: FTCPE port map (RAM_WR,RAM_WR_T,GCLK2,'0','0');
+RAM_WR_T <= ((NOT MCU_SWR AND NOT X1A AND NOT RAM_WR)
+	OR (NOT X1A AND NOT RAM_WR AND cmddone)
+	OR (NOT X1A AND NOT RAM_WR AND cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	NOT cmdid(0) AND autostep(0) AND autostep(1))
+	OR (MCU_SWR AND NOT X1A AND RAM_WR AND cmdid(2) AND NOT cmdid(3) AND 
+	cmdid(1) AND NOT cmdid(0) AND NOT cmddone AND autostep(0) AND NOT autostep(1)));
+
+FDCPE_autostep0: FDCPE port map (autostep(0),autostep_D(0),GCLK2,'0','0',NOT X1A);
+autostep_D(0) <= ((X1A AND NOT autostep(0))
+	OR (MCU_SWR AND NOT cmddone AND NOT autostep(0)));
+
+FDCPE_autostep1: FDCPE port map (autostep(1),autostep_D(1),GCLK2,'0','0',NOT X1A);
+autostep_D(1) <= ((X1A AND autostep(0) AND NOT autostep(1))
+	OR (X1A AND NOT autostep(0) AND autostep(1))
+	OR (MCU_SWR AND NOT cmddone AND autostep(0) AND NOT autostep(1))
+	OR (MCU_SWR AND NOT cmddone AND NOT autostep(0) AND autostep(1)));
+
+FDCPE_clk2: FDCPE port map (clk2,clk2_D,GCLK2,'0','0',X1A);
+clk2_D <= (VSYNC AND NOT clk2);
+
+FDCPE_cmddone: FDCPE port map (cmddone,cmddone_D,GCLK2,'0','0',NOT X1A);
+cmddone_D <= ((MCU_SWR AND NOT cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	NOT cmddone)
+	OR (MCU_SWR AND NOT cmdid(2) AND NOT cmdid(3) AND cmdid(0) AND 
+	NOT cmddone)
+	OR (MCU_SWR AND cmdid(2) AND NOT cmdid(3) AND NOT cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone)
+	OR (MCU_SWR AND cmdid(2) AND NOT cmdid(3) AND NOT cmdid(0) AND 
+	NOT cmddone AND autostep(0) AND autostep(1)));
+
+FDCPE_cmdid0: FDCPE port map (cmdid(0),cmdid_D(0),GCLK2,'0','0');
+cmdid_D(0) <= ((cmdid(1).EXP)
+	OR (X1A AND cmdid(0))
+	OR (NOT MCU_SWR AND NOT X1A AND MCU_CMD(0))
+	OR (NOT X1A AND MCU_CMD(0) AND cmddone));
+
+FDCPE_cmdid1: FDCPE port map (cmdid(1),cmdid_D(1),GCLK2,'0','0');
+cmdid_D(1) <= ((X1A AND cmdid(1))
+	OR (MCU_SWR AND cmdid(1) AND NOT cmddone)
+	OR (NOT MCU_SWR AND NOT X1A AND MCU_CMD(1))
+	OR (NOT X1A AND MCU_CMD(1) AND cmddone));
+
+FDCPE_cmdid2: FDCPE port map (cmdid(2),cmdid_D(2),GCLK2,'0','0');
+cmdid_D(2) <= ((X1A AND cmdid(2))
+	OR (MCU_SWR AND cmdid(2) AND NOT cmddone)
+	OR (NOT MCU_SWR AND NOT X1A AND MCU_CMD(2))
+	OR (NOT X1A AND MCU_CMD(2) AND cmddone));
+
+FDCPE_cmdid3: FDCPE port map (cmdid(3),cmdid_D(3),GCLK2,'0','0');
+cmdid_D(3) <= ((X1A AND cmdid(3))
+	OR (MCU_SWR AND cmdid(3) AND NOT cmddone)
+	OR (NOT MCU_SWR AND NOT X1A AND MCU_CMD(3))
+	OR (NOT X1A AND MCU_CMD(3) AND cmddone));
+
+FDCPE_ramdat0: FDCPE port map (ramdat(0),ramdat_D(0),GCLK2,'0','0');
+ramdat_D(0) <= ((RAM_ADR_12.EXP)
+	OR (NOT MCU_SWR AND NOT X1A AND MCU_DAT(0))
+	OR (X1A AND NOT clk2 AND ramdat(0))
+	OR (NOT X1A AND cmddone AND MCU_DAT(0)));
+
+FDCPE_ramdat1: FDCPE port map (ramdat(1),ramdat_D(1),GCLK2,'0','0');
+ramdat_D(1) <= ((ramdat(0).EXP)
+	OR (NOT MCU_SWR AND NOT X1A AND MCU_DAT(1))
+	OR (X1A AND NOT clk2 AND ramdat(1))
+	OR (X1A AND ramdat(1) AND NOT XM1)
+	OR (NOT X1A AND cmddone AND MCU_DAT(1)));
+
+FDCPE_ramdat2: FDCPE port map (ramdat(2),ramdat_D(2),GCLK2,'0','0');
+ramdat_D(2) <= ((ramdat(1).EXP)
+	OR (NOT MCU_SWR AND NOT X1A AND MCU_DAT(2))
+	OR (X1A AND NOT clk2 AND ramdat(2))
+	OR (X1A AND ramdat(2) AND NOT XM1)
+	OR (NOT X1A AND cmddone AND MCU_DAT(2))
+	OR (X1A AND clk2 AND XM1 AND RAM_DAT(2).PIN));
+
+FDCPE_ramdat3: FDCPE port map (ramdat(3),ramdat_D(3),GCLK2,'0','0');
+ramdat_D(3) <= ((ramdat(4).EXP)
+	OR (NOT MCU_SWR AND NOT X1A AND MCU_DAT(3))
+	OR (X1A AND NOT clk2 AND ramdat(3))
+	OR (X1A AND ramdat(3) AND NOT XM1)
+	OR (NOT X1A AND cmddone AND MCU_DAT(3))
+	OR (X1A AND clk2 AND XM1 AND RAM_DAT(3).PIN));
+
+FDCPE_ramdat4: FDCPE port map (ramdat(4),ramdat_D(4),GCLK2,'0','0');
+ramdat_D(4) <= ((ramdat(5).EXP)
+	OR (NOT MCU_SWR AND NOT X1A AND MCU_DAT(4))
+	OR (X1A AND NOT clk2 AND ramdat(4))
+	OR (X1A AND ramdat(4) AND NOT XM1)
+	OR (NOT X1A AND cmddone AND MCU_DAT(4)));
+
+FDCPE_ramdat5: FDCPE port map (ramdat(5),ramdat_D(5),GCLK2,'0','0');
+ramdat_D(5) <= ((EXP11_.EXP)
+	OR (NOT MCU_SWR AND NOT X1A AND MCU_DAT(5))
+	OR (X1A AND NOT clk2 AND ramdat(5))
+	OR (NOT X1A AND cmddone AND MCU_DAT(5)));
+
+FDCPE_ramdat6: FDCPE port map (ramdat(6),ramdat_D(6),GCLK2,'0','0');
+ramdat_D(6) <= ((ramdat(7).EXP)
+	OR (NOT MCU_SWR AND NOT X1A AND MCU_DAT(6))
+	OR (X1A AND NOT clk2 AND ramdat(6))
+	OR (X1A AND ramdat(6) AND NOT XM1)
+	OR (NOT X1A AND cmddone AND MCU_DAT(6))
+	OR (X1A AND clk2 AND XM1 AND RAM_DAT(6).PIN));
+
+FDCPE_ramdat7: FDCPE port map (ramdat(7),ramdat_D(7),GCLK2,'0','0');
+ramdat_D(7) <= ((cmdid(0).EXP)
+	OR (NOT MCU_SWR AND NOT X1A AND MCU_DAT(7))
+	OR (X1A AND NOT clk2 AND ramdat(7))
+	OR (X1A AND ramdat(7) AND NOT XM1)
+	OR (NOT X1A AND cmddone AND MCU_DAT(7)));
+
+FTCPE_ramptr0: FTCPE port map (ramptr(0),ramptr_T(0),GCLK2,'0','0');
+ramptr_T(0) <= ((COL_2.EXP)
+	OR (X1A AND VSYNC AND clk2 AND XM1)
+	OR (MCU_SWR AND NOT X1A AND cmdid(2) AND NOT cmdid(3) AND NOT cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND ramptr(0))
+	OR (MCU_SWR AND NOT X1A AND cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND autostep(0) AND NOT autostep(1))
+	OR (MCU_SWR AND NOT X1A AND NOT cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	cmdid(0) AND NOT cmddone AND ramptr(0) AND NOT ramdat(0))
+	OR (MCU_SWR AND NOT X1A AND NOT cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	cmdid(0) AND NOT cmddone AND NOT ramptr(0) AND ramdat(0)));
+
+FTCPE_ramptr1: FTCPE port map (ramptr(1),ramptr_T(1),GCLK2,'0','0');
+ramptr_T(1) <= ((ramptr(2).EXP)
+	OR (MCU_SWR AND NOT X1A AND cmdid(2) AND NOT cmdid(3) AND NOT cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND ramptr(1))
+	OR (MCU_SWR AND NOT X1A AND NOT cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	cmdid(0) AND NOT cmddone AND ramdat(1) AND NOT ramptr(1))
+	OR (MCU_SWR AND NOT X1A AND NOT cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	cmdid(0) AND NOT cmddone AND NOT ramdat(1) AND ramptr(1))
+	OR (MCU_SWR AND NOT X1A AND cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND autostep(0) AND NOT autostep(1) AND ramptr(0)));
+
+FTCPE_ramptr2: FTCPE port map (ramptr(2),ramptr_T(2),GCLK2,'0','0');
+ramptr_T(2) <= ((EXP15_.EXP)
+	OR (MCU_SWR AND NOT X1A AND NOT cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	cmdid(0) AND NOT cmddone AND ramdat(2) AND NOT ramptr(2))
+	OR (MCU_SWR AND NOT X1A AND NOT cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	cmdid(0) AND NOT cmddone AND NOT ramdat(2) AND ramptr(2))
+	OR (MCU_SWR AND NOT X1A AND cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND autostep(0) AND NOT autostep(1) AND ramptr(0) AND 
+	ramptr(1)));
+
+FTCPE_ramptr3: FTCPE port map (ramptr(3),ramptr_T(3),GCLK2,'0','0');
+ramptr_T(3) <= ((RAM_ADR_8.EXP)
+	OR (X1A AND ramptr(0) AND VSYNC AND clk2 AND ramptr(1) AND 
+	ramptr(2) AND XM1)
+	OR (MCU_SWR AND NOT X1A AND cmdid(2) AND NOT cmdid(3) AND NOT cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND ramptr(3))
+	OR (MCU_SWR AND NOT X1A AND NOT cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	cmdid(0) AND NOT cmddone AND ramptr(3) AND NOT ramdat(3))
+	OR (MCU_SWR AND NOT X1A AND NOT cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	cmdid(0) AND NOT cmddone AND NOT ramptr(3) AND ramdat(3))
+	OR (MCU_SWR AND NOT X1A AND cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND autostep(0) AND NOT autostep(1) AND ramptr(0) AND 
+	ramptr(1) AND ramptr(2)));
+
+FTCPE_ramptr4: FTCPE port map (ramptr(4),ramptr_T(4),GCLK2,'0','0');
+ramptr_T(4) <= ((clk2.EXP)
+	OR (MCU_SWR AND NOT X1A AND cmdid(2) AND NOT cmdid(3) AND NOT cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND ramptr(4))
+	OR (X1A AND ramptr(0) AND VSYNC AND clk2 AND ramptr(1) AND 
+	ramptr(2) AND ramptr(3) AND XM1)
+	OR (MCU_SWR AND NOT X1A AND NOT cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	cmdid(0) AND NOT cmddone AND ramptr(4) AND NOT ramdat(4))
+	OR (MCU_SWR AND NOT X1A AND NOT cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	cmdid(0) AND NOT cmddone AND NOT ramptr(4) AND ramdat(4))
+	OR (MCU_SWR AND NOT X1A AND cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND autostep(0) AND NOT autostep(1) AND ramptr(0) AND 
+	ramptr(1) AND ramptr(2) AND ramptr(3)));
+
+FTCPE_ramptr5: FTCPE port map (ramptr(5),ramptr_T(5),GCLK2,'0','0');
+ramptr_T(5) <= ((Mtridata_RAM_DAT(4).EXP)
+	OR (MCU_SWR AND NOT X1A AND cmdid(2) AND NOT cmdid(3) AND NOT cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND ramptr(5))
+	OR (MCU_SWR AND NOT X1A AND NOT cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	cmdid(0) AND NOT cmddone AND ramptr(5) AND NOT ramdat(5))
+	OR (MCU_SWR AND NOT X1A AND NOT cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	cmdid(0) AND NOT cmddone AND NOT ramptr(5) AND ramdat(5))
+	OR (X1A AND ramptr(0) AND VSYNC AND clk2 AND ramptr(1) AND 
+	ramptr(2) AND ramptr(3) AND ramptr(4) AND XM1)
+	OR (MCU_SWR AND NOT X1A AND cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND autostep(0) AND NOT autostep(1) AND ramptr(0) AND 
+	ramptr(1) AND ramptr(2) AND ramptr(3) AND ramptr(4)));
+
+FTCPE_ramptr6: FTCPE port map (ramptr(6),ramptr_T(6),GCLK2,'0','0');
+ramptr_T(6) <= ((RAM_RD_OBUF.EXP)
+	OR (MCU_SWR AND NOT X1A AND cmdid(2) AND NOT cmdid(3) AND NOT cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND ramptr(6))
+	OR (MCU_SWR AND NOT X1A AND NOT cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	cmdid(0) AND NOT cmddone AND ramptr(6) AND NOT ramdat(6))
+	OR (MCU_SWR AND NOT X1A AND NOT cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	cmdid(0) AND NOT cmddone AND NOT ramptr(6) AND ramdat(6))
+	OR (X1A AND ramptr(0) AND VSYNC AND clk2 AND ramptr(1) AND 
+	ramptr(2) AND ramptr(3) AND ramptr(4) AND ramptr(5) AND XM1)
+	OR (MCU_SWR AND NOT X1A AND cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND autostep(0) AND NOT autostep(1) AND ramptr(0) AND 
+	ramptr(1) AND ramptr(2) AND ramptr(3) AND ramptr(4) AND ramptr(5)));
+
+FTCPE_ramptr7: FTCPE port map (ramptr(7),ramptr_T(7),GCLK2,'0','0');
+ramptr_T(7) <= ((Mtridata_RAM_DAT(3).EXP)
+	OR (MCU_SWR AND NOT X1A AND cmdid(2) AND NOT cmdid(3) AND NOT cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND ramptr(7))
+	OR (MCU_SWR AND NOT X1A AND NOT cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	cmdid(0) AND NOT cmddone AND ramptr(7) AND NOT ramdat(7))
+	OR (MCU_SWR AND NOT X1A AND NOT cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	cmdid(0) AND NOT cmddone AND NOT ramptr(7) AND ramdat(7))
+	OR (X1A AND ramptr(0) AND VSYNC AND clk2 AND ramptr(1) AND 
+	ramptr(2) AND ramptr(3) AND ramptr(4) AND ramptr(5) AND ramptr(6) AND 
+	XM1)
+	OR (MCU_SWR AND NOT X1A AND cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND autostep(0) AND NOT autostep(1) AND ramptr(0) AND 
+	ramptr(1) AND ramptr(2) AND ramptr(3) AND ramptr(4) AND ramptr(5) AND 
+	ramptr(6)));
+
+FTCPE_ramptr8: FTCPE port map (ramptr(8),ramptr_T(8),GCLK2,'0','0');
+ramptr_T(8) <= ((Mtridata_RAM_DAT(0).EXP)
+	OR (MCU_SWR AND NOT X1A AND cmdid(2) AND NOT cmdid(3) AND NOT cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND ramptr(8))
+	OR (MCU_SWR AND NOT X1A AND NOT cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND ramdat(0) AND NOT ramptr(8))
+	OR (MCU_SWR AND NOT X1A AND NOT cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND NOT ramdat(0) AND ramptr(8))
+	OR (X1A AND ramptr(0) AND VSYNC AND clk2 AND ramptr(1) AND 
+	ramptr(2) AND ramptr(3) AND ramptr(4) AND ramptr(5) AND ramptr(6) AND 
+	ramptr(7) AND XM1)
+	OR (MCU_SWR AND NOT X1A AND cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND autostep(0) AND NOT autostep(1) AND ramptr(0) AND 
+	ramptr(1) AND ramptr(2) AND ramptr(3) AND ramptr(4) AND ramptr(5) AND 
+	ramptr(6) AND ramptr(7)));
+
+FTCPE_ramptr9: FTCPE port map (ramptr(9),ramptr_T(9),GCLK2,'0','0');
+ramptr_T(9) <= ((EXP14_.EXP)
+	OR (MCU_SWR AND NOT X1A AND NOT cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND ramdat(1) AND NOT ramptr(9))
+	OR (MCU_SWR AND NOT X1A AND NOT cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND NOT ramdat(1) AND ramptr(9))
+	OR (X1A AND ramptr(0) AND VSYNC AND clk2 AND ramptr(1) AND 
+	ramptr(2) AND ramptr(3) AND ramptr(4) AND ramptr(5) AND ramptr(6) AND 
+	ramptr(7) AND ramptr(8) AND XM1)
+	OR (MCU_SWR AND NOT X1A AND cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND autostep(0) AND NOT autostep(1) AND ramptr(0) AND 
+	ramptr(1) AND ramptr(2) AND ramptr(3) AND ramptr(4) AND ramptr(5) AND 
+	ramptr(6) AND ramptr(7) AND ramptr(8)));
+
+FTCPE_ramptr10: FTCPE port map (ramptr(10),ramptr_T(10),GCLK2,'0','0');
+ramptr_T(10) <= ((ramptr(1).EXP)
+	OR (MCU_SWR AND NOT X1A AND cmdid(2) AND NOT cmdid(3) AND NOT cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND ramptr(10))
+	OR (MCU_SWR AND NOT X1A AND NOT cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND ramdat(2) AND NOT ramptr(10))
+	OR (MCU_SWR AND NOT X1A AND NOT cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND NOT ramdat(2) AND ramptr(10))
+	OR (X1A AND ramptr(0) AND VSYNC AND clk2 AND ramptr(1) AND 
+	ramptr(2) AND ramptr(3) AND ramptr(4) AND ramptr(5) AND ramptr(6) AND 
+	ramptr(7) AND ramptr(8) AND ramptr(9) AND XM1)
+	OR (MCU_SWR AND NOT X1A AND cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND autostep(0) AND NOT autostep(1) AND ramptr(0) AND 
+	ramptr(1) AND ramptr(2) AND ramptr(3) AND ramptr(4) AND ramptr(5) AND 
+	ramptr(6) AND ramptr(7) AND ramptr(8) AND ramptr(9)));
+
+FTCPE_ramptr11: FTCPE port map (ramptr(11),ramptr_T(11),GCLK2,'0','0');
+ramptr_T(11) <= ((RAM_CE_OBUF.EXP)
+	OR (MCU_SWR AND NOT X1A AND NOT cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND ramptr(11) AND NOT ramdat(3))
+	OR (MCU_SWR AND NOT X1A AND NOT cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND NOT ramptr(11) AND ramdat(3))
+	OR (X1A AND ramptr(0) AND VSYNC AND clk2 AND ramptr(10) AND 
+	ramptr(1) AND ramptr(2) AND ramptr(3) AND ramptr(4) AND ramptr(5) AND 
+	ramptr(6) AND ramptr(7) AND ramptr(8) AND ramptr(9) AND XM1)
+	OR (MCU_SWR AND NOT X1A AND cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND autostep(0) AND NOT autostep(1) AND ramptr(0) AND 
+	ramptr(10) AND ramptr(1) AND ramptr(2) AND ramptr(3) AND ramptr(4) AND 
+	ramptr(5) AND ramptr(6) AND ramptr(7) AND ramptr(8) AND ramptr(9)));
+
+FTCPE_ramptr12: FTCPE port map (ramptr(12),ramptr_T(12),GCLK2,'0','0');
+ramptr_T(12) <= ((ramptr(11).EXP)
+	OR (MCU_SWR AND NOT X1A AND cmdid(2) AND NOT cmdid(3) AND NOT cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND ramptr(12))
+	OR (MCU_SWR AND NOT X1A AND NOT cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND ramptr(12) AND NOT ramdat(4))
+	OR (MCU_SWR AND NOT X1A AND NOT cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND NOT ramptr(12) AND ramdat(4))
+	OR (X1A AND ramptr(0) AND VSYNC AND clk2 AND ramptr(10) AND 
+	ramptr(11) AND ramptr(1) AND ramptr(2) AND ramptr(3) AND ramptr(4) AND 
+	ramptr(5) AND ramptr(6) AND ramptr(7) AND ramptr(8) AND ramptr(9) AND 
+	XM1)
+	OR (MCU_SWR AND NOT X1A AND cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND autostep(0) AND NOT autostep(1) AND ramptr(0) AND 
+	ramptr(10) AND ramptr(11) AND ramptr(1) AND ramptr(2) AND ramptr(3) AND 
+	ramptr(4) AND ramptr(5) AND ramptr(6) AND ramptr(7) AND ramptr(8) AND 
+	ramptr(9)));
+
+FTCPE_ramptr13: FTCPE port map (ramptr(13),ramptr_T(13),GCLK2,'0','0');
+ramptr_T(13) <= ((ramptr(16).EXP)
+	OR (MCU_SWR AND NOT X1A AND cmdid(2) AND NOT cmdid(3) AND NOT cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND ramptr(13))
+	OR (MCU_SWR AND NOT X1A AND NOT cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND ramptr(13) AND NOT ramdat(5))
+	OR (MCU_SWR AND NOT X1A AND NOT cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND NOT ramptr(13) AND ramdat(5))
+	OR (X1A AND ramptr(0) AND VSYNC AND clk2 AND ramptr(10) AND 
+	ramptr(11) AND ramptr(12) AND ramptr(1) AND ramptr(2) AND ramptr(3) AND 
+	ramptr(4) AND ramptr(5) AND ramptr(6) AND ramptr(7) AND ramptr(8) AND 
+	ramptr(9) AND XM1)
+	OR (MCU_SWR AND NOT X1A AND cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND autostep(0) AND NOT autostep(1) AND ramptr(0) AND 
+	ramptr(10) AND ramptr(11) AND ramptr(12) AND ramptr(1) AND ramptr(2) AND 
+	ramptr(3) AND ramptr(4) AND ramptr(5) AND ramptr(6) AND ramptr(7) AND 
+	ramptr(8) AND ramptr(9)));
+
+FTCPE_ramptr14: FTCPE port map (ramptr(14),ramptr_T(14),GCLK2,'0','0');
+ramptr_T(14) <= ((RAM_ADR_11.EXP)
+	OR (MCU_SWR AND NOT X1A AND cmdid(2) AND NOT cmdid(3) AND NOT cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND ramptr(14))
+	OR (MCU_SWR AND NOT X1A AND NOT cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND ramptr(14) AND NOT ramdat(6))
+	OR (MCU_SWR AND NOT X1A AND NOT cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND NOT ramptr(14) AND ramdat(6))
+	OR (X1A AND ramptr(0) AND VSYNC AND clk2 AND ramptr(10) AND 
+	ramptr(11) AND ramptr(12) AND ramptr(13) AND ramptr(1) AND ramptr(2) AND 
+	ramptr(3) AND ramptr(4) AND ramptr(5) AND ramptr(6) AND ramptr(7) AND 
+	ramptr(8) AND ramptr(9) AND XM1)
+	OR (MCU_SWR AND NOT X1A AND cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND autostep(0) AND NOT autostep(1) AND ramptr(0) AND 
+	ramptr(10) AND ramptr(11) AND ramptr(12) AND ramptr(13) AND 
+	ramptr(1) AND ramptr(2) AND ramptr(3) AND ramptr(4) AND ramptr(5) AND 
+	ramptr(6) AND ramptr(7) AND ramptr(8) AND ramptr(9)));
+
+FTCPE_ramptr15: FTCPE port map (ramptr(15),ramptr_T(15),GCLK2,'0','0');
+ramptr_T(15) <= ((RAM_ADR_10.EXP)
+	OR (MCU_SWR AND NOT X1A AND cmdid(2) AND NOT cmdid(3) AND NOT cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND ramptr(15))
+	OR (MCU_SWR AND NOT X1A AND NOT cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND ramptr(15) AND NOT ramdat(7))
+	OR (MCU_SWR AND NOT X1A AND NOT cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND NOT ramptr(15) AND ramdat(7))
+	OR (X1A AND ramptr(0) AND VSYNC AND clk2 AND ramptr(10) AND 
+	ramptr(11) AND ramptr(12) AND ramptr(13) AND ramptr(14) AND 
+	ramptr(1) AND ramptr(2) AND ramptr(3) AND ramptr(4) AND ramptr(5) AND 
+	ramptr(6) AND ramptr(7) AND ramptr(8) AND ramptr(9) AND XM1)
+	OR (MCU_SWR AND NOT X1A AND cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND autostep(0) AND NOT autostep(1) AND ramptr(0) AND 
+	ramptr(10) AND ramptr(11) AND ramptr(12) AND ramptr(13) AND 
+	ramptr(14) AND ramptr(1) AND ramptr(2) AND ramptr(3) AND ramptr(4) AND 
+	ramptr(5) AND ramptr(6) AND ramptr(7) AND ramptr(8) AND ramptr(9)));
+
+FTCPE_ramptr16: FTCPE port map (ramptr(16),ramptr_T(16),GCLK2,'0','0');
+ramptr_T(16) <= ((ramptr(17).EXP)
+	OR (MCU_SWR AND NOT X1A AND NOT cmdid(2) AND NOT cmdid(3) AND NOT cmdid(1) AND 
+	cmdid(0) AND NOT cmddone AND ramdat(0) AND NOT ramptr(16))
+	OR (MCU_SWR AND NOT X1A AND NOT cmdid(2) AND NOT cmdid(3) AND NOT cmdid(1) AND 
+	cmdid(0) AND NOT cmddone AND NOT ramdat(0) AND ramptr(16))
+	OR (X1A AND ramptr(0) AND VSYNC AND clk2 AND ramptr(10) AND 
+	ramptr(11) AND ramptr(12) AND ramptr(13) AND ramptr(14) AND 
+	ramptr(15) AND ramptr(1) AND ramptr(2) AND ramptr(3) AND ramptr(4) AND 
+	ramptr(5) AND ramptr(6) AND ramptr(7) AND ramptr(8) AND ramptr(9) AND 
+	XM1)
+	OR (MCU_SWR AND NOT X1A AND cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND autostep(0) AND NOT autostep(1) AND ramptr(0) AND 
+	ramptr(10) AND ramptr(11) AND ramptr(12) AND ramptr(13) AND 
+	ramptr(14) AND ramptr(15) AND ramptr(1) AND ramptr(2) AND ramptr(3) AND 
+	ramptr(4) AND ramptr(5) AND ramptr(6) AND ramptr(7) AND ramptr(8) AND 
+	ramptr(9)));
+
+FTCPE_ramptr17: FTCPE port map (ramptr(17),ramptr_T(17),GCLK2,'0','0');
+ramptr_T(17) <= ((ramptr(18).EXP)
+	OR (MCU_SWR AND NOT X1A AND NOT cmdid(2) AND NOT cmdid(3) AND NOT cmdid(1) AND 
+	cmdid(0) AND NOT cmddone AND ramdat(1) AND NOT ramptr(17))
+	OR (X1A AND ramptr(0) AND VSYNC AND clk2 AND ramptr(10) AND 
+	ramptr(11) AND ramptr(12) AND ramptr(13) AND ramptr(14) AND 
+	ramptr(15) AND ramptr(16) AND ramptr(1) AND ramptr(2) AND ramptr(3) AND 
+	ramptr(4) AND ramptr(5) AND ramptr(6) AND ramptr(7) AND ramptr(8) AND 
+	ramptr(9) AND XM1)
+	OR (MCU_SWR AND NOT X1A AND cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND autostep(0) AND NOT autostep(1) AND ramptr(0) AND 
+	ramptr(10) AND ramptr(11) AND ramptr(12) AND ramptr(13) AND 
+	ramptr(14) AND ramptr(15) AND ramptr(16) AND ramptr(1) AND ramptr(2) AND 
+	ramptr(3) AND ramptr(4) AND ramptr(5) AND ramptr(6) AND ramptr(7) AND 
+	ramptr(8) AND ramptr(9)));
+
+FTCPE_ramptr18: FTCPE port map (ramptr(18),ramptr_T(18),GCLK2,'0','0');
+ramptr_T(18) <= ((EXP12_.EXP)
+	OR (X1A AND ramptr(0) AND VSYNC AND clk2 AND ramptr(10) AND 
+	ramptr(11) AND ramptr(12) AND ramptr(13) AND ramptr(14) AND 
+	ramptr(15) AND ramptr(16) AND ramptr(17) AND ramptr(1) AND ramptr(2) AND 
+	ramptr(3) AND ramptr(4) AND ramptr(5) AND ramptr(6) AND ramptr(7) AND 
+	ramptr(8) AND ramptr(9) AND XM1)
+	OR (MCU_SWR AND NOT X1A AND cmdid(2) AND NOT cmdid(3) AND cmdid(1) AND 
+	NOT cmdid(0) AND NOT cmddone AND autostep(0) AND NOT autostep(1) AND ramptr(0) AND 
+	ramptr(10) AND ramptr(11) AND ramptr(12) AND ramptr(13) AND 
+	ramptr(14) AND ramptr(15) AND ramptr(16) AND ramptr(17) AND 
+	ramptr(1) AND ramptr(2) AND ramptr(3) AND ramptr(4) AND ramptr(5) AND 
+	ramptr(6) AND ramptr(7) AND ramptr(8) AND ramptr(9)));
+
+Register Legend:
+ FDCPE (Q,D,C,CLR,PRE,CE); 
+ FTCPE (Q,D,C,CLR,PRE,CE); 
+ LDCP  (Q,D,G,CLR,PRE); 
+
+******************************  Device Pin Out *****************************
+
+Device : XC95144XL-10-TQ100
+
+
+   --------------------------------------------------  
+  /100 98  96  94  92  90  88  86  84  82  80  78  76  \
+ |   99  97  95  93  91  89  87  85  83  81  79  77    |
+ | 1                                               75  | 
+ | 2                                               74  | 
+ | 3                                               73  | 
+ | 4                                               72  | 
+ | 5                                               71  | 
+ | 6                                               70  | 
+ | 7                                               69  | 
+ | 8                                               68  | 
+ | 9                                               67  | 
+ | 10                                              66  | 
+ | 11                                              65  | 
+ | 12                                              64  | 
+ | 13              XC95144XL-10-TQ100              63  | 
+ | 14                                              62  | 
+ | 15                                              61  | 
+ | 16                                              60  | 
+ | 17                                              59  | 
+ | 18                                              58  | 
+ | 19                                              57  | 
+ | 20                                              56  | 
+ | 21                                              55  | 
+ | 22                                              54  | 
+ | 23                                              53  | 
+ | 24                                              52  | 
+ | 25                                              51  | 
+ |   27  29  31  33  35  37  39  41  43  45  47  49    |
+  \26  28  30  32  34  36  38  40  42  44  46  48  50  /
+   --------------------------------------------------  
+
+
+Pin Signal                         Pin Signal                        
+No. Name                           No. Name                          
+  1 KPR                              51 VCC                           
+  2 KPR                              52 RAM_ADR<17>                   
+  3 KPR                              53 RAM_ADR<16>                   
+  4 KPR                              54 RAM_ADR<15>                   
+  5 VCC                              55 RAM_ADR<14>                   
+  6 KPR                              56 RAM_ADR<13>                   
+  7 KPR                              57 VCC                           
+  8 MCU_DAT<4>                       58 RAM_RD                        
+  9 MCU_DAT<3>                       59 RAM_WR                        
+ 10 MCU_DAT<2>                       60 RAM_DAT<4>                    
+ 11 MCU_DAT<1>                       61 RAM_DAT<5>                    
+ 12 MCU_DAT<0>                       62 GND                           
+ 13 MCU_DAT<7>                       63 RAM_DAT<6>                    
+ 14 MCU_DAT<5>                       64 RAM_DAT<7>                    
+ 15 MCU_DAT<6>                       65 RAM_DAT<0>                    
+ 16 KPR                              66 RAM_DAT<1>                    
+ 17 KPR                              67 RAM_DAT<2>                    
+ 18 KPR                              68 RAM_DAT<3>                    
+ 19 KPR                              69 GND                           
+ 20 MCU_SWR                          70 RAM_ADR<9>                    
+ 21 GND                              71 RAM_ADR<8>                    
+ 22 KPR                              72 RAM_ADR<7>                    
+ 23 GCLK2                            73 KPR                           
+ 24 KPR                              74 RAM_ADR<6>                    
+ 25 KPR                              75 GND                           
+ 26 VCC                              76 RAM_ADR<5>                    
+ 27 KPR                              77 RAM_ADR<4>                    
+ 28 COL<7>                           78 RAM_ADR<3>                    
+ 29 COL<6>                           79 RAM_ADR<2>                    
+ 30 COL<5>                           80 KPR                           
+ 31 GND                              81 RAM_ADR<1>                    
+ 32 COL<4>                           82 RAM_ADR<0>                    
+ 33 COL<3>                           83 TDO                           
+ 34 KPR                              84 GND                           
+ 35 COL<2>                           85 RAM_ADR<10>                   
+ 36 COL<1>                           86 RAM_ADR<11>                   
+ 37 COL<0>                           87 RAM_ADR<12>                   
+ 38 VCC                              88 VCC                           
+ 39 KPR                              89 MCU_CMD<1>                    
+ 40 VSYNC                            90 MCU_CMD<0>                    
+ 41 XM1                              91 MCU_CMD<2>                    
+ 42 XM2                              92 MCU_CMD<3>                    
+ 43 KPR                              93 KPR                           
+ 44 GND                              94 KPR                           
+ 45 TDI                              95 KPR                           
+ 46 KPR                              96 KPR                           
+ 47 TMS                              97 X1A                           
+ 48 TCK                              98 VCC                           
+ 49 RAM_CE                           99 KPR                           
+ 50 RAM_ADR<18>                     100 GND                           
+
+
+Legend :  NC  = Not Connected, unbonded pin
+         PGND = Unused I/O configured as additional Ground pin
+         TIE  = Unused I/O floating -- must tie to VCC, GND or other signal
+         KPR  = Unused I/O with weak keeper (leave unconnected)
+         VCC  = Dedicated Power Pin
+         GND  = Dedicated Ground Pin
+         TDI  = Test Data In, JTAG pin
+         TDO  = Test Data Out, JTAG pin
+         TCK  = Test Clock, JTAG pin
+         TMS  = Test Mode Select, JTAG pin
+  PROHIBITED  = User reserved pin
+****************************  Compiler Options  ****************************
+
+Following is a list of all global compiler options used by the fitter run.
+
+Device(s) Specified                         : xc95144xl-10-TQ100
+Optimization Method                         : SPEED
+Multi-Level Logic Optimization              : ON
+Ignore Timing Specifications                : OFF
+Default Register Power Up Value             : LOW
+Keep User Location Constraints              : ON
+What-You-See-Is-What-You-Get                : OFF
+Exhaustive Fitting                          : OFF
+Keep Unused Inputs                          : OFF
+Slew Rate                                   : FAST
+Power Mode                                  : STD
+Ground on Unused IOs                        : OFF
+Set I/O Pin Termination                     : KEEPER
+Global Clock Optimization                   : ON
+Global Set/Reset Optimization               : ON
+Global Ouput Enable Optimization            : ON
+Input Limit                                 : 54
+Pterm Limit                                 : 25
