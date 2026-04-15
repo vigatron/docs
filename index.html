@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vigatron Documentation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-950 text-gray-100">
+    <div class="max-w-6xl mx-auto p-8">
+        <!-- Header -->
+        <div class="flex items-center justify-between mb-12">
+            <div>
+                <h1 class="text-5xl font-bold tracking-tight">Vigatron Docs</h1>
+                <p class="text-xl text-gray-400 mt-2">Hardware • FPGA • Embedded Systems • CMBoards Platform</p>
+            </div>
+            <a href="https://github.com/vigatron/docs" target="_blank"
+                class="flex items-center gap-2 px-6 py-3 bg-gray-900 hover:bg-gray-800 rounded-2xl border border-gray-700 text-sm font-medium">
+                <i class="fab fa-github"></i>
+                <span>View on GitHub</span>
+            </a>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+
+            <!-- Formats / Cells -->
+            <div class="bg-gray-900 rounded-3xl p-8 card-hover">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-12 h-12 bg-blue-600 rounded-2xl flex items-center justify-center text-3xl">📐</div>
+                    <div>
+                        <h2 class="text-3xl font-semibold">Formats / Cells</h2>
+                        <p class="text-blue-400 text-sm">Binary video data format</p>
+                    </div>
+                </div>
+                <p class="text-gray-300 leading-relaxed mb-6">
+                    Documentation for the <strong>.cells</strong> 16 KB binary format used in CMBoards (STM32 + Xilinx
+                    FPGA + SDRAM).
+                    Optimized tile-based (8×8) graphics layout for efficient SDRAM burst access and real-time 2D
+                    rendering.
+                </p>
+                <ul class="text-sm text-gray-400 space-y-2 mb-8">
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-400"></i> HRGB2222 pixel
+                        format</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-400"></i> 256 tiles, row-major
+                        layout</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-400"></i> SDRAM burst
+                        optimized</li>
+                </ul>
+                <a href="formats/cells/"
+                    class="inline-flex items-center gap-2 px-8 py-4 bg-blue-600 hover:bg-blue-500 rounded-2xl font-medium text-white">
+                    Open Formats / Cells docs →
+                </a>
+            </div>
+
+            <!-- Projects -->
+            <div class="bg-gray-900 rounded-3xl p-8 card-hover">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-12 h-12 bg-emerald-600 rounded-2xl flex items-center justify-center text-3xl">📦</div>
+                    <div>
+                        <h2 class="text-3xl font-semibold">Projects</h2>
+                        <p class="text-emerald-400 text-sm">All hardware &amp; software projects</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+                    <a href="projects/autonavi2008/"
+                        class="block p-4 bg-gray-800 hover:bg-gray-700 rounded-2xl transition">autonavi2008 <span
+                            class="text-gray-500 text-xs block">Autonomous Navigation System (2008)</span></a>
+                    <a href="projects/autonavi2008tests/"
+                        class="block p-4 bg-gray-800 hover:bg-gray-700 rounded-2xl transition">autonavi2008tests <span
+                            class="text-gray-500 text-xs block">Test suite for autonavi2008</span></a>
+                    <a href="projects/led2006/"
+                        class="block p-4 bg-gray-800 hover:bg-gray-700 rounded-2xl transition">led2006 <span
+                            class="text-gray-500 text-xs block">LED control project (2006)</span></a>
+                    <a href="projects/led2008/"
+                        class="block p-4 bg-gray-800 hover:bg-gray-700 rounded-2xl transition">led2008 <span
+                            class="text-gray-500 text-xs block">LED control project (2008)</span></a>
+                    <a href="projects/videocard2008/"
+                        class="block p-4 bg-gray-800 hover:bg-gray-700 rounded-2xl transition">videocard2008 <span
+                            class="text-gray-500 text-xs block">Video card / graphics output (2008)</span></a>
+                    <a href="projects/cmboards/brd32f407hdmir3/"
+                        class="block p-4 bg-gray-800 hover:bg-gray-700 rounded-2xl transition">cmboards/brd32f407hdmir3
+                        <span class="text-gray-500 text-xs block">CMBoards hardware board (STM32F407 + HDMI,
+                            rev.3)</span></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-16 text-center text-gray-500 text-sm">
+            Built with ❤️ for the CMBoards platform •
+            <a href="https://github.com/vigatron/docs"
+                class="underline hover:text-gray-300">github.com/vigatron/docs</a>
+        </div>
+    </div>
+</body>
+
+</html>
