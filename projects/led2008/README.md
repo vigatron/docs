@@ -77,8 +77,9 @@ SMD пайка : разный тип секторов
   </tr>
 </table>
 
-
+<br>
 Изготовление :
+
 - NG Metal - корпуса, лазерная резка металических конструкций
 - VDMAIS ( светодиоды и пайка )
 - SEA Electronics ( пайка )
@@ -88,10 +89,9 @@ SMD пайка : разный тип секторов
 
 Links :
 
-- Блок управления : [Avtonavi 2008 Board Details](https://github.com/vigatron/docs/tree/main/projects/autonavi2008)
+- Блок управления : https://vigatron.github.io/projects/autonavi2008 , github - [Autonavi 2008 Board Details](https://github.com/vigatron/docs/tree/main/projects/autonavi2008)
 - Предшественник : [LED Panel 2006](https://github.com/vigatron/docs/tree/main/projects/led2006)
 
 
 ---
 2007-2008 Viktor Glebov V01G04A81
-

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vigatron Documentation</title>
+    <title>V01G04A81 Hardware & Software Projects</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <style>
@@ -28,8 +28,10 @@
         <!-- Header -->
         <div class="flex items-center justify-between mb-12">
             <div>
-                <h1 class="text-5xl font-bold tracking-tight">Vigatron Docs</h1>
-                <p class="text-xl text-gray-400 mt-2">Hardware • FPGA • Embedded Systems • CMBoards Platform</p>
+                <h1 class="text-3xl font-bold tracking-tight">V01G04A81 : Hardware & Software Projects
+                </h1>
+                <p class="text-xl text-gray-400 mt-2">Viktor Glebov : Hardware • Software • C++ • FPGA •
+                    PCB • Embedded Systems • CMBoards Platform</p>
             </div>
             <a href="https://github.com/vigatron/docs" target="_blank"
                 class="flex items-center gap-2 px-6 py-3 bg-gray-900 hover:bg-gray-800 rounded-2xl border border-gray-700 text-sm font-medium">
@@ -101,6 +103,55 @@
                             rev.3)</span></a>
                 </div>
             </div>
+
+            <!-- PUSHK Archiver Section -->
+            <div class="bg-gray-900 rounded-3xl p-8 card-hover mt-10">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-12 h-12 bg-purple-600 rounded-2xl flex items-center justify-center text-3xl">🗜️</div>
+                    <div>
+                        <h2 class="text-3xl font-semibold">PUSHK Archiver</h2>
+                        <p class="text-purple-400 text-sm">Representation-first compression pipeline (C++)</p>
+                    </div>
+                </div>
+                <p class="text-gray-300 leading-relaxed mb-6">
+                    PUSHK is a high-performance data preprocessing pipeline written in C++.
+                    It transforms structured files (especially tiled <strong>.cells</strong> format) into extremely
+                    compressible representations
+                    using custom filters. In test runs, PUSHK significantly outperforms standard archivers like LZMA,
+                    7z, RAR and others.
+                </p>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+                    <a href="https://github.com/vigatron/pushk2pre1move" target="_blank"
+                        class="block p-4 bg-gray-800 hover:bg-gray-700 rounded-2xl transition">
+                        pushk2pre1move
+                        <span class="text-gray-500 text-xs block">Filter 'move' — data block reordering</span>
+                    </a>
+                    <a href="https://github.com/vigatron/pushk2pre2spc" target="_blank"
+                        class="block p-4 bg-gray-800 hover:bg-gray-700 rounded-2xl transition">
+                        pushk2pre2spc
+                        <span class="text-gray-500 text-xs block">Filter 'spc' — byte presence map analysis</span>
+                    </a>
+                    <a href="https://github.com/vigatron/pushk2pre3rdrop" target="_blank"
+                        class="block p-4 bg-gray-800 hover:bg-gray-700 rounded-2xl transition">
+                        pushk2pre3rdrop
+                        <span class="text-gray-500 text-xs block">Filter 'rdrop' — Resolution Drop (resolution
+                            reduction)</span>
+                    </a>
+                    <a href="https://github.com/vigatron/pushk/tree/main/compression_results/test_run_01"
+                        target="_blank" class="block p-4 bg-gray-800 hover:bg-gray-700 rounded-2xl transition">
+                        test_run_01
+                        <span class="text-gray-500 text-xs block">backobjs.cells — compression tests (PUSHK: 1 484
+                            bytes)</span>
+                    </a>
+                    <a href="https://github.com/vigatron/pushk/tree/main/compression_results/test_run_02_rdrop"
+                        target="_blank" class="block p-4 bg-gray-800 hover:bg-gray-700 rounded-2xl transition">
+                        test_run_02_rdrop
+                        <span class="text-gray-500 text-xs block">example7b_rdrop.bin — RDrop mode tests</span>
+                    </a>
+                </div>
+            </div>
+
         </div>
 
         <div class="mt-16 text-center text-gray-500 text-sm">

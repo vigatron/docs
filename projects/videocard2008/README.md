@@ -4,10 +4,15 @@
 |-------------------|-----------------------------|
 | Device Released   | Feb 2008                    |
 | Author            | Viktor Glebov (V01G04A81)   |
-| Series            | Small Series (x3) Prototype |
+| Series            | Small Series (x5) Prototype |
 
 
-## Embedded Videocard
+## Description 
+
+This project implements a VGA-compatible video card using CPLD logic without a GPU.
+The design uses dual XC95144XL and external SRAM to generate a 640x480 signal.
+
+### Embedded Videocard
 
 | Component            | Specification / Notes          |
 |----------------------|--------------------------------|
@@ -22,12 +27,13 @@
 
 
 
-## Video-Modes
+##### Key challenge:
+- memory bandwidth constraints
+- real-time pixel generation without framebuffer
 
-* (A) Resolution: 640 x 480, 8-bit color
-* (B) Resolution: 320 x 240, 8-bit color
-* (C) Resolution: 400 x 240, 8-bit color
-* (D) Resolution: custom non-standard etc ...
+##### Result:
+- stable VGA output
+- deterministic timing
 
 
 
@@ -45,6 +51,7 @@
 
 <a href="pics/Video2008_DVC.JPG"><img src="pics/Video2008_DVC.JPG" /></a>
 <em>After Soldering Process </em>
+
 
 
 ---
@@ -72,6 +79,13 @@
     первый - принимает содержание от MCU. В момент синхронизации - первый CPLD дублирует
     содержимое через параллельную шину в CPLD #2
 
+### Video-Modes
+
+* (A) Resolution: 640 x 480, 8-bit color
+* (B) Resolution: 320 x 240, 8-bit color
+* (C) Resolution: 400 x 240, 8-bit color
+* (D) Resolution: custom non-standard etc ...
+
 ---
 
 <table>
@@ -93,13 +107,13 @@
 
 ### Related Links
 
-##### Main Board : [Autonavi 2008 Board Details](https://github.com/vigatron/docs/tree/main/projects/autonavi2008)
+##### Main Board - gitpages - https://vigatron.github.io/projects/autonavi2008 , github - [Autonavi 2008 Board Details](https://github.com/vigatron/docs/tree/main/projects/autonavi2008)
 
-##### VHDL Source XC95144XL CPLD #1 : [DEMO7MODE VHDL CPLD1](https://github.com/vigatron/docs/tree/main/projects/videocard2008/demo7vhdl/videox1)
+##### VHDL Source XC95144XL CPLD #1 github - [DEMO7MODE VHDL CPLD1](https://github.com/vigatron/docs/tree/main/projects/videocard2008/demo7vhdl/videox1)
 
-##### VHDL Source XC95144XL CPLD #2 : [DEMO7MODE VHDL CPLD2](https://github.com/vigatron/docs/tree/main/projects/videocard2008/demo7vhdl/videox2)
+##### VHDL Source XC95144XL CPLD #2 github - [DEMO7MODE VHDL CPLD2](https://github.com/vigatron/docs/tree/main/projects/videocard2008/demo7vhdl/videox2)
 
-##### GUI 2008 / Embedded C / AT91SAM7X256 : [Embedded GUI 2008](https://github.com/vigatron/docs/tree/main/projects/videocard2008/vhlib_gui)
+##### GUI 2008 / Embedded C / AT91SAM7X256 - github - [Embedded GUI 2008](https://github.com/vigatron/docs/tree/main/projects/videocard2008/vhlib_gui)
 
 
 ---
