@@ -196,7 +196,7 @@ CMBoards — custom hardware platform based on STM32 MCU + Xilinx FPGA + externa
 ---
 Links : 
 
-[BRD32F407HDMIR3 Board Details](https://github.com/vigatron/docs/tree/main/projects/cmboards/brd32f407hdmir3)
+[BRD32F407HDMIR3 Board Details](https://vigatron.github.io/projects/cmboards/brd32f407hdmir3/)
 
 
 ---
