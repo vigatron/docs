@@ -32,16 +32,15 @@ A programmer tool for AVR microcontrollers via the LPT port, using WinIo v1.3 fo
 
 <br>
 
-<table >
+<table>
   <tr>
     <td>
       <a href="palm.jpg"><img src="palm.jpg" alt="Palm device interface" /></a>
     </td>
     <td>
       <p>
-        <strong>Development environment:</strong> CodeWarrior C / IDE
-        <br>
-        <strong>Requirements:</strong> PalmOS 4.5
+        <b>Development environment:</b><br>CodeWarrior C / IDE<br>
+        <b>Requirements:</b><br>PalmOS 4.5<br>
       </p>
       <p>
         The Palm device serial port is used to download binary data sets.<br>
@@ -52,7 +51,7 @@ A programmer tool for AVR microcontrollers via the LPT port, using WinIo v1.3 fo
       </p>
     </td>
     <td>
-      <a href="FFBox.jpg"><img src="FFBox.jpg" />
+      <a href="FFBox.jpg"><img src="FFBox.jpg" /></a>
     </td>
   </tr>
 </table>
