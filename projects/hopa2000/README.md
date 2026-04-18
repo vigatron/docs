@@ -6,6 +6,7 @@
 | Company           | HOPA Motortuning            |
 | Date              | 2001 - 2002                 |
 
+
 ---
 
 ## AVR Programmer
@@ -19,10 +20,50 @@ A programmer tool for AVR microcontrollers via the LPT port, using WinIo v1.3 fo
 - Low-level hardware access via WinIo
 - Designed for early AVR device programming workflows
 
-**Source code:**
-https://github.com/vigatron/vigatron.github.io/tree/main/projects/hopa2000/AVR_PROGRAMMER
+**Source code:** <a href="https://github.com/vigatron/vigatron.github.io/tree/main/projects/hopa2000/AVR_PROGRAMMER">AVR_Pogrammer</a>
+
+
+<br>
 
 ---
+
+
+## Application for system configuration, Import & Export data from trucks
+
+<br>
+
+<table >
+  <tr>
+    <td>
+      <a href="palm.jpg"><img src="palm.jpg" alt="Palm device interface" /></a>
+    </td>
+    <td>
+      <p>
+        <strong>Development environment:</strong> CodeWarrior C / IDE
+        <br>
+        <strong>Requirements:</strong> PalmOS 4.5
+      </p>
+      <p>
+        The Palm device serial port is used to download binary data sets.<br>
+        Multichannel ADC records logs from the device (installed on trucks) with:<br>
+        - temperature log<br>
+        - fuel consumption statistic<br>
+        - and GPS data tags<br>
+      </p>
+    </td>
+    <td>
+      <a href="FFBox.jpg"><img src="FFBox.jpg" />
+    </td>
+  </tr>
+</table>
+
+
+**Source code:** <a href="https://github.com/vigatron/vigatron.github.io/tree/main/projects/hopa2000/FFImportExport">FFImportExport app for PalmOS</a>
+
+<br><br>
+
+---
+
 
 ## Fuel Monitoring Software
 
@@ -49,6 +90,8 @@ A desktop application for visualization and analysis of truck fuel consumption d
   </tr>
 </table>
 
+<br>
+
 ---
 
-2000-2022 Viktor Glebov V01G04A81
+<center>2000-2022 Viktor Glebov V01G04A81</center>
