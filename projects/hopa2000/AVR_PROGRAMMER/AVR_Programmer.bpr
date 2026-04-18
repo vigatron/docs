@@ -1,0 +1,146 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!-- C++Builder XML Project -->
+<PROJECT>
+  <MACROS>
+    <VERSION value="BCB.05.03"/>
+    <PROJECT value="AVR_Programmer.exe"/>
+    <OBJFILES value="AVR_Programmer.obj Programmer.obj VLPT.obj"/>
+    <RESFILES value="Programmer.res"/>
+    <IDLFILES value=""/>
+    <IDLGENFILES value=""/>
+    <DEFFILE value=""/>
+    <RESDEPEN value="$(RESFILES) Programmer.dfm"/>
+    <LIBFILES value=""/>
+    <LIBRARIES value="bcbsmp50.lib VclX50.lib Vcl50.lib"/>
+    <SPARELIBS value="Vcl50.lib VclX50.lib bcbsmp50.lib"/>
+    <PACKAGES value="Vcl50.bpi Vclx50.bpi bcbsmp50.bpi Vcldb50.bpi vclado50.bpi ibsmp50.bpi 
+      VCLBDE50.bpi vcldbx50.bpi Qrpt50.bpi TeeUI50.bpi TeeDB50.bpi Tee50.bpi 
+      Dss50.bpi TeeQR50.bpi VCLIB50.bpi Vclmid50.bpi vclie50.bpi Inetdb50.bpi 
+      Inet50.bpi NMFast50.bpi webmid50.bpi bcbie50.bpi dclocx50.bpi 
+      bcb2kaxserver50.bpi"/>
+    <PATHCPP value=".;"/>
+    <PATHPAS value=".;"/>
+    <PATHRC value=".;"/>
+    <PATHASM value=".;"/>
+    <DEBUGLIBPATH value="$(BCB)\lib\debug"/>
+    <RELEASELIBPATH value="$(BCB)\lib\release"/>
+    <LINKER value="tlink32"/>
+    <USERDEFINES value="_DEBUG"/>
+    <SYSDEFINES value="NO_STRICT"/>
+    <MAINSOURCE value="AVR_Programmer.cpp"/>
+    <INCLUDEPATH value="&quot;C:\CPP\abfComponents ( BCPP )\units\&quot;;&quot;C:\CPP\Varian Async32\Bcb5\&quot;;&quot;C:\Soft\RUNTIME\abfComponents ( BCPP )\units\&quot;;&quot;C:\Soft\RUNTIME\Varian Async32\Bcb5\&quot;;..;..\..\..\..\RC25\LibBCB5;$(BCB)\include;$(BCB)\include\vcl"/>
+    <LIBPATH value="$(BCB)\lib\obj;$(BCB)\lib;..\V"/>
+    <WARNINGS value="-w-par"/>
+  </MACROS>
+  <OPTIONS>
+    <IDLCFLAGS value="-I&quot;C:\CPP\abfComponents ( BCPP )\units\.&quot; -I&quot;C:\CPP\Varian Async32\Bcb5\.&quot; 
+      -I&quot;C:\Soft\RUNTIME\abfComponents ( BCPP )\units\.&quot; 
+      -I&quot;C:\Soft\RUNTIME\Varian Async32\Bcb5\.&quot; -I.. -I..\..\..\..\RC25\LibBCB5 
+      -I$(BCB)\include -I$(BCB)\include\vcl -src_suffix cpp -D_DEBUG -boa"/>
+    <CFLAG1 value="-Od -H=$(BCB)\lib\vcl50.csm -Hc -Vx -Ve -X- -r- -a8 -b- -k -y -v -vi- -c 
+      -tW -tWM"/>
+    <PFLAGS value="-$Y+ -$W -$O- -v -JPHNE -M"/>
+    <RFLAGS value=""/>
+    <AFLAGS value="/mx /w2 /zi"/>
+    <LFLAGS value="-D&quot;&quot; -aa -Tpe -x -Gn -v"/>
+  </OPTIONS>
+  <LINKER>
+    <ALLOBJ value="c0w32.obj sysinit.obj $(OBJFILES)"/>
+    <ALLRES value="$(RESFILES)"/>
+    <ALLLIB value="$(LIBFILES) $(LIBRARIES) import32.lib cp32mt.lib"/>
+  </LINKER>
+  <IDEOPTIONS>
+[Version Info]
+IncludeVerInfo=0
+AutoIncBuild=0
+MajorVer=1
+MinorVer=0
+Release=0
+Build=0
+Debug=0
+PreRelease=0
+Special=0
+Private=0
+DLL=0
+Locale=0
+CodePage=1252
+
+[Version Info Keys]
+CompanyName=
+FileDescription=
+FileVersion=1.0.0.0
+InternalName=
+LegalCopyright=
+LegalTrademarks=
+OriginalFilename=
+ProductName=
+ProductVersion=1.0.0.0
+Comments=
+
+[HistoryLists\hlIncludePath]
+Count=10
+Item0=C:\CPP\abfComponents ( BCPP )\units\;C:\CPP\Varian Async32\Bcb5\;C:\Soft\RUNTIME\abfComponents ( BCPP )\units\;C:\Soft\RUNTIME\Varian Async32\Bcb5\;..;..\..\..\..\RC25\LibBCB5;$(BCB)\include;$(BCB)\include\vcl
+Item1=C:\CPP\abfComponents ( BCPP )\units;C:\CPP\Varian Async32\Bcb5;..\..\..\..\..\Soft\RUNTIME\abfComponents ( BCPP )\units;..\..\..\..\..\Soft\RUNTIME\Varian Async32\Bcb5;C:\Programme\Borland\CBuilder5\Projects\;C:\Programme\RC25\LibBCB5\;$(BCB)\include;$(BCB)\include\vcl;..\..\..\..\Soft\RUNTIME\abfComponents ( BCPP )\units;..\..\..\..\Soft\RUNTIME\Varian Async32\Bcb5
+Item2=..\..\..\..\..\Soft\RUNTIME\abfComponents ( BCPP )\units;..\..\..\..\..\Soft\RUNTIME\Varian Async32\Bcb5;C:\Programme\Borland\CBuilder5\Projects\;C:\Programme\RC25\LibBCB5\;$(BCB)\include;$(BCB)\include\vcl;..\..\..\..\Soft\RUNTIME\abfComponents ( BCPP )\units;..\..\..\..\Soft\RUNTIME\Varian Async32\Bcb5
+Item3=C:\Programme\Borland\CBuilder5\Projects\;C:\Programme\RC25\LibBCB5\;$(BCB)\include;$(BCB)\include\vcl;..\..\..\..\Soft\RUNTIME\abfComponents ( BCPP )\units;..\..\..\..\Soft\RUNTIME\Varian Async32\Bcb5
+Item4=C:\Programme\Borland\CBuilder5\Projects\;C:\Programme\RC25\LibBCB5\;$(BCB)\include;$(BCB)\include\vcl;C:\Data\Soft\RUNTIME\abfComponents ( BCPP )\units;C:\Data\Soft\RUNTIME\Varian Async32\Bcb5
+Item5=..\..\..\..\Soft\RUNTIME\abfComponents ( BCPP )\units;d:\soft\runtime\abfcomponents ( bcpp )\units\;D:\Soft\abfComponents ( BCPP )\units\;..\..\Varian Async32\Bcb5;C:\Programme\Borland\CBuilder5\Projects\;C:\Programme\RC25\LibBCB5\;$(BCB)\include;$(BCB)\include\vcl
+Item6=d:\soft\runtime\abfcomponents ( bcpp )\units\;D:\Soft\abfComponents ( BCPP )\units\;..\..\Varian Async32\Bcb5;C:\Programme\Borland\CBuilder5\Projects\;C:\Programme\RC25\LibBCB5\;$(BCB)\include;$(BCB)\include\vcl
+Item7=D:\Soft\abfComponents ( BCPP )\units\;..\..\Varian Async32\Bcb5;C:\Programme\Borland\CBuilder5\Projects\;C:\Programme\RC25\LibBCB5\;$(BCB)\include;$(BCB)\include\vcl
+Item8=D:\Soft\abfComponents ( BCPP )\units;..\..\Varian Async32\Bcb5;C:\Programme\Borland\CBuilder5\Projects\;C:\Programme\RC25\LibBCB5\;$(BCB)\include;$(BCB)\include\vcl
+Item9=C:\Programme\Borland\CBuilder5\Projects\;C:\Programme\RC25\LibBCB5\;$(BCB)\include;$(BCB)\include\vcl
+
+[HistoryLists\hlLibraryPath]
+Count=11
+Item0=$(BCB)\lib\obj;$(BCB)\lib;C:\Programme\Borland\CBuilder5\Projects\V
+Item1=C:\CPP\abfComponents ( BCPP )\units\;C:\CPP\Varian Async32\Bcb5\;C:\Soft\RUNTIME\abfComponents ( BCPP )\units\;C:\Soft\RUNTIME\Varian Async32\Bcb5\;..;..\..\..\..\RC25\LibBCB5;$(BCB)\lib\obj;$(BCB)\lib
+Item2=C:\CPP\abfComponents ( BCPP )\units;C:\CPP\Varian Async32\Bcb5;..\..\..\..\..\Soft\RUNTIME\abfComponents ( BCPP )\units;..\..\..\..\..\Soft\RUNTIME\Varian Async32\Bcb5;C:\Programme\Borland\CBuilder5\Projects\;C:\Programme\RC25\LibBCB5\;$(BCB)\lib\obj;$(BCB)\lib;..\..\..\..\Soft\RUNTIME\abfComponents ( BCPP )\units;..\..\..\..\Soft\RUNTIME\Varian Async32\Bcb5
+Item3=..\..\..\..\..\Soft\RUNTIME\abfComponents ( BCPP )\units;..\..\..\..\..\Soft\RUNTIME\Varian Async32\Bcb5;C:\Programme\Borland\CBuilder5\Projects\;C:\Programme\RC25\LibBCB5\;$(BCB)\lib\obj;$(BCB)\lib;..\..\..\..\Soft\RUNTIME\abfComponents ( BCPP )\units;..\..\..\..\Soft\RUNTIME\Varian Async32\Bcb5
+Item4=C:\Programme\Borland\CBuilder5\Projects\;C:\Programme\RC25\LibBCB5\;$(BCB)\lib\obj;$(BCB)\lib;..\..\..\..\Soft\RUNTIME\abfComponents ( BCPP )\units;..\..\..\..\Soft\RUNTIME\Varian Async32\Bcb5
+Item5=C:\Programme\Borland\CBuilder5\Projects\;C:\Programme\RC25\LibBCB5\;$(BCB)\lib\obj;$(BCB)\lib;C:\Data\Soft\RUNTIME\abfComponents ( BCPP )\units;C:\Data\Soft\RUNTIME\Varian Async32\Bcb5
+Item6=..\..\..\..\Soft\RUNTIME\abfComponents ( BCPP )\units;d:\soft\runtime\abfcomponents ( bcpp )\units\;D:\Soft\abfComponents ( BCPP )\units\;..\..\Varian Async32\Bcb5;C:\Programme\Borland\CBuilder5\Projects\;C:\Programme\RC25\LibBCB5\;C:\PROGRA~1\Borland\Indy\C5\;$(BCB)\lib\obj;$(BCB)\lib
+Item7=d:\soft\runtime\abfcomponents ( bcpp )\units\;D:\Soft\abfComponents ( BCPP )\units\;..\..\Varian Async32\Bcb5;C:\Programme\Borland\CBuilder5\Projects\;C:\Programme\RC25\LibBCB5\;C:\PROGRA~1\Borland\Indy\C5\;$(BCB)\lib\obj;$(BCB)\lib
+Item8=D:\Soft\abfComponents ( BCPP )\units\;..\..\Varian Async32\Bcb5;C:\Programme\Borland\CBuilder5\Projects\;C:\Programme\RC25\LibBCB5\;C:\PROGRA~1\Borland\Indy\C5\;$(BCB)\lib\obj;$(BCB)\lib
+Item9=D:\Soft\abfComponents ( BCPP )\units;..\..\Varian Async32\Bcb5;C:\Programme\Borland\CBuilder5\Projects\;C:\Programme\RC25\LibBCB5\;C:\PROGRA~1\Borland\Indy\C5\;$(BCB)\lib\obj;$(BCB)\lib
+Item10=C:\Programme\Borland\CBuilder5\Projects\;C:\Programme\RC25\LibBCB5\;C:\PROGRA~1\Borland\Indy\C5\;$(BCB)\lib\obj;$(BCB)\lib
+
+[HistoryLists\hlDebugSourcePath]
+Count=1
+Item0=$(BCB)\source\vcl
+
+[HistoryLists\hlConditionals]
+Count=1
+Item0=_DEBUG
+
+[HistoryLists\hlFinalOutputDir]
+Count=3
+Item0=..\
+Item1=..\EXE\
+Item2=C:\Data\_HEAP\Projects\FFinisher\FFGraph2\EXE
+
+[Debugging]
+DebugSourceDirs=$(BCB)\source\vcl
+
+[Parameters]
+RunParams=
+HostApplication=
+RemoteHost=
+RemotePath=
+RemoteDebug=0
+
+[Compiler]
+ShowInfoMsgs=0
+LinkDebugVcl=0
+LinkCGLIB=0
+
+[CORBA]
+AddServerUnit=1
+AddClientUnit=1
+PrecompiledHeaders=1
+
+[Language]
+ActiveLang=
+ProjectLang=
+RootDir=
+  </IDEOPTIONS>
+</PROJECT>
