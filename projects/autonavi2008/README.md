@@ -136,7 +136,7 @@ Related Links :
 - https://vigatron.github.io/projects/videocard2008 , github - [VideoCARD 2008 Board Details](https://github.com/vigatron/docs/tree/main/projects/videocard2008)
 - https://vigatron.github.io/projects/led2008 , github - [LED Panels 2008](https://github.com/vigatron/docs/tree/main/projects/led2008)
 - Embedded MP3 Player ( --- )
-- Passanger Counter ( --- )
+- IR Passanger Counter ( --- )
 
 ---
 

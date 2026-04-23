@@ -2,8 +2,8 @@
 
 | Property          | Value                       |
 |-------------------|-----------------------------|
-| Designed          | Apr 2007                    |
-| Device Released   | Nov 2007                    |
+| Designed          | Apr 2007 - Nov 2007         |
+| Device Released   | Mai 2008                    |
 | Author            | Viktor Glebov (V01G04A81)   |
 
 
