@@ -107,7 +107,7 @@ The design uses dual XC95144XL and external SRAM to generate a 640x480 signal.
 
 ### Related Links
 
-##### Main Board - gitpages - https://vigatron.github.io/projects/autonavi2008 , github - [Autonavi 2008 Board Details](https://github.com/vigatron/docs/tree/main/projects/autonavi2008)
+##### Main Board - [Autonavi 2008 Project Details](https://vigatron.github.io/projects/autonavi2008) , github [link](https://github.com/vigatron/docs/tree/main/projects/autonavi2008)
 
 ##### VHDL Source XC95144XL CPLD #1 github - [DEMO7MODE VHDL CPLD1](https://github.com/vigatron/docs/tree/main/projects/videocard2008/demo7vhdl/videox1)
 
