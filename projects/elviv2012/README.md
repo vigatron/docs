@@ -44,8 +44,8 @@
 
 ## Diesel Motor Controller (HOPA Motortuning GmbH / Optimex Import Export GmbH)
 
-&bull; PCB layout design
-&bull; Production Test Software & QA
+&bull; PCB layout design  
+&bull; Production Test Software & QA  
 
 <br><br><br>
 
@@ -77,9 +77,9 @@
 
 ## GPS Tracker (Taxi / Dubai)
 
-&bull; Designed full hardware platform (STM32 + SD + audio subsystem)
-&bull; Integrated MP3/FM functionality (client requirement)
-&bull; Developed PC-side configuration tool (USB)
+&bull; Designed full hardware platform (STM32 + SD + audio subsystem)  
+&bull; Integrated MP3/FM functionality (client requirement)  
+&bull; Developed PC-side configuration tool (USB)  
 
 <br><br><br>
 
@@ -181,9 +181,9 @@
 
 ## Stereo Camera (own project)
 
-&bull; Designed system architecture: STM32 + FPGA + SDRAM
-&bull; Dual synchronized camera interface
-&bull; HDMI output + WiFi module integration
+&bull; Designed system architecture: STM32 + FPGA + SDRAM  
+&bull; Dual synchronized camera interface  
+&bull; HDMI output + WiFi module integration  
 
 <p align="center">
 <img src="pics_cam/stereocam_present.png" height="1200" alt="Device">
@@ -191,25 +191,25 @@
 
 #### Hardware
 
-&bull; STM32F746
-&bull; XC6SLX16
-&bull; MT48LC16M16A2P-6A x2
-&bull; HDMI Output
-&bull; Micro SD-Card
-&bull; USB Interface
+&bull; STM32F746  
+&bull; XC6SLX16  
+&bull; MT48LC16M16A2P-6A x2  
+&bull; HDMI Output  
+&bull; Micro SD-Card  
+&bull; USB Interface  
 
 
 #### Software
 
-&bull; FreeRTOS
-&bull; Verilog / Testbenches
+&bull; FreeRTOS  
+&bull; Verilog / Testbenches  
 
 #### Key Functionalities
 
 
-&bull; <b>Traffic Sign Recognition (TSR):</b> Real-time detection and classification of road signs.
-&bull; <b>Spatial Estimation:</b> High-precision distance measurement to obstacles using stereo-vision disparity maps.
-&bull; <b>Lane Detection & Classification:</b> Identification of road markings and lane boundary types.
+&bull; <b>Traffic Sign Recognition (TSR):</b> Real-time detection and classification of road signs.  
+&bull; <b>Spatial Estimation:</b> High-precision distance measurement to obstacles using stereo-vision disparity maps.  
+&bull; <b>Lane Detection & Classification:</b> Identification of road markings and lane boundary types.  
 
 <br>
 
@@ -231,9 +231,9 @@
 
 <i><b>Full-cycle hardware/firmware development with custom "Engrave Version" for client use.</b></i>
 
-&bull; <b>System Ownership:</b> Independently developed a proprietary motion control architecture (STM32 + FPGA + L6472).
+&bull; <b>System Ownership:</b> Independently developed a proprietary motion control architecture (STM32 + FPGA + L6472).  
 
-&bull; <b>Custom Implementation:</b> Engineered a specialized "Engrave Version" tailored to specific client requirements for precision engraving.
+&bull; <b>Custom Implementation:</b> Engineered a specialized "Engrave Version" tailored to specific client requirements for precision engraving.  
 
 &bull; <b>Architectural Innovation:</b>
 
@@ -248,21 +248,21 @@
 
 #### Hardware
 
-&bull; STM32F407
-&bull; XC6SLX9
-&bull; MT48LC16M16A2P-75
-&bull; L6472 x3
-&bull; Extension I/O port
+&bull; STM32F407  
+&bull; XC6SLX9  
+&bull; MT48LC16M16A2P-75  
+&bull; L6472 x3  
+&bull; Extension I/O port  
 
 <i>Status: Gerbers Sent to production 13 Apr 2015</i>
 
 #### Software
-&bull; FreeRTOS
-&bull; App core
-&bull; STM32 peripheral drivers
-&bull; L6472 drivers
-&bull; VHGUI2016 @ 800x480 port (over SPI, draft)
-&bull; Verilog / Testbenches
+&bull; FreeRTOS  
+&bull; App core  
+&bull; STM32 peripheral drivers  
+&bull; L6472 drivers  
+&bull; VHGUI2016 @ 800x480 port (over SPI, draft)  
+&bull; Verilog / Testbenches  
 
 #### Notes
 
@@ -285,9 +285,9 @@
 
 ## Boiler Controller (2 kW)
 
-&bull; Designed STM32-based control panel
-&bull; 4-digit 7-segment LED display
-&bull; Implemented user interface (buttons + LED indication)
+&bull; Designed STM32-based control panel  
+&bull; 4-digit 7-segment LED display  
+&bull; Implemented user interface (buttons + LED indication)  
 
 <br><br><br>
 
@@ -299,9 +299,9 @@
 
 <br>
 
-&bull; STM32 + ETH PHY + XC6SLX100T + SDRAM 166 Mhz + x2 HDMI
-&bull; Status: Pending.
-&bull; Finding: A reliable solution requires a more complex enterprise-grade system rather than the "simple fix" originally envisioned.
+&bull; STM32 + ETH PHY + XC6SLX100T + SDRAM 166 Mhz + x2 HDMI  
+&bull; Status: Pending.  
+&bull; Finding: A reliable solution requires a more complex enterprise-grade system rather than the "simple fix" originally envisioned.  
 
 <br>
 
