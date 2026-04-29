@@ -13,7 +13,7 @@
         }
 
         .container {
-            max-width: 60%;
+            max-width: 70%;
             margin: 60px auto;
             padding: 0 20px;
             text-align: center;
@@ -73,6 +73,10 @@
             flex: 1;
         }
 
+        .desc2 {
+            flex: 1;
+        }
+
         footer {
             margin-top: 40px;
             font-size: 18px;
@@ -112,30 +116,55 @@
 
         <h2>Work Experience Details</h2>
         <ul>
-
             <li>
                 <span class="year">2026</span>
                 <span class="desc"> <b>PUSHK</b> Archiver<br>
-                    <br><a href="https://github.com/vigatron/pushk" target="_blank">PUSHK Project</a>
+                    <br>
+                    Experimental Data Compression Archiver<br>
+                    <br>
+                    Research and development of custom data compression algorithms.<br>
+                    <br>
+                    &bull; Custom transform-based compression pipeline design<br>
+                    &bull; Experimental preprocessing and entropy optimization methods<br>
+                    &bull; Benchmarking against existing compression solutions<br>
+                    &bull; Multi-stage compression prototype implementations
+
+                </span>
+                <span class="desc2">
+                    <a href="https://github.com/vigatron/pushk" target="_blank">
+                        PUSHK Project (GitHub)
+                    </a><br><br>
+                    Benchmarks:<br>
+                    <a href="https://vigatron.github.io/pushk/compression_results/test_run_01/" target="_blank">
+                        Test Run #1
+                    </a>
                     &bull;
-                    <a href="https://vigatron.github.io/pushk/compression_results/test_run_01/"
-                        target="_blank">Benchmark #1</a>
-                    &bull;
-                    <a href="https://vigatron.github.io/pushk/compression_results/test_run_02_rdrop/"
-                        target="_blank">Benchmark #2</a>
-                    <br><a href="https://vigatron.github.io/pushk2pre1move/" target="_blank">pushk2pre1move</a>
+                    <a href="https://vigatron.github.io/pushk/compression_results/test_run_02_rdrop/" target="_blank">
+                        Test Run #2 (R-Drop)
+                    </a><br><br>
+                    Submodules:<br>
+                    <a href="https://vigatron.github.io/pushk2pre1move/" target="_blank">pushk2pre1move</a>
                     &bull;
                     <a href="https://vigatron.github.io/pushk2pre2spc/" target="_blank">pushk2pre2spc</a>
                     &bull;
                     <a href="https://vigatron.github.io/pushk2pre3rdrop/" target="_blank">pushk2pre3rdrop</a>
-
                 </span>
             </li>
 
             <li>
                 <span class="year">2025</span>
-                <span class="desc"><b>PSYOL-25</b> Digital Audio Mixer / 16-bit x32 channels<br>
-                    <br>Designed in KiCAD. <br><br>
+                <span class="desc">
+                    <b>PSYOL-25</b> 32-channel / 16-bit Digital Audio Mixer <br>
+                    <br>Schematic and PCB design in KiCad.
+                    <br>
+                    <br>&bull; STM32H750-based control panel
+                    <br>&bull; 7" 800×480 TFT display
+                    <br>&bull; Modular main board with 8 audio-bank expansion slots
+                    <br>&bull; 32MB NAND Flash audio-bank module
+                    <br>&bull; 32MB SDRAM audio-bank module
+                </span>
+                <span class="desc2">
+                    Prototype Videos<br><br>
                     <a href="https://youtu.be/ZLKKc4rG5Fo" target="_blank">PCB Prototype &bull; Digital Audio Mixer, 32
                         channels 16-bit</a><br>
                     <a href="https://youtu.be/VBANKYLg7Yc" target="_blank">PCB Prototype &bull; Synthesizer Control
@@ -143,7 +172,6 @@
                     </a><br>
                     <a href="https://youtu.be/4nj9RxdhadU" target="_blank">PCB Prototype &bull; 128M Audio Bank Board,
                         PlugIn</a><br>
-
                 </span>
             </li>
 
@@ -171,8 +199,8 @@
                     <br>
                     <br>&bull; Servo motor driver board ( freelance )
                     <br>PCB prototype received from client,
-                    working remote on embedded software
-                    <br>(C++ / ESP32 + Motor control + GUI on 4" TFT + multilanguage support)<br>
+                    working on HDL (drivers) and embedded software
+                    <br>(C++ / ESP32 / TMC4671+TMC6100-BOB / GUI on 4" TFT + multilanguage support)<br>
 
                 </span>
             </li>
