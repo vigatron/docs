@@ -72,10 +72,18 @@ Dual 32-bit ARM MCU Board with CPLD
 
 ---
 
-<center><a href="pics/IMG_FPANEL_PTH.JPG"><img src="pics/IMG_FPANEL_PTH.JPG" width="600px"/></a>
-
-<em>Front Panel Device</em>
-</center>
+<table>
+  <tr>
+    <td width="65%">
+    <a href="pics/IMG_FPANEL_PTH.JPG"><img src="pics/IMG_FPANEL_PTH.JPG" height="300"/></a>
+    <br><em>Front Panel Device</em>
+    </td>
+    <td>
+    <a href="pics/IMG_5588_MP3.JPG"><img src="pics/IMG_5588_MP3.JPG" height="300"/></a>
+    <br><em>Embedded MP3 Player ( AT91SAM7S64 + UDA1334 ) </em>
+    </td>
+  </tr>
+</table>
 
 
 ---
