@@ -191,17 +191,25 @@
                 <span class="year">2020-2021</span>
                 <span class="desc"> <b>Freelance During CVD</b>
                     <br>
-                    <br>Some hobby boards designed + one embedded software project for client<br>
-                    <a href="https://vigatron.github.io/projects/cmboards/brd32f407hdmir3" target="_blank">Details</a>
+                    <br>Some hobby boards designed + one embedded software project for client
                     <br>
-                    <br>&bull; STM32H750 + XC6SLX9 with HDMI Output Interface board
+                    <br><b>STM32H750 + XC6SLX9 with HDMI Output Interface board</b>
+                    <a href="https://vigatron.github.io/projects/cmboards/brd32f407hdmir3" target="_blank">Details</a>
                     <br> ( ZX / NES / Atari / DOS Emulator )
                     <br>
-                    <br>&bull; Servo motor driver board ( freelance )
+                    <br><b>Servo motor driver board</b> ( freelance )
                     <br>PCB prototype received from client,
                     working on HDL (drivers) and embedded software
                     <br>(C++ / ESP32 / TMC4671+TMC6100-BOB / GUI on 4" TFT + multilanguage support)<br>
 
+                    <br><b>STM32-based configurable TFT LCD power sequencing and backlight controller</b>
+                    <br>Hardware architecture PCB design and embedded firmware development
+                    <br>Generation and control of TFT bias/power rails:
+                    <br>DVDD 3.3V &bull; AVDD 10.4V &bull; VGH 16.2V &bull; VGL -7.3V &bull; VCOM &bull; VLED 9.3V /
+                    200mA
+                    <br>Implemented programmable power-on/off timing and safe LCD bias sequencing
+                    <br>Power-up sequence: DVDD → RESET → VGL → AVDD → VGH → RGB/Data → Backlight
+                    <br>
                 </span>
             </li>
 
@@ -340,19 +348,19 @@
                     <br>AT91 Based 100M Ethernet Board: ( Hardware + Software, May 2007)
                     <br>Main components : AT91SAM7X256 + DP83848 + USARTS etc ...
                     <br>
-                    <br><b>Проект "Avtonavigator" 2008</b> (May 2007)
+                    <br><b>Проект "Avtonavigator" 2008</b> (Started on May 2007)
                     <br>( Concept , Architecture, Schematic , PCB Layout , Embedded software C++, VHDL & testbenches
                     )<br>
-                    <br>&bull; Embedded GPS & GPRS Tracker<br>( partially navigation System, drivers control ) for
+                    <br>&bull; Embedded GPS & GPRS Tracker (partially navigation System, drivers control) for
                     public
-                    transport.<br>
-                    <br>&bull; Embedded MP3 Player - озвучка улиц, остановок, озвучка рекламы<br>
-                    <br>&bull; Embedded Videocard AT91SAM7X256 + Xilinx CPLD<br>VGA 640x480 @ 60 fps / 8-bit colors<br>
-                    <br>&bull; LED Panel в салоне троллейбусов и автобусов<br>выведение остановок, пунктов прибытия.<br>
-                    <br>&bull; Табло для остановок с отображением графика запаздывания ранспорта.<br>
-                    <br>&bull; Embedded video camera : трансляция изображений салона автобуса<br>( пассажиры ) на
-                    сервер<br>
-                    <br>&bull; Infrared passanger counter sensor<br>
+                    transport.
+                    <br>&bull; Embedded MP3 Player AT91SAM7S64 - озвучка улиц, остановок, озвучка рекламы
+                    <br>&bull; Embedded Videocard AT91SAM7X256 + Xilinx CPLD VGA 640x480 @ 60 fps / 8-bit colors
+                    <br>&bull; LED Panel в салоне троллейбусов и автобусов, выведение остановок, пунктов прибытия.
+                    <br>&bull; Табло для остановок с отображением графика запаздывания ранспорта.
+                    <br>&bull; Embedded video camera : трансляция изображений салона автобуса ( пассажиры ) на
+                    сервер
+                    <br>&bull; Infrared passanger counter sensor
                     <br>
                     <br>Поддержка от компании:
                     <br> &bull; серверная поддержка, сетевые протоколы и базы данных
@@ -393,6 +401,8 @@
                     <br><b>Embedded MP3 audio player based on LPC2148</b>
                     <br>Note: real-time MP3 decoding achieved by relocating
                     <br>time-critical routines from Flash to internal SRAM
+                    <br>
+                    <br><i>Tags: LPC2148, FreeRTOS, MP3, PWM Audio</i>
                 </span>
             </li>
 
@@ -400,16 +410,19 @@
                 <span class="year">2004-2005</span>
                 <span class="desc"> <b>MTEC Motortuning GmbH</b>
                     <br>
-                    <br>OBD-II diagnostic device
+                    <br><b>OBD-II diagnostic device</b>
                     <br>
                     <br>&bull; Device architecture
                     <br>&bull; PCB design and schematic development
-                    <br>&bull; Embedded Software: core, drivers, embedded GUI on 128x64 B/W LCD
+                    <br>&bull; Embedded Software ATMega128: app core / drivers / FreeRTOS
+                    <br>&bull; Embedded software development for ATMega128
+                    <br>&bull; Application core, low-level drivers, FreeRTOS integration
+                    <br>&bull; Embedded GUI on 128x64 B/W LCD
                     <br>&bull; PC configuration tools and USB (FT245) interface
                     <br>&bull; Logic design in Quartus for Altera MAX CPLD
                     <br>&bull; FPGA logic design in Quartus (Cyclone II)
                     <br>
-                    <br>Additional tasks
+                    <br><b>Additional tasks</b>
                     <br>
                     <br>&bull; Worked with MPC555 (Motorola)
                     <br>&bull; Worked with C166/C167 (Siemens)
@@ -426,12 +439,12 @@
                     Kontron Jumptec 386SX embedded module
                     <br>with Embedded FLASH based file system and B&W TFT 320x240 1-bit color<br>
                     <br>
-                    Software development C/C++ :<br>
+                    <b>Software development C/C++:</b><br>
                     * Интеграция с VDO Dayton Navi (серия 2000) через serial port.<br>
                     * компоновка меню и наполнение окна текстом<br>
                     * разработка классов на C++ для поддержки протокола VDO Dayton<br>
                     <br>
-                    Libraries integration ( Kernel level ):
+                    <b>Libraries integration ( Kernel level ):</b>
                     <br>* DJGPP Toolchain DOS / GNU C++ Compiler :
                     <br>* RTKernel-C + RTIP + RTFS + Symbol PDT 2700
                     <br>* Интеграция в ядро базовой программы
