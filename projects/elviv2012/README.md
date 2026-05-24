@@ -117,7 +117,8 @@ This repository contains PHP and JavaScript libraries for parsing and processing
 |-------------------|-----------------------------|
 | Started on        | Dec 2013                    |
 | Gerbers Completed | Feb 2014                    |
-| Author            | Viktor Glebov (V01G04A81)   |
+| Tests             | May 2014 / Aug 2015         |
+| PCB Layout        | Viktor Glebov (V01G04A81)   |
 
 
 &bull; PCB layout design  
