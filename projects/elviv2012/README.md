@@ -172,9 +172,27 @@ This repository contains PHP and JavaScript libraries for parsing and processing
 
 <br>
 
-<p>
-<img src="pics_dubai/GPSTrackDevice.png" height="400" alt="Device"/><br>
-</p>
+> Basically, this is a bare-bones, compact version of the 2008 AutoNavi module stripped down for baseline tasks.
+(https://vigatron.github.io/projects/autonavi2008/)
+It features support for 2 independent stereo channels for simultaneous audio streaming.
+
+> What's been removed:
+> * Video card / video interface
+> * Dispatch and routing systems
+> * Passenger counters and cabin image capture
+> * All other driver tracking and route-logging systems
+> 
+> What's kept:
+> * Kernel + FreeRTOS + Debug protocols
+> * GPS NMEA Parser + Serial protocols
+> * USB Serial Port for configuration & testing
+> * Audio module / MP3 library / MP3 playback
+> * File system / FatFS / SD-Card / Embedded Serial 16-Mbytes FLASH
+> 
+> What's added:
+> * FM module / Voice message audio transmitter
+> * 3-Axis accelerometer
+> * Sonar / LiDAR support for distance ranging
 
 
 #### Hardware
@@ -186,6 +204,15 @@ This repository contains PHP and JavaScript libraries for parsing and processing
 * USART / GPS
 * USB Interface ( STM32-based )
 
+
+<p align="center"><img src="pics_dubai/gerbv_v1p0.png" alt="pcb top" width="600"/><br>
+PCB Layout / Gerber Viewer
+</p>
+  
+<p align="center"><img src="pics_dubai/GPSTrackDevice.png" alt="pcb bot" width="600"/><br>
+Assembled Board
+</p>
+  
 
 #### Software
 * FreeRTOS
@@ -206,62 +233,37 @@ This repository contains PHP and JavaScript libraries for parsing and processing
 ---
 
 
-<table>
-  <tr>
-    <td>
-    <img src="pics_dubai/pcb_top.jpg" height="240" alt="Device"/><br>
-    </td>
-    <td>
-    <img src="pics_dubai/gerbv_v1p0.png" height="240" alt="Device"/><br>
-    </td>
-    <td>
-    <img src="pics_dubai/pcb_bot.jpg" height="240" alt="Device"/><br>
-    </td>
-  </tr>
-</table>
+<p align="center">
+  <img src="pics_dubai/pcb_top.jpg" alt="pcb top" width="400"/>
+  <img src="pics_dubai/pcb_bot.jpg" alt="pcb bot" width="400"/>
+</p>
+
+<p align="center">
+  <img src="pics_dubai/scr_dubai1.png" alt="pcb top" width="400" height="320"/>
+  <img src="pics_dubai/scr_dubai2.png" alt="pcb bot" width="400" height="320"/>
+</p>
+
+<p align="center">
+<img src="pics_dubai/scr_enclosure_1.png" width="400" height="320"/>
+<img src="pics_dubai/scr_dubai3.png" width="400" height="320"/>
+</p>
+
+<p align="center">
+  <img src="pics_dubai/post_hk4.png" alt="pcb top" width="400"/>
+  <img src="pics_dubai/post_hk3.png" alt="pcb bot" width="400"/>
+</p>
 
 
-<table>
-  <tr>
-    <td>
-      <a href="pics_dubai/scr_dubai1.png">
-        <img src="pics_dubai/scr_dubai1.png" height="300"/><br>
-        <b>Device</b>
-      </a>
-    </td>
-    <td>
-      <a href="pics_dubai/scr_dubai2.png">
-        <img src="pics_dubai/scr_dubai2.png" height="300"/><br>
-        <b>Serie x5</b>
-      </a>
-    </td>
-    <td>
-      <a href="pics_dubai/scr_dubai3.png">
-        <img src="pics_dubai/scr_dubai3.png" height="300"/><br>
-        <b>3D Model</b>
-      </a>
-    </td>
-  </tr>
-</table>
+<br>
+
+> When we tried to ship the prototype devices directly to Dubai via DHL, customs blocked the package.
+They thought the device looked like a tracking bug that could be used to spy on people and send location coordinates over radio.
+In reality, it was nothing like that — it was just a low-power voice transmitter with a maximum of 2 mW (normally running at 1 mW). That’s enough to send voice messages about 30–50 meters away. Since the first prototypes were stuck in Ukraine and we had an event/presentation coming up in the UAE, we decided to manufacture the whole batch outside Ukraine. We made them in Canada and China through our partner KS Circuits Inc, and then did all the firmware development, testing, and debugging remotely.
+
+> In the end, everything worked great, and devices were successfully showcased at the "RTA Back Off Radio 2015" in Dubai.
+https://www.youtube.com/watch?v=7nTjF7D036w
 
 
-<table>
-  <tr>
-    <td>
-    <img src="pics_dubai/scr_enclosure_1.png" height="300"/><br>
-    </td>
-    <td>
-    <img src="pics_dubai/post_hk4.png" height="300"/><br>
-    </td>
-    <td>
-    <img src="pics_dubai/post_hk3.png" height="300"/><br>
-    </td>
-  </tr>
-</table>
-
-
-
-<br><br>
 
 ---
 
@@ -523,6 +525,11 @@ https://web.archive.org/web/20151127081327/http://electro-lviv.com/electro-soft/
 &bull;  <b>GUI Framework Development</b>  
 Iterative evolution of the proprietary interface: VHGUI (v.2004 → v.2008 → v.2012 → v.2016).
 
+<i>VHGUI2004</i> : B&W LED 128x64 COG : Initial version on ATMega128 + Altera MAX7000 / MTEC Motortunung / Automotive ECU Flasher device
+<i>VHGUI2008</i> : ARM7TDMI-S 640x480 version : [Embedded Videocard 2008](https://vigatron.github.io/projects/videocard2008/) as part of the [Autonavigator 2008](https://vigatron.github.io/projects/autonavi2008/)
+<i>VHGUI2012</i> : ARM 32-bit 7"TFT 800x480 R8:G8:B8 : GVIF Video Interface for Toyota/Lexis
+<i>VHGUI2016</i> : ARM 32-bit 7"TFT 800x480 R8:G8:B8 : Multi-language ported version for CNC related applications
+
 &bull;  <b>Crossplatform Architecture</b> The CNC Pro v2.0 program was developed in C++ / gcc / Windows.
 It was launched and debugged in a special emulator without being tied to a specific platform.
 GUI and functionality emulation during development was carried out in Windows, after which the program was built for STM32F407 (porting).
@@ -588,7 +595,7 @@ Version 2.0
 Key differences: full multitasking; a fully‑fledged GUI with multi‑windowing and the ability to switch between windows at any time, completely independent of task status; font anti‑aliasing and fast graphics; image scaling; hierarchical menu systems with detailed motor settings, application parameters, and other module configurations; support for Bootloader, System Monitor, input file parsing and task pre‑processing before execution, as well as other features …
 
 > In spring–summer 2016, the entrepreneur unexpectedly declared that "CNC development was no longer in his interest."
-
+> For three quarters, V01G04A81 invested time and resources into CNC development. However, following a sudden notification from the "partner" expressing a "lack of interest," they decided to halt further resource allocation in this direction. Throughout this period, the partner had promised to provide an industrial milling and drilling platform to test the CNC control unit and software. It now appears these were deliberate empty promises intended to buy time. Ultimately, they failed to deliver.
 
 ---
 
@@ -596,18 +603,42 @@ Key differences: full multitasking; a fully‑fledged GUI with multi‑windowing
 
 ## Boiler Controller (2 kW)
 
-| Property           | Value                       |
-|--------------------|-----------------------------|
-| Started on         | Mar 2016                    |
-| Author             | Viktor Glebov (V01G04A81)   |
-| Author             | GMad                        |
+| Property           | Details             | Author                       |
+|--------------------|---------------------|------------------------------|
+| Started on         | Mar 2016            |                              |
+| Main Board         | Schematic & Layout  | Viktor Glebov (`V01G04A81`)  |
+| Embedded Software  | Firmware            | Viktor Glebov (`V01G04A81`)  |
+| Power Controller   | Schematic & Layout  | GMad                         |
+  
+<br>
+  
+An STM32F1-based control system designed for a 2 kW boiler heating element,  
+featuring a tactile user interface, multi-segment display, and voice alert capabilities.
+  
 
 
-&bull; Designed STM32-based control panel  
-&bull; 4-digit 7-segment LED display  
-&bull; Implemented user interface (buttons + LED indication)  
+#### Key Features
 
-<br><br>
+* **High-Power Regulation:**  Secure microcontroller-based control of a 2 kW boiler heating element.  
+  
+* **STM32 Architecture:**  Robust hardware core built entirely on the STM32F1 series.  
+  
+* **Thermal Monitoring:**  Dedicated temperature measurement circuits designed to interface with and process signals from both analog and digital sensors.  
+  
+* **Hardware Protection:**  Integrated hardware protection circuits to ensure safe, stable, and reliable operation under heavy loads.  
+  
+* **Visual Interface:**  Clear 4-digit, 7-segment LED display for real-time telemetry.  
+  
+* **Control UI:**  Intuitive 4-button hardware navigation with a custom pseudo-menu system and LED status indicators.  
+  
+* **Audio Alerts:**  Integrated 1W–3W audio amplifier paired with a mini speaker for voice messages and system alarms.  
+  
+<br>
+
+<p align="center"><img src="pics/ctlboiler.jpg" alt="pcb bot" width="600"/><br>
+Assembled Board
+</p>
+
 
 ---
 
@@ -628,7 +659,7 @@ Key differences: full multitasking; a fully‑fledged GUI with multi‑windowing
 
 <br>
 
-<p>
+<p align="center">
   <a href="pics_kvm/kvm1.png"><img src="pics_kvm/kvm1.png" height="600" alt="KVM Board" /></a><br>
   <em>KVM Board ( only draft version available from archive ) : Year: 2014-2015 </em>
 </p>
@@ -647,29 +678,128 @@ Key differences: full multitasking; a fully‑fledged GUI with multi‑windowing
 | Gerbers Completed  | Dec 2015                    |
 | Author             | Viktor Glebov (V01G04A81)   |
 
+### System Architecture
+
+**Core:**
+  * **MCIMX233CAG4C** processor 
+  * **AS4C32M16D1A-5TIN** (DDR1 SDRAM)
+  * **T29F4G08ABADAWP:D** (NAND Flash).
+
+**Connectivity & Peripherals:**
+  * **STN1110:** Multiprotocol OBD-to-UART interpreter.
+  * **ESP8266:** Wi-Fi module for wireless data streaming.
+  * **LIS302DLTR:** 3-axis MEMS accelerometer.
+  * **Storage:** microSD card slot for data logging.
+
+ ### Key Responsibilities & Features
+* **Protocol Support:** Designed and implemented an automotive diagnostic interface supporting **CAN (ISO 15765)**, **K-Line (ISO 9141 / KWP2000)**, and legacy protocols via external transceivers.
+* **Firmware Development:** Developed embedded firmware for real-time ECU communication, DTC (Diagnostic Trouble Codes) decoding, and PID data acquisition.
+* **Hardware Engineering:** Designed the complete hardware architecture, including automotive-grade power conditioning, transient/surge protection circuits, and high-speed MCU–peripheral interfaces (UART, SPI, EMI).
+
+<br>
+
+<p align="center"><b>Main Board with OBD Connector, STN1110, LIS302DLTR, and ESP8266 Wi-Fi</b></p>
+
+<p align="center">
+  <img src="pics_obd/picb.jpg" alt="base pcb prototype" width="420" height="500"/>
+</p>
+
+<p align="center"><b>Base Board (3D Models)</b></p>
+
+<p align="center">
+  <img src="pics_obd/OBDBaseBoardTop3D.png" alt="pcb top" width="320" height="300"/>
+  <img src="pics_obd/OBDBaseBoardBot3D.png" alt="pcb bot" width="320" height="300"/>
+  <br>
+  Base board
+</p>
+
+<br>
+
+<p align="center"><b>i.MX233 MCU Plug (PCB Prototype Photos)</b></p>
+
+<p align="center">
+  <img src="pics_obd/pic2.jpg" alt="pcb top" width="320" height="400" />
+  <img src="pics_obd/pic1.jpg" alt="pcb bot" width="320" height="400" />
+  <br>
+  iMX232 Plug
+</p>
+
+<p align="center"><b>i.MX233 MCU Plug (3D Models)</b></p>
+
+<p align="center">
+  <img src="pics_obd/OBDMCUBoardTop3D.png" alt="pcb top" width="320" height="300" />
+  <img src="pics_obd/OBDMCUBoardBot3D.png" alt="pcb bot" width="320" height="300" />
  
-Designed and implemented an automotive diagnostic interface supporting CAN (ISO 15765), K-Line (ISO 9141 / KWP2000), and legacy protocols via external transceivers.
+</p>
 
-<table>
-  <tr>
-    <td>
-    <img src="pics_obd/OBDBaseBoardTop3D.png" height="240" /><br>Base board (Top)
-    </td>
-    <td>
-    <img src="pics_obd/OBDBaseBoardBot3D.png" height="240" /><br>Base board (Bottom)
-    </td>
-    <td>
-    <img src="pics_obd/OBDMCUBoardTop3D.png" height="240" /><br>iMX232 Plug (Top)
-    </td>
-    <td>
-    <img src="pics_obd/OBDMCUBoardBot3D.png" height="240" /><br>iMX232 Plug (Bottom)
-    </td>
-  </tr>
-</table>
 
-Developed embedded firmware for ECU communication, DTC decoding, and real-time PID data acquisition.
-Implemented hardware architecture including automotive power conditioning, protection circuits, and MCU–peripheral interfacing (UART/SPI).
 
+---
+
+## Kawasaki OBD-II Diagnostic Device
+
+Compact STM32F407-based motorcycle diagnostic device designed for Kawasaki OBD-II systems with K-Line, KWP2000 and CAN bus support.  
+
+<br>
+
+
+
+#### Project Timeline
+
+| Milestone | Description | Date |
+|------------|-------------|------|
+| Project Started | Architecture & schematic design | Mar 2016 |
+| PCB Layout Completed | Manufacturing process started | Apr 2016 |
+| PCB Assembly | First 2 prototypes assembled | May 2016 |
+| Firmware Testing | Beta firmware released | Jun 2016 |
+| Diagnostic Testing | OBD diagnostics and fault code tests | Jul 2016 |
+
+#### Contributors
+
+| Area | Contributor |
+|------|-------------|
+| Hardware Architecture | Viktor Glebov (`V01G04A81`) |
+| PCB Layout | Viktor Glebov (`V01G04A81`) |
+| Firmware Development | Viktor Glebov (`V01G04A81`) |
+| Motorcycle Integration | GMad |
+| Diagnostic Testing | GMad |
+
+<br>
+
+
+
+### Features
+
+- STM32F407 microcontroller platform
+- SPI TFT display support
+- 4 user navigation buttons
+- External I/O expansion
+- SD card support for data logging and diagnostic databases
+- USB Host mode for direct data logging to USB flash storage
+- USB Device mode for PC synchronization and data exchange
+- K-Line / KWP2000 support
+    * ISO-14230
+    * ISO-9141
+- CAN bus interface
+
+<p align="center"><img src="pics_obdmoto/obdmoto.png" alt="pcb top" width="640"/><br>
+PCB Layout / Gerber Viewer
+</p>
+
+
+<p align="center">
+    <img src="pics_obdmoto/photo1.png" alt="pcb top" width="320" height="260"/>
+    <img src="pics_obdmoto/photo2.png" alt="pcb top" width="320" height="260"/>
+    <br>
+    Assembled devices
+</p>
+
+<p align="center">
+    <img src="pics_obdmoto/photo3.png" alt="pcb top" width="320" height="260"/>
+    <img src="pics_obdmoto/photo4.png" alt="pcb top" width="320" height="260"/>
+    <br>
+    Diagnostic testing
+</p>
 
 ---
 2013-2016 V01G04A81
