@@ -120,29 +120,70 @@ This repository contains PHP and JavaScript libraries for parsing and processing
 | Tests             | May 2014 / Aug 2015         |
 | PCB Layout        | Viktor Glebov (V01G04A81)   |
 
+<br>
 
 &bull; PCB layout design  
 &bull; Production Test Software & QA  
 
-<br><br>
+<br>
 
+<b>High-Voltage Piezo Injector Control</b>
 
-<table>
-  <tr>
-    <td align="center">
-      <a href="pics_hopa/hpc_dev.JPG">
-        <img src="pics_hopa/hpc_dev.JPG" height="500" alt="Device"/><br>
-        <b>Device</b>
-      </a>
-    </td>
-    <td align="center">
-      <a href="pics_hopa/HPC_From_Factory.png">
-        <img src="pics_hopa/HPC_From_Factory.png" height="500" alt="Serie x5"/><br>
-        <b>Serie x5</b>
-      </a>
-    </td>
-  </tr>
-</table>
+The system supports high-voltage piezoelectric fuel injector control in the 100V to 200V range.
+
+<br>
+
+<p align="center">
+    <img src="pics_hopa/hpc_dev.JPG" width="500" height="500" alt="Device"/>
+    <img src="pics_hopa/HPC_From_Factory.png" width="600" height="500" alt="Serie x5"/><br>
+</p>
+
+<br>
+
+> Unlike conventional solenoid injectors, piezo injectors require a fast high-voltage charge and discharge cycle to actuate the piezo stack with extremely low response time and high injection precision.
+
+<br>
+
+The driver architecture consists of:
+
+* a high-voltage DC-DC boost converter,
+* fast charge/discharge switching stage,
+* energy recovery circuit,
+* and protected high-speed gate driver circuitry.
+
+<br>
+
+The piezo actuator behaves mainly as a capacitive load, therefore the control strategy is based on controlled energy transfer rather than continuous current drive.
+
+Typical operation sequence:
+
+1. The boost converter generates the required high-voltage rail (100V–200V).
+2. The injector is charged with a fast high-current pulse.
+3. The piezo stack expands and opens the injector valve.
+4. After the injection event, the stored energy is actively discharged or recovered back into the power stage.
+
+<br>
+
+Special design considerations include:
+
+* fast switching edge control,
+* high peak transient currents,
+* EMC/EMI suppression,
+* overvoltage protection,
+* thermal stability,
+* and safe handling of inductive and capacitive transients.
+
+<br>
+
+The firmware controls:
+
+* injection timing,
+* pulse width,
+* charge/discharge profile,
+* and multi-stage injection sequences for precise fuel delivery at high engine RPM.
+
+The hardware design is suitable for modern high-speed automotive piezo injector systems used in common rail diesel and direct injection engines.
+
 
 
 <br><br>
