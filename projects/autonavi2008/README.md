@@ -142,8 +142,8 @@ Dual 32-bit ARM MCU Board with CPLD
 
 Related Links : 
 
-- [VideoCARD 2008 Project](https://vigatron.github.io/projects/videocard2008) &bull; [github Link](https://github.com/vigatron/docs/tree/main/projects/videocard2008)
-- [LED Panels 2008 Project](https://vigatron.github.io/projects/led2008) &bull; [github Link](https://github.com/vigatron/docs/tree/main/projects/led2008)
+- [VideoCARD 2008 Project](https://vigatron.github.io/projects/videocard2008/) &bull; [github Link](https://github.com/vigatron/docs/tree/main/projects/videocard2008)
+- [LED Panels 2008 Project](https://vigatron.github.io/projects/led2008/) &bull; [github Link](https://github.com/vigatron/docs/tree/main/projects/led2008)
 - Embedded MP3 Player ( --- )
 - IR Passanger Counter ( --- )
 
